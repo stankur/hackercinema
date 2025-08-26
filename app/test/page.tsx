@@ -87,7 +87,7 @@ export default function TestProfilePage() {
 				{/* About */}
 				{about && (
 					<section className="space-y-3">
-						<h2 className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
+						<h2 className="text-xs font-bold tracking-wide text-muted-foreground uppercase">
 							About
 						</h2>
 						<p className="text-base leading-relaxed text-foreground pl-4 md:pl-5">

@@ -13,7 +13,7 @@ export default function ExperienceSection({
 
 	return (
 		<section className="space-y-4 md:space-y-5">
-			<h2 className="text-xs font-medium tracking-wide text-muted-foreground uppercase mb-2">
+			<h2 className="text-xs font-bold tracking-wide text-muted-foreground uppercase mb-2">
 				Experience
 			</h2>
 			<ul className="divide-y divide-muted-foreground/20 pl-4 md:pl-5">

@@ -42,7 +42,7 @@ export default function ExperienceItem({ experience }: ExperienceItemProps) {
 						<div className="text-xl font-semibold text-foreground leading-relaxed">
 							{experience.org}
 						</div>
-						<div className="text-base text-muted-foreground">
+						<div className="text-sm font-light">
 							{experience.role}
 						</div>
 					</div>
@@ -93,7 +93,7 @@ export default function ExperienceItem({ experience }: ExperienceItemProps) {
 								{experience.tech!.map((tech, idx) => (
 									<span
 										key={idx}
-										className="inline-flex items-center rounded-full bg-muted text-foreground px-2 py-0.5 text-[11px] leading-5"
+										className="inline-flex font-light items-center rounded-full bg-muted text-foreground px-2 py-0.5 text-[11px] leading-5"
 									>
 										{tech}
 									</span>
@@ -102,7 +102,7 @@ export default function ExperienceItem({ experience }: ExperienceItemProps) {
 						)}
 
 						{activeTab === "details" && hasDetails && (
-							<div className="space-y-3">
+							<div className="space-y-3 font-light">
 								{experience.location &&
 									experience.location.trim().length > 0 && (
 										<div className="text-sm text-muted-foreground">

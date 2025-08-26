@@ -19,7 +19,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
 
 	return (
 		<section className="space-y-4 md:space-y-5">
-			<h2 className="text-xs font-medium tracking-wide text-muted-foreground uppercase mb-2">
+			<h2 className="text-xs font-bold tracking-wide text-muted-foreground uppercase mb-2">
 				Projects
 			</h2>
 

@@ -39,21 +39,21 @@ export default function ProjectCard({
 				ref={contentRef}
 				data-content
 				className={`relative flex flex-col py-4 md:py-5 ${
-					columnIndex === 0 
-						? "pr-4 md:pr-5" // Left column: only right padding
-						: "pl-4 md:pl-5" // Right column: only left padding
+					// Mobile: no horizontal padding (container has pl-4)
+					// Desktop: asymmetric padding based on column
+					columnIndex === 0
+						? "md:pr-5" // Left column: only right padding on desktop
+						: "md:pl-5" // Right column: only left padding on desktop
 				}`}
 				style={{ transition: "height 0.2s ease" }}
 			>
 				{/* Project Info - natural height with bottom margin for tab spacing */}
-				<div className="space-y-2 flex-1 mb-8">
+				<div className="space-y-3 flex-1 mb-8">
 					<div className="text-xl font-semibold text-foreground leading-relaxed">
 						{project.name}
 					</div>
 					{project.subtitle && (
-						<p className="text-base text-muted-foreground">
-							{project.subtitle}
-						</p>
+						<p className="text-sm font-light">{project.subtitle}</p>
 					)}
 				</div>
 
@@ -62,7 +62,13 @@ export default function ProjectCard({
 					<div
 						ref={tabsRef}
 						data-tabs
-						className="absolute bottom-4 md:bottom-5 left-4 md:left-5 right-4 md:right-5"
+						className={`absolute bottom-4 md:bottom-5 ${
+							// Mobile: no horizontal offset (flush left)
+							// Desktop: asymmetric positioning based on column
+							columnIndex === 0
+								? "left-0 md:right-5" // Left column: flush left, right padding on desktop
+								: "left-0 md:left-5 md:right-0" // Right column: flush left on mobile, padded on desktop
+						}`}
 					>
 						<div className="flex gap-6">
 							{hasTech && (
@@ -99,12 +105,20 @@ export default function ProjectCard({
 			</div>
 
 			{/* Expansion Track - ONLY expanded content, completely independent */}
-			<div className="px-4 md:px-5">
+			<div
+				className={`${
+					// Mobile: no horizontal padding (consistent with content)
+					// Desktop: asymmetric padding based on column
+					columnIndex === 0
+						? "md:pr-5" // Left column: only right padding on desktop
+						: "md:pl-5" // Right column: only left padding on desktop
+				}`}
+			>
 				{activeTab === "tech" && hasTech && (
 					<div
 						id={`${project.name}-tech-panel`}
 						role="tabpanel"
-						className="pt-4 pb-4 md:pb-5"
+						className="pt-4 pb-4 md:pb-5 font-light"
 					>
 						<div className="flex flex-wrap gap-1.5">
 							{project.tech!.map((tech, idx) => (
@@ -123,7 +137,7 @@ export default function ProjectCard({
 					<div
 						id={`${project.name}-details-panel`}
 						role="tabpanel"
-						className="pt-4 pb-4 md:pb-5 space-y-3"
+						className="pt-4 pb-4 md:pb-5 space-y-3 font-light"
 					>
 						{project.period && project.period.trim().length > 0 && (
 							<div className="text-xs text-muted-foreground">
