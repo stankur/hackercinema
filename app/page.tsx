@@ -3,28 +3,24 @@
 import { useState, useEffect } from "react";
 import BuilderItem from "../components/BuilderItem";
 
-interface GitHubProfile {
-	login: string;
-	avatar_url: string;
-	bio?: string | null;
-	location?: string | null;
-	blog?: string;
-}
-
-interface GitHubRepo {
-	name: string;
-	description?: string | null;
-	updated_at: string;
-	stars?: number;
-	language?: string | null;
-	topics?: string[];
-}
-
 interface Builder {
 	username: string;
 	theme: string;
-	profile: GitHubProfile;
-	repos: GitHubRepo[];
+	profile: {
+		login: string;
+		avatar_url: string;
+		bio?: string | null;
+		location?: string | null;
+		blog?: string;
+	};
+	repos: {
+		name: string;
+		description?: string | null;
+		updated_at: string;
+		stars?: number;
+		language?: string | null;
+		topics?: string[];
+	}[];
 }
 
 export default function Home() {
@@ -54,8 +50,8 @@ export default function Home() {
 
 	return (
 		<div className="min-h-screen bg-background">
-			<div className="max-w-3xl mx-auto py-8 px-6">
-				<div className="divide-y divide-border">
+			<div className="max-w-3xl mx-auto py-12 px-6">
+				<div className="divide-y">
 					{builders.map((builder) => (
 						<BuilderItem key={builder.username} builder={builder} />
 					))}

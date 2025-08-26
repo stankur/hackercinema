@@ -19,7 +19,9 @@ export default function ProjectItem({ project }: ProjectItemProps) {
 	const [activeTab, setActiveTab] = useState<"tech" | "details" | null>(null);
 
 	const hasTech = project.tech && project.tech.length > 0;
-	const hasDetails = project.details && project.details.length > 0;
+	const hasDetails =
+		(project.period && project.period.trim().length > 0) ||
+		(project.details && project.details.length > 0);
 
 	const handleTabClick = (tab: "tech" | "details") => {
 		setActiveTab(activeTab === tab ? null : tab);
@@ -28,22 +30,17 @@ export default function ProjectItem({ project }: ProjectItemProps) {
 	return (
 		<div
 			key={`${project.name}-${project.period || "no-period"}`}
-			className="space-y-2"
+			className="space-y-2 h-full"
 		>
-			<div className="space-y-8">
+			<div className="gap-8 flex flex-col justify-between">
 				<div className="space-y-2">
-					<div className="text-lg font-semibold text-foreground leading-relaxed">
+					<div className="text-xl font-semibold text-foreground leading-relaxed">
 						{project.name}
 					</div>
 					{project.subtitle && (
-						<p className="text-sm text-muted-foreground">
+						<p className="text-base text-muted-foreground">
 							{project.subtitle}
 						</p>
-					)}
-					{project.period && (
-						<div className="text-xs text-muted-foreground">
-							{project.period}
-						</div>
 					)}
 				</div>
 
@@ -92,11 +89,22 @@ export default function ProjectItem({ project }: ProjectItemProps) {
 						)}
 
 						{activeTab === "details" && hasDetails && (
-							<ul className="list-disc pl-5 text-sm text-foreground space-y-1 leading-relaxed">
-								{project.details!.map((d, idx) => (
-									<li key={idx}>{d}</li>
-								))}
-							</ul>
+							<div className="space-y-3">
+								{project.period &&
+									project.period.trim().length > 0 && (
+										<div className="text-xs text-muted-foreground">
+											{project.period}
+										</div>
+									)}
+								{project.details &&
+									project.details.length > 0 && (
+										<ul className="list-disc pl-5 text-sm text-foreground space-y-1 leading-relaxed">
+											{project.details.map((d, idx) => (
+												<li key={idx}>{d}</li>
+											))}
+										</ul>
+									)}
+							</div>
 						)}
 					</div>
 				)}

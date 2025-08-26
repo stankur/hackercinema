@@ -18,15 +18,14 @@ interface ExperienceItemProps {
 }
 
 export default function ExperienceItem({ experience }: ExperienceItemProps) {
-	const [activeTab, setActiveTab] = useState<"tech" | "highlights" | null>(
-		null
-	);
+	const [activeTab, setActiveTab] = useState<"tech" | "details" | null>(null);
 
 	const hasTech = experience.tech && experience.tech.length > 0;
-	const hasHighlights =
-		experience.highlights && experience.highlights.length > 0;
+	const hasDetails =
+		(experience.location && experience.location.trim().length > 0) ||
+		(experience.highlights && experience.highlights.length > 0);
 
-	const handleTabClick = (tab: "tech" | "highlights") => {
+	const handleTabClick = (tab: "tech" | "details") => {
 		setActiveTab(activeTab === tab ? null : tab);
 	};
 
@@ -40,18 +39,11 @@ export default function ExperienceItem({ experience }: ExperienceItemProps) {
 			<div className="space-y-8">
 				<div className="space-y-4">
 					<div className="space-y-2">
-						<div className="text-lg font-semibold text-foreground leading-relaxed">
-							{experience.role}
+						<div className="text-xl font-semibold text-foreground leading-relaxed">
+							{experience.org}
 						</div>
-						<div className="flex items-center gap-4">
-							<div className="text-sm text-foreground">
-								{experience.org}
-							</div>
-							{experience.location && (
-								<span className="text-xs text-muted-foreground">
-									{experience.location}
-								</span>
-							)}
+						<div className="text-base text-muted-foreground">
+							{experience.role}
 						</div>
 					</div>
 					{experience.period &&
@@ -66,7 +58,7 @@ export default function ExperienceItem({ experience }: ExperienceItemProps) {
 				</div>
 
 				{/* Tabs */}
-				{(hasTech || hasHighlights) && (
+				{(hasTech || hasDetails) && (
 					<div className="space-y-4">
 						<div className="flex gap-6">
 							{hasTech && (
@@ -81,16 +73,16 @@ export default function ExperienceItem({ experience }: ExperienceItemProps) {
 									Tech
 								</button>
 							)}
-							{hasHighlights && (
+							{hasDetails && (
 								<button
-									onClick={() => handleTabClick("highlights")}
+									onClick={() => handleTabClick("details")}
 									className={`text-xs transition-colors ${
-										activeTab === "highlights"
+										activeTab === "details"
 											? "text-foreground"
 											: "text-muted-foreground hover:text-foreground"
 									}`}
 								>
-									Highlights
+									Details
 								</button>
 							)}
 						</div>
@@ -109,12 +101,25 @@ export default function ExperienceItem({ experience }: ExperienceItemProps) {
 							</div>
 						)}
 
-						{activeTab === "highlights" && hasHighlights && (
-							<ul className="list-disc pl-5 text-sm text-foreground space-y-1 leading-relaxed">
-								{experience.highlights!.map((h, idx) => (
-									<li key={idx}>{h}</li>
-								))}
-							</ul>
+						{activeTab === "details" && hasDetails && (
+							<div className="space-y-3">
+								{experience.location &&
+									experience.location.trim().length > 0 && (
+										<div className="text-sm text-muted-foreground">
+											{experience.location}
+										</div>
+									)}
+								{experience.highlights &&
+									experience.highlights.length > 0 && (
+										<ul className="list-disc pl-5 text-sm text-foreground space-y-1 leading-relaxed">
+											{experience.highlights.map(
+												(h, idx) => (
+													<li key={idx}>{h}</li>
+												)
+											)}
+										</ul>
+									)}
+							</div>
 						)}
 					</div>
 				)}
