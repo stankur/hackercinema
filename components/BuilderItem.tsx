@@ -85,9 +85,7 @@ export default function BuilderItem({ builder }: BuilderItemProps) {
 							{builder.username}
 						</Link>
 					</div>
-					<div className="text-sm font-light">
-						{builder.theme}
-					</div>
+					<div className="text-sm font-light">{builder.theme}</div>
 				</div>
 			</div>
 

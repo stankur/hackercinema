@@ -172,3 +172,7 @@
 .animate-blob-3 {
 	animation: blob-3 11s infinite;
 }
+
+.animate-shimmer {
+	animation: shimmer 1.5s linear 2;
+}

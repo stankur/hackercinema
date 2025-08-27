@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import LazyBuilderItem from "@/components/LazyBuilderItem";
 import type { Builder } from "@/lib/types";
+import { Github } from "lucide-react";
+import { Shimmer } from "@/components/ui/shimmer";
 
 export default function Home() {
 	const [builders, setBuilders] = useState<Builder[]>([]);
@@ -90,41 +92,44 @@ export default function Home() {
 						></div>
 
 						{/* Text content */}
-						<div className="relative z-10 pt-16 font-mono text-sm px-8 max-w-4xl mx-auto">
-							<p className="text-white/80 tracking-wide leading-relaxed mb-8">
+						<div className="relative z-10 pt-4 font-mono text-sm px-8 max-w-4xl mx-auto">
+							<p className="mb-6 font-black text-2xl">
+								THE HACKER FILTER
+							</p>
+							<div className="mb-8 font-semibold">
+								<Shimmer>
+									<span>join with github</span>
+								</Shimmer>
+							</div>
+
+							<p className=" mb-8">
 								there are people who build things for hobby, in
 								their free time, what they do is building stuff,
 								and they are technically inclined and curious,
-								and ambitious. I just need you to classify
-								whether this github profile matches that
-								criteria.
+								and ambitious.
 							</p>
 
-							<p className="text-white/80 tracking-wide leading-relaxed mb-8">
+							<p className="tracking-wide leading-relaxed mb-8">
 								People who code professionally but not in free
-								time, doing projects for work do not pass, also
-								people who do it for school, uni assignments do
-								not pass, people who seem to be doing projects
-								to hit keywords for job search don&apos;t pass,
-								people who only do projects at hackathons do not
-								pass.
+								time, people who do it for school, uni
+								assignments, people who seem to be doing
+								projects to hit keywords for job search, people
+								who only do projects at hackathons do not pass.
 							</p>
 
-							<p className="text-white/80 tracking-wide leading-relaxed mb-8">
+							<p className="tracking-wide leading-relaxed mb-8">
 								does this person seem to have a taste, do their
 								project show that they have a passion for some
 								particular theme, like an obsession because they
 								are pursuing it, the type of person who would
-								work or start a startup, rather than go to big
-								tech. And it must also be something that is
-								rather pursuing an ambitious vision, rather than
-								starting startups for the sake of starting one
-								type.
+								work or start a startup pursuing an ambitious
+								vision, rather than starting startups for the
+								sake of starting one type.
 							</p>
 
-							<p className="text-white/80 tracking-wide leading-relaxed">
+							<p className="tracking-wide leading-relaxed">
 								curious, exeprimental, learner, builder type.
-								Yes or no one word answer, just one answer.
+								YES or NO. One word answer, just one answer.
 							</p>
 						</div>
 					</>
