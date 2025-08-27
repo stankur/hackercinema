@@ -1,58 +1,63 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, use } from "react";
 import ExperienceSection from "@/components/ExperienceSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import { validateProfileData, type ProfileData } from "@/lib/schemas";
+import { Mail, Globe, ExternalLink, Github, Linkedin } from "lucide-react";
 
 interface PageProps {
-	params: {
+	params: Promise<{
 		username: string;
-	};
+	}>;
 }
 
 export default function ProfilePage({ params }: PageProps) {
-	const { username } = params;
+	const { username } = use(params);
 	const [data, setData] = useState<ProfileData | null>(null);
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		// First try to load custom profile data
-		fetch(`/api/profiles/${username}.json`)
+		// Load all profiles from the consolidated file
+		fetch("/api/profiles.json")
 			.then((res) => {
-				if (res.ok) {
-					return res.json();
+				if (!res.ok) {
+					throw new Error("Failed to load profiles");
 				}
-				// If custom profile doesn't exist, fall back to sample data
+				return res.json();
+			})
+			.then((profiles) => {
+				// Find profile with case-insensitive matching
+				const profileKey = Object.keys(profiles).find(
+					(key) => key.toLowerCase() === username.toLowerCase()
+				);
+
+				// Check if the requested username exists
+				if (profileKey) {
+					try {
+						const validatedData = validateProfileData(
+							profiles[profileKey]
+						);
+						setData(validatedData);
+						setLoading(false);
+						return; // Exit early, don't continue to fallback
+					} catch (validationError) {
+						console.error(
+							`Validation error for ${username}:`,
+							validationError
+						);
+						// Continue to fallback if validation fails
+					}
+				}
+
+				// Username not found or validation failed, try sample data as fallback
 				return fetch("/api/sample_index.json").then((res) =>
 					res.json()
 				);
 			})
-			.then((json) => {
-				// Ensure we have valid data before validation
-				if (!json) {
-					throw new Error("No data received");
-				}
-
-				try {
-					// Validate the data against our schema
-					const validatedData = validateProfileData(json);
-					setData(validatedData);
-					setLoading(false);
-				} catch (validationError) {
-					console.error(
-						`Validation error for ${username}:`,
-						validationError
-					);
-					// If validation fails, try sample data as fallback
-					return fetch("/api/sample_index.json").then((res) =>
-						res.json()
-					);
-				}
-			})
 			.then((fallbackJson) => {
-				// This will only run if validation failed above
-				if (!data && fallbackJson) {
+				// This will only run if username not found or validation failed above
+				if (fallbackJson && !data) {
 					try {
 						const validatedFallback =
 							validateProfileData(fallbackJson);
@@ -63,8 +68,8 @@ export default function ProfilePage({ params }: PageProps) {
 							fallbackError
 						);
 					}
-					setLoading(false);
 				}
+				setLoading(false);
 			})
 			.catch((error) => {
 				console.error(`Failed to load profile for ${username}:`, error);
@@ -116,22 +121,77 @@ export default function ProfilePage({ params }: PageProps) {
 	const hasContacts = contacts && Object.keys(contacts).length > 0;
 
 	return (
-		<div className="min-h-screen bg-background">
+		<div className="min-h-screen">
 			<div className="max-w-3xl mx-auto py-10 px-6 space-y-16">
 				{/* Header */}
 				<header>
-					<div className="flex-1 min-w-0">
-						<h1 className="text-2xl font-bold text-foreground">
+					<div className="flex-1 min-w-0 space-y-2">
+						<h1 className="text-2xl font-semibold text-foreground">
 							{profile.name}
 						</h1>
 						{profile.headline && (
-							<p className="text-base text-muted-foreground mt-1">
+							<p className="text-sm font-light mt-1">
 								{profile.headline}
 							</p>
 						)}
 						{profile.location && (
-							<div className="text-sm text-muted-foreground mt-3">
+							<div className="text-sm font-light mt-3">
 								{profile.location}
+							</div>
+						)}
+						{/* Profile Links */}
+						{profile.links && (
+							<div className="flex gap-4 items-center mt-8">
+								{profile.links.email && (
+									<a
+										href={`mailto:${profile.links.email}`}
+										className="text-foreground hover:opacity-80 transition-opacity"
+									>
+										<Mail
+											className="w-5 h-5"
+											strokeWidth={1}
+										/>
+									</a>
+								)}
+								{profile.links.github && (
+									<a
+										href={profile.links.github}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="text-foreground hover:opacity-80 transition-opacity"
+									>
+										<Github
+											className="w-5 h-5"
+											strokeWidth={1}
+										/>
+									</a>
+								)}
+								{profile.links.linkedin && (
+									<a
+										href={profile.links.linkedin}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="text-foreground hover:opacity-80 transition-opacity"
+									>
+										<Linkedin
+											className="w-5 h-5"
+											strokeWidth={1}
+										/>
+									</a>
+								)}
+								{profile.links.personal && (
+									<a
+										href={profile.links.personal}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="text-foreground hover:opacity-80 transition-opacity"
+									>
+										<Globe
+											className="w-5 h-5"
+											strokeWidth={1}
+										/>
+									</a>
+								)}
 							</div>
 						)}
 					</div>
@@ -140,13 +200,13 @@ export default function ProfilePage({ params }: PageProps) {
 				{/* About */}
 				{about && (
 					<section className="space-y-6">
-						<div className="flex gap-4 items-center">
-							<h2 className="text-xl font-mono tracking-widest uppercase">
+						<div className="flex gap-2 items-center">
+							<h2 className="text-xs text-muted-foreground font-mono tracking-widest uppercase">
 								About
 							</h2>
 							<div className="h-0 flex-1 border-b-[0.1px] border-slate-600" />
 						</div>
-						<p className="text-base leading-relaxed text-foreground pl-4 md:pl-5">
+						<p className="text-sm leading-relaxed text-foreground font-light pl-4 md:pl-5">
 							{about}
 						</p>
 					</section>

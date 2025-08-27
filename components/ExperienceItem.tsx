@@ -50,13 +50,13 @@ export default function ExperienceItem({ experience }: ExperienceItemProps) {
 						<div className="text-xl font-semibold text-foreground leading-relaxed">
 							{experience.org}
 						</div>
-						<div className="text-sm font-light">
+						<div className="text-sm text-foreground font-light">
 							{experience.role}
 						</div>
 					</div>
 					{experience.period &&
 						experience.period.trim().length > 0 && (
-							<div className="text-xs text-muted-foreground">
+							<div className="text-xs font-mono">
 								<span className="inline-flex items-center gap-1.5">
 									<Calendar className="w-3.5 h-3.5" />
 									{experience.period}
@@ -119,7 +119,7 @@ export default function ExperienceItem({ experience }: ExperienceItemProps) {
 									)}
 								{experience.highlights &&
 									experience.highlights.length > 0 && (
-										<ul className="list-disc pl-5 text-sm text-foreground space-y-1 leading-relaxed">
+										<ul className="list-disc pl-5 text-sm text-foreground space-y-4 leading-relaxed">
 											{experience.highlights.map(
 												(h, idx) => (
 													<li key={idx}>{h}</li>

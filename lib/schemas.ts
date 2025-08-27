@@ -7,6 +7,14 @@ export const ProfileSchema = z.object({
 	name: z.string(),
 	headline: z.string().optional(),
 	location: z.string().optional(),
+	links: z
+		.object({
+			personal: z.string().optional(),
+			github: z.string().optional(),
+			linkedin: z.string().optional(),
+			email: z.string().optional(),
+		})
+		.optional(),
 });
 
 export const ExperienceSchema = z.object({

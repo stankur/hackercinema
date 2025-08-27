@@ -48,7 +48,7 @@ export default function ProjectCard({
 			>
 				{/* Project Info - natural height with bottom margin for tab spacing */}
 				<div className="space-y-3 flex-1 mb-8">
-					<div className="text-xl font-semibold text-foreground leading-relaxed">
+					<div className="text-lg font-semibold text-foreground leading-relaxed">
 						{project.name}
 					</div>
 					{project.subtitle && (
