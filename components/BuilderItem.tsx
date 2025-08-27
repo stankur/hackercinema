@@ -115,7 +115,7 @@ export default function BuilderItem({ builder }: BuilderItemProps) {
 			</div>
 
 			{/* Tabs - full width below the header */}
-			<div className="flex gap-8 mb-6">
+			<div className="flex gap-10 mb-6">
 				<button
 					onClick={() => handleTabClick("profile")}
 					className={`text-xs transition-colors ${

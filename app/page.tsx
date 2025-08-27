@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import LazyBuilderItem from "@/components/LazyBuilderItem";
+import { generateGradientBackground } from "@/lib/gradientUtils";
 
 interface Builder {
 	username: string;
@@ -57,8 +58,8 @@ export default function Home() {
 		<div className="min-h-screen bg-background">
 			<div className="max-w-3xl mx-auto py-12 px-6">
 				{/* Tabs */}
-				<div className="flex justify-center mb-12">
-					<div className="flex gap-8">
+				<div className="flex justify-center mb-12 relative z-20">
+					<div className="flex gap-10">
 						<button
 							onClick={() => handleTabClick("hackers")}
 							className={`text-sm transition-colors ${
@@ -96,9 +97,57 @@ export default function Home() {
 				)}
 
 				{activeTab === "filter" && (
-					<div className="text-center text-muted-foreground py-12">
-						Filter functionality coming soon...
-					</div>
+					<>
+						{/* Full page gradient background */}
+						<div
+							className="fixed inset-0 bg-slate-900"
+							style={{
+								background: `
+									radial-gradient(circle at 60% 50%, rgba(71, 85, 105, 0.25) 0%, rgba(71, 85, 105, 0.15) 30%, rgba(71, 85, 105, 0.08) 60%, transparent 80%),
+									radial-gradient(circle at 80% 20%, rgba(71, 85, 105, 0.18) 0%, rgba(71, 85, 105, 0.10) 35%, rgba(71, 85, 105, 0.04) 65%, transparent 80%)
+								`,
+							}}
+						></div>
+
+						{/* Text content */}
+						<div className="relative z-10 pt-16 font-mono text-sm px-8 max-w-4xl mx-auto">
+							<p className="text-white/80 tracking-wide leading-relaxed mb-8">
+								there are people who build things for hobby, in
+								their free time, what they do is building stuff,
+								and they are technically inclined and curious,
+								and ambitious. I just need you to classify
+								whether this github profile matches that
+								criteria.
+							</p>
+
+							<p className="text-white/80 tracking-wide leading-relaxed mb-8">
+								People who code professionally but not in free
+								time, doing projects for work do not pass, also
+								people who do it for school, uni assignments do
+								not pass, people who seem to be doing projects
+								to hit keywords for job search don't pass,
+								people who only do projects at hackathons do not
+								pass.
+							</p>
+
+							<p className="text-white/80 tracking-wide leading-relaxed mb-8">
+								does this person seem to have a taste, do their
+								project show that they have a passion for some
+								particular theme, like an obsession because they
+								are pursuing it, the type of person who would
+								work or start a startup, rather than go to big
+								tech. And it must also be something that is
+								rather pursuing an ambitious vision, rather than
+								starting startups for the sake of starting one
+								type.
+							</p>
+
+							<p className="text-white/80 tracking-wide leading-relaxed">
+								curious, exeprimental, learner, builder type.
+								Yes or no one word answer, just one answer.
+							</p>
+						</div>
+					</>
 				)}
 			</div>
 		</div>
