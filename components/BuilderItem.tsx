@@ -5,30 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MapPin, Globe, Github, MessageSquare, Star } from "lucide-react";
 import { getCardBackground, getLanguageDotColor } from "@/lib/language-colors";
-
-interface GitHubProfile {
-	login: string;
-	avatar_url: string;
-	bio?: string | null;
-	location?: string | null;
-	blog?: string;
-}
-
-interface GitHubRepo {
-	name: string;
-	description?: string | null;
-	updated_at: string;
-	stars?: number;
-	language?: string | null;
-	topics?: string[];
-}
-
-interface Builder {
-	username: string;
-	theme: string;
-	profile: GitHubProfile;
-	repos: GitHubRepo[];
-}
+import type { Builder } from "@/lib/types";
 
 interface BuilderItemProps {
 	builder: Builder;

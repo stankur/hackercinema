@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, use } from "react";
+import { useEffect, useState } from "react";
 import ExperienceSection from "@/components/ExperienceSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import { validateProfileData, type ProfileData } from "@/lib/schemas";
@@ -12,7 +12,7 @@ interface PageProps {
 }
 
 export default function ProfilePage({ params }: PageProps) {
-	const { username } = use(params);
+	const { username } = params;
 	const [data, setData] = useState<ProfileData | null>(null);
 	const [loading, setLoading] = useState(true);
 

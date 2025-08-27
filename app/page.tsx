@@ -2,27 +2,7 @@
 
 import { useState, useEffect } from "react";
 import LazyBuilderItem from "@/components/LazyBuilderItem";
-import { generateGradientBackground } from "@/lib/gradientUtils";
-
-interface Builder {
-	username: string;
-	theme: string;
-	profile: {
-		login: string;
-		avatar_url: string;
-		bio?: string | null;
-		location?: string | null;
-		blog?: string;
-	};
-	repos: {
-		name: string;
-		description?: string | null;
-		updated_at: string;
-		stars?: number;
-		language?: string | null;
-		topics?: string[];
-	}[];
-}
+import type { Builder } from "@/lib/types";
 
 export default function Home() {
 	const [builders, setBuilders] = useState<Builder[]>([]);
@@ -125,7 +105,7 @@ export default function Home() {
 								time, doing projects for work do not pass, also
 								people who do it for school, uni assignments do
 								not pass, people who seem to be doing projects
-								to hit keywords for job search don't pass,
+								to hit keywords for job search don&apos;t pass,
 								people who only do projects at hackathons do not
 								pass.
 							</p>

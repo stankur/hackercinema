@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import BuilderItem from "./BuilderItem";
-import type { Builder } from "./BuilderItem";
+import type { Builder } from "@/lib/types";
 
 interface LazyBuilderItemProps {
 	builder: Builder;
