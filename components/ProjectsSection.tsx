@@ -18,13 +18,16 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
 	}
 
 	return (
-		<section className="space-y-4 md:space-y-5">
-			<h2 className="text-xs font-bold tracking-wide text-muted-foreground uppercase mb-2">
-				Projects
-			</h2>
+		<section className="space-y-6">
+			<div className="flex gap-4 items-center">
+				<h2 className="text-lg font-mono tracking-wide uppercase">
+					Projects
+				</h2>
+				<div className="h-0 flex-1 border-b-[0.1px] border-slate-300" />
+			</div>
 
 			{/* Desktop: Row-based layout */}
-			<div className="hidden md:block pl-5">
+			<div className="hidden md:block pl-4 md:pl-5">
 				{projectPairs.map((pair, rowIndex) => (
 					<ProjectRow
 						key={`row-${rowIndex}`}
@@ -35,7 +38,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
 			</div>
 
 			{/* Mobile: Single column with current border logic */}
-			<div className="md:hidden pl-4">
+			<div className="md:hidden">
 				{projects.map((project, index) => (
 					<div
 						key={`${project.name}-${project.period || "no-period"}`}

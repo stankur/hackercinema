@@ -12,10 +12,13 @@ export default function ExperienceSection({
 	}
 
 	return (
-		<section className="space-y-4 md:space-y-5">
-			<h2 className="text-xs font-bold tracking-wide text-muted-foreground uppercase mb-2">
-				Experience
-			</h2>
+		<section className="space-y-3">
+			<div className="flex gap-4 items-center">
+				<h2 className="text-lg font-mono tracking-wide uppercase">
+					Experience
+				</h2>
+				<div className="h-0 flex-1 border-b-[0.1px] border-slate-300" />
+			</div>
 			<ul className="divide-y divide-muted-foreground/20 pl-4 md:pl-5">
 				{experiences.map((experience) => (
 					<ExperienceItem

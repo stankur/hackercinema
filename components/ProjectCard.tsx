@@ -38,12 +38,11 @@ export default function ProjectCard({
 			<div
 				ref={contentRef}
 				data-content
-				className={`relative flex flex-col py-4 md:py-5 ${
-					// Mobile: no horizontal padding (container has pl-4)
-					// Desktop: asymmetric padding based on column
+				className={`relative flex flex-col p-4 md:p-5 ${
+					// Add padding on all sides for both mobile and desktop
 					columnIndex === 0
-						? "md:pr-5" // Left column: only right padding on desktop
-						: "md:pl-5" // Right column: only left padding on desktop
+						? "md:pr-6" // Left column: extra right padding for border
+						: "md:pl-6" // Right column: extra left padding for border
 				}`}
 				style={{ transition: "height 0.2s ease" }}
 			>
@@ -63,11 +62,10 @@ export default function ProjectCard({
 						ref={tabsRef}
 						data-tabs
 						className={`absolute bottom-4 md:bottom-5 ${
-							// Mobile: no horizontal offset (flush left)
-							// Desktop: asymmetric positioning based on column
+							// Positioning adjusted for new padding
 							columnIndex === 0
-								? "left-0 md:right-5" // Left column: flush left, right padding on desktop
-								: "left-0 md:left-5 md:right-0" // Right column: flush left on mobile, padded on desktop
+								? "left-4 md:left-5 md:right-6" // Left column: account for left padding, extra right padding for border
+								: "left-4 md:left-6 md:right-5" // Right column: account for left padding, extra left padding for border
 						}`}
 					>
 						<div className="flex gap-6">
@@ -106,12 +104,11 @@ export default function ProjectCard({
 
 			{/* Expansion Track - ONLY expanded content, completely independent */}
 			<div
-				className={`${
-					// Mobile: no horizontal padding (consistent with content)
-					// Desktop: asymmetric padding based on column
+				className={`px-4 md:px-5 ${
+					// Add consistent horizontal padding with extra for borders
 					columnIndex === 0
-						? "md:pr-5" // Left column: only right padding on desktop
-						: "md:pl-5" // Right column: only left padding on desktop
+						? "md:pr-6" // Left column: extra right padding for border
+						: "md:pl-6" // Right column: extra left padding for border
 				}`}
 			>
 				{activeTab === "tech" && hasTech && (

@@ -64,7 +64,7 @@ export default function TestProfilePage() {
 
 	return (
 		<div className="min-h-screen bg-background">
-			<div className="max-w-3xl mx-auto py-10 px-6 space-y-10">
+			<div className="max-w-3xl mx-auto py-10 px-6 space-y-16">
 				{/* Header */}
 				<header>
 					<div className="flex-1 min-w-0">
@@ -86,10 +86,13 @@ export default function TestProfilePage() {
 
 				{/* About */}
 				{about && (
-					<section className="space-y-3">
-						<h2 className="text-xs font-bold tracking-wide text-muted-foreground uppercase">
-							About
-						</h2>
+					<section className="space-y-6">
+						<div className="flex gap-4 items-center">
+							<h2 className="text-lg font-mono tracking-wide uppercase">
+								About
+							</h2>
+							<div className="h-0 flex-1 border-b-[0.1px] border-slate-300" />
+						</div>
 						<p className="text-base leading-relaxed text-foreground pl-4 md:pl-5">
 							{about}
 						</p>
@@ -104,10 +107,13 @@ export default function TestProfilePage() {
 
 				{/* Contacts (hidden if empty) */}
 				{hasContacts && (
-					<section className="space-y-3">
-						<h2 className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
-							Contacts
-						</h2>
+					<section className="space-y-6">
+						<div className="flex gap-4 items-center">
+							<h2 className="text-lg font-mono tracking-wide uppercase">
+								Contacts
+							</h2>
+							<div className="h-0 flex-1 border-b-[0.1px] border-slate-300" />
+						</div>
 						<ul className="text-sm text-foreground/90 space-y-1 pl-4 md:pl-5">
 							{Object.entries(contacts).map(([key, value]) => (
 								<li
