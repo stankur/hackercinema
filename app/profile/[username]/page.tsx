@@ -1,10 +1,12 @@
 "use client";
 
-import { useEffect, useState, use } from "react";
+import { useEffect, useState, use, useRef, useCallback } from "react";
 import ExperienceSection from "@/components/ExperienceSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import WritingsSection from "@/components/WritingsSection";
 import { validateProfileData, type ProfileData } from "@/lib/schemas";
-import { Mail, Globe, ExternalLink, Github, Linkedin } from "lucide-react";
+import { Mail, Globe, ExternalLink } from "lucide-react";
+import { SocialIcon } from "@/components/ui/OrganizationIcon";
 
 interface PageProps {
 	params: Promise<{
@@ -16,6 +18,83 @@ export default function ProfilePage({ params }: PageProps) {
 	const { username } = use(params);
 	const [data, setData] = useState<ProfileData | null>(null);
 	const [loading, setLoading] = useState(true);
+
+	// Animation refs for each section
+	const headerRef = useRef<HTMLElement>(null);
+	const aboutRef = useRef<HTMLElement>(null);
+	const workingOnRef = useRef<HTMLElement>(null);
+	const experienceRef = useRef<HTMLDivElement>(null);
+	const projectsRef = useRef<HTMLDivElement>(null);
+	const writingsRef = useRef<HTMLDivElement>(null);
+	const contactsRef = useRef<HTMLElement>(null);
+
+	// Animation states
+	const [visibleSections, setVisibleSections] = useState<Set<string>>(
+		new Set()
+	);
+
+	const handleIntersection = useCallback(
+		(entries: IntersectionObserverEntry[]) => {
+			console.log(
+				"Intersection callback triggered:",
+				entries.length,
+				"entries"
+			);
+			entries.forEach((entry) => {
+				const sectionId = entry.target.getAttribute("data-section");
+				console.log(
+					"Section:",
+					sectionId,
+					"isIntersecting:",
+					entry.isIntersecting
+				);
+				if (sectionId) {
+					if (entry.isIntersecting) {
+						console.log("Setting section visible:", sectionId);
+						setVisibleSections(
+							(prev) => new Set([...prev, sectionId])
+						);
+					}
+				}
+			});
+		},
+		[]
+	);
+
+	useEffect(() => {
+		// Only set up observer after data is loaded and components are rendered
+		if (!data) return;
+
+		console.log("Setting up intersection observer");
+		const observer = new IntersectionObserver(handleIntersection, {
+			root: null,
+			rootMargin: "100px",
+			threshold: 0.1,
+		});
+
+		// Small delay to ensure DOM is fully rendered
+		setTimeout(() => {
+			// Observe all sections
+			[
+				headerRef,
+				aboutRef,
+				workingOnRef,
+				experienceRef,
+				projectsRef,
+				writingsRef,
+				contactsRef,
+			].forEach((ref) => {
+				if (ref.current) {
+					console.log("Observing ref:", ref.current);
+					observer.observe(ref.current);
+				} else {
+					console.log("Ref is null:", ref);
+				}
+			});
+		}, 100);
+
+		return () => observer.disconnect();
+	}, [handleIntersection, data]);
 
 	useEffect(() => {
 		// Load all profiles from the consolidated file
@@ -115,8 +194,17 @@ export default function ProfilePage({ params }: PageProps) {
 		about,
 		experiences = [],
 		projects = [],
+		writings = [],
 		contacts = {},
+		workingOn,
 	} = data;
+
+	// Debug logging
+	console.log("🔍 Profile Data Debug:");
+	console.log("Profile:", profile);
+	console.log("Profile Links:", profile.links);
+	console.log("X Link:", profile.links?.x);
+	console.log("Has X Link:", !!profile.links?.x);
 
 	const hasContacts = contacts && Object.keys(contacts).length > 0;
 
@@ -124,7 +212,18 @@ export default function ProfilePage({ params }: PageProps) {
 		<div className="min-h-screen">
 			<div className="max-w-3xl mx-auto py-10 px-6 space-y-16">
 				{/* Header */}
-				<header>
+				<header
+					ref={headerRef}
+					data-section="header"
+					className={`
+						transition-all duration-700 ease-out
+						${
+							visibleSections.has("header")
+								? "opacity-100 blur-0 scale-100"
+								: "opacity-0 blur-sm scale-95"
+						}
+					`}
+				>
 					<div className="flex-1 min-w-0 space-y-2">
 						<h1 className="text-2xl font-semibold text-foreground">
 							{profile.name}
@@ -146,6 +245,7 @@ export default function ProfilePage({ params }: PageProps) {
 									<a
 										href={`mailto:${profile.links.email}`}
 										className="text-foreground hover:opacity-80 transition-opacity"
+										title="Email"
 									>
 										<Mail
 											className="w-5 h-5"
@@ -159,10 +259,12 @@ export default function ProfilePage({ params }: PageProps) {
 										target="_blank"
 										rel="noopener noreferrer"
 										className="text-foreground hover:opacity-80 transition-opacity"
+										title="GitHub"
 									>
-										<Github
-											className="w-5 h-5"
-											strokeWidth={1}
+										<SocialIcon
+											platformName="github"
+											size={20}
+											color="currentColor"
 										/>
 									</a>
 								)}
@@ -172,10 +274,42 @@ export default function ProfilePage({ params }: PageProps) {
 										target="_blank"
 										rel="noopener noreferrer"
 										className="text-foreground hover:opacity-80 transition-opacity"
+										title="LinkedIn"
 									>
-										<Linkedin
-											className="w-5 h-5"
-											strokeWidth={1}
+										<SocialIcon
+											platformName="linkedin"
+											size={20}
+											color="currentColor"
+										/>
+									</a>
+								)}
+								{profile.links.x && (
+									<a
+										href={profile.links.x}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="text-foreground hover:opacity-80 transition-opacity"
+										title="X (Twitter)"
+									>
+										<SocialIcon
+											platformName="x"
+											size={20}
+											color="currentColor"
+										/>
+									</a>
+								)}
+								{profile.links.yc && (
+									<a
+										href={profile.links.yc}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="text-foreground hover:opacity-80 transition-opacity"
+										title="Y Combinator"
+									>
+										<SocialIcon
+											platformName="yc"
+											size={20}
+											color="currentColor"
 										/>
 									</a>
 								)}
@@ -185,6 +319,7 @@ export default function ProfilePage({ params }: PageProps) {
 										target="_blank"
 										rel="noopener noreferrer"
 										className="text-foreground hover:opacity-80 transition-opacity"
+										title="Personal Website"
 									>
 										<Globe
 											className="w-5 h-5"
@@ -199,7 +334,18 @@ export default function ProfilePage({ params }: PageProps) {
 
 				{/* About */}
 				{about && (
-					<section className="space-y-6">
+					<section
+						ref={aboutRef}
+						data-section="about"
+						className={`
+							space-y-6 transition-all duration-700 ease-out
+							${
+								visibleSections.has("about")
+									? "opacity-100 blur-0 scale-100"
+									: "opacity-0 blur-sm scale-95"
+							}
+						`}
+					>
 						<div className="flex gap-2 items-center">
 							<h2 className="text-xs text-muted-foreground font-mono tracking-widest uppercase">
 								About
@@ -212,15 +358,94 @@ export default function ProfilePage({ params }: PageProps) {
 					</section>
 				)}
 
+				{/* Working On */}
+				{workingOn && (
+					<section
+						ref={workingOnRef}
+						data-section="workingOn"
+						className={`
+							space-y-6 transition-all duration-700 ease-out
+							${
+								visibleSections.has("workingOn")
+									? "opacity-100 blur-0 scale-100"
+									: "opacity-0 blur-sm scale-95"
+							}
+						`}
+					>
+						<div className="flex gap-2 items-center">
+							<h2 className="text-xs text-muted-foreground font-mono tracking-widest uppercase">
+								Working On
+							</h2>
+							<div className="h-0 flex-1 border-b-[0.1px] border-slate-600" />
+						</div>
+						<p className="text-sm leading-relaxed text-foreground font-light pl-4 md:pl-5">
+							{workingOn}
+						</p>
+					</section>
+				)}
+
 				{/* Experience */}
-				<ExperienceSection experiences={experiences} />
+				<div
+					ref={experienceRef}
+					data-section="experience"
+					className={`
+						transition-all duration-700 ease-out
+						${
+							visibleSections.has("experience")
+								? "opacity-100 blur-0 scale-100"
+								: "opacity-0 blur-sm scale-95"
+						}
+					`}
+				>
+					<ExperienceSection experiences={experiences} />
+				</div>
 
 				{/* Projects */}
-				<ProjectsSection projects={projects} />
+				<div
+					ref={projectsRef}
+					data-section="projects"
+					className={`
+						transition-all duration-700 ease-out
+						${
+							visibleSections.has("projects")
+								? "opacity-100 blur-0 scale-100"
+								: "opacity-0 blur-sm scale-95"
+						}
+					`}
+				>
+					<ProjectsSection projects={projects} />
+				</div>
+
+				{/* Writings */}
+				<div
+					ref={writingsRef}
+					data-section="writings"
+					className={`
+						transition-all duration-700 ease-out
+						${
+							visibleSections.has("writings")
+								? "opacity-100 blur-0 scale-100"
+								: "opacity-0 blur-sm scale-95"
+						}
+					`}
+				>
+					<WritingsSection writings={writings} />
+				</div>
 
 				{/* Contacts (hidden if empty) */}
 				{hasContacts && (
-					<section className="space-y-6">
+					<section
+						ref={contactsRef}
+						data-section="contacts"
+						className={`
+							space-y-6 transition-all duration-700 ease-out
+							${
+								visibleSections.has("contacts")
+									? "opacity-100 blur-0 scale-100"
+									: "opacity-0 blur-sm scale-95"
+							}
+						`}
+					>
 						<div className="flex gap-4 items-center">
 							<h2 className="text-lg font-mono tracking-wide uppercase">
 								Contacts

@@ -8,12 +8,14 @@ interface ProjectCardProps {
 	project: Project;
 	rowIndex: number;
 	columnIndex: number;
+	hasRightProject?: boolean;
 }
 
 export default function ProjectCard({
 	project,
 	rowIndex,
 	columnIndex,
+	hasRightProject = true,
 }: ProjectCardProps) {
 	const [activeTab, setActiveTab] = useState<"tech" | "details" | null>(null);
 
@@ -33,7 +35,10 @@ export default function ProjectCard({
 	};
 
 	return (
-		<div className="h-full" data-row={rowIndex}>
+		<div
+			className={hasRightProject ? "h-full" : "h-auto"}
+			data-row={rowIndex}
+		>
 			{/* Content Track - height synchronized across row */}
 			<div
 				ref={contentRef}
@@ -47,7 +52,9 @@ export default function ProjectCard({
 				style={{ transition: "height 0.2s ease" }}
 			>
 				{/* Project Info - natural height with bottom margin for tab spacing */}
-				<div className="space-y-3 flex-1 mb-8">
+				<div
+					className={`space-y-3 ${hasRightProject ? "mb-8" : "mb-2"}`}
+				>
 					<div className="text-lg font-semibold text-foreground leading-relaxed">
 						{project.name}
 					</div>

@@ -57,5 +57,19 @@
 			]
 		}
 	],
-	"about": "Previously @ Cohere, Hugging Face, and Wealthsimple."
+	"about": "Previously @ Cohere, Hugging Face, and Wealthsimple.",
+	"writings": [
+		{
+			"title": "From Digits to Decisions: How Tokenization Impacts Arithmetic in LLMs",
+			"link": "https://www.garreth.cc/blog/digits-vs-decisions",
+			"description": "I explore how right-to-left reading improves number tokenization and identify the most accurate method for arithmetic",
+			"date": "December 4, 2024"
+		},
+		{
+			"title": "Finetuning a Large Language Model to Write Emails",
+			"link": "https://www.garreth.cc/blog/finetuning-llm-for-email",
+			"description": "I finetune an LLM to write emails for my school club",
+			"date": "May 8, 2024"
+		}
+	]
 }

@@ -33,6 +33,8 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
 						key={`row-${rowIndex}`}
 						projects={pair}
 						rowIndex={rowIndex}
+						isLastRow={rowIndex === projectPairs.length - 1}
+						totalProjects={projects.length}
 					/>
 				))}
 			</div>

@@ -22,7 +22,19 @@ export function useTabSync({ rowIndex, isActive }: TabSyncOptions) {
 			`[data-row="${rowIndex}"] [data-tabs]`
 		);
 
+		console.log(
+			`Row ${rowIndex}: Found ${rowElements.length} content elements`
+		);
+
 		if (rowElements.length === 0) return;
+
+		// If there's only one project in the row, don't synchronize heights
+		if (rowElements.length === 1) {
+			console.log(
+				`Row ${rowIndex}: Single project, skipping height sync`
+			);
+			return;
+		}
 
 		// First, measure actual tab heights
 		let maxTabHeight = 0;
