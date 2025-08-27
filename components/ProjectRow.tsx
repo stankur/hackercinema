@@ -16,7 +16,7 @@ export default function ProjectRow({ projects, rowIndex }: ProjectRowProps) {
 			{/* Left column */}
 			<div
 				className={`
-					border-r border-muted-foreground/20
+					${rightProject ? "border-r border-muted-foreground/20" : ""}
 					${rowIndex > 0 ? "border-t border-muted-foreground/20" : ""}
 				`.trim()}
 			>

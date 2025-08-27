@@ -5,7 +5,11 @@
 	"PayByPhone": "#00b140",
 	"Apryse": "#f59e0b",
 	"UBC": "#0099ff",
-	"Hugging face": "#fee133",
-	"Wealthsimple": "##32302f",
-	"Cohere": "#002145"
+	"Hugging face": "#feff03",
+	"Wealthsimple": "#fffffe",
+	"Cohere": "#339963",
+	"Amazon": "#ff9900",
+	"Klue": "#6466ff",
+	"UBC Cloud Innovation Centre": "#0295ff",
+	"University of British Columbia": "#0094ff"
 }

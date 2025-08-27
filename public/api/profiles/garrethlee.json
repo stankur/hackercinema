@@ -1,0 +1,61 @@
+{
+	"profile": {
+		"id": "garreth",
+		"name": "Garreth Lee",
+		"headline": "ML Engineer. I build stuff with AI & data and write about what I learned.",
+		"location": ""
+	},
+	"contacts": {},
+	"experiences": [
+		{
+			"org": "Hugging face",
+			"role": "Machine Learning Engineer Intern",
+			"location": "Vancouver",
+			"period": "Fall 2024",
+			"tech": ["Python"],
+			"highlights": [
+				"Improved text extraction for future Fineweb datasets",
+				"Tokenizer experiments for mathematical reasoning and detailed report",
+				"Internal tools for visualizing & inspecting LLM pretraining data"
+			]
+		},
+		{
+			"org": "Wealthsimple",
+			"role": "Data Science Intern",
+			"location": "Toronto",
+			"period": "Summer 2024",
+			"tech": ["Python", "ML"],
+			"highlights": [
+				"On‑call ticket routing: 40%→80% accuracy",
+				"Improved PII scrubber coverage for LLM gateway",
+				"Auto‑update pipeline for in‑house vector DB"
+			]
+		},
+		{
+			"org": "Cohere",
+			"role": "Member of Technical Staff",
+			"location": "Toronto",
+			"period": "Fall 2023",
+			"tech": ["Python", "Spark"],
+			"highlights": [
+				"Terabyte‑scale pretraining data pipelines",
+				"LLM pipeline for document quality evaluation",
+				"Language ID integration for HTML parsing (quality ↑)"
+			]
+		}
+	],
+	"projects": [
+		{
+			"name": "Email Generation Model Fine‑tuning",
+			"subtitle": "PEFT, Python, Ollama, Transformers",
+			"period": "May 2024",
+			"tech": ["PEFT", "Transformers", "Ollama", "Python"],
+			"details": [
+				"Fine‑tuned Mistral 7B to streamline initial email drafts for UBC Biztech's partnerships team",
+				"End‑to‑end dataset preparation for training with high‑quality inputs",
+				"Deployed locally with Ollama for optimized inference and data control"
+			]
+		}
+	],
+	"about": "Previously @ Cohere, Hugging Face, and Wealthsimple."
+}

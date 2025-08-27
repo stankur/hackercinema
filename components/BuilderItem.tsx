@@ -101,7 +101,7 @@ export default function BuilderItem({ builder }: BuilderItemProps) {
 
 				<div className="flex-1 min-w-0">
 					<div className="text-2xl font-bold text-foreground mb-1">
-						<Link 
+						<Link
 							href={`/profile/${builder.username}`}
 							className="hover:text-primary transition-colors"
 						>

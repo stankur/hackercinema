@@ -29,6 +29,11 @@ export default function ProfilePage({ params }: PageProps) {
 				);
 			})
 			.then((json) => {
+				// Ensure we have valid data before validation
+				if (!json) {
+					throw new Error("No data received");
+				}
+
 				try {
 					// Validate the data against our schema
 					const validatedData = validateProfileData(json);
@@ -47,7 +52,7 @@ export default function ProfilePage({ params }: PageProps) {
 			})
 			.then((fallbackJson) => {
 				// This will only run if validation failed above
-				if (!data) {
+				if (!data && fallbackJson) {
 					try {
 						const validatedFallback =
 							validateProfileData(fallbackJson);
@@ -67,14 +72,16 @@ export default function ProfilePage({ params }: PageProps) {
 				fetch("/api/sample_index.json")
 					.then((res) => res.json())
 					.then((json) => {
-						try {
-							const validatedData = validateProfileData(json);
-							setData(validatedData);
-						} catch (validationError) {
-							console.error(
-								"Sample data validation failed:",
-								validationError
-							);
+						if (json) {
+							try {
+								const validatedData = validateProfileData(json);
+								setData(validatedData);
+							} catch (validationError) {
+								console.error(
+									"Sample data validation failed:",
+									validationError
+								);
+							}
 						}
 						setLoading(false);
 					})
