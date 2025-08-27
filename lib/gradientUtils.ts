@@ -10,15 +10,42 @@ export function generateGradientBackground(
 
 	// Generate seeded random positions based on color values
 	const seed = (r + g + b) % 1000; // Create a seed from color values
-	const leftX = 0 + (seed % 50); // Left blob: 15-35% from left
-	const leftY = 50 + (seed % 50); // Left blob: 70-90% from top
-	const rightX = 50 + (seed % 50); // Right blob: 65-85% from left
-	const rightY = 0 + (seed % 100); // Right blob: 10-30% from top
 
-	// Create the gradient with seeded random positions
-	const gradient = `radial-gradient(circle at ${rightX}% ${rightY}%, rgba(${r}, ${g}, ${b}, ${opacity}) 0%, transparent 50%), radial-gradient(circle at ${leftX}% ${leftY}%, rgba(${r}, ${g}, ${b}, ${
+	// Simulate cubic-bezier easing with carefully crafted gradient stops
+	// Using multiple overlapping gradients with varying opacities and sizes
+	const primaryX = 60 + (seed % 40); // Primary blob: 30-70% from left
+	const primaryY = 50 + (seed % 50); // Primary blob: 20-80% from top
+	const secondaryX = 70 + (seed % 30); // Secondary blob: 70-100% from left
+	const secondaryY = 80 + (seed % 20); // Secondary blob: 80-100% from top
+	const accentX = 10 + (seed % 20); // Accent blob: 10-30% from left
+	const accentY = 60 + (seed % 40); // Accent blob: 60-100% from top
+
+	// Create multiple gradient layers with easing-like falloff
+	// Primary gradient with smooth falloff (simulates ease-out)
+	const primaryGradient = `radial-gradient(circle at ${primaryX}% ${primaryY}%, rgba(${r}, ${g}, ${b}, ${opacity}) 0%, rgba(${r}, ${g}, ${b}, ${
+		opacity * 0.8
+	}) 15%, rgba(${r}, ${g}, ${b}, ${
+		opacity * 0.4
+	}) 35%, rgba(${r}, ${g}, ${b}, ${opacity * 0.1}) 60%, transparent 80%)`;
+
+	// Secondary gradient with different easing curve (simulates ease-in-out)
+	const secondaryGradient = `radial-gradient(circle at ${secondaryX}% ${secondaryY}%, rgba(${r}, ${g}, ${b}, ${
 		opacity * 0.7
-	}) 0%, transparent 50%)`;
+	}) 0%, rgba(${r}, ${g}, ${b}, ${
+		opacity * 0.5
+	}) 20%, rgba(${r}, ${g}, ${b}, ${
+		opacity * 0.3
+	}) 45%, rgba(${r}, ${g}, ${b}, ${opacity * 0.05}) 70%, transparent 85%)`;
+
+	// Accent gradient for subtle depth (simulates ease-in)
+	const accentGradient = `radial-gradient(circle at ${accentX}% ${accentY}%, rgba(${r}, ${g}, ${b}, ${
+		opacity * 0.4
+	}) 0%, rgba(${r}, ${g}, ${b}, ${
+		opacity * 0.2
+	}) 25%, rgba(${r}, ${g}, ${b}, ${opacity * 0.05}) 50%, transparent 70%)`;
+
+	// Combine all gradients for a smooth, easing-like effect
+	const gradient = `${primaryGradient}, ${secondaryGradient}, ${accentGradient}`;
 
 	// Base64 encoded SVG noise texture with more grain
 	const noiseTexture =

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import BuilderItem from "../components/BuilderItem";
+import LazyBuilderItem from "@/components/LazyBuilderItem";
 
 interface Builder {
 	username: string;
@@ -26,6 +26,11 @@ interface Builder {
 export default function Home() {
 	const [builders, setBuilders] = useState<Builder[]>([]);
 	const [loading, setLoading] = useState(true);
+	const [activeTab, setActiveTab] = useState<"hackers" | "filter">("hackers");
+
+	const handleTabClick = (tab: "hackers" | "filter") => {
+		setActiveTab(tab);
+	};
 
 	useEffect(() => {
 		fetch("/api/data.json")
@@ -51,11 +56,50 @@ export default function Home() {
 	return (
 		<div className="min-h-screen bg-background">
 			<div className="max-w-3xl mx-auto py-12 px-6">
-				<div className="divide-y">
-					{builders.map((builder) => (
-						<BuilderItem key={builder.username} builder={builder} />
-					))}
+				{/* Tabs */}
+				<div className="flex justify-center mb-12">
+					<div className="flex gap-8">
+						<button
+							onClick={() => handleTabClick("hackers")}
+							className={`text-sm transition-colors ${
+								activeTab === "hackers"
+									? "text-foreground"
+									: "text-muted-foreground hover:text-foreground"
+							}`}
+						>
+							Hackers
+						</button>
+						<button
+							onClick={() => handleTabClick("filter")}
+							className={`text-sm transition-colors ${
+								activeTab === "filter"
+									? "text-foreground"
+									: "text-muted-foreground hover:text-foreground"
+							}`}
+						>
+							Filter
+						</button>
+					</div>
 				</div>
+
+				{/* Tab content */}
+				{activeTab === "hackers" && (
+					<div className="divide-y">
+						{builders.map((builder, index) => (
+							<LazyBuilderItem
+								key={builder.username}
+								builder={builder}
+								index={index}
+							/>
+						))}
+					</div>
+				)}
+
+				{activeTab === "filter" && (
+					<div className="text-center text-muted-foreground py-12">
+						Filter functionality coming soon...
+					</div>
+				)}
 			</div>
 		</div>
 	);

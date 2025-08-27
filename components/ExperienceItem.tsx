@@ -30,7 +30,7 @@ export default function ExperienceItem({ experience }: ExperienceItemProps) {
 
 	// Get the organization color and generate gradient style
 	const orgColor = getOrganizationColor(experience.org);
-	const gradientStyle = generateGradientStyle(orgColor, 0.25);
+	const gradientStyle = generateGradientStyle(orgColor, 0.20);
 
 	const handleTabClick = (tab: "tech" | "details") => {
 		setActiveTab(activeTab === tab ? null : tab);
