@@ -20,10 +20,10 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
 	return (
 		<section className="space-y-6">
 			<div className="flex gap-4 items-center">
-				<h2 className="text-lg font-mono tracking-wide uppercase">
+				<h2 className="text-xl font-mono tracking-widest uppercase">
 					Projects
 				</h2>
-				<div className="h-0 flex-1 border-b-[0.1px] border-slate-300" />
+				<div className="h-0 flex-1 border-b-[0.1px] border-slate-600" />
 			</div>
 
 			{/* Desktop: Row-based layout */}
