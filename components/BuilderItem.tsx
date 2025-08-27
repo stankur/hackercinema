@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { MapPin, Globe, Github, MessageSquare, Star } from "lucide-react";
 import { getCardBackground, getLanguageDotColor } from "@/lib/language-colors";
 
@@ -100,7 +101,12 @@ export default function BuilderItem({ builder }: BuilderItemProps) {
 
 				<div className="flex-1 min-w-0">
 					<div className="text-2xl font-bold text-foreground mb-1">
-						{builder.username}
+						<Link 
+							href={`/profile/${builder.username}`}
+							className="hover:text-primary transition-colors"
+						>
+							{builder.username}
+						</Link>
 					</div>
 					<div className="text-base text-muted-foreground">
 						{builder.theme}
