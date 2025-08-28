@@ -310,5 +310,434 @@
 			}
 		],
 		"about": "I find no greater satisfaction than in the process of creation: Creating art, cooking food, writing code. Our purpose on Earth is to see ourselves reflected in the products of our labour, so I hope that at the end of it all, when all is said and done, we will gaze upon the things we have built, the art that we have made, and the people that we have loved—and find ourselves there."
+	},
+	"calvin-ll": {
+		"profile": {
+			"id": "calvin-ll",
+			"name": "Calvin Liang",
+			"headline": "Software Engineer",
+			"location": "Vancouver, British Columbia, Canada",
+			"links": {
+				"personal": "https://calvin.sh",
+				"github": "https://github.com/Calvin-LL",
+				"linkedin": "https://linkedin.com/in/calvin-liang"
+			}
+		},
+		"contacts": {},
+		"experiences": [
+			{
+				"org": "Amazon Web Services (AWS)",
+				"role": "Software Development Engineer (SDE) Intern",
+				"location": "Vancouver, British Columbia, Canada",
+				"period": "May 2021 - Jul 2021",
+				"tech": [],
+				"highlights": []
+			}
+		],
+		"projects": [
+			{
+				"name": "Atelier",
+				"subtitle": "The Vancouver node of Socratica. My co-hosts and I run 2 weekly co-working sessions for 30+ people to work on their passion projects. I vibe-engineer the space, building both people and software infrastructure to help creativity and connection thrive.",
+				"period": "",
+				"tech": [],
+				"details": [],
+				"links": {
+					"website": "https://atelier.place/"
+				}
+			},
+			{
+				"name": "Dot Counter",
+				"subtitle": "Click to count items in images with colored dots to keep track of your progress and get an instant total",
+				"period": "",
+				"tech": [
+					"Web",
+					"Astro",
+					"Vue.js",
+					"JavaScript",
+					"TypeScript",
+					"Sass"
+				],
+				"details": [],
+				"links": {
+					"website": "https://calvin.sh/tools/dot-counter"
+				}
+			},
+			{
+				"name": "Link Sanitizer",
+				"subtitle": "A mobile app that removes trackers from links.",
+				"period": "",
+				"tech": [
+					"Mobile",
+					"iOS",
+					"Swift",
+					"SwiftUI",
+					"Android",
+					"Kotlin",
+					"Jetpack Compose"
+				],
+				"details": [],
+				"links": {
+					"website": "https://linksanitizer.com/",
+					"github": "https://github.com/Calvin-LL/link-sanitizer"
+				}
+			},
+			{
+				"name": "Unveiler.xyz",
+				"subtitle": "A web app to bring awareness to the privacy implications of poorly censored images.",
+				"period": "",
+				"tech": ["Web", "Astro", "JavaScript", "TypeScript", "Sass"],
+				"details": [],
+				"links": {
+					"website": "https://unveiler.xyz/"
+				}
+			},
+			{
+				"name": "Reorderable",
+				"subtitle": "A simple library that enable drag-and-drop reordering in lists in Jetpack Compose and Kotlin Compose Multiplatform.",
+				"period": "",
+				"tech": ["Mobile", "Android", "Kotlin", "Jetpack Compose"],
+				"details": [
+					"952 Stars on GitHub",
+					"78k+ downloads on maven central"
+				],
+				"links": {
+					"github": "https://github.com/Calvin-LL/Reorderable"
+				}
+			},
+			{
+				"name": "Orbital Flush",
+				"subtitle": "A toilet that flushes whenever an astronaut aboard the International Space Station (ISS) flushes. It's mounted on a rotating platform that tracks the ISS as it orbits Earth.",
+				"period": "",
+				"tech": ["Raspberry Pi", "3D Printing", "Node.js"],
+				"details": [],
+				"links": {
+					"website": "https://calvin.sh/projects/orbital-flush"
+				}
+			},
+			{
+				"name": "Unscannable QR Code",
+				"subtitle": "A QR code you can see but not scan. This piece was displayed at the QR Show at the The Recurse Center.",
+				"period": "",
+				"tech": ["3D Printing"],
+				"details": [],
+				"links": {
+					"website": "https://calvin.sh/projects/unscannable-qr-code"
+				}
+			},
+			{
+				"name": "Clicka!",
+				"subtitle": "An absurdly simple yet addictive game, it involves a counter rising with each click, alongside a timer tracking your total game time. With each click, enjoy satisfying sound effects and visual ripples, celebrate milestones with confetti showers, unlock achievements, and compare your stats with players worldwide.",
+				"period": "",
+				"tech": [
+					"Mobile",
+					"iOS",
+					"tvOS",
+					"Swift",
+					"SwiftUI",
+					"Android",
+					"Kotlin",
+					"Jetpack Compose"
+				],
+				"details": [
+					"282k+ downloads on the App Store with 4.8★",
+					"20k+ downloads on Google Play with 4.7★"
+				],
+				"links": {
+					"website": "https://clicka.xyz/"
+				}
+			},
+			{
+				"name": "CalcGPT.io",
+				"subtitle": "An amusing web app, satirizing the trend of employing advanced GPT large language models for trivial tasks. It depicts a simple calculator with adjustable \"Temperature\" and \"Top P\" sliders, embodying a comical way to control overkill AI functionalities. This project humorously illustrates the potential redundancy of next-generation AI for straightforward tasks, serving as a lighthearted critique of the tech industry's novelty obsession.",
+				"period": "",
+				"tech": [
+					"Web",
+					"Vue.js",
+					"Astro",
+					"JavaScript",
+					"TypeScript",
+					"Sass",
+					"Machine Learning",
+					"LLM",
+					"CI/CD"
+				],
+				"details": [],
+				"links": {
+					"website": "https://calcgpt.io/"
+				}
+			},
+			{
+				"name": "SecretDrop.io",
+				"subtitle": "A web app designed to establish secure communication in public domain. It generates encryption and decryption links, allowing texts and files to be safely shared. Developed out of a real-life need to send private messages on public forums, SecretDrop.io democratizes public key cryptography. Ideal for anyone looking to securely communicate over public platforms.",
+				"period": "",
+				"tech": [
+					"Web",
+					"Vue.js",
+					"Astro",
+					"JavaScript",
+					"TypeScript",
+					"Sass",
+					"Cryptography",
+					"CI/CD"
+				],
+				"details": [],
+				"links": {
+					"website": "https://secretdrop.io/"
+				}
+			},
+			{
+				"name": "DEF CON 32 Badge Flashy ROM",
+				"subtitle": "A GameBoy ROM that runs on the DEF CON 32 badge, flashes all the LEDs.",
+				"period": "",
+				"tech": ["C"],
+				"details": [],
+				"links": {
+					"github": "https://github.com/Calvin-LL/defcon-32-badge-flashy-rom/"
+				}
+			},
+			{
+				"name": "Big Weigh",
+				"subtitle": "A daily game where you guess the price of stranger's Big Way.",
+				"period": "",
+				"tech": [
+					"Web",
+					"Astro",
+					"Vue.js",
+					"JavaScript",
+					"TypeScript",
+					"Sass"
+				],
+				"details": [],
+				"links": {
+					"website": "https://bigweigh.com/"
+				}
+			},
+			{
+				"name": "Webpack Image Loaders",
+				"subtitle": "A suite of 6 loaders for the Webpack JavaScript bundler that offers features like thumbnail creation, dominant color extraction for pre-loading previews, and generating differently sized images for responsive design. These project enhances image loading efficiency, saving bandwidth and reducing loading times for an improved user experience.",
+				"period": "",
+				"tech": ["Node.js", "JavaScript", "TypeScript"],
+				"details": ["767k+ Downloads on NPM", "103 Stars on GitHub"],
+				"links": {
+					"github": "https://github.com/Calvin-LL?tab=repositories&q=webpack"
+				}
+			},
+			{
+				"name": "view-transition-name",
+				"subtitle": "A JavaScript library that format strings to valid css `view-transition-name`s",
+				"period": "",
+				"tech": ["JavaScript", "TypeScript"],
+				"details": [],
+				"links": {
+					"github": "https://github.com/Calvin-LL/view-transition-name/",
+					"website": "https://www.npmjs.com/package/view-transition-name"
+				}
+			},
+			{
+				"name": "toggleairport",
+				"subtitle": "A script for macOS to turn off WiFi when Ethernet is plugged in, and turn on WiFi when Ethernet is unplugged.",
+				"period": "",
+				"tech": ["macOS"],
+				"details": ["203 Stars on GitHub"],
+				"links": {
+					"github": "https://github.com/Calvin-LL/toggleairport"
+				}
+			},
+			{
+				"name": "AutoLinkText",
+				"subtitle": "A simple library that makes links, emails, and phone numbers clickable in text in Jetpack Compose and Kotlin Compose Multiplatform.",
+				"period": "",
+				"tech": ["Mobile", "Android", "Kotlin", "Jetpack Compose"],
+				"details": ["79 Stars on GitHub"],
+				"links": {
+					"github": "https://github.com/Calvin-LL/AutoLinkText"
+				}
+			},
+			{
+				"name": "is-even-ai",
+				"subtitle": "A library that checks number parity with AI.",
+				"period": "",
+				"tech": [
+					"Node.js",
+					"JavaScript",
+					"TypeScript",
+					"Machine Learning",
+					"LLM",
+					"CI/CD"
+				],
+				"details": [],
+				"links": {
+					"github": "https://github.com/Calvin-LL/is-even-ai",
+					"website": "https://www.npmjs.com/package/is-even-ai"
+				}
+			},
+			{
+				"name": "Kitsilano School App",
+				"subtitle": "A multifunctional iOS and Android application I created in high school. This app was designed to keep students updated about upcoming school events and homework assignments. Additionally, it offers a platform for administrators, teachers, and clubs to share events, send out notifications, and disseminate news, ensuring efficient and seamless communication within the school community.",
+				"period": "",
+				"tech": [
+					"Mobile",
+					"iOS",
+					"Objective-C",
+					"Android",
+					"Java",
+					"Database",
+					"Express.js",
+					"TypeScript",
+					"React Native"
+				],
+				"details": ["Media Appearances: The Vancouver Sun, CBC"],
+				"links": {}
+			},
+			{
+				"name": "Kitsilano Secondary Heritage Tour",
+				"subtitle": "A virtual journey through the historic Kitsilano Secondary School, created before its destructive renovation. The project serves as a digital time capsule, preserving the walls that bore witness to countless student memories. Designed in collaboration with my arts teacher Mr.Mehl during my time at the school.",
+				"period": "",
+				"tech": ["Web", "JavaScript"],
+				"details": ["Media Appearances: Global News, Sing Tao Daily"],
+				"links": {
+					"website": "https://kitsheritage.vsb.bc.ca/Tour/index.htm"
+				}
+			},
+			{
+				"name": "USB Morse Code Key",
+				"subtitle": "A project that breathes life into a historical communication method, marrying it with modern hardware and software to forge an interactive, functional tool. It's more than just a historical novelty; it yields practical use. Perfect for Morse Code enthusiasts and history buffs.",
+				"period": "",
+				"tech": ["C", "Arduino"],
+				"details": [],
+				"links": {
+					"website": "https://www.instructables.com/USB-Arduino-Morse-Code-Key/"
+				}
+			},
+			{
+				"name": "Hot Words on Reddit",
+				"subtitle": "A web app that leverages natural language processing and sentiment analysis to creates interactive word clouds that visually represent the most discussed topics on Reddit. Each word's sentiment is intuitively color-coded, with a scale from green (positive) to red (negative). By providing a real-time snapshot of trending conversations, Hotwords of Reddit serves as a unique tool for understanding public sentiment on various issues.",
+				"period": "",
+				"tech": [
+					"Web",
+					"JavaScript",
+					"TypeScript",
+					"D3.js",
+					"Express.js",
+					"Machine Learning",
+					"Natural Language Processing"
+				],
+				"details": [],
+				"links": {}
+			},
+			{
+				"name": "Kitsilano Grad Composite Gallery",
+				"subtitle": "A web app designed for Kitsilano Secondary School alumni. It serves as a digital yearbook, offering an online space for alumni to reminisce and reconnect with their high school days.",
+				"period": "",
+				"tech": ["Web", "JavaScript"],
+				"details": [],
+				"links": {
+					"website": "https://kitsheritage.vsb.bc.ca/Grad/NGCG/index.htm"
+				}
+			},
+			{
+				"name": "Martini Call Blocker",
+				"subtitle": "An Android app that offers robust call blocking for intrusive spam calls. Utilizing the new STIR/SHAKEN protocol mechanisms, it ensures users receive only authenticated calls.",
+				"period": "",
+				"tech": ["Mobile", "Android", "Kotlin", "Jetpack Compose"],
+				"details": [],
+				"links": {
+					"website": "https://play.google.com/store/apps/details?id=sh.calvin.martini"
+				}
+			},
+			{
+				"name": "NaviChat",
+				"subtitle": "An innovative way-finding kiosk designed for Emily Carr University to guide students and visitors alike. Combining a large touchscreen display with an integrated voice assistant, it provides an interactive experience of location search. Running on a Raspberry Pi and powered by Electron, the software includes 500 context-aware dialogs for voice-activated queries. Users can conveniently search for direction by typing or speaking, effectively simplifying campus navigation.",
+				"period": "",
+				"tech": [
+					"Electron",
+					"Node.js",
+					"JavaScript",
+					"TypeScript",
+					"Raspberry Pi"
+				],
+				"details": [],
+				"links": {}
+			},
+			{
+				"name": "RPi-MFRC522",
+				"subtitle": "A driver written in C++ for MFRC522 RFID card readers that exposes them to the Node.js runtime.",
+				"period": "",
+				"tech": [
+					"Node.js",
+					"JavaScript",
+					"TypeScript",
+					"C++",
+					"Raspberry Pi"
+				],
+				"details": [],
+				"links": {
+					"github": "https://github.com/Calvin-LL/RPi-MFRC522-nodejs",
+					"website": "https://www.npmjs.com/package/rpi-mfrc522-nodejs"
+				}
+			},
+			{
+				"name": "Touch ID Box",
+				"subtitle": "A 3D printed enclosure that transform your Apple Magic Keyboard into a standalone Touch ID button.",
+				"period": "",
+				"tech": ["Apple", "3D Printing"],
+				"details": [],
+				"links": {
+					"website": "https://www.printables.com/model/355924-clickable-touch-id-box-tkl-board-wired"
+				}
+			},
+			{
+				"name": "3D Barge Model",
+				"subtitle": "A 3D model of the English Bay barge that washed ashore in Vancouver, BC, Canada in November 2021.",
+				"period": "",
+				"tech": ["3D Printing"],
+				"details": ["Media Appearances: Vancouver Is Awesome"],
+				"links": {
+					"website": "https://www.thingiverse.com/thing:5196797/files"
+				}
+			},
+			{
+				"name": "Barrelfish",
+				"subtitle": "Redesigned and re-implemented parts of the experimental operating system, Barrelfish, originally developed by ETH Zurich and Microsoft Research, to explore the frontier of multikernel and heterogeneous hardware approaches",
+				"period": "",
+				"tech": ["C", "Operating Systems", "Distributed Systems"],
+				"details": [],
+				"links": {}
+			},
+			{
+				"name": "Peer-to-Peer Isolation-Aware Value Access Network - P2P IVAN",
+				"subtitle": "A distributed, peer-to-peer, fault-tolerant, and scalable key-value store.",
+				"period": "",
+				"tech": ["Go", "Distributed Systems"],
+				"details": [],
+				"links": {}
+			},
+			{
+				"name": "Currentcy",
+				"subtitle": "A Wear OS (Android) and watchOS (Apple Watch) complication that shows the exchange rate of the currency of the user's current location to the user's home currency.",
+				"period": "",
+				"tech": [
+					"Android",
+					"Wear OS",
+					"Kotlin",
+					"Jetpack Compose",
+					"watchOS",
+					"Swift",
+					"SwiftUI"
+				],
+				"details": [],
+				"links": {}
+			}
+		],
+		"writings": [
+			{
+				"title": "The Fed says this is a cube of $1M. They're off by half a million.",
+				"link": "https://calvin.sh/blog/fed-lie",
+				"description": "",
+				"date": ""
+			}
+		],
+		"about": "I'm a software engineer based in Vancouver, BC. I build mobile apps, web apps, and open source libraries. I'm passionate about privacy, security, and creating tools that help people.",
+		"workingOn": ""
 	}
 }

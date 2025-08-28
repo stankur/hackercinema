@@ -81,7 +81,11 @@
 			"subtitle": "AR assistance using Snap's Spectacles: diagnoses, scribing, follow‑ups",
 			"period": "Oct 2024 • CalHacks 2024",
 			"tech": ["Lens Studio", "Snap Spectacles", "Python", "React"],
-			"details": []
+			"details": [],
+			"links": {
+				"website": "https://spectacare.example.com",
+				"github": "https://github.com/byron/spectacare"
+			}
 		},
 		{
 			"name": "Recall Rehearsal 🏅",
@@ -104,7 +108,12 @@
 			"details": [
 				"Mascots quiz learning objectives",
 				"Uploads feed a RAG model"
-			]
+			],
+			"links": {
+				"website": "https://recall-rehearsal.example.com",
+				"youtube": "https://youtube.com/watch?v=recall-rehearsal-demo",
+				"github": "https://github.com/byron/recall-rehearsal"
+			}
 		},
 		{
 			"name": "Dialog 🏅",

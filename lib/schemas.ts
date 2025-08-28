@@ -34,6 +34,13 @@ export const ProjectSchema = z.object({
 	period: z.string(),
 	tech: z.array(z.string()),
 	details: z.array(z.string()),
+	links: z
+		.object({
+			website: z.string().optional(),
+			youtube: z.string().optional(),
+			github: z.string().optional(),
+		})
+		.optional(),
 });
 
 export const WritingSchema = z.object({

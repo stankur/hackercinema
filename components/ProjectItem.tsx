@@ -9,6 +9,11 @@ export type Project = {
 	period?: string;
 	tech?: string[];
 	details?: string[];
+	links?: {
+		website?: string;
+		youtube?: string;
+		github?: string;
+	};
 };
 
 interface ProjectItemProps {
@@ -16,14 +21,21 @@ interface ProjectItemProps {
 }
 
 export default function ProjectItem({ project }: ProjectItemProps) {
-	const [activeTab, setActiveTab] = useState<"tech" | "details" | null>(null);
+	const [activeTab, setActiveTab] = useState<
+		"tech" | "details" | "links" | null
+	>(null);
 
 	const hasTech = project.tech && project.tech.length > 0;
 	const hasDetails =
 		(project.period && project.period.trim().length > 0) ||
 		(project.details && project.details.length > 0);
+	const hasLinks =
+		project.links &&
+		(project.links.website ||
+			project.links.youtube ||
+			project.links.github);
 
-	const handleTabClick = (tab: "tech" | "details") => {
+	const handleTabClick = (tab: "tech" | "details" | "links") => {
 		setActiveTab(activeTab === tab ? null : tab);
 	};
 
@@ -45,7 +57,7 @@ export default function ProjectItem({ project }: ProjectItemProps) {
 				</div>
 
 				{/* Tabs */}
-				{(hasTech || hasDetails) && (
+				{(hasTech || hasDetails || hasLinks) && (
 					<div className="space-y-4">
 						<div className="flex gap-6">
 							{hasTech && (
@@ -70,6 +82,18 @@ export default function ProjectItem({ project }: ProjectItemProps) {
 									}`}
 								>
 									Details
+								</button>
+							)}
+							{hasLinks && (
+								<button
+									onClick={() => handleTabClick("links")}
+									className={`text-xs transition-colors ${
+										activeTab === "links"
+											? "text-foreground"
+											: "text-muted-foreground hover:text-foreground"
+									}`}
+								>
+									Links
 								</button>
 							)}
 						</div>
@@ -104,6 +128,41 @@ export default function ProjectItem({ project }: ProjectItemProps) {
 											))}
 										</ul>
 									)}
+							</div>
+						)}
+
+						{activeTab === "links" && hasLinks && (
+							<div className="space-y-3">
+								{project.links?.website && (
+									<a
+										href={project.links.website}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="text-sm text-muted-foreground hover:text-foreground underline"
+									>
+										Website
+									</a>
+								)}
+								{project.links?.youtube && (
+									<a
+										href={project.links.youtube}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="text-sm text-muted-foreground hover:text-foreground underline"
+									>
+										YouTube
+									</a>
+								)}
+								{project.links?.github && (
+									<a
+										href={project.links.github}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="text-sm text-muted-foreground hover:text-foreground underline"
+									>
+										GitHub
+									</a>
+								)}
 							</div>
 						)}
 					</div>

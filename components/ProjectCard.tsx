@@ -17,12 +17,19 @@ export default function ProjectCard({
 	columnIndex,
 	hasRightProject = true,
 }: ProjectCardProps) {
-	const [activeTab, setActiveTab] = useState<"tech" | "details" | null>(null);
+	const [activeTab, setActiveTab] = useState<
+		"tech" | "details" | "links" | null
+	>(null);
 
 	const hasTech = project.tech && project.tech.length > 0;
 	const hasDetails =
 		(project.period && project.period.trim().length > 0) ||
 		(project.details && project.details.length > 0);
+	const hasLinks =
+		project.links &&
+		(project.links.website ||
+			project.links.youtube ||
+			project.links.github);
 
 	const { contentRef, tabsRef } = useTabSync({
 		rowIndex,
@@ -30,7 +37,7 @@ export default function ProjectCard({
 		isActive: activeTab !== null,
 	});
 
-	const handleTabClick = (tab: "tech" | "details") => {
+	const handleTabClick = (tab: "tech" | "details" | "links") => {
 		setActiveTab(activeTab === tab ? null : tab);
 	};
 
@@ -64,7 +71,7 @@ export default function ProjectCard({
 				</div>
 
 				{/* Tabs - positioned at bottom of content area - LOCKED POSITION */}
-				{(hasTech || hasDetails) && (
+				{(hasTech || hasDetails || hasLinks) && (
 					<div
 						ref={tabsRef}
 						data-tabs
@@ -102,6 +109,20 @@ export default function ProjectCard({
 									aria-controls={`${project.name}-details-panel`}
 								>
 									Details
+								</button>
+							)}
+							{hasLinks && (
+								<button
+									onClick={() => handleTabClick("links")}
+									className={`text-xs transition-colors ${
+										activeTab === "links"
+											? "text-foreground"
+											: "text-muted-foreground hover:text-foreground"
+									}`}
+									aria-expanded={activeTab === "links"}
+									aria-controls={`${project.name}-links-panel`}
+								>
+									Links
 								</button>
 							)}
 						</div>
@@ -154,6 +175,45 @@ export default function ProjectCard({
 									<li key={idx}>{d}</li>
 								))}
 							</ul>
+						)}
+					</div>
+				)}
+
+				{activeTab === "links" && hasLinks && project.links && (
+					<div
+						id={`${project.name}-links-panel`}
+						role="tabpanel"
+						className="pt-4 pb-4 md:pb-5 space-y-3 font-light"
+					>
+						{project.links.website && (
+							<a
+								href={project.links.website}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-sm text-foreground hover:underline"
+							>
+								Website
+							</a>
+						)}
+						{project.links.youtube && (
+							<a
+								href={project.links.youtube}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-sm text-foreground hover:underline"
+							>
+								YouTube
+							</a>
+						)}
+						{project.links.github && (
+							<a
+								href={project.links.github}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-sm text-foreground hover:underline"
+							>
+								GitHub
+							</a>
 						)}
 					</div>
 				)}
