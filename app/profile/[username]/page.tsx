@@ -33,6 +33,30 @@ export default function ProfilePage({ params }: PageProps) {
 		new Set()
 	);
 
+	// Expand/collapse states for each section
+	const [expandedSections, setExpandedSections] = useState<Set<string>>(
+		new Set([
+			"about",
+			"workingOn",
+			"experience",
+			"projects",
+			"writings",
+			"contacts",
+		])
+	);
+
+	const toggleSection = (sectionName: string) => {
+		setExpandedSections((prev) => {
+			const newSet = new Set(prev);
+			if (newSet.has(sectionName)) {
+				newSet.delete(sectionName);
+			} else {
+				newSet.add(sectionName);
+			}
+			return newSet;
+		});
+	};
+
 	const handleIntersection = useCallback(
 		(entries: IntersectionObserverEntry[]) => {
 			console.log(
@@ -338,7 +362,7 @@ export default function ProfilePage({ params }: PageProps) {
 						ref={aboutRef}
 						data-section="about"
 						className={`
-							space-y-6 transition-all duration-700 ease-out
+							transition-all duration-700 ease-out
 							${
 								visibleSections.has("about")
 									? "opacity-100 blur-0 scale-100"
@@ -346,15 +370,24 @@ export default function ProfilePage({ params }: PageProps) {
 							}
 						`}
 					>
-						<div className="flex gap-2 items-center">
+						<div className="flex justify-between items-center mb-4">
 							<h2 className="text-xs text-muted-foreground font-mono tracking-widest uppercase">
-								About
+								ABOUT
 							</h2>
-							<div className="h-0 flex-1 border-b-[0.1px] border-slate-600" />
+							<button
+								onClick={() => toggleSection("about")}
+								className="text-lg text-muted-foreground hover:text-foreground transition-colors cursor-pointer font-mono"
+							>
+								{expandedSections.has("about") ? "—" : "+"}
+							</button>
 						</div>
-						<p className="text-sm leading-relaxed text-foreground font-light pl-4 md:pl-5">
-							{about}
-						</p>
+						{expandedSections.has("about") && (
+							<div className="space-y-6">
+								<p className="text-sm leading-relaxed text-foreground font-light pl-4 md:pl-5">
+									{about}
+								</p>
+							</div>
+						)}
 					</section>
 				)}
 
@@ -364,7 +397,7 @@ export default function ProfilePage({ params }: PageProps) {
 						ref={workingOnRef}
 						data-section="workingOn"
 						className={`
-							space-y-6 transition-all duration-700 ease-out
+							transition-all duration-700 ease-out
 							${
 								visibleSections.has("workingOn")
 									? "opacity-100 blur-0 scale-100"
@@ -372,15 +405,24 @@ export default function ProfilePage({ params }: PageProps) {
 							}
 						`}
 					>
-						<div className="flex gap-2 items-center">
+						<div className="flex justify-between items-center mb-4">
 							<h2 className="text-xs text-muted-foreground font-mono tracking-widest uppercase">
-								Working On
+								WORKING ON
 							</h2>
-							<div className="h-0 flex-1 border-b-[0.1px] border-slate-600" />
+							<button
+								onClick={() => toggleSection("workingOn")}
+								className="text-lg text-muted-foreground hover:text-foreground transition-colors cursor-pointer font-mono"
+							>
+								{expandedSections.has("workingOn") ? "—" : "+"}
+							</button>
 						</div>
-						<p className="text-sm leading-relaxed text-foreground font-light pl-4 md:pl-5">
-							{workingOn}
-						</p>
+						{expandedSections.has("workingOn") && (
+							<div className="space-y-6">
+								<p className="text-sm leading-relaxed text-foreground font-light pl-4 md:pl-5">
+									{workingOn}
+								</p>
+							</div>
+						)}
 					</section>
 				)}
 
@@ -397,7 +439,20 @@ export default function ProfilePage({ params }: PageProps) {
 						}
 					`}
 				>
-					<ExperienceSection experiences={experiences} />
+					<div className="flex justify-between items-center mb-4">
+						<h2 className="text-xs text-muted-foreground font-mono tracking-widest uppercase">
+							EXPERIENCE
+						</h2>
+						<button
+							onClick={() => toggleSection("experience")}
+							className="text-lg text-muted-foreground hover:text-foreground transition-colors cursor-pointer font-mono"
+						>
+							{expandedSections.has("experience") ? "—" : "+"}
+						</button>
+					</div>
+					{expandedSections.has("experience") && (
+						<ExperienceSection experiences={experiences} />
+					)}
 				</div>
 
 				{/* Projects */}
@@ -413,24 +468,52 @@ export default function ProfilePage({ params }: PageProps) {
 						}
 					`}
 				>
-					<ProjectsSection projects={projects} />
+					<div className="flex justify-between items-center mb-4">
+						<h2 className="text-xs text-muted-foreground font-mono tracking-widest uppercase">
+							PROJECTS
+						</h2>
+						<button
+							onClick={() => toggleSection("projects")}
+							className="text-lg text-muted-foreground hover:text-foreground transition-colors cursor-pointer font-mono"
+						>
+							{expandedSections.has("projects") ? "—" : "+"}
+						</button>
+					</div>
+					{expandedSections.has("projects") && (
+						<ProjectsSection projects={projects} />
+					)}
 				</div>
 
 				{/* Writings */}
-				<div
-					ref={writingsRef}
-					data-section="writings"
-					className={`
-						transition-all duration-700 ease-out
-						${
-							visibleSections.has("writings")
-								? "opacity-100 blur-0 scale-100"
-								: "opacity-0 blur-sm scale-95"
-						}
-					`}
-				>
-					<WritingsSection writings={writings} />
-				</div>
+				{writings.length > 0 && (
+					<div
+						ref={writingsRef}
+						data-section="writings"
+						className={`
+							transition-all duration-700 ease-out
+							${
+								visibleSections.has("writings")
+									? "opacity-100 blur-0 scale-100"
+									: "opacity-0 blur-sm scale-95"
+							}
+						`}
+					>
+						<div className="flex justify-between items-center mb-4">
+							<h2 className="text-xs text-muted-foreground font-mono tracking-widest uppercase">
+								WRITINGS
+							</h2>
+							<button
+								onClick={() => toggleSection("writings")}
+								className="text-lg text-muted-foreground hover:text-foreground transition-colors cursor-pointer font-mono"
+							>
+								{expandedSections.has("writings") ? "—" : "+"}
+							</button>
+						</div>
+						{expandedSections.has("writings") && (
+							<WritingsSection writings={writings} />
+						)}
+					</div>
+				)}
 
 				{/* Contacts (hidden if empty) */}
 				{hasContacts && (
@@ -438,7 +521,7 @@ export default function ProfilePage({ params }: PageProps) {
 						ref={contactsRef}
 						data-section="contacts"
 						className={`
-							space-y-6 transition-all duration-700 ease-out
+							transition-all duration-700 ease-out
 							${
 								visibleSections.has("contacts")
 									? "opacity-100 blur-0 scale-100"
@@ -446,30 +529,41 @@ export default function ProfilePage({ params }: PageProps) {
 							}
 						`}
 					>
-						<div className="flex gap-4 items-center">
-							<h2 className="text-lg font-mono tracking-wide uppercase">
-								Contacts
+						<div className="flex justify-between items-center mb-4">
+							<h2 className="text-xs text-muted-foreground font-mono tracking-widest uppercase">
+								CONTACTS
 							</h2>
-							<div className="h-0 flex-1 border-b-[0.1px] border-slate-300" />
+							<button
+								onClick={() => toggleSection("contacts")}
+								className="text-lg text-muted-foreground hover:text-foreground transition-colors cursor-pointer font-mono"
+							>
+								{expandedSections.has("contacts") ? "—" : "+"}
+							</button>
 						</div>
-						<ul className="text-sm text-foreground/90 space-y-1 pl-4 md:pl-5">
-							{Object.entries(contacts).map(([key, value]) => (
-								<li
-									key={key}
-									className="flex items-center gap-2"
-								>
-									<span className="text-muted-foreground capitalize">
-										{key}:
-									</span>
-									<a
-										href={value}
-										className="text-primary hover:underline break-all"
-									>
-										{value}
-									</a>
-								</li>
-							))}
-						</ul>
+						{expandedSections.has("contacts") && (
+							<div className="space-y-6">
+								<ul className="text-sm text-foreground/90 space-y-1 pl-4 md:pl-5">
+									{Object.entries(contacts).map(
+										([key, value]) => (
+											<li
+												key={key}
+												className="flex items-center gap-2"
+											>
+												<span className="text-muted-foreground capitalize">
+													{key}:
+												</span>
+												<a
+													href={value}
+													className="text-primary hover:underline break-all"
+												>
+													{value}
+												</a>
+											</li>
+										)
+									)}
+								</ul>
+							</div>
+						)}
 					</section>
 				)}
 			</div>

@@ -19,13 +19,6 @@ export default function WritingsSection({ writings }: WritingsSectionProps) {
 
 	return (
 		<section className="space-y-6">
-			<div className="flex gap-2 items-center">
-				<h2 className="text-xs text-muted-foreground font-mono tracking-widest uppercase">
-					Writings
-				</h2>
-				<div className="h-0 flex-1 border-b-[0.1px] border-slate-600" />
-			</div>
-
 			{/* Desktop: Row-based layout */}
 			<div className="hidden md:block pl-4 md:pl-5">
 				{writingPairs.map((pair, rowIndex) => (
