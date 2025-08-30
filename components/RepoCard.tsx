@@ -9,12 +9,14 @@ interface RepoCardProps {
 	repo: GitHubRepo;
 	owner: string;
 	showOwner?: boolean;
+	showUsernameInsteadOfDate?: boolean;
 }
 
 export default function RepoCard({
 	repo,
 	owner,
 	showOwner = false,
+	showUsernameInsteadOfDate = false,
 }: RepoCardProps) {
 	const [cardBackground, setCardBackground] = useState<string>("");
 	const [languageDotColor, setLanguageDotColor] = useState<string>("");
@@ -70,7 +72,7 @@ export default function RepoCard({
 					{repo.description}
 				</div>
 			)}
-			<div className="flex items-center justify-between mt-3 pt-2 border-t border-slate-800/30">
+			<div className="flex items-center justify-between mt-3 pt-2">
 				<div className="flex items-center gap-3 text-xs text-muted-foreground/60">
 					{repo.language && (
 						<div className="flex items-center gap-1.5">
@@ -92,7 +94,9 @@ export default function RepoCard({
 					)}
 				</div>
 				<div className="text-xs text-muted-foreground/60">
-					Updated {formatDate(repo.updated_at)}
+					{showUsernameInsteadOfDate
+						? owner
+						: `Updated ${formatDate(repo.updated_at)}`}
 				</div>
 			</div>
 		</div>

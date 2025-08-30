@@ -20,4 +20,5 @@ export interface Builder {
 	theme: string;
 	profile: GitHubProfile;
 	repos: GitHubRepo[];
+	similar_interest?: string[];
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { MapPin, Globe, Github, MessageSquare } from "lucide-react";
@@ -18,11 +18,11 @@ export default function BuilderDisplay({
 	showOwner = false,
 	className = "py-8",
 }: BuilderDisplayProps) {
-	const [activeTab, setActiveTab] = useState<"profile" | "repos" | null>(
-		null
-	);
+	const [activeTab, setActiveTab] = useState<
+		"profile" | "repos" | "similar" | null
+	>(null);
 
-	const handleTabClick = (tab: "profile" | "repos") => {
+	const handleTabClick = (tab: "profile" | "repos" | "similar") => {
 		setActiveTab(activeTab === tab ? null : tab);
 	};
 
@@ -79,6 +79,19 @@ export default function BuilderDisplay({
 				>
 					Highlights
 				</button>
+				{builder.similar_interest &&
+					builder.similar_interest.length > 0 && (
+						<button
+							onClick={() => handleTabClick("similar")}
+							className={`text-xs transition-colors ${
+								activeTab === "similar"
+									? "text-foreground"
+									: "text-muted-foreground hover:text-foreground"
+							}`}
+						>
+							Similar
+						</button>
+					)}
 			</div>
 
 			{/* Tab content - full width */}
@@ -136,21 +149,111 @@ export default function BuilderDisplay({
 			{activeTab === "repos" && (
 				<div className="space-y-6">
 					{builder.repos.length > 0 ? (
-						<div className="space-y-4">
-							{builder.repos.map((repo) => (
-								<RepoCard
-									key={repo.name}
-									repo={repo}
-									owner={builder.username}
-									showOwner={showOwner}
-								/>
-							))}
-						</div>
+						builder.repos.map((repo) => (
+							<RepoCard
+								key={repo.name}
+								repo={repo}
+								owner={builder.username}
+								showOwner={showOwner}
+								showUsernameInsteadOfDate={false}
+							/>
+						))
 					) : (
 						<div className="text-sm text-muted-foreground">
-							No repositories available
+							No repositories found.
 						</div>
 					)}
+				</div>
+			)}
+
+			{activeTab === "similar" && builder.similar_interest && (
+				<SimilarInterestsSection
+					similarUsernames={builder.similar_interest}
+				/>
+			)}
+		</div>
+	);
+}
+
+// Similar Interests Section Component
+interface SimilarInterestsSectionProps {
+	similarUsernames: string[];
+}
+
+function SimilarInterestsSection({
+	similarUsernames,
+}: SimilarInterestsSectionProps) {
+	const [userData, setUserData] = useState<Record<string, { repos: any[] }>>(
+		{}
+	);
+	const [showAllRepos, setShowAllRepos] = useState(false);
+
+	// Fetch user data when component mounts
+	useEffect(() => {
+		const fetchUserData = async () => {
+			try {
+				const response = await fetch("/api/data.json");
+				const data = await response.json();
+
+				const userDataMap: Record<string, { repos: any[] }> = {};
+				data.forEach((user: any) => {
+					if (similarUsernames.includes(user.username)) {
+						userDataMap[user.username] = {
+							repos: user.repos || [],
+						};
+					}
+				});
+
+				setUserData(userDataMap);
+			} catch (error) {
+				console.error("Failed to fetch user data:", error);
+			}
+		};
+
+		fetchUserData();
+	}, [similarUsernames]);
+
+	// Collect all repos from all similar users
+	const allRepos: Array<{ repo: any; owner: string }> = [];
+	similarUsernames.forEach((username) => {
+		const userInfo = userData[username];
+		if (userInfo && userInfo.repos.length > 0) {
+			userInfo.repos.forEach((repo) => {
+				allRepos.push({ repo, owner: username });
+			});
+		}
+	});
+
+	const displayedRepos = showAllRepos ? allRepos : allRepos.slice(0, 5);
+
+	return (
+		<div className="space-y-4">
+			{displayedRepos.length > 0 ? (
+				<>
+					{displayedRepos.map(({ repo, owner }) => (
+						<RepoCard
+							key={`${owner}-${repo.name}`}
+							repo={repo}
+							owner={owner}
+							showOwner={false}
+							showUsernameInsteadOfDate={true}
+						/>
+					))}
+
+					{allRepos.length > 5 && (
+						<div className="text-center pt-4">
+							<button
+								onClick={() => setShowAllRepos(!showAllRepos)}
+								className="text-xs text-muted-foreground hover:text-foreground transition-colors underline"
+							>
+								{showAllRepos ? "show less" : "show more"}
+							</button>
+						</div>
+					)}
+				</>
+			) : (
+				<div className="text-sm text-muted-foreground">
+					No repositories found for similar users.
 				</div>
 			)}
 		</div>

@@ -23,13 +23,6 @@
 				]
 			},
 			{
-				"name": "social-bookmarking",
-				"description": "A site for social bookmarking",
-				"updated_at": "2024-08-04T17:39:52Z",
-				"stars": 1,
-				"language": "Python"
-			},
-			{
 				"name": "EdmontonCityCouncilFeed",
 				"description": "Website to make the activities of Edmonton City Council more accessible",
 				"updated_at": "2024-07-06T09:01:09Z",
@@ -37,6 +30,16 @@
 				"language": "Python",
 				"topics": ["city-council", "edmonton", "politics", "yeg"]
 			}
+		],
+		"similar_interest": [
+			"stankur",
+			"mountainMath",
+			"albertkim",
+			"yhaooo11",
+			"gshklovs",
+			"hyperknot",
+			"naijwu",
+			"wiesenthal"
 		]
 	},
 	{
@@ -58,33 +61,29 @@
 				"language": "Python"
 			},
 			{
-				"name": "img2markdown",
-				"description": "When you have that pesky image with text (think wifi password, long numbers, urls, etc.) and you just want to be able to copy and paste its contents",
-				"updated_at": "2024-10-10T08:52:41Z",
-				"stars": 0,
-				"language": "TypeScript"
-			},
-			{
-				"name": "ubeseat",
-				"description": "Track UBC Courses for Seat Availability | Real-time Email Notifications",
-				"updated_at": "2023-09-03T19:01:10Z",
-				"stars": 0,
-				"language": "Python"
-			},
-			{
 				"name": "research-paper-parser",
 				"description": "An app that takes in management academic research PDF files from certain journals, analyzes them, and outputs two CSV files. One CSV file should dissect the research papers into sections, and the other CSV file should provide all references within the paper and the sections in which they were used.",
 				"updated_at": "2023-09-03T14:09:28Z",
 				"stars": 0,
 				"language": "Python"
-			},
-			{
-				"name": "arithmetic_problems_dataset",
-				"description": "A script to generate arithmetic problems, with various tuneable configs",
-				"updated_at": "2024-10-08T21:24:59Z",
-				"stars": 0,
-				"language": "Python"
 			}
+		],
+		"similar_interest": [
+			"stankur",
+			"ElianBelot",
+			"abdurj",
+			"NathanAW24",
+			"albertkim",
+			"ochen1",
+			"wilbowma",
+			"Jerr-z",
+			"asiff00",
+			"gagan3012",
+			"cosmo3769",
+			"gshklovs",
+			"meleongg",
+			"okarthikb",
+			"wiesenthal"
 		]
 	},
 	{
@@ -118,20 +117,29 @@
 				"updated_at": "2025-05-18T08:57:28Z",
 				"stars": 0,
 				"language": "TypeScript"
-			},
-			{
-				"name": "goblok",
-				"description": "Books converted into a data structure that can be used in my summarization interface",
-				"updated_at": "2024-09-05T06:51:12Z",
-				"stars": 2
-			},
-			{
-				"name": "granularity",
-				"description": "demo of an interface to understand the bigger picture of long reads with writings from Paul Graham, Sam Altman, and Nikola Tesla",
-				"updated_at": "2024-08-14T11:12:33Z",
-				"stars": 4,
-				"language": "Svelte"
 			}
+		],
+		"similar_interest": [
+			"garrethlee",
+			"ElianBelot",
+			"abdurj",
+			"albertkim",
+			"mvllow",
+			"ochen1",
+			"trevorblades",
+			"wilbowma",
+			"Tgcohce",
+			"Vicente015",
+			"asiff00",
+			"cosmo3769",
+			"gagan3012",
+			"gshklovs",
+			"iHildy",
+			"meleongg",
+			"okarthikb",
+			"tika",
+			"vsaosuo",
+			"wiesenthal"
 		]
 	},
 	{
@@ -180,7 +188,8 @@
 				"stars": 7,
 				"language": "R"
 			}
-		]
+		],
+		"similar_interest": ["albertkim", "ateucher", "hyperknot"]
 	},
 	{
 		"username": "ju1ien1100",
@@ -206,21 +215,17 @@
 				"updated_at": "2024-01-29T18:32:37Z",
 				"stars": 0,
 				"language": "Java"
-			},
-			{
-				"name": "SampleEQ",
-				"description": null,
-				"updated_at": "2024-01-26T01:12:12Z",
-				"stars": 0,
-				"language": "C++"
-			},
-			{
-				"name": "MarkovMelodies",
-				"description": "Music Generation using python, set up for Kids by MGMT",
-				"updated_at": "2025-03-21T17:19:33Z",
-				"stars": 0,
-				"language": "Python"
 			}
+		],
+		"similar_interest": [
+			"ardeshireshghi",
+			"javathunderman",
+			"ochen1",
+			"yi-jason",
+			"Mark123M",
+			"Tgcohce",
+			"asiff00",
+			"zanedb"
 		]
 	},
 	{
@@ -235,31 +240,10 @@
 		},
 		"repos": [
 			{
-				"name": "discord-debian-updater",
-				"description": "Sick of downloading and installing discord, so I made my own bash script to do it automatically",
-				"updated_at": "2025-07-29T02:35:58Z",
-				"stars": 3,
-				"language": "Shell"
-			},
-			{
 				"name": "workdaytoics",
 				"description": "Takes workday spreadsheets and converts them to .ics files",
 				"updated_at": "2024-09-05T13:04:10Z",
 				"stars": 1,
-				"language": "Python"
-			},
-			{
-				"name": "reboot-primer",
-				"description": "Sets your grub default so when your computer reboots it goes to the selected menu entry",
-				"updated_at": "2025-04-21T05:25:30Z",
-				"stars": 0,
-				"language": "Shell"
-			},
-			{
-				"name": "FrameChucker",
-				"description": "It chucks frames at another server using UDP",
-				"updated_at": "2025-02-08T09:41:31Z",
-				"stars": 0,
 				"language": "Python"
 			},
 			{
@@ -269,6 +253,15 @@
 				"stars": 0,
 				"language": "JavaScript"
 			}
+		],
+		"similar_interest": [
+			"EdwardJXLi",
+			"Highfire1",
+			"HudZah",
+			"Tidyrice",
+			"StarGazingHomies",
+			"hanmindev",
+			"MrAnderson1971"
 		]
 	},
 	{
@@ -307,13 +300,6 @@
 				"topics": ["bidirectional-typechecking", "lambda-calculus"]
 			},
 			{
-				"name": "sticks",
-				"description": "A simple static site generator",
-				"updated_at": "2024-07-23T01:10:42Z",
-				"stars": 0,
-				"language": "Haskell"
-			},
-			{
 				"name": "config",
 				"description": "Configuration files for various devices.",
 				"updated_at": "2024-08-11T07:35:08Z",
@@ -321,6 +307,25 @@
 				"language": "Scheme",
 				"topics": ["config", "dotfiles"]
 			}
+		],
+		"similar_interest": [
+			"ADSteele916",
+			"alaviss",
+			"funemy",
+			"kiedtl",
+			"kumarpit",
+			"grhkm21",
+			"mvllow",
+			"rctcwyvrn",
+			"ionathanch",
+			"theCasm",
+			"thomasporter522",
+			"wilbowma",
+			"Vicente015",
+			"birchmd",
+			"antler5",
+			"mfornet",
+			"achreto"
 		]
 	},
 	{
@@ -335,13 +340,6 @@
 		},
 		"repos": [
 			{
-				"name": "Focusaurus",
-				"description": "keeping you healthy, focused, and balanced online! ",
-				"updated_at": "2025-01-23T23:25:34Z",
-				"stars": 0,
-				"language": "Python"
-			},
-			{
 				"name": "BThere",
 				"description": "BThere is a friend-assisting application that analyzes conversations and provides insightful suggestions for users to connect with their friends on a deeper level.",
 				"updated_at": "2024-01-24T18:58:51Z",
@@ -354,21 +352,38 @@
 				"updated_at": "2024-01-22T18:37:48Z",
 				"stars": 0,
 				"language": "JavaScript"
-			},
-			{
-				"name": "SleepCode",
-				"description": "A coding challenge platform with an executable coding environment, integrated timer, and embedded youtube solutions.",
-				"updated_at": "2023-12-01T21:42:03Z",
-				"stars": 0,
-				"language": "TypeScript"
-			},
-			{
-				"name": "Wanderer-s-Hub",
-				"description": null,
-				"updated_at": "2024-04-22T05:53:03Z",
-				"stars": 0,
-				"language": "JavaScript"
 			}
+		],
+		"similar_interest": [
+			"garrethlee",
+			"stankur",
+			"Jake-Yeo",
+			"Anmol-Ghadia",
+			"Vaten0x",
+			"aviwad",
+			"fegicochen",
+			"kickscondor",
+			"Aashu-Dubey",
+			"PrincewillIroka",
+			"Tgcohce",
+			"YashVG",
+			"Nathn",
+			"YingjiaLiu99",
+			"asiff00",
+			"gshklovs",
+			"elibroftw",
+			"luckyjsx",
+			"mathewbushuru",
+			"meleongg",
+			"oltimaloku",
+			"naijwu",
+			"s-alad",
+			"merouanezouaid",
+			"pi-rate14",
+			"snlimadev",
+			"tika",
+			"wiesenthal",
+			"zanedb"
 		]
 	},
 	{
@@ -390,33 +405,53 @@
 				"language": "JavaScript"
 			},
 			{
-				"name": "radar",
-				"description": null,
-				"updated_at": "2025-05-25T16:11:49Z",
-				"stars": 0,
-				"language": "JavaScript"
-			},
-			{
 				"name": "website",
 				"description": null,
 				"updated_at": "2024-07-10T18:19:05Z",
 				"stars": 0,
 				"language": "HTML"
-			},
-			{
-				"name": "website2",
-				"description": null,
-				"updated_at": "2024-09-04T20:00:15Z",
-				"stars": 0,
-				"language": "CSS"
-			},
-			{
-				"name": "react-rosie",
-				"description": null,
-				"updated_at": "2024-03-10T00:52:34Z",
-				"stars": 0,
-				"language": "JavaScript"
 			}
+		],
+		"similar_interest": [
+			"Jake-Yeo",
+			"Anmol-Ghadia",
+			"albertkim",
+			"ardeshireshghi",
+			"austinlparker",
+			"PepperLola",
+			"fegicochen",
+			"chasefleming",
+			"kspaans",
+			"kickscondor",
+			"mahalisunil1",
+			"mvllow",
+			"trevorblades",
+			"y-dejong",
+			"Aashu-Dubey",
+			"Highfire1",
+			"Ezzhingy",
+			"JipFr",
+			"ManasSin",
+			"PrincewillIroka",
+			"Nathn",
+			"Vicente015",
+			"Siliconrob",
+			"YingjiaLiu99",
+			"arnvgh",
+			"erwin-lovecraft",
+			"elibroftw",
+			"hyperknot",
+			"irisxu02",
+			"luckyjsx",
+			"mathewbushuru",
+			"meleongg",
+			"naijwu",
+			"s-alad",
+			"pi-rate14",
+			"sanjeevyadavIT",
+			"snlimadev",
+			"vsaosuo",
+			"virchau13"
 		]
 	},
 	{
@@ -430,20 +465,6 @@
 			"blog": ""
 		},
 		"repos": [
-			{
-				"name": "KeyDex",
-				"description": null,
-				"updated_at": "2024-10-01T01:05:28Z",
-				"stars": 0,
-				"language": "Java"
-			},
-			{
-				"name": "GorillaType",
-				"description": null,
-				"updated_at": "2024-08-10T19:54:20Z",
-				"stars": 0,
-				"language": "Java"
-			},
 			{
 				"name": "nova-type",
 				"description": null,
@@ -465,47 +486,36 @@
 				"stars": 0,
 				"language": "TypeScript"
 			}
-		]
-	},
-	{
-		"username": "Nishim12",
-		"theme": "computer vision and interactive visualization",
-		"profile": {
-			"login": "Nishim12",
-			"avatar_url": "https://avatars.githubusercontent.com/u/140373368?v=4",
-			"bio": null,
-			"location": null,
-			"blog": ""
-		},
-		"repos": [
-			{
-				"name": "Visual-ai",
-				"description": null,
-				"updated_at": "2025-03-16T00:02:08Z",
-				"stars": 0,
-				"language": "Jupyter Notebook"
-			},
-			{
-				"name": "Sailboat-aplication",
-				"description": null,
-				"updated_at": "2024-09-09T15:32:04Z",
-				"stars": 0,
-				"language": "C"
-			},
-			{
-				"name": "LineCircleIntersection",
-				"description": null,
-				"updated_at": "2023-09-20T05:29:43Z",
-				"stars": 0,
-				"language": "Python"
-			},
-			{
-				"name": "nishim-portfolio",
-				"description": null,
-				"updated_at": "2025-02-23T04:43:51Z",
-				"stars": 0,
-				"language": "TypeScript"
-			}
+		],
+		"similar_interest": [
+			"stankur",
+			"aldenluthfi",
+			"albertkim",
+			"armintalaie",
+			"austinlparker",
+			"fegicochen",
+			"chasefleming",
+			"mvllow",
+			"trevorblades",
+			"wilbowma",
+			"Aashu-Dubey",
+			"Highfire1",
+			"Ezzhingy",
+			"PrincewillIroka",
+			"Tgcohce",
+			"Vicente015",
+			"agrawal-d",
+			"arnvgh",
+			"cosmo3769",
+			"elibroftw",
+			"iHildy",
+			"mathewbushuru",
+			"meleongg",
+			"naijwu",
+			"s-alad",
+			"tika",
+			"snlimadev",
+			"wiesenthal"
 		]
 	},
 	{
@@ -520,40 +530,26 @@
 		},
 		"repos": [
 			{
-				"name": "Sudoku",
-				"description": "Sudoku",
-				"updated_at": "2025-02-11T16:23:03Z",
-				"stars": 0,
-				"language": "GDScript"
-			},
-			{
-				"name": "jigsaw_puzzle",
-				"description": null,
-				"updated_at": "2025-01-05T16:21:55Z",
-				"stars": 0,
-				"language": "GDScript"
-			},
-			{
 				"name": "run3d",
 				"description": "Avoid obstacles as long as possible (TDD practice)",
 				"updated_at": "2024-10-27T16:33:50Z",
 				"stars": 0,
 				"language": "GDScript"
-			},
-			{
-				"name": "RunRight",
-				"description": "Game to run right dodging obstacles.",
-				"updated_at": "2024-10-05T15:27:39Z",
-				"stars": 0,
-				"language": "GDScript"
-			},
-			{
-				"name": "try3b1bgame",
-				"description": "I tried to replicate the game described in a 3b1b video with Godot",
-				"updated_at": "2024-09-30T14:52:17Z",
-				"stars": 0,
-				"language": "GDScript"
 			}
+		],
+		"similar_interest": [
+			"aldenluthfi",
+			"Mark123M",
+			"Tidyrice",
+			"StarGazingHomies",
+			"irisxu02",
+			"mxple",
+			"snlimadev",
+			"MrAnderson1971",
+			"WinteryFox",
+			"AdenC123",
+			"manglemix",
+			"Edster1121"
 		]
 	},
 	{
@@ -573,35 +569,23 @@
 				"updated_at": "2025-07-20T03:58:39Z",
 				"stars": 17,
 				"language": "Python"
-			},
-			{
-				"name": "souvenir-python",
-				"description": "A structured ID generation and parsing library",
-				"updated_at": "2025-03-10T22:17:13Z",
-				"stars": 0,
-				"language": "Python"
-			},
-			{
-				"name": "tmux-sessionizer",
-				"description": "Easy way to create tmux sessions based on git repositories or user configurations",
-				"updated_at": "2024-11-28T22:28:19Z",
-				"stars": 5,
-				"language": "Shell"
-			},
-			{
-				"name": "is-vim",
-				"description": "Bash Script that checks if the current tmux pane contains a vim-related process.",
-				"updated_at": "2024-12-04T19:45:10Z",
-				"stars": 9,
-				"language": "Shell"
-			},
-			{
-				"name": "dxbench",
-				"description": null,
-				"updated_at": "2025-08-04T05:50:01Z",
-				"stars": 1,
-				"language": "Python"
 			}
+		],
+		"similar_interest": [
+			"omentic",
+			"abdurj",
+			"NathanAW24",
+			"funemy",
+			"kumarpit",
+			"ionathanch",
+			"thomasporter522",
+			"wilbowma",
+			"Jerr-z",
+			"WorldofKerry",
+			"ethanthoma",
+			"gagan3012",
+			"evansemet",
+			"cosmo3769"
 		]
 	},
 	{
@@ -623,74 +607,19 @@
 				"language": "Rust"
 			},
 			{
-				"name": "earendil",
-				"description": "A Markdown-based HTML email API written in Python",
-				"updated_at": "2024-05-28T00:46:39Z",
-				"stars": 0,
-				"language": "Python"
-			},
-			{
 				"name": "cabal",
 				"description": "Utilities for clustering fully-connected similarity graphs",
 				"updated_at": "2024-04-02T19:11:23Z",
 				"stars": 1,
 				"language": "Rust"
-			},
-			{
-				"name": "pybay2024-talk",
-				"description": null,
-				"updated_at": "2024-10-05T20:00:30Z",
-				"stars": 1,
-				"language": "TeX"
-			},
-			{
-				"name": "nwhacks2024-talk",
-				"description": "Code and slides for my \"Introduction to Rust\" talk at nwHacks 2024",
-				"updated_at": "2024-02-04T03:30:17Z",
-				"stars": 3,
-				"language": "TeX"
 			}
-		]
-	},
-	{
-		"username": "Ahmedbne",
-		"theme": "applying machine learning to practical problems",
-		"profile": {
-			"login": "Ahmedbne",
-			"avatar_url": "https://avatars.githubusercontent.com/u/75976499?v=4",
-			"bio": null,
-			"location": null,
-			"blog": ""
-		},
-		"repos": [
-			{
-				"name": "IngenioPath",
-				"description": "Chatbot with serious game modes (Guessing game, Quiz) using gemini and streamlit",
-				"updated_at": "2025-05-24T20:29:35Z",
-				"stars": 0,
-				"language": "Python"
-			},
-			{
-				"name": "options_pricing_monte_carlo",
-				"description": "Options Pricing Using Monte Carlo & Stochastic Differential Equations",
-				"updated_at": "2025-03-13T16:53:29Z",
-				"stars": 0,
-				"language": "Python"
-			},
-			{
-				"name": "Reinforcement-Learning-Pipeline-for-a-Language-Model",
-				"description": null,
-				"updated_at": "2025-03-04T06:41:37Z",
-				"stars": 0,
-				"language": "Jupyter Notebook"
-			},
-			{
-				"name": "Titanic---Machine-Learning-from-Disaster",
-				"description": "Predict survival on the Titanic",
-				"updated_at": "2025-02-25T09:39:26Z",
-				"stars": 0,
-				"language": "Jupyter Notebook"
-			}
+		],
+		"similar_interest": [
+			"javathunderman",
+			"kumarpit",
+			"Jerr-z",
+			"evansemet",
+			"lukasgolson"
 		]
 	},
 	{
@@ -731,14 +660,19 @@
 				"updated_at": "2024-08-19T08:46:38Z",
 				"stars": 1,
 				"language": "TypeScript"
-			},
-			{
-				"name": "mood-cal",
-				"description": null,
-				"updated_at": "2024-11-11T04:43:04Z",
-				"stars": 0,
-				"language": "TypeScript"
 			}
+		],
+		"similar_interest": [
+			"fegicochen",
+			"mvllow",
+			"turbolent",
+			"Nathn",
+			"luckyjsx",
+			"mathewbushuru",
+			"naijwu",
+			"sanjeevyadavIT",
+			"snlimadev",
+			"wiesenthal"
 		]
 	},
 	{
@@ -761,29 +695,6 @@
 				"topics": ["ai-agents", "llm"]
 			},
 			{
-				"name": "rin",
-				"description": "Implementation of Recurrent Interface Networks (RIN) with a denoising diffusion model.",
-				"updated_at": "2025-06-09T14:59:20Z",
-				"stars": 1,
-				"language": "Jupyter Notebook"
-			},
-			{
-				"name": "handcrafted-backdoors",
-				"description": "Introducing backdoors in neural networks through parameter-level manipulation.",
-				"updated_at": "2023-09-30T10:03:04Z",
-				"stars": 3,
-				"language": "Jupyter Notebook",
-				"topics": ["adversarial-learning", "backdoors"]
-			},
-			{
-				"name": "resnet50-segmentation",
-				"description": "Image segmentation on the AI4MARS dataset using ResNet50 and PyTorch Lightning.",
-				"updated_at": "2023-09-29T09:38:02Z",
-				"stars": 2,
-				"language": "Jupyter Notebook",
-				"topics": ["image-segmentation", "pytorch-lightning"]
-			},
-			{
 				"name": "captcha-breaker",
 				"description": "Extracting text out of CAPTCHA images using Keras.",
 				"updated_at": "2023-09-29T07:21:52Z",
@@ -791,6 +702,22 @@
 				"language": "Python",
 				"topics": ["convolutional-neural-networks", "keras"]
 			}
+		],
+		"similar_interest": [
+			"stankur",
+			"garrethlee",
+			"KevinL10",
+			"Lydxn",
+			"abdurj",
+			"albertkim",
+			"wilbowma",
+			"asiff00",
+			"gagan3012",
+			"gshklovs",
+			"meleongg",
+			"okarthikb",
+			"saucesteals",
+			"wiesenthal"
 		]
 	},
 	{
@@ -832,34 +759,6 @@
 				"language": "Kotlin"
 			},
 			{
-				"name": "view-transition-name",
-				"description": "format strings to valid css `view-transition-name`s",
-				"updated_at": "2025-07-01T09:01:49Z",
-				"stars": 1,
-				"language": "TypeScript",
-				"topics": [
-					"css",
-					"view-transition",
-					"view-transition-api",
-					"view-transitions",
-					"view-transitions-api"
-				]
-			},
-			{
-				"name": "custom-ident",
-				"description": "format strings to css `<custom-ident>`s",
-				"updated_at": "2025-07-01T08:28:41Z",
-				"stars": 1,
-				"language": "TypeScript",
-				"topics": [
-					"css",
-					"view-transition",
-					"view-transition-api",
-					"view-transitions",
-					"view-transitions-api"
-				]
-			},
-			{
 				"name": "SecretDrop.io",
 				"description": "Public key encryption for everyone",
 				"updated_at": "2025-07-02T20:15:35Z",
@@ -867,7 +766,8 @@
 				"language": "Vue",
 				"topics": ["encryption", "public-key-cryptography"]
 			}
-		]
+		],
+		"similar_interest": ["CallumMackenzie"]
 	},
 	{
 		"username": "EdwardJXLi",
@@ -898,28 +798,18 @@
 					"reverse-engineering",
 					"socket-server"
 				]
-			},
-			{
-				"name": "discord-email-verify",
-				"description": "Rule-based Discord Email Verification Bot",
-				"updated_at": "2025-03-04T22:11:37Z",
-				"stars": 0,
-				"language": "Python"
-			},
-			{
-				"name": "2fa-slack-bot",
-				"description": "Slack bot for generating 2fa / OTP codes.",
-				"updated_at": "2025-03-04T07:45:27Z",
-				"stars": 0,
-				"language": "Python"
-			},
-			{
-				"name": "copy-url-extension",
-				"description": "Copies the current page URL to your clipboard using the shortcut `Ctrl+Shift+C`. (Similar to Arc or Zen)",
-				"updated_at": "2025-06-07T15:29:01Z",
-				"stars": 0,
-				"language": "JavaScript"
 			}
+		],
+		"similar_interest": [
+			"KevinL10",
+			"JustinHuPrime",
+			"abdurj",
+			"austinlparker",
+			"Tidyrice",
+			"StarGazingHomies",
+			"hanmindev",
+			"wiesenthal",
+			"MrAnderson1971"
 		]
 	},
 	{
@@ -938,13 +828,6 @@
 				"description": "A minimal packet sniffer on the terminal.",
 				"updated_at": "2024-08-03T18:31:18Z",
 				"stars": 2,
-				"language": "Rust"
-			},
-			{
-				"name": "forgetdb",
-				"description": "A vector database that forgets.",
-				"updated_at": "2024-04-07T01:27:22Z",
-				"stars": 0,
 				"language": "Rust"
 			},
 			{
@@ -974,6 +857,19 @@
 				"stars": 1,
 				"language": "Rust"
 			}
+		],
+		"similar_interest": [
+			"ElianBelot",
+			"Lydxn",
+			"kewbish",
+			"rctcwyvrn",
+			"Aeren1564",
+			"AdnaneKhan",
+			"birchmd",
+			"gaurav-gogia",
+			"saucesteals",
+			"sim0wn",
+			"zahash"
 		]
 	},
 	{
@@ -1015,55 +911,8 @@
 				"stars": 182,
 				"language": "Assembly"
 			}
-		]
-	},
-	{
-		"username": "Jiramide",
-		"theme": "streamlining developer workflows",
-		"profile": {
-			"login": "Jiramide",
-			"avatar_url": "https://avatars.githubusercontent.com/u/16442486?v=4",
-			"bio": "4th year cs @ ubc &&\r\nswe intern @ google",
-			"location": "Canada",
-			"blog": "jirami.de"
-		},
-		"repos": [
-			{
-				"name": "nicer-numbers.nvim",
-				"description": "Formats numbers nicer",
-				"updated_at": "2025-08-13T10:07:54Z",
-				"stars": 1,
-				"language": "Lua"
-			},
-			{
-				"name": "nvim-dots",
-				"description": null,
-				"updated_at": "2025-08-13T09:28:10Z",
-				"stars": 0,
-				"language": "Lua"
-			},
-			{
-				"name": "leaf",
-				"description": null,
-				"updated_at": "2024-08-06T00:22:51Z",
-				"stars": 0,
-				"language": "Nix"
-			},
-			{
-				"name": "simmer",
-				"description": null,
-				"updated_at": "2024-06-29T08:04:08Z",
-				"stars": 0,
-				"language": "Nix"
-			},
-			{
-				"name": "HackCamp",
-				"description": "i'm on that hackcamp stuff",
-				"updated_at": "2023-11-19T17:23:55Z",
-				"stars": 0,
-				"language": "TypeScript"
-			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "CallumMackenzie",
@@ -1084,25 +933,11 @@
 				"language": "Swift"
 			},
 			{
-				"name": "StrithveinaServer",
-				"description": null,
-				"updated_at": "2024-11-12T20:57:26Z",
-				"stars": 0,
-				"language": "Rust"
-			},
-			{
 				"name": "guitranslate",
 				"description": null,
 				"updated_at": "2024-05-23T00:28:57Z",
 				"stars": 0,
 				"language": "Swift"
-			},
-			{
-				"name": "vitalert",
-				"description": "Vitalert (NwHacks 2024)",
-				"updated_at": "2024-01-22T03:04:53Z",
-				"stars": 0,
-				"language": "TypeScript"
 			},
 			{
 				"name": "exvi-client",
@@ -1111,6 +946,22 @@
 				"stars": 0,
 				"language": "Kotlin"
 			}
+		],
+		"similar_interest": [
+			"ju1ien1100",
+			"Calvin-LL",
+			"aviwad",
+			"ochen1",
+			"Aashu-Dubey",
+			"Mark123M",
+			"asiff00",
+			"elibroftw",
+			"meleongg",
+			"oltimaloku",
+			"naijwu",
+			"s-alad",
+			"wiesenthal",
+			"zanedb"
 		]
 	},
 	{
@@ -1132,33 +983,30 @@
 				"language": "Rust"
 			},
 			{
-				"name": "GridOnline",
-				"description": "An online card-placement game.",
-				"updated_at": "2025-07-19T17:15:25Z",
-				"stars": 0,
-				"language": "Rust"
-			},
-			{
-				"name": "Spellflow",
-				"description": "A magic computer engineering mod for Minecraft",
-				"updated_at": "2024-05-31T06:56:02Z",
-				"stars": 0,
-				"language": "Java"
-			},
-			{
 				"name": "Minecraft-Market",
 				"description": "Lua scripts for running a market in Minecraft using ComputerCraft",
 				"updated_at": "2024-05-26T04:08:01Z",
 				"stars": 0,
 				"language": "Lua"
-			},
-			{
-				"name": "universal-recipe-helper",
-				"description": "A game-agnostic crafting recipe planner",
-				"updated_at": "2024-02-29T04:27:02Z",
-				"stars": 0,
-				"language": "Rust"
 			}
+		],
+		"similar_interest": [
+			"ADSteele916",
+			"EdwardJXLi",
+			"aldenluthfi",
+			"PepperLola",
+			"rctcwyvrn",
+			"thep2p",
+			"Beta-test-initiation",
+			"FrozenHydrant",
+			"JipFr",
+			"Tidyrice",
+			"StarGazingHomies",
+			"birchmd",
+			"caoculus",
+			"hanmindev",
+			"nickbabcock",
+			"mxple"
 		]
 	},
 	{
@@ -1173,32 +1021,11 @@
 		},
 		"repos": [
 			{
-				"name": "algojudge",
-				"description": null,
-				"updated_at": "2025-05-04T05:44:17Z",
-				"stars": 0,
-				"language": "Python"
-			},
-			{
 				"name": "oj",
 				"description": "online judge",
 				"updated_at": "2025-05-04T05:43:02Z",
 				"stars": 0,
 				"language": "Python"
-			},
-			{
-				"name": "aoc",
-				"description": "my aoc template",
-				"updated_at": "2024-12-04T00:37:38Z",
-				"stars": 0,
-				"language": "Python"
-			},
-			{
-				"name": "codspeed-aoc24",
-				"description": null,
-				"updated_at": "2024-12-02T07:18:28Z",
-				"stars": 2,
-				"language": "Rust"
 			},
 			{
 				"name": "crypy",
@@ -1207,40 +1034,18 @@
 				"stars": 0,
 				"language": "Python"
 			}
-		]
-	},
-	{
-		"username": "PhamHao1412",
-		"theme": "building practical software systems",
-		"profile": {
-			"login": "PhamHao1412",
-			"avatar_url": "https://avatars.githubusercontent.com/u/87088426?v=4",
-			"bio": "Software Engineer",
-			"location": null,
-			"blog": ""
-		},
-		"repos": [
-			{
-				"name": "clean-architecture-book-management",
-				"description": null,
-				"updated_at": "2025-04-07T10:23:38Z",
-				"stars": 0,
-				"language": "C#"
-			},
-			{
-				"name": "Internal-Email-System",
-				"description": null,
-				"updated_at": "2024-03-27T07:38:42Z",
-				"stars": 0,
-				"language": "HTML"
-			},
-			{
-				"name": "Ecommerce_android_app",
-				"description": null,
-				"updated_at": "2024-03-25T10:58:47Z",
-				"stars": 0,
-				"language": "Java"
-			}
+		],
+		"similar_interest": [
+			"KevinL10",
+			"frankuyan",
+			"kewbish",
+			"Aeren1564",
+			"AdnaneKhan",
+			"abeaumont",
+			"agrawal-d",
+			"gaurav-gogia",
+			"mfornet",
+			"sim0wn"
 		]
 	},
 	{
@@ -1261,6 +1066,26 @@
 				"stars": 3,
 				"language": "CSS"
 			}
+		],
+		"similar_interest": [
+			"stankur",
+			"aldenluthfi",
+			"Aashu-Dubey",
+			"Highfire1",
+			"PrincewillIroka",
+			"YashVG",
+			"Nathn",
+			"luckyjsx",
+			"meleongg",
+			"mxple",
+			"naijwu",
+			"snlimadev",
+			"wiesenthal",
+			"Candyzorua",
+			"MrAnderson1971",
+			"AidenKerr",
+			"AdenC123",
+			"Edster1121"
 		]
 	},
 	{
@@ -1282,13 +1107,6 @@
 				"language": "Python"
 			},
 			{
-				"name": "nn-zero-to-hero",
-				"description": "Andrej Karpathy - Zero to Hero Tutorials",
-				"updated_at": "2025-08-18T16:01:50Z",
-				"stars": 0,
-				"language": "Jupyter Notebook"
-			},
-			{
 				"name": "Local-Planner-Visualization-Project",
 				"description": "An all-in-one application to visualize multiple different local path planning algorithms",
 				"updated_at": "2024-03-14T14:43:30Z",
@@ -1307,6 +1125,18 @@
 					"rrt"
 				]
 			}
+		],
+		"similar_interest": [
+			"stankur",
+			"ElianBelot",
+			"javathunderman",
+			"wilbowma",
+			"asiff00",
+			"cosmo3769",
+			"gagan3012",
+			"meleongg",
+			"okarthikb",
+			"wiesenthal"
 		]
 	},
 	{
@@ -1387,6 +1217,22 @@
 					"vite"
 				]
 			}
+		],
+		"similar_interest": [
+			"ADSteele916",
+			"abdurj",
+			"mlechu",
+			"rctcwyvrn",
+			"ysaleh03",
+			"JuliaPoo",
+			"Mark123M",
+			"bistromath25",
+			"birchmd",
+			"irisxu02",
+			"nickbabcock",
+			"mfornet",
+			"AidenKerr",
+			"manglemix"
 		]
 	},
 	{
@@ -1427,14 +1273,23 @@
 				"updated_at": "2024-03-05T18:37:06Z",
 				"stars": 0,
 				"language": "TypeScript"
-			},
-			{
-				"name": "movie-characters-vectors",
-				"description": "A system search and compare character journeys between movies, tv shows, and anime using embedding vectors and cosine-similarity search",
-				"updated_at": "2024-03-27T17:57:55Z",
-				"stars": 0,
-				"language": "JavaScript"
 			}
+		],
+		"similar_interest": [
+			"SamuelmdLow",
+			"stankur",
+			"garrethlee",
+			"mountainMath",
+			"ElianBelot",
+			"abdurj",
+			"fegicochen",
+			"wilbowma",
+			"yhaooo11",
+			"gagan3012",
+			"cosmo3769",
+			"gshklovs",
+			"naijwu",
+			"wiesenthal"
 		]
 	},
 	{
@@ -1470,19 +1325,35 @@
 				"language": "Jupyter Notebook"
 			},
 			{
-				"name": "quantedge-prep-hotels-data-merge",
-				"description": null,
-				"updated_at": "2025-02-12T13:49:51Z",
-				"stars": 0,
-				"language": "Python"
-			},
-			{
 				"name": "quantedge-prep-fetch-rewards",
 				"description": null,
 				"updated_at": "2025-02-12T13:16:31Z",
 				"stars": 0,
 				"language": "Python"
 			}
+		],
+		"similar_interest": [
+			"stankur",
+			"ElianBelot",
+			"armintalaie",
+			"Tenzinomics",
+			"fxamacker",
+			"thep2p",
+			"Beta-test-initiation",
+			"Moavia-Hassan",
+			"LordMoMA",
+			"NK-GO",
+			"brandur",
+			"colliand",
+			"gagan3012",
+			"cosmo3769",
+			"gshklovs",
+			"gaurav-gogia",
+			"evansemet",
+			"lukasgolson",
+			"marianlime",
+			"wiesenthal",
+			"patrickward"
 		]
 	},
 	{
@@ -1533,15 +1404,9 @@
 					"nim-plugin",
 					"work-in-progress"
 				]
-			},
-			{
-				"name": "nimskull-ci",
-				"description": "CI dependencies for nimskull",
-				"updated_at": "2024-11-01T01:39:28Z",
-				"stars": 0,
-				"language": "Dockerfile"
 			}
-		]
+		],
+		"similar_interest": ["omentic", "mvllow", "virchau13"]
 	},
 	{
 		"username": "aviwad",
@@ -1581,26 +1446,9 @@
 				"updated_at": "2025-04-19T08:35:04Z",
 				"stars": 24,
 				"language": "Swift"
-			},
-			{
-				"name": "LyricFeverSpicetifyIntegration",
-				"description": "Spicetify extension to open Lyric Fever's fullscreen, karaoke, or menubar mode from within Spotify",
-				"updated_at": "2025-03-12T01:08:57Z",
-				"stars": 0
-			},
-			{
-				"name": "LRCLIBSwiftUI",
-				"description": "SwiftUI Mac app to contribute to LRCLIB lyrics for songs. ",
-				"updated_at": "2025-02-11T20:00:12Z",
-				"stars": 0
-			},
-			{
-				"name": "SpicetifyColorLightSync",
-				"description": "Sync lights on song change: Spicetify extension. Sends request to HomeControl URL on song change using internal Spotify color ",
-				"updated_at": "2024-10-27T00:39:38Z",
-				"stars": 1
 			}
-		]
+		],
+		"similar_interest": ["PepperLola", "zanedb"]
 	},
 	{
 		"username": "ardeshireshghi",
@@ -1628,26 +1476,31 @@
 				"language": "JavaScript"
 			},
 			{
-				"name": "clarity-ai",
-				"description": "Created with StackBlitz ⚡️",
-				"updated_at": "2025-03-21T21:51:58Z",
-				"stars": 0,
-				"language": "TypeScript"
-			},
-			{
-				"name": "ai-design-system",
-				"description": null,
-				"updated_at": "2024-11-04T14:11:39Z",
-				"stars": 0,
-				"language": "TypeScript"
-			},
-			{
 				"name": "photos",
 				"description": "This is an S3 based photo Gallery app",
 				"updated_at": "2024-05-18T15:12:31Z",
 				"stars": 0,
 				"language": "JavaScript"
 			}
+		],
+		"similar_interest": [
+			"ju1ien1100",
+			"FrankWhoee",
+			"Anmol-Ghadia",
+			"argonaut0",
+			"kickscondor",
+			"mvllow",
+			"Aashu-Dubey",
+			"HudZah",
+			"PrincewillIroka",
+			"Nathn",
+			"Vicente015",
+			"elibroftw",
+			"irisxu02",
+			"joshvocal",
+			"pi-rate14",
+			"sanjeevyadavIT",
+			"tika"
 		]
 	},
 	{
@@ -1661,13 +1514,6 @@
 			"blog": "https://deciph.red"
 		},
 		"repos": [
-			{
-				"name": "automation",
-				"description": "Automation, IAC, Manifests, for personal things.",
-				"updated_at": "2023-11-08T06:46:01Z",
-				"stars": 0,
-				"language": "HCL"
-			},
 			{
 				"name": "ddd",
 				"description": "Dynamic DNS \"Daemon\"",
@@ -1688,13 +1534,33 @@
 				"updated_at": "2025-03-11T18:24:19Z",
 				"stars": 1,
 				"language": "Nix"
-			},
-			{
-				"name": "pdns-client-go",
-				"description": "Autogenerated PowerDNS API client for Go",
-				"updated_at": "2025-02-04T05:27:38Z",
-				"stars": 0
 			}
+		],
+		"similar_interest": [
+			"omentic",
+			"KevinL10",
+			"armintalaie",
+			"kewbish",
+			"kevinmingtarja",
+			"mvllow",
+			"peterargue",
+			"rctcwyvrn",
+			"theCasm",
+			"thep2p",
+			"LordMoMA",
+			"NK-GO",
+			"Vicente015",
+			"antnks",
+			"brandur",
+			"erwin-lovecraft",
+			"gaurav-gogia",
+			"joshvocal",
+			"marianlime",
+			"saucesteals",
+			"starptr",
+			"virchau13",
+			"devon-mar",
+			"patrickward"
 		]
 	},
 	{
@@ -1738,28 +1604,28 @@
 					"shadcn-ui",
 					"supabase"
 				]
-			},
-			{
-				"name": "Liftoff-Github-Action",
-				"description": "Github Actions Intro",
-				"updated_at": "2024-03-16T19:02:02Z",
-				"stars": 0,
-				"language": "TypeScript",
-				"topics": ["cicd", "github-actions"]
-			},
-			{
-				"name": "pleaseread.io",
-				"description": null,
-				"updated_at": "2025-01-12T02:39:31Z",
-				"stars": 0
-			},
-			{
-				"name": "docs",
-				"description": null,
-				"updated_at": "2025-08-19T04:46:20Z",
-				"stars": 0,
-				"language": "MDX"
 			}
+		],
+		"similar_interest": [
+			"stankur",
+			"Jake-Yeo",
+			"chasefleming",
+			"kewbish",
+			"thep2p",
+			"NK-GO",
+			"PrincewillIroka",
+			"Vicente015",
+			"brandur",
+			"erwin-lovecraft",
+			"gaurav-gogia",
+			"elibroftw",
+			"iHildy",
+			"joshvocal",
+			"mathewbushuru",
+			"marianlime",
+			"wiesenthal",
+			"zahash",
+			"patrickward"
 		]
 	},
 	{
@@ -1788,26 +1654,25 @@
 				"language": "Java"
 			},
 			{
-				"name": "hny-aida",
-				"description": null,
-				"updated_at": "2025-03-24T19:46:20Z",
-				"stars": 0,
-				"language": "Go"
-			},
-			{
 				"name": "otel-radar",
 				"description": null,
 				"updated_at": "2024-12-26T22:16:38Z",
 				"stars": 2,
 				"language": "TypeScript"
-			},
-			{
-				"name": "orrey",
-				"description": "GitHub Action to manage repositories, users, teams, and other metadata.",
-				"updated_at": "2024-12-16T05:12:42Z",
-				"stars": 0,
-				"language": "TypeScript"
 			}
+		],
+		"similar_interest": [
+			"stankur",
+			"FrankWhoee",
+			"EdwardJXLi",
+			"thep2p",
+			"wilbowma",
+			"FrozenHydrant",
+			"Tidyrice",
+			"StarGazingHomies",
+			"hanmindev",
+			"saucesteals",
+			"wiesenthal"
 		]
 	},
 	{
@@ -1836,13 +1701,6 @@
 				"language": "Rust"
 			},
 			{
-				"name": "split-keyboard",
-				"description": null,
-				"updated_at": "2024-08-19T19:13:46Z",
-				"stars": 1,
-				"language": "JavaScript"
-			},
-			{
 				"name": "lights",
 				"description": "A lights ecosystem for FRC teams.",
 				"updated_at": "2024-03-10T01:22:41Z",
@@ -1858,6 +1716,20 @@
 				"language": "Java",
 				"topics": ["hacktoberfest", "minecraft"]
 			}
+		],
+		"similar_interest": [
+			"laurenyip",
+			"Anmol-Ghadia",
+			"EdwardJXLi",
+			"JustinHuPrime",
+			"aviwad",
+			"FrozenHydrant",
+			"HudZah",
+			"Tidyrice",
+			"StarGazingHomies",
+			"hanmindev",
+			"wiesenthal",
+			"MrAnderson1971"
 		]
 	},
 	{
@@ -1872,40 +1744,36 @@
 		},
 		"repos": [
 			{
-				"name": "Yield-Curve-Analysis-Using-PCA",
-				"description": null,
-				"updated_at": "2025-08-05T13:27:15Z",
-				"stars": 0,
-				"language": "Jupyter Notebook"
-			},
-			{
-				"name": "Black-Karasinski-model",
-				"description": "Zero Coupon Interest rate model",
-				"updated_at": "2025-05-05T19:34:23Z",
-				"stars": 1,
-				"language": "Jupyter Notebook"
-			},
-			{
-				"name": "Canada-Inflation-Monitor",
-				"description": null,
-				"updated_at": "2025-03-12T19:45:05Z",
-				"stars": 0,
-				"language": "Jupyter Notebook"
-			},
-			{
-				"name": "fomcscrape",
-				"description": "This program scrapes FOMC Statements",
-				"updated_at": "2025-02-04T14:48:40Z",
-				"stars": 0,
-				"language": "Python"
-			},
-			{
 				"name": "Google-Search-Index",
 				"description": null,
 				"updated_at": "2023-11-21T04:51:36Z",
 				"stars": 0,
 				"language": "Jupyter Notebook"
 			}
+		],
+		"similar_interest": [
+			"SamuelmdLow",
+			"garrethlee",
+			"ElianBelot",
+			"abdurj",
+			"aldenluthfi",
+			"albertkim",
+			"NathanAW24",
+			"kevinmingtarja",
+			"recordcrash",
+			"wilbowma",
+			"yhaooo11",
+			"Beta-test-initiation",
+			"Moavia-Hassan",
+			"YashVG",
+			"Vicente015",
+			"asiff00",
+			"colliand",
+			"gagan3012",
+			"cosmo3769",
+			"gshklovs",
+			"evansemet",
+			"wiesenthal"
 		]
 	},
 	{
@@ -1920,25 +1788,11 @@
 		},
 		"repos": [
 			{
-				"name": "EVMHelper",
-				"description": "EVMHelper",
-				"updated_at": "2024-10-28T13:04:38Z",
-				"stars": 2,
-				"language": "Cadence"
-			},
-			{
 				"name": "cadenceUpgrader",
 				"description": null,
 				"updated_at": "2024-08-03T15:58:09Z",
 				"stars": 6,
 				"language": "Cadence"
-			},
-			{
-				"name": "cdcq",
-				"description": "cdcq - A Cadence AST Query Tool",
-				"updated_at": "2024-04-20T13:44:10Z",
-				"stars": 1,
-				"language": "Go"
 			},
 			{
 				"name": "cadence-tree-sitter",
@@ -1954,6 +1808,15 @@
 				"stars": 1,
 				"language": "Cadence"
 			}
+		],
+		"similar_interest": [
+			"alaviss",
+			"chasefleming",
+			"jribbink",
+			"nvdtf",
+			"peterargue",
+			"rheaplex",
+			"virchau13"
 		]
 	},
 	{
@@ -1976,34 +1839,14 @@
 				"topics": ["r", "rlang", "rstats"]
 			},
 			{
-				"name": "quarto-private-gh-actions",
-				"description": null,
-				"updated_at": "2025-04-02T21:10:49Z",
-				"stars": 0,
-				"language": "R"
-			},
-			{
-				"name": "quarto-private-website",
-				"description": null,
-				"updated_at": "2025-04-02T21:10:37Z",
-				"stars": 3,
-				"language": "R"
-			},
-			{
 				"name": "pkg-dev-dfo-2024-11",
 				"description": null,
 				"updated_at": "2024-11-08T21:50:44Z",
 				"stars": 0,
 				"language": "R"
-			},
-			{
-				"name": "libminer-dfo-2024-11",
-				"description": "Summarize R packages on your computer",
-				"updated_at": "2024-11-06T21:49:04Z",
-				"stars": 0,
-				"language": "R"
 			}
-		]
+		],
+		"similar_interest": ["mountainMath", "hyperknot"]
 	},
 	{
 		"username": "fegicochen",
@@ -2024,23 +1867,9 @@
 				"language": "TypeScript"
 			},
 			{
-				"name": "VitAlert-nwHacks2024",
-				"description": "Full-stack nutrition tracker built with React, TypeScript, and Firebase at NWHacks 2024.",
-				"updated_at": "2025-01-26T05:32:18Z",
-				"stars": 0,
-				"language": "TypeScript"
-			},
-			{
 				"name": "UniMatch",
 				"description": "A matchmaking full-stack service built with Node.js, Express, and Oracle Database.",
 				"updated_at": "2025-01-20T08:34:47Z",
-				"stars": 0,
-				"language": "JavaScript"
-			},
-			{
-				"name": "Sum-Up-Sundae-nwHacks2025",
-				"description": "A platform for sharing short weekly video updates with friends every Sunday. Built with React, Node.js, Express, MongoDB, and Livepeer.",
-				"updated_at": "2025-01-20T08:29:08Z",
 				"stars": 0,
 				"language": "JavaScript"
 			},
@@ -2051,6 +1880,25 @@
 				"stars": 0,
 				"language": "JavaScript"
 			}
+		],
+		"similar_interest": [
+			"stankur",
+			"Jake-Yeo",
+			"albertkim",
+			"Highfire1",
+			"ManasSin",
+			"PrincewillIroka",
+			"YashVG",
+			"Nathn",
+			"iHildy",
+			"elibroftw",
+			"luckyjsx",
+			"mathewbushuru",
+			"meleongg",
+			"oltimaloku",
+			"naijwu",
+			"snlimadev",
+			"wiesenthal"
 		]
 	},
 	{
@@ -2087,19 +1935,6 @@
 				]
 			},
 			{
-				"name": "ccf_draft",
-				"description": "Cadence Compact Format specification 1.0.0 (March 31, 2025). See github.com/onflow/ccf for official specs.",
-				"updated_at": "2025-03-31T17:46:07Z",
-				"stars": 3,
-				"topics": ["cadence", "cbor", "ccf", "cddl", "flow"]
-			},
-			{
-				"name": "CBOR-Tag-Specs",
-				"description": null,
-				"updated_at": "2025-08-24T23:50:03Z",
-				"stars": 0
-			},
-			{
 				"name": "circlehash",
 				"description": "CircleHash is a family of fast hashes -- CircleHash64f is ideal for short inputs, reaching 10GB/s starting at <64 bytes and 15GB/s at 256 bytes (i7-1068NG7)",
 				"updated_at": "2025-08-24T14:32:21Z",
@@ -2114,7 +1949,8 @@
 					"smhasher"
 				]
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "frankuyan",
@@ -2133,34 +1969,31 @@
 				"updated_at": "2025-07-05T02:22:11Z",
 				"stars": 0,
 				"language": "Solidity"
-			},
-			{
-				"name": "blockchainResearch",
-				"description": null,
-				"updated_at": "2025-02-11T04:55:17Z",
-				"stars": 0,
-				"language": "HTML"
-			},
-			{
-				"name": "CTFs",
-				"description": null,
-				"updated_at": "2024-05-02T07:07:09Z",
-				"stars": 0
-			},
-			{
-				"name": "Rev25",
-				"description": null,
-				"updated_at": "2025-08-06T06:44:09Z",
-				"stars": 0,
-				"language": "Python"
-			},
-			{
-				"name": "adventofcode24",
-				"description": null,
-				"updated_at": "2024-12-20T00:35:23Z",
-				"stars": 0,
-				"language": "R"
 			}
+		],
+		"similar_interest": [
+			"KevinL10",
+			"Lydxn",
+			"armintalaie",
+			"bluesign",
+			"kewbish",
+			"jribbink",
+			"nvdtf",
+			"ionathanch",
+			"rheaplex",
+			"thep2p",
+			"wilbowma",
+			"Aeren1564",
+			"ASCorreia",
+			"StTronn",
+			"Tgcohce",
+			"calvbore",
+			"gaurav-gogia",
+			"gitpancake",
+			"mfornet",
+			"pi-rate14",
+			"zahash",
+			"Edster1121"
 		]
 	},
 	{
@@ -2181,34 +2014,9 @@
 				"stars": 18,
 				"language": "R",
 				"topics": ["cran", "oceanic-nino", "oceanography", "r"]
-			},
-			{
-				"name": "libminer",
-				"description": "Explore Your R Libraries",
-				"updated_at": "2024-11-06T19:32:57Z",
-				"stars": 1,
-				"language": "R"
-			},
-			{
-				"name": "tidyhydat-modeling",
-				"description": null,
-				"updated_at": "2024-11-17T01:26:53Z",
-				"stars": 0
-			},
-			{
-				"name": "raven-vscode",
-				"description": "A vscode extension for the Raven modelling framework",
-				"updated_at": "2025-08-20T21:18:30Z",
-				"stars": 0
-			},
-			{
-				"name": "quarto-profiles",
-				"description": null,
-				"updated_at": "2023-12-15T21:39:43Z",
-				"stars": 0,
-				"language": "JavaScript"
 			}
-		]
+		],
+		"similar_interest": ["mountainMath", "Moavia-Hassan", "colliand"]
 	},
 	{
 		"username": "chasefleming",
@@ -2244,21 +2052,26 @@
 				"stars": 8,
 				"language": "TypeScript",
 				"topics": ["cadence", "fcl", "flow", "web3"]
-			},
-			{
-				"name": "flow-cadence-plugin",
-				"description": "Webpack plugin for Cadence and Flow.",
-				"updated_at": "2024-11-07T22:04:15Z",
-				"stars": 5,
-				"language": "JavaScript"
-			},
-			{
-				"name": "hardhat-flow",
-				"description": null,
-				"updated_at": "2024-03-01T19:11:11Z",
-				"stars": 0,
-				"language": "TypeScript"
 			}
+		],
+		"similar_interest": [
+			"Anmol-Ghadia",
+			"bluesign",
+			"jribbink",
+			"nvdtf",
+			"mvllow",
+			"oezingle",
+			"peterargue",
+			"rheaplex",
+			"Highfire1",
+			"LordMoMA",
+			"PrincewillIroka",
+			"StTronn",
+			"Vicente015",
+			"brandur",
+			"erwin-lovecraft",
+			"meleongg",
+			"patrickward"
 		]
 	},
 	{
@@ -2291,35 +2104,25 @@
 					"trity",
 					"windows"
 				]
-			},
-			{
-				"name": "PythonKeylogger",
-				"description": "A remote keylogger with some cool features",
-				"updated_at": "2024-07-29T12:16:27Z",
-				"stars": 46,
-				"language": "Python",
-				"topics": ["hack", "keylogger", "python", "remote", "windows"]
-			},
-			{
-				"name": "ewat",
-				"description": null,
-				"updated_at": "2024-02-20T01:28:20Z",
-				"stars": 2,
-				"topics": [
-					"hacking",
-					"linux",
-					"pentesting",
-					"python",
-					"social-engineering-attacks"
-				]
-			},
-			{
-				"name": "CyberSecurityPanel-Project",
-				"description": "A security management system made for CPSC210",
-				"updated_at": "2024-01-24T01:59:18Z",
-				"stars": 0,
-				"language": "Java"
 			}
+		],
+		"similar_interest": [
+			"stankur",
+			"ElianBelot",
+			"KevinL10",
+			"Lydxn",
+			"kewbish",
+			"theCasm",
+			"Aeren1564",
+			"y-dejong",
+			"AdnaneKhan",
+			"Tgcohce",
+			"antnks",
+			"gaurav-gogia",
+			"s-alad",
+			"saucesteals",
+			"sim0wn",
+			"zahash"
 		]
 	},
 	{
@@ -2341,33 +2144,29 @@
 				"language": "Haskell"
 			},
 			{
-				"name": "async-rust-examples",
-				"description": "A collection of async rust toy programs",
-				"updated_at": "2025-05-01T07:34:17Z",
-				"stars": 0,
-				"language": "Rust"
-			},
-			{
-				"name": "object-algebra",
-				"description": "demo for object algebra",
-				"updated_at": "2025-01-15T23:45:40Z",
-				"stars": 0,
-				"language": "Java"
-			},
-			{
-				"name": "conceptual-math",
-				"description": "exercises in conceptual mathematics",
-				"updated_at": "2024-03-09T02:13:13Z",
-				"stars": 1,
-				"language": "Agda"
-			},
-			{
 				"name": "dt",
 				"description": "cpsc539b",
 				"updated_at": "2023-11-30T03:41:14Z",
 				"stars": 0,
 				"language": "Agda"
 			}
+		],
+		"similar_interest": [
+			"omentic",
+			"BriHan-Tech",
+			"aldenluthfi",
+			"kiedtl",
+			"kumarpit",
+			"grhkm21",
+			"ionathanch",
+			"thomasporter522",
+			"wilbowma",
+			"JuliaPoo",
+			"WorldofKerry",
+			"agrawal-d",
+			"antler5",
+			"evansemet",
+			"mfornet"
 		]
 	},
 	{
@@ -2394,28 +2193,14 @@
 				"updated_at": "2025-05-27T02:11:37Z",
 				"stars": 0,
 				"language": "TeX"
-			},
-			{
-				"name": "tt09-verilog",
-				"description": null,
-				"updated_at": "2024-11-10T00:35:16Z",
-				"stars": 0,
-				"language": "Verilog"
-			},
-			{
-				"name": "gr-ros2-pubsub",
-				"description": "A (pythonic) ROS2 bridge from GNURadio's UDP sink block",
-				"updated_at": "2024-02-20T17:08:06Z",
-				"stars": 0,
-				"language": "Python"
-			},
-			{
-				"name": "gr-bridge-ros2",
-				"description": "Publish data from a GNURadio UDP sink to a ROS2 topic",
-				"updated_at": "2024-01-29T06:37:56Z",
-				"stars": 0,
-				"language": "C++"
 			}
+		],
+		"similar_interest": [
+			"ADSteele916",
+			"ochen1",
+			"WorldofKerry",
+			"ethanthoma",
+			"nickbabcock"
 		]
 	},
 	{
@@ -2468,15 +2253,9 @@
 				"updated_at": "2024-06-24T21:11:02Z",
 				"stars": 1,
 				"language": "Go"
-			},
-			{
-				"name": "vscode-typst-implied-multiplication",
-				"description": "Automatically fix implied multiplication errors in Typst files",
-				"updated_at": "2025-07-14T02:12:54Z",
-				"stars": 0,
-				"language": "TypeScript"
 			}
-		]
+		],
+		"similar_interest": ["stankur"]
 	},
 	{
 		"username": "kewbish",
@@ -2511,6 +2290,33 @@
 				"stars": 1,
 				"language": "Go"
 			}
+		],
+		"similar_interest": [
+			"ADSteele916",
+			"Calvin-LL",
+			"KevinL10",
+			"Lydxn",
+			"argonaut0",
+			"javathunderman",
+			"kickscondor",
+			"rctcwyvrn",
+			"theCasm",
+			"thep2p",
+			"y-dejong",
+			"ASCorreia",
+			"Beta-test-initiation",
+			"LordMoMA",
+			"StTronn",
+			"Tgcohce",
+			"birchmd",
+			"brandur",
+			"calvbore",
+			"gaurav-gogia",
+			"marianlime",
+			"pi-rate14",
+			"saucesteals",
+			"sim0wn",
+			"zahash"
 		]
 	},
 	{
@@ -2529,13 +2335,6 @@
 				"description": null,
 				"updated_at": "2025-04-02T18:02:49Z",
 				"stars": 2,
-				"language": "Cadence"
-			},
-			{
-				"name": "cadence-chess",
-				"description": null,
-				"updated_at": "2025-01-24T09:17:34Z",
-				"stars": 0,
 				"language": "Cadence"
 			},
 			{
@@ -2559,6 +2358,14 @@
 				"stars": 4,
 				"language": "TypeScript"
 			}
+		],
+		"similar_interest": [
+			"bluesign",
+			"chasefleming",
+			"nvdtf",
+			"peterargue",
+			"Tgcohce",
+			"pi-rate14"
 		]
 	},
 	{
@@ -2616,6 +2423,14 @@
 				"stars": 7,
 				"language": "Zig"
 			}
+		],
+		"similar_interest": [
+			"rctcwyvrn",
+			"theCasm",
+			"turbolent",
+			"ethanthoma",
+			"liam-ilan",
+			"MrAnderson1971"
 		]
 	},
 	{
@@ -2635,32 +2450,25 @@
 				"updated_at": "2025-03-15T20:48:02Z",
 				"stars": 0,
 				"language": "Go"
-			},
-			{
-				"name": "aoc-2024-zig",
-				"description": null,
-				"updated_at": "2024-12-03T05:21:09Z",
-				"stars": 0,
-				"language": "Zig"
-			},
-			{
-				"name": "go-simd",
-				"description": null,
-				"updated_at": "2024-11-23T04:38:44Z",
-				"stars": 0
-			},
-			{
-				"name": "zigkv",
-				"description": "A simple key-value store written in Zig, using RocksDB as the storage engine.",
-				"updated_at": "2024-08-25T15:19:37Z",
-				"stars": 0
-			},
-			{
-				"name": "wasm-ml-go",
-				"description": null,
-				"updated_at": "2025-05-26T04:55:44Z",
-				"stars": 0
 			}
+		],
+		"similar_interest": [
+			"omentic",
+			"NathanAW24",
+			"fxamacker",
+			"kiedtl",
+			"kumarpit",
+			"rctcwyvrn",
+			"ionathanch",
+			"theCasm",
+			"thep2p",
+			"wilbowma",
+			"LordMoMA",
+			"WorldofKerry",
+			"brandur",
+			"liam-ilan",
+			"MrAnderson1971",
+			"patrickward"
 		]
 	},
 	{
@@ -2689,26 +2497,23 @@
 				"language": "JavaScript"
 			},
 			{
-				"name": "npm-crev",
-				"description": "NPM Code REView",
-				"updated_at": "2023-11-18T23:43:52Z",
-				"stars": 10,
-				"language": "JavaScript"
-			},
-			{
 				"name": "resume",
 				"description": "Kyle Spaans' Resume",
 				"updated_at": "2025-07-04T18:56:57Z",
 				"stars": 0,
 				"language": "HTML"
-			},
-			{
-				"name": "consulting",
-				"description": null,
-				"updated_at": "2025-02-27T23:45:08Z",
-				"stars": 0,
-				"language": "HTML"
 			}
+		],
+		"similar_interest": [
+			"Anmol-Ghadia",
+			"fegicochen",
+			"Beta-test-initiation",
+			"JipFr",
+			"PrincewillIroka",
+			"joshvocal",
+			"mathewbushuru",
+			"meleongg",
+			"sanjeevyadavIT"
 		]
 	},
 	{
@@ -2723,40 +2528,14 @@
 		},
 		"repos": [
 			{
-				"name": "calculi",
-				"description": "notes and explorations from Benjamin C. Pierce's \"Types and Programming Languages\"",
-				"updated_at": "2025-08-14T07:47:29Z",
-				"stars": 0,
-				"language": "Racket"
-			},
-			{
-				"name": "pratt",
-				"description": "top-down operator precedence (Pratt) parsing",
-				"updated_at": "2025-08-06T17:55:05Z",
-				"stars": 0,
-				"language": "Racket"
-			},
-			{
-				"name": "systemf",
-				"description": "interpreter for systemf",
-				"updated_at": "2025-08-06T07:35:38Z",
-				"stars": 0
-			},
-			{
-				"name": "monads",
-				"description": "return-type polymorphism for monads in Racket",
-				"updated_at": "2025-07-23T21:47:28Z",
-				"stars": 0,
-				"language": "Racket"
-			},
-			{
 				"name": "ramb",
 				"description": "generalized backtracking search using continuations!",
 				"updated_at": "2025-03-31T02:31:06Z",
 				"stars": 0,
 				"language": "Racket"
 			}
-		]
+		],
+		"similar_interest": ["sherlockjack", "thomasporter522", "wilbowma"]
 	},
 	{
 		"username": "kickscondor",
@@ -2777,13 +2556,6 @@
 				"language": "JavaScript"
 			},
 			{
-				"name": "sneaky",
-				"description": "Sneaky Wiki on the Hypercore Network",
-				"updated_at": "2024-10-07T02:04:49Z",
-				"stars": 1,
-				"language": "JavaScript"
-			},
-			{
 				"name": "fraidycat",
 				"description": "Follow blogs, wikis, YouTube channels, as well as accounts on Twitter, Instagram, etc. from a single page.",
 				"updated_at": "2024-02-07T01:25:05Z",
@@ -2797,7 +2569,8 @@
 				"stars": 0,
 				"language": "HTML"
 			}
-		]
+		],
+		"similar_interest": ["kewbish"]
 	},
 	{
 		"username": "grhkm21",
@@ -2825,27 +2598,14 @@
 				"language": "Lean"
 			},
 			{
-				"name": "queens-puzzle-solver",
-				"description": "Solve LinkedIn's Queens Puzzle",
-				"updated_at": "2025-03-02T20:01:43Z",
-				"stars": 0,
-				"language": "Python"
-			},
-			{
 				"name": "advent-of-code-2023",
 				"description": "Advent of Code 2023",
 				"updated_at": "2023-12-26T03:57:43Z",
 				"stars": 1,
 				"language": "Python"
-			},
-			{
-				"name": "typescript-AoT-2023",
-				"description": "Advent of TypeScript 2023",
-				"updated_at": "2024-03-23T17:48:23Z",
-				"stars": 0,
-				"language": "TypeScript"
 			}
-		]
+		],
+		"similar_interest": ["omentic", "ionathanch", "mfornet"]
 	},
 	{
 		"username": "mahalisunil1",
@@ -2859,37 +2619,50 @@
 		},
 		"repos": [
 			{
-				"name": "selfmail",
-				"description": "SelfMail is an open-source, self-hosted mail server solution with a CLI installer, backend API, and modern web UI. It automates Postfix, Dovecot, SPF, DKIM, and DMARC setup, integrates with Cloudflare for DNS, and provides a user-friendly dashboard for email management.",
-				"updated_at": "2025-02-20T10:51:08Z",
-				"stars": 0
-			},
-			{
-				"name": "Aquilla",
-				"description": null,
-				"updated_at": "2024-11-28T14:39:11Z",
-				"stars": 0
-			},
-			{
-				"name": "devBackend",
-				"description": "Dev Server Backend",
-				"updated_at": "2023-11-04T18:45:52Z",
-				"stars": 0,
-				"language": "HTML"
-			},
-			{
 				"name": "portfolio",
 				"description": "Follow along on my web development journey with Angular, where I experiment and create impactful digital experiences.",
 				"updated_at": "2024-11-25T11:56:14Z",
 				"stars": 0,
 				"language": "HTML"
-			},
-			{
-				"name": "test",
-				"description": null,
-				"updated_at": "2023-11-04T09:10:01Z",
-				"stars": 0
 			}
+		],
+		"similar_interest": [
+			"laurenyip",
+			"Jake-Yeo",
+			"Anmol-Ghadia",
+			"albertkim",
+			"PepperLola",
+			"fegicochen",
+			"chasefleming",
+			"kspaans",
+			"mvllow",
+			"trevorblades",
+			"Aashu-Dubey",
+			"Ezzhingy",
+			"Highfire1",
+			"JuliaPoo",
+			"JipFr",
+			"ManasSin",
+			"Rainerino",
+			"PrincewillIroka",
+			"Nathn",
+			"Siliconrob",
+			"YingjiaLiu99",
+			"arnvgh",
+			"elibroftw",
+			"irisxu02",
+			"luckyjsx",
+			"meleongg",
+			"mathewbushuru",
+			"naijwu",
+			"s-alad",
+			"pi-rate14",
+			"sanjeevyadavIT",
+			"snlimadev",
+			"vsaosuo",
+			"tweeres04",
+			"wiesenthal",
+			"AidenKerr"
 		]
 	},
 	{
@@ -2904,13 +2677,6 @@
 		},
 		"repos": [
 			{
-				"name": "scope-draw",
-				"description": "atmega328 oscilloscope art",
-				"updated_at": "2024-11-22T10:33:54Z",
-				"stars": 0,
-				"language": "C"
-			},
-			{
 				"name": "shape-rotator",
 				"description": "Generate polyhedra using Conway polyhedron notation",
 				"updated_at": "2024-10-22T23:25:54Z",
@@ -2923,99 +2689,21 @@
 				"updated_at": "2024-10-22T20:03:44Z",
 				"stars": 2,
 				"language": "C"
-			},
-			{
-				"name": "etetris2",
-				"description": "Emacs tetris-mode with tweaks",
-				"updated_at": "2024-01-23T08:09:23Z",
-				"stars": 2,
-				"language": "Emacs Lisp"
-			},
-			{
-				"name": "aoc",
-				"description": null,
-				"updated_at": "2023-12-09T06:20:11Z",
-				"stars": 0,
-				"language": "Racket"
 			}
-		]
-	},
-	{
-		"username": "lmcmz",
-		"theme": "Flow blockchain developer tooling",
-		"profile": {
-			"login": "lmcmz",
-			"avatar_url": "https://avatars.githubusercontent.com/u/9669733?v=4",
-			"bio": null,
-			"location": "Sydney, Australia ",
-			"blog": ""
-		},
-		"repos": [
-			{
-				"name": "flow-mcp",
-				"description": "MCP server for interacting with Flow blockchain",
-				"updated_at": "2025-04-23T14:34:11Z",
-				"stars": 0
-			},
-			{
-				"name": "cadence-codegen",
-				"description": "A tool for analyzing Cadence smart contracts and generating code",
-				"updated_at": "2025-04-10T16:13:25Z",
-				"stars": 0
-			},
-			{
-				"name": "cadence-tools",
-				"description": "Tools for Cadence smart contract development",
-				"updated_at": "2025-04-10T16:10:52Z",
-				"stars": 0
-			},
-			{
-				"name": "flow-blocklist",
-				"description": "Flow Blockchain Blocklist API - A comprehensive blocklist service for Flow and Flow-EVM networks",
-				"updated_at": "2025-04-03T04:39:12Z",
-				"stars": 1,
-				"language": "JavaScript"
-			},
-			{
-				"name": "flow-mcp-server",
-				"description": "Model Context Protocol (MCP) server for Flow blockchain with direct RPC communication",
-				"updated_at": "2025-03-20T15:42:58Z",
-				"stars": 1,
-				"language": "JavaScript"
-			}
-		]
-	},
-	{
-		"username": "nedashokraneh",
-		"theme": "advancing genomic data analysis",
-		"profile": {
-			"login": "nedashokraneh",
-			"avatar_url": "https://avatars.githubusercontent.com/u/24844512?v=4",
-			"bio": null,
-			"location": null,
-			"blog": ""
-		},
-		"repos": [
-			{
-				"name": "vssHiC",
-				"description": null,
-				"updated_at": "2024-12-11T12:57:18Z",
-				"stars": 0,
-				"language": "R"
-			},
-			{
-				"name": "scHiC-diff-imputation",
-				"description": null,
-				"updated_at": "2023-12-24T09:38:47Z",
-				"stars": 0,
-				"language": "Python"
-			},
-			{
-				"name": "CMPT984_seq2activity",
-				"description": null,
-				"updated_at": "2023-11-28T00:17:18Z",
-				"stars": 1
-			}
+		],
+		"similar_interest": [
+			"tachibana-marine",
+			"aldenluthfi",
+			"kiedtl",
+			"kevinmingtarja",
+			"theCasm",
+			"sherlockjack",
+			"JuliaPoo",
+			"Tidyrice",
+			"caoculus",
+			"irisxu02",
+			"mxple",
+			"AidenKerr"
 		]
 	},
 	{
@@ -3030,13 +2718,6 @@
 		},
 		"repos": [
 			{
-				"name": "flow-port-lost-and-found",
-				"description": "LostAndFound integrations with Flow Port.",
-				"updated_at": "2024-12-05T22:29:35Z",
-				"stars": 0,
-				"language": "Cadence"
-			},
-			{
 				"name": "flow-nft-scaffold",
 				"description": "Starter template to create a new Cadence NFT project on Flow",
 				"updated_at": "2024-09-09T17:15:50Z",
@@ -3049,20 +2730,14 @@
 				"updated_at": "2024-08-29T19:51:40Z",
 				"stars": 0,
 				"language": "Cadence"
-			},
-			{
-				"name": "cadence-engine-poc",
-				"description": "proof of concept to explore using Cadence scripts to run games smoothly",
-				"updated_at": "2023-09-16T00:29:18Z",
-				"stars": 0,
-				"language": "Cadence"
-			},
-			{
-				"name": "flow-dynamic-token-list",
-				"description": null,
-				"updated_at": "2025-02-12T22:17:17Z",
-				"stars": 0
 			}
+		],
+		"similar_interest": [
+			"bluesign",
+			"jribbink",
+			"rheaplex",
+			"ASCorreia",
+			"pi-rate14"
 		]
 	},
 	{
@@ -3137,6 +2812,20 @@
 					"tailwindcss-plugin"
 				]
 			}
+		],
+		"similar_interest": [
+			"stankur",
+			"alaviss",
+			"argonaut0",
+			"oezingle",
+			"trevorblades",
+			"Aashu-Dubey",
+			"PrincewillIroka",
+			"Vicente015",
+			"ethanthoma",
+			"elibroftw",
+			"joshvocal",
+			"meleongg"
 		]
 	},
 	{
@@ -3158,23 +2847,9 @@
 				"language": "Lua"
 			},
 			{
-				"name": "LuaProfiler",
-				"description": "A profiler for lua that outputs to formats readable by other applications",
-				"updated_at": "2025-01-13T05:30:20Z",
-				"stars": 0,
-				"language": "Lua"
-			},
-			{
 				"name": "lua-bundler",
 				"description": "A command-line application to turn lua project directories into portable, self-contained libraries, with outside dependencies",
 				"updated_at": "2024-10-22T21:55:48Z",
-				"stars": 0,
-				"language": "Lua"
-			},
-			{
-				"name": "lua-inspector",
-				"description": "A simple lua library to help inspect data at runtime",
-				"updated_at": "2024-04-10T21:06:21Z",
 				"stars": 0,
 				"language": "Lua"
 			},
@@ -3186,6 +2861,14 @@
 				"language": "Lua",
 				"topics": ["dotfiles", "linux", "theme"]
 			}
+		],
+		"similar_interest": [
+			"JustinHuPrime",
+			"mvllow",
+			"Aashu-Dubey",
+			"PrincewillIroka",
+			"ethanthoma",
+			"pi-rate14"
 		]
 	},
 	{
@@ -3200,23 +2883,9 @@
 		},
 		"repos": [
 			{
-				"name": "worktree",
-				"description": "scripts for working with git worktrees",
-				"updated_at": "2025-08-23T15:13:19Z",
-				"stars": 1,
-				"language": "Shell"
-			},
-			{
 				"name": "flow-info",
 				"description": "Tools for downloading flow network information",
 				"updated_at": "2025-03-20T03:50:29Z",
-				"stars": 0,
-				"language": "Go"
-			},
-			{
-				"name": "workerpool",
-				"description": null,
-				"updated_at": "2025-02-20T19:04:31Z",
 				"stars": 0,
 				"language": "Go"
 			},
@@ -3227,6 +2896,13 @@
 				"stars": 7,
 				"language": "Go"
 			}
+		],
+		"similar_interest": [
+			"KevinL10",
+			"bluesign",
+			"thep2p",
+			"gaurav-gogia",
+			"devon-mar"
 		]
 	},
 	{
@@ -3248,13 +2924,6 @@
 				"language": "Rust"
 			},
 			{
-				"name": "woodpecker-v2",
-				"description": null,
-				"updated_at": "2024-11-10T15:58:01Z",
-				"stars": 1,
-				"language": "Rust"
-			},
-			{
 				"name": "rlox",
 				"description": "Rust implementation of the bytecode VM (clox) from https://craftinginterpreters.com/",
 				"updated_at": "2024-03-16T00:24:02Z",
@@ -3262,6 +2931,19 @@
 				"language": "Rust",
 				"topics": ["crafting-interpreters", "lox-language", "rust"]
 			}
+		],
+		"similar_interest": [
+			"KevinL10",
+			"kevinmingtarja",
+			"kiedtl",
+			"theCasm",
+			"wilbowma",
+			"birchmd",
+			"brandur",
+			"liam-ilan",
+			"zahash",
+			"MrAnderson1971",
+			"achreto"
 		]
 	},
 	{
@@ -3281,14 +2963,18 @@
 				"updated_at": "2024-06-08T06:51:47Z",
 				"stars": 368,
 				"language": "Python"
-			},
-			{
-				"name": "Voice-Recorder-for-Wear-OS-MFT-IP-Server",
-				"description": "Reverse-engineered minimal implmentation for \"MFT IP Server\" feature used by Voice Recorder for Wear OS ",
-				"updated_at": "2025-07-24T02:09:23Z",
-				"stars": 0,
-				"language": "Python"
 			}
+		],
+		"similar_interest": [
+			"stankur",
+			"ElianBelot",
+			"Mark123M",
+			"asiff00",
+			"gagan3012",
+			"cosmo3769",
+			"gshklovs",
+			"tika",
+			"wiesenthal"
 		]
 	},
 	{
@@ -3324,19 +3010,27 @@
 				"language": "JavaScript"
 			},
 			{
-				"name": "postscript-viruses",
-				"description": "Sketches for aesthetic viruses in PostScript from 1994. All-caps names are from the DOS system these were develped on.",
-				"updated_at": "2024-11-25T23:15:29Z",
-				"stars": 2,
-				"language": "PostScript"
-			},
-			{
 				"name": "rheart",
 				"description": "Art generation software in Lisp.",
 				"updated_at": "2024-08-21T04:45:10Z",
 				"stars": 3,
 				"language": "Common Lisp"
 			}
+		],
+		"similar_interest": [
+			"frankuyan",
+			"chasefleming",
+			"jribbink",
+			"nvdtf",
+			"thep2p",
+			"ASCorreia",
+			"Beta-test-initiation",
+			"Tgcohce",
+			"StTronn",
+			"calvbore",
+			"gitpancake",
+			"s-alad",
+			"pi-rate14"
 		]
 	},
 	{
@@ -3393,6 +3087,12 @@
 				"stars": 13,
 				"language": "Agda"
 			}
+		],
+		"similar_interest": [
+			"omentic",
+			"grhkm21",
+			"thomasporter522",
+			"WorldofKerry"
 		]
 	},
 	{
@@ -3426,21 +3126,15 @@
 				"updated_at": "2023-12-10T06:18:12Z",
 				"stars": 0,
 				"language": "C"
-			},
-			{
-				"name": "Infix-Calculator",
-				"description": "an infix notation calculator using recursive descent parsing in C.",
-				"updated_at": "2024-09-03T00:02:50Z",
-				"stars": 0,
-				"language": "C"
-			},
-			{
-				"name": "polishStackCalculator",
-				"description": "polish notation calculator implementation using stacks",
-				"updated_at": "2023-09-04T00:20:23Z",
-				"stars": 0,
-				"language": "C"
 			}
+		],
+		"similar_interest": [
+			"kiedtl",
+			"rctcwyvrn",
+			"antnks",
+			"zahash",
+			"MrAnderson1971",
+			"AidenKerr"
 		]
 	},
 	{
@@ -3455,27 +3149,6 @@
 		},
 		"repos": [
 			{
-				"name": "Tugas-AAW",
-				"description": null,
-				"updated_at": "2025-04-18T09:30:46Z",
-				"stars": 0,
-				"language": "TypeScript"
-			},
-			{
-				"name": "geokom_tk1",
-				"description": "Tugas Kelompok 1 Geokom",
-				"updated_at": "2024-11-18T09:29:23Z",
-				"stars": 0,
-				"language": "Python"
-			},
-			{
-				"name": "robotika-2024",
-				"description": "Tugas Robotikaku 2024",
-				"updated_at": "2024-06-05T15:25:54Z",
-				"stars": 0,
-				"language": "Python"
-			},
-			{
 				"name": "prolog-proyek",
 				"description": null,
 				"updated_at": "2024-05-12T16:06:10Z",
@@ -3489,6 +3162,33 @@
 				"stars": 0,
 				"language": "MDX"
 			}
+		],
+		"similar_interest": [
+			"SamuelmdLow",
+			"stankur",
+			"omentic",
+			"BriHan-Tech",
+			"ElianBelot",
+			"abdurj",
+			"aldenluthfi",
+			"fegicochen",
+			"kumarpit",
+			"mahalisunil1",
+			"mlechu",
+			"rheaplex",
+			"ionathanch",
+			"theCasm",
+			"thomasporter522",
+			"trevorblades",
+			"wilbowma",
+			"Highfire1",
+			"JuliaPoo",
+			"WorldofKerry",
+			"gagan3012",
+			"liam-ilan",
+			"mfornet",
+			"sim0wn",
+			"wiesenthal"
 		]
 	},
 	{
@@ -3531,15 +3231,9 @@
 				"updated_at": "2024-10-19T17:43:13Z",
 				"stars": 1,
 				"language": "Jupyter Notebook"
-			},
-			{
-				"name": "homestuck-community-census-2025",
-				"description": "Code used to calculate and visualize responses from the Homestuck Community Census run from March 1st to March 31st, 2025.",
-				"updated_at": "2025-04-13T14:14:03Z",
-				"stars": 0,
-				"language": "Jupyter Notebook"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "thomasporter522",
@@ -3558,35 +3252,15 @@
 				"updated_at": "2024-10-22T17:02:29Z",
 				"stars": 0,
 				"language": "Agda"
-			},
-			{
-				"name": "incremental-statics-artifact",
-				"description": null,
-				"updated_at": "2025-07-30T10:57:17Z",
-				"stars": 0,
-				"language": "Agda"
-			},
-			{
-				"name": "incremental-hazelnut",
-				"description": null,
-				"updated_at": "2024-06-26T18:25:09Z",
-				"stars": 0,
-				"language": "Reason"
-			},
-			{
-				"name": "Structure-Editor",
-				"description": null,
-				"updated_at": "2023-12-22T22:54:58Z",
-				"stars": 0,
-				"language": "Python"
-			},
-			{
-				"name": "arachne",
-				"description": "Constrained Latin sentence generator",
-				"updated_at": "2023-12-22T21:47:55Z",
-				"stars": 0,
-				"language": "Python"
 			}
+		],
+		"similar_interest": [
+			"funemy",
+			"kumarpit",
+			"grhkm21",
+			"ionathanch",
+			"wilbowma",
+			"WorldofKerry"
 		]
 	},
 	{
@@ -3617,14 +3291,6 @@
 				]
 			},
 			{
-				"name": "TigerSwift",
-				"description": "Swift for Mac OS X Tiger, via w2c2",
-				"updated_at": "2024-06-10T02:20:59Z",
-				"stars": 15,
-				"language": "Objective-C",
-				"topics": ["powerpc", "swift", "w2c2", "wasm"]
-			},
-			{
 				"name": "NewtonKit",
 				"description": "An implementation of the Apple Newton Dock protocol in Swift",
 				"updated_at": "2023-12-27T21:43:27Z",
@@ -3646,7 +3312,8 @@
 				"stars": 3,
 				"language": "Swift"
 			}
-		]
+		],
+		"similar_interest": ["achreto"]
 	},
 	{
 		"username": "trevorblades",
@@ -3699,25 +3366,6 @@
 				]
 			},
 			{
-				"name": "pollenize",
-				"description": "🐝 An election guide website built with React and GraphQL",
-				"updated_at": "2025-04-18T07:56:49Z",
-				"stars": 1,
-				"language": "JavaScript",
-				"topics": [
-					"apollo",
-					"civic-tech",
-					"design",
-					"elections",
-					"gatsby",
-					"graphql",
-					"javascript",
-					"material-ui",
-					"react",
-					"tool"
-				]
-			},
-			{
 				"name": "eslint-config",
 				"description": "☝️ A shared ESLint config",
 				"updated_at": "2023-11-20T06:50:06Z",
@@ -3739,6 +3387,20 @@
 					"typescript"
 				]
 			}
+		],
+		"similar_interest": [
+			"stankur",
+			"fegicochen",
+			"chasefleming",
+			"mvllow",
+			"Aashu-Dubey",
+			"Highfire1",
+			"PrincewillIroka",
+			"Vicente015",
+			"elibroftw",
+			"iHildy",
+			"mathewbushuru",
+			"meleongg"
 		]
 	},
 	{
@@ -3753,27 +3415,14 @@
 		},
 		"repos": [
 			{
-				"name": "tello_circle_follower",
-				"description": "A Dockerized ROS2 Foxy/OpenCV project that allows a Tello Boost Combo drone to track/follow any circular object.",
-				"updated_at": "2025-07-03T17:57:19Z",
-				"stars": 0,
-				"language": "C++"
-			},
-			{
 				"name": "jackal_ros1_bridge",
 				"description": "A Dockerized ros1_bridge setup to communicate between ROS Noetic on a Clearpath Robotics Jackal 100 and ROS 2 Jazzy on a PC",
 				"updated_at": "2025-05-21T19:16:40Z",
 				"stars": 0,
 				"language": "C++"
-			},
-			{
-				"name": "ros2_docker_pubsub",
-				"description": "A Dockerized custom ROS 2 publisher/subscriber node pair.",
-				"updated_at": "2025-05-09T04:40:10Z",
-				"stars": 0,
-				"language": "C++"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "thep2p",
@@ -3801,12 +3450,6 @@
 				"language": "Go"
 			},
 			{
-				"name": "skip-graphs",
-				"description": "The overarching repository for Skip Graph project features set",
-				"updated_at": "2025-03-26T14:48:14Z",
-				"stars": 1
-			},
-			{
 				"name": "go-eth-localnet",
 				"description": "A fully Go-native tool to spin up and orchestrate a local Ethereum network composed of Geth and Prysm nodes — either in-process or inside Docker containers — without using Bash, Docker Compose, or non-Go tooling.",
 				"updated_at": "2025-08-06T19:47:03Z",
@@ -3820,6 +3463,12 @@
 				"stars": 1,
 				"language": "Java"
 			}
+		],
+		"similar_interest": [
+			"kewbish",
+			"Beta-test-initiation",
+			"StTronn",
+			"marianlime"
 		]
 	},
 	{
@@ -3853,21 +3502,19 @@
 				"updated_at": "2023-10-27T21:47:04Z",
 				"stars": 16,
 				"language": "TeX"
-			},
-			{
-				"name": "syntax-micros",
-				"description": "An implementation of micros on top of macros.",
-				"updated_at": "2025-06-27T22:22:13Z",
-				"stars": 1,
-				"language": "Racket"
-			},
-			{
-				"name": "syntax-mule",
-				"description": "A little library abstracting a pattern for returning non-syntax values from syntax transformers.",
-				"updated_at": "2025-06-27T20:18:59Z",
-				"stars": 0,
-				"language": "Racket"
 			}
+		],
+		"similar_interest": [
+			"stankur",
+			"omentic",
+			"kevinmingtarja",
+			"kumarpit",
+			"ionathanch",
+			"theCasm",
+			"thomasporter522",
+			"antler5",
+			"wiesenthal",
+			"MrAnderson1971"
 		]
 	},
 	{
@@ -3882,41 +3529,24 @@
 		},
 		"repos": [
 			{
-				"name": "emacs.d",
-				"description": "A tailored modal emacs setup",
-				"updated_at": "2025-08-07T06:36:10Z",
-				"stars": 0,
-				"language": "Emacs Lisp"
-			},
-			{
-				"name": "shelly",
-				"description": "My personal scripts for desktop and window management",
-				"updated_at": "2025-02-04T20:14:14Z",
-				"stars": 0,
-				"language": "Rust"
-			},
-			{
-				"name": "buildbox",
-				"description": "Instantly containerize your development",
-				"updated_at": "2024-09-23T18:55:43Z",
-				"stars": 0,
-				"language": "Python"
-			},
-			{
 				"name": "nfcurl",
 				"description": "Create NFC tags on the fly that direct you to a website",
 				"updated_at": "2024-06-20T00:13:57Z",
 				"stars": 14,
 				"language": "C",
 				"topics": ["flipper", "flipperzero"]
-			},
-			{
-				"name": "clock-in",
-				"description": "Calhacks 10.0 winner | Wearable app protecting blue collar workers through work safety monitoring",
-				"updated_at": "2023-11-13T05:34:26Z",
-				"stars": 0,
-				"language": "JavaScript"
 			}
+		],
+		"similar_interest": [
+			"laurenyip",
+			"ElianBelot",
+			"chasefleming",
+			"kewbish",
+			"kickscondor",
+			"Aashu-Dubey",
+			"LordMoMA",
+			"PrincewillIroka",
+			"joshvocal"
 		]
 	},
 	{
@@ -3930,13 +3560,6 @@
 			"blog": "https://jasonyi.vercel.app/"
 		},
 		"repos": [
-			{
-				"name": "riscv-emulator",
-				"description": null,
-				"updated_at": "2024-10-10T03:39:10Z",
-				"stars": 0,
-				"language": "C"
-			},
 			{
 				"name": "jls",
 				"description": "myls",
@@ -3978,6 +3601,19 @@
 					"tui"
 				]
 			}
+		],
+		"similar_interest": [
+			"ju1ien1100",
+			"KevinL10",
+			"kiedtl",
+			"theCasm",
+			"Aeren1564",
+			"Mark123M",
+			"Tidyrice",
+			"liam-ilan",
+			"mxple",
+			"AidenKerr",
+			"MrAnderson1971"
 		]
 	},
 	{
@@ -4027,6 +3663,29 @@
 				"stars": 2,
 				"language": "HTML"
 			}
+		],
+		"similar_interest": [
+			"stankur",
+			"BriHan-Tech",
+			"Anmol-Ghadia",
+			"aldenluthfi",
+			"funemy",
+			"rctcwyvrn",
+			"wilbowma",
+			"Aeren1564",
+			"FrozenHydrant",
+			"JoshuaWu7",
+			"Nathn",
+			"StarGazingHomies",
+			"bistromath25",
+			"evansemet",
+			"mxple",
+			"mfornet",
+			"snlimadev",
+			"wiesenthal",
+			"MrAnderson1971",
+			"AdenC123",
+			"Edster1121"
 		]
 	},
 	{
@@ -4041,27 +3700,6 @@
 		},
 		"repos": [
 			{
-				"name": "http-server-cpp",
-				"description": "http server from scratch using C++",
-				"updated_at": "2024-08-20T17:52:00Z",
-				"stars": 0,
-				"language": "C++"
-			},
-			{
-				"name": "grepy",
-				"description": "A simple remake of the command-line utility grep in C++",
-				"updated_at": "2024-02-12T01:08:46Z",
-				"stars": 0,
-				"language": "C++"
-			},
-			{
-				"name": "ml-methods",
-				"description": "Various machine learning methods implemented from scratch using Python",
-				"updated_at": "2025-01-07T18:41:18Z",
-				"stars": 0,
-				"language": "Python"
-			},
-			{
 				"name": "voter",
 				"description": "A scalable realtime election-style voting system made with Python, Kafka, Spark, Postgres, and Streamlit.",
 				"updated_at": "2023-12-30T08:19:43Z",
@@ -4075,6 +3713,20 @@
 				"stars": 0,
 				"language": "TypeScript"
 			}
+		],
+		"similar_interest": [
+			"stankur",
+			"fegicochen",
+			"kickscondor",
+			"Highfire1",
+			"HudZah",
+			"Tgcohce",
+			"Nathn",
+			"erwin-lovecraft",
+			"gshklovs",
+			"naijwu",
+			"s-alad",
+			"wiesenthal"
 		]
 	},
 	{
@@ -4123,44 +3775,16 @@
 				"stars": 1,
 				"language": "C++"
 			}
-		]
-	},
-	{
-		"username": "Ademar506",
-		"theme": "learning web development",
-		"profile": {
-			"login": "Ademar506",
-			"avatar_url": "https://avatars.githubusercontent.com/u/93223960?v=4",
-			"bio": null,
-			"location": null,
-			"blog": ""
-		},
-		"repos": [
-			{
-				"name": "meuPrimeiroRepositorio",
-				"description": null,
-				"updated_at": "2025-04-28T14:07:09Z",
-				"stars": 0
-			},
-			{
-				"name": "primeiraPagina",
-				"description": null,
-				"updated_at": "2025-04-28T13:38:22Z",
-				"stars": 0
-			},
-			{
-				"name": "cursoPhp7-Dao",
-				"description": null,
-				"updated_at": "2025-03-03T01:31:21Z",
-				"stars": 0
-			},
-			{
-				"name": "php",
-				"description": null,
-				"updated_at": "2024-10-08T03:01:27Z",
-				"stars": 0,
-				"language": "PHP"
-			}
+		],
+		"similar_interest": [
+			"KevinL10",
+			"Lydxn",
+			"aldenluthfi",
+			"theCasm",
+			"abeaumont",
+			"agrawal-d",
+			"mfornet",
+			"sim0wn"
 		]
 	},
 	{
@@ -4189,26 +3813,20 @@
 				"language": "Rust"
 			},
 			{
-				"name": "anchor-vault-q4-2024",
-				"description": "Anchor Vault Turbin3 Q4 Cohort",
-				"updated_at": "2024-10-23T11:30:30Z",
-				"stars": 4,
-				"language": "Rust"
-			},
-			{
-				"name": "native-escrow-2024",
-				"description": "Native Escrow Program Example",
-				"updated_at": "2024-11-01T14:45:17Z",
-				"stars": 1,
-				"language": "TypeScript"
-			},
-			{
 				"name": "anchor-marketplace-2024",
 				"description": null,
 				"updated_at": "2025-01-28T17:32:27Z",
 				"stars": 10,
 				"language": "Rust"
 			}
+		],
+		"similar_interest": [
+			"frankuyan",
+			"rheaplex",
+			"StTronn",
+			"Tgcohce",
+			"birchmd",
+			"pi-rate14"
 		]
 	},
 	{
@@ -4313,6 +3931,20 @@
 					"typescript"
 				]
 			}
+		],
+		"similar_interest": [
+			"aldenluthfi",
+			"mvllow",
+			"PrincewillIroka",
+			"YashVG",
+			"Nathn",
+			"YingjiaLiu99",
+			"elibroftw",
+			"mathewbushuru",
+			"meleongg",
+			"s-alad",
+			"sanjeevyadavIT",
+			"snlimadev"
 		]
 	},
 	{
@@ -4327,20 +3959,6 @@
 		},
 		"repos": [
 			{
-				"name": "AuthentiFind",
-				"description": "A rust powered service that scrapes secondhand luxury marketplaces to discover high-value fashion items. It then cross-references these items with a digital ledger to verify their authenticity and track their provenance, providing buyers with confidence and a rich history for each piece.",
-				"updated_at": "2025-08-20T01:06:05Z",
-				"stars": 0,
-				"language": "Rust"
-			},
-			{
-				"name": "chico",
-				"description": "Chico leverages the power of AI to provide a personalized fashion experience. Users upload images of clothing items, and our platform uses cutting-edge image processing technologies to analyze these items, suggest complete outfits, and offer shopping recommendations from local businesses.",
-				"updated_at": "2024-03-10T18:07:28Z",
-				"stars": 0,
-				"language": "JavaScript"
-			},
-			{
 				"name": "Platepal",
 				"description": "A Reinforcement Learning based recommendation system that takes in your pin code, fetches the latest deals from grocery stores nearby and curates a grocery list across four categories - carbs, proteins, dairy and fresh-produce all within the budget specified by the user.",
 				"updated_at": "2023-09-11T17:05:44Z",
@@ -4353,14 +3971,15 @@
 				"updated_at": "2025-08-21T00:25:47Z",
 				"stars": 0,
 				"language": "Rust"
-			},
-			{
-				"name": "ferrari-strategy-maker",
-				"description": "A data-driven tire degradation analysis system for Ferrari Formula 1 team performance optimization. This project collects, processes, and analyzes real F1 telemetry data to provide insights into tire strategy decisions.",
-				"updated_at": "2025-07-07T01:47:08Z",
-				"stars": 0,
-				"language": "Python"
 			}
+		],
+		"similar_interest": [
+			"ElianBelot",
+			"LordMoMA",
+			"StTronn",
+			"birchmd",
+			"oltimaloku",
+			"wiesenthal"
 		]
 	},
 	{
@@ -4374,20 +3993,6 @@
 			"blog": "https://eugenezhang.me/"
 		},
 		"repos": [
-			{
-				"name": "pollarez",
-				"description": "Pollarez | The ultimate slack off tool, study zone, and stress reliever all-in-one!",
-				"updated_at": "2024-07-23T16:24:01Z",
-				"stars": 0,
-				"language": "HTML"
-			},
-			{
-				"name": "pocketdoc",
-				"description": "Facilitating the appointment process through AI",
-				"updated_at": "2024-03-17T23:02:15Z",
-				"stars": 0,
-				"language": "JavaScript"
-			},
 			{
 				"name": "thank-you",
 				"description": "Sending much gratitude and appreciation, from me to you",
@@ -4409,6 +4014,33 @@
 				"stars": 1,
 				"language": "TypeScript"
 			}
+		],
+		"similar_interest": [
+			"stankur",
+			"Anmol-Ghadia",
+			"ElianBelot",
+			"aldenluthfi",
+			"albertkim",
+			"armintalaie",
+			"fegicochen",
+			"chasefleming",
+			"mvllow",
+			"trevorblades",
+			"Aashu-Dubey",
+			"Highfire1",
+			"JuliaPoo",
+			"PrincewillIroka",
+			"Vicente015",
+			"cosmo3769",
+			"elibroftw",
+			"iHildy",
+			"lukasgolson",
+			"meleongg",
+			"sim0wn",
+			"tika",
+			"vsaosuo",
+			"tweeres04",
+			"wiesenthal"
 		]
 	},
 	{
@@ -4437,27 +4069,19 @@
 				"language": "Python"
 			},
 			{
-				"name": "prerequisites-visualization",
-				"description": "View course prerequisites from UBC, SFU, and Langara in a graph form to make it easier to explore courses.",
-				"updated_at": "2025-07-13T12:37:04Z",
-				"stars": 0,
-				"language": "TypeScript",
-				"topics": ["langara", "sfu", "sigmajs", "ubc"]
-			},
-			{
 				"name": "sfu-prerequisites-parsing",
 				"description": "A project to parse course prerequisites from SFU in text form to data. ",
 				"updated_at": "2025-07-13T13:54:55Z",
 				"stars": 1,
 				"language": "TypeScript"
-			},
-			{
-				"name": "ubc-prerequisites-parsing",
-				"description": "Parse course prerequisites from UBC in text form to data. ",
-				"updated_at": "2025-07-05T02:05:54Z",
-				"stars": 0,
-				"language": "TypeScript"
 			}
+		],
+		"similar_interest": [
+			"stankur",
+			"fegicochen",
+			"Aashu-Dubey",
+			"luckyjsx",
+			"wiesenthal"
 		]
 	},
 	{
@@ -4477,35 +4101,16 @@
 				"updated_at": "2024-12-28T08:20:53Z",
 				"stars": 0,
 				"language": "Java"
-			},
-			{
-				"name": "even-better-amethyst",
-				"description": "Minecraft mod for newer versions, add decoration blocks based on amethyst.",
-				"updated_at": "2024-08-20T21:12:46Z",
-				"stars": 0,
-				"language": "Java"
-			},
-			{
-				"name": "yumemium",
-				"description": "A Minecraft performance mod which uses somewhat questionable methods.",
-				"updated_at": "2024-05-02T22:08:13Z",
-				"stars": 0,
-				"language": "Java"
-			},
-			{
-				"name": "enchanted-golden-apple-crafting",
-				"description": "A Minecraft mod which allows enchanted golden apples to be crafted",
-				"updated_at": "2023-10-27T03:18:57Z",
-				"stars": 0,
-				"language": "Java"
-			},
-			{
-				"name": "elegant-anvils",
-				"description": "A mod which changes the cost of anvil operations",
-				"updated_at": "2023-10-07T05:49:55Z",
-				"stars": 0,
-				"language": "Java"
 			}
+		],
+		"similar_interest": [
+			"FrankWhoee",
+			"JustinHuPrime",
+			"PepperLola",
+			"Tidyrice",
+			"StarGazingHomies",
+			"hanmindev",
+			"MrAnderson1971"
 		]
 	},
 	{
@@ -4525,36 +4130,9 @@
 				"updated_at": "2024-07-08T20:56:29Z",
 				"stars": 16,
 				"language": "Python"
-			},
-			{
-				"name": "SmartShot",
-				"description": "SmartShot automates the task of organizing and renaming screenshots in a specified folder on macOS. It uses the built-in Automater app to auto-detect when new screenshots are taken and runs a script to rename them.",
-				"updated_at": "2023-11-13T03:55:55Z",
-				"stars": 13,
-				"language": "Python"
-			},
-			{
-				"name": "Adblocker",
-				"description": null,
-				"updated_at": "2023-11-10T14:13:59Z",
-				"stars": 4,
-				"language": "JavaScript"
-			},
-			{
-				"name": "Gif2Mov",
-				"description": "Gif to Mov converter for looping gifs for 10 seconds",
-				"updated_at": "2023-10-19T04:46:46Z",
-				"stars": 0,
-				"language": "Python"
-			},
-			{
-				"name": "CheatSheet",
-				"description": "Cheat sheet script to convert a large course notes file into a queryable thing. ",
-				"updated_at": "2023-10-01T02:10:22Z",
-				"stars": 4,
-				"language": "Python"
 			}
-		]
+		],
+		"similar_interest": ["garrethlee", "ochen1"]
 	},
 	{
 		"username": "Jerr-z",
@@ -4575,33 +4153,47 @@
 				"language": "Python"
 			},
 			{
-				"name": "court-booking-bot",
-				"description": null,
-				"updated_at": "2024-12-27T10:01:33Z",
-				"stars": 0,
-				"language": "TypeScript"
-			},
-			{
-				"name": "CppFillingTool",
-				"description": "A tool that allows you to select a location on the png and fill it with a specific pattern.",
-				"updated_at": "2024-05-31T04:37:59Z",
-				"stars": 0,
-				"language": "C++"
-			},
-			{
 				"name": "CrossyRoadLite",
 				"description": null,
 				"updated_at": "2024-04-18T07:29:36Z",
 				"stars": 0,
 				"language": "Java"
-			},
-			{
-				"name": "ChatGPT-ver.CONS127",
-				"description": "Personalized ChatGPT with all the knowledge from CONS127",
-				"updated_at": "2023-10-01T00:31:25Z",
-				"stars": 0,
-				"language": "Python"
 			}
+		],
+		"similar_interest": [
+			"garrethlee",
+			"stankur",
+			"mountainMath",
+			"BriHan-Tech",
+			"ADSteele916",
+			"ElianBelot",
+			"KevinL10",
+			"Lydxn",
+			"abdurj",
+			"aldenluthfi",
+			"NathanAW24",
+			"rctcwyvrn",
+			"ysaleh03",
+			"Aeren1564",
+			"yhaooo11",
+			"HudZah",
+			"AdnaneKhan",
+			"WorldofKerry",
+			"YingjiaLiu99",
+			"asiff00",
+			"colliand",
+			"dmok22",
+			"cosmo3769",
+			"gagan3012",
+			"gshklovs",
+			"gaurav-gogia",
+			"hyperknot",
+			"joshvocal",
+			"gvaghasiya02",
+			"lukasgolson",
+			"mxple",
+			"wiesenthal",
+			"briantist"
 		]
 	},
 	{
@@ -4616,20 +4208,6 @@
 		},
 		"repos": [
 			{
-				"name": "manga-app",
-				"description": null,
-				"updated_at": "2025-08-21T22:02:38Z",
-				"stars": 0,
-				"language": "TypeScript"
-			},
-			{
-				"name": "video-navigator",
-				"description": null,
-				"updated_at": "2024-07-06T17:37:58Z",
-				"stars": 0,
-				"language": "Vue"
-			},
-			{
 				"name": "budget",
 				"description": null,
 				"updated_at": "2025-05-31T21:59:23Z",
@@ -4642,14 +4220,25 @@
 				"updated_at": "2025-03-06T17:11:53Z",
 				"stars": 3,
 				"language": "TypeScript"
-			},
-			{
-				"name": "movie-cli",
-				"description": null,
-				"updated_at": "2023-10-01T18:59:39Z",
-				"stars": 49,
-				"language": "TypeScript"
 			}
+		],
+		"similar_interest": [
+			"laurenyip",
+			"JustinHuPrime",
+			"aldenluthfi",
+			"fegicochen",
+			"kspaans",
+			"mahalisunil1",
+			"Highfire1",
+			"PrincewillIroka",
+			"Nathn",
+			"Tidyrice",
+			"StarGazingHomies",
+			"mxple",
+			"snlimadev",
+			"wiesenthal",
+			"AdenC123",
+			"Edster1121"
 		]
 	},
 	{
@@ -4664,40 +4253,24 @@
 		},
 		"repos": [
 			{
-				"name": "VGA-Oscilloscope",
-				"description": null,
-				"updated_at": "2024-05-15T05:01:51Z",
-				"stars": 0,
-				"language": "C"
-			},
-			{
-				"name": "kernel",
-				"description": null,
-				"updated_at": "2024-02-01T07:20:28Z",
-				"stars": 0,
-				"language": "C"
-			},
-			{
 				"name": "KV-Store",
 				"description": null,
 				"updated_at": "2024-05-14T18:21:47Z",
 				"stars": 0,
 				"language": "Java"
-			},
-			{
-				"name": "MaskMatcher",
-				"description": "MaskMatcher is an Internet-of-Thing device that uses a convolutional neural network to detect faces with or without a mask. ",
-				"updated_at": "2024-01-06T06:13:54Z",
-				"stars": 0,
-				"language": "Python"
-			},
-			{
-				"name": "WikiMediator",
-				"description": null,
-				"updated_at": "2024-01-16T07:51:26Z",
-				"stars": 0,
-				"language": "Java"
 			}
+		],
+		"similar_interest": [
+			"armintalaie",
+			"austinlparker",
+			"fegicochen",
+			"fxamacker",
+			"thep2p",
+			"yhaooo11",
+			"LordMoMA",
+			"brandur",
+			"gagan3012",
+			"gvaghasiya02"
 		]
 	},
 	{
@@ -4732,6 +4305,14 @@
 				"stars": 4,
 				"language": "Typst"
 			}
+		],
+		"similar_interest": [
+			"funemy",
+			"grhkm21",
+			"mlechu",
+			"ionathanch",
+			"thomasporter522",
+			"irisxu02"
 		]
 	},
 	{
@@ -4746,40 +4327,39 @@
 		},
 		"repos": [
 			{
-				"name": "chat_app-fastAPI",
-				"description": null,
-				"updated_at": "2025-08-20T06:16:53Z",
-				"stars": 0,
-				"language": "Python"
-			},
-			{
-				"name": "chat_app-frontend_nextjs",
-				"description": null,
-				"updated_at": "2025-08-17T21:49:05Z",
-				"stars": 0,
-				"language": "TypeScript"
-			},
-			{
-				"name": "Ecomm-shop",
-				"description": null,
-				"updated_at": "2023-12-23T16:49:24Z",
-				"stars": 0,
-				"language": "JavaScript"
-			},
-			{
 				"name": "MERN-Auth",
 				"description": null,
 				"updated_at": "2023-11-01T06:28:15Z",
 				"stars": 0,
 				"language": "JavaScript"
-			},
-			{
-				"name": "Plura",
-				"description": null,
-				"updated_at": "2024-03-12T13:57:51Z",
-				"stars": 0,
-				"language": "TypeScript"
 			}
+		],
+		"similar_interest": [
+			"laurenyip",
+			"Anmol-Ghadia",
+			"armintalaie",
+			"fegicochen",
+			"kspaans",
+			"kickscondor",
+			"mahalisunil1",
+			"trevorblades",
+			"Aashu-Dubey",
+			"Highfire1",
+			"NK-GO",
+			"PrincewillIroka",
+			"StTronn",
+			"Siliconrob",
+			"Nathn",
+			"YingjiaLiu99",
+			"luckyjsx",
+			"mathewbushuru",
+			"meleongg",
+			"naijwu",
+			"s-alad",
+			"pi-rate14",
+			"sanjeevyadavIT",
+			"snlimadev",
+			"wiesenthal"
 		]
 	},
 	{
@@ -4821,6 +4401,14 @@
 				"stars": 1,
 				"language": "C#"
 			}
+		],
+		"similar_interest": [
+			"ju1ien1100",
+			"javathunderman",
+			"Tidyrice",
+			"asiff00",
+			"WinteryFox",
+			"AdenC123"
 		]
 	},
 	{
@@ -4835,31 +4423,11 @@
 		},
 		"repos": [
 			{
-				"name": "face_mask_detection_deployed",
-				"description": "I have created this repo to deploy my project",
-				"updated_at": "2025-08-08T06:37:18Z",
-				"stars": 0,
-				"language": "CSS"
-			},
-			{
-				"name": "Bone_Crack_Detection",
-				"description": null,
-				"updated_at": "2025-05-24T15:52:37Z",
-				"stars": 0,
-				"language": "Jupyter Notebook"
-			},
-			{
 				"name": "Energy_Consumption_Forecasting",
 				"description": "Created this repo for my Client Project related to Energy Consumption Forecasting for 5 years",
 				"updated_at": "2025-06-06T17:35:01Z",
 				"stars": 0,
 				"language": "Jupyter Notebook"
-			},
-			{
-				"name": "AI-Retail-Assistant-Agent",
-				"description": "I have created this repo to build an AI Agent that assist retailers to have a good info about products",
-				"updated_at": "2025-03-11T20:51:54Z",
-				"stars": 0
 			},
 			{
 				"name": "Spam-Email-Detection",
@@ -4868,7 +4436,8 @@
 				"stars": 0,
 				"language": "Jupyter Notebook"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "LordMoMA",
@@ -4929,13 +4498,6 @@
 				]
 			},
 			{
-				"name": "mini-redis",
-				"description": "A simple implementation of a Redis-like server. It is intended as a practical guide to network programming and basic data structures in C.",
-				"updated_at": "2023-09-25T18:55:31Z",
-				"stars": 0,
-				"language": "C++"
-			},
-			{
 				"name": "blog-aggregator",
 				"description": "A RSS feed aggregator in Go",
 				"updated_at": "2023-09-24T10:44:14Z",
@@ -4949,22 +4511,18 @@
 					"rss-reader",
 					"webscraping"
 				]
-			},
-			{
-				"name": "NetProbe",
-				"description": "a cli tool in Go to expose network stats",
-				"updated_at": "2024-02-11T22:33:02Z",
-				"stars": 0,
-				"language": "Go",
-				"topics": [
-					"cli",
-					"go",
-					"golang",
-					"network-analysis",
-					"network-monitoring",
-					"networkstatus"
-				]
 			}
+		],
+		"similar_interest": [
+			"kewbish",
+			"kickscondor",
+			"thep2p",
+			"NK-GO",
+			"brandur",
+			"mathewbushuru",
+			"marianlime",
+			"sanjeevyadavIT",
+			"wiesenthal"
 		]
 	},
 	{
@@ -4984,27 +4542,76 @@
 				"updated_at": "2025-06-09T14:50:43Z",
 				"stars": 0,
 				"language": "TypeScript"
-			},
-			{
-				"name": "cheshire-react",
-				"description": null,
-				"updated_at": "2025-06-11T05:06:11Z",
-				"stars": 0,
-				"language": "TypeScript"
-			},
-			{
-				"name": "sys_loader",
-				"description": null,
-				"updated_at": "2025-08-05T14:34:39Z",
-				"stars": 0
-			},
-			{
-				"name": "station_model_loader",
-				"description": null,
-				"updated_at": "2025-05-24T07:21:46Z",
-				"stars": 0,
-				"language": "Python"
 			}
+		],
+		"similar_interest": [
+			"SamuelmdLow",
+			"stankur",
+			"laurenyip",
+			"Jake-Yeo",
+			"Anmol-Ghadia",
+			"ElianBelot",
+			"KevinL10",
+			"abdurj",
+			"aldenluthfi",
+			"albertkim",
+			"armintalaie",
+			"fegicochen",
+			"austinlparker",
+			"chasefleming",
+			"kewbish",
+			"jribbink",
+			"kevinmingtarja",
+			"kiedtl",
+			"mvllow",
+			"rheaplex",
+			"ionathanch",
+			"turbolent",
+			"trevorblades",
+			"wilbowma",
+			"yhaooo11",
+			"ASCorreia",
+			"Beta-test-initiation",
+			"Aashu-Dubey",
+			"Ezzhingy",
+			"Highfire1",
+			"JuliaPoo",
+			"Mark123M",
+			"AdnaneKhan",
+			"PrincewillIroka",
+			"StTronn",
+			"Tgcohce",
+			"WorldofKerry",
+			"Nathn",
+			"Vicente015",
+			"YingjiaLiu99",
+			"agrawal-d",
+			"asiff00",
+			"arnvgh",
+			"calvbore",
+			"erwin-lovecraft",
+			"gagan3012",
+			"cosmo3769",
+			"gshklovs",
+			"gaurav-gogia",
+			"elibroftw",
+			"iHildy",
+			"irisxu02",
+			"mathewbushuru",
+			"meleongg",
+			"nickbabcock",
+			"oltimaloku",
+			"naijwu",
+			"s-alad",
+			"pi-rate14",
+			"sanjeevyadavIT",
+			"sim0wn",
+			"snlimadev",
+			"tika",
+			"vsaosuo",
+			"tweeres04",
+			"virchau13",
+			"wiesenthal"
 		]
 	},
 	{
@@ -5033,26 +4640,28 @@
 				"language": "Go"
 			},
 			{
-				"name": "Scalable-Notification-System",
-				"description": null,
-				"updated_at": "2025-05-30T22:10:04Z",
-				"stars": 0,
-				"language": "Go"
-			},
-			{
 				"name": "Dockerized-Golang_API-MySql-React.js",
 				"description": null,
 				"updated_at": "2025-05-30T22:07:59Z",
 				"stars": 0,
 				"language": "Go"
-			},
-			{
-				"name": "directmail",
-				"description": null,
-				"updated_at": "2025-05-30T22:11:08Z",
-				"stars": 0,
-				"language": "Go"
 			}
+		],
+		"similar_interest": [
+			"NathanAW24",
+			"argonaut0",
+			"armintalaie",
+			"fxamacker",
+			"jo3-l",
+			"peterargue",
+			"thep2p",
+			"LordMoMA",
+			"brandur",
+			"erwin-lovecraft",
+			"gaurav-gogia",
+			"marianlime",
+			"devon-mar",
+			"patrickward"
 		]
 	},
 	{
@@ -5112,7 +4721,8 @@
 				"stars": 8,
 				"language": "Python"
 			}
-		]
+		],
+		"similar_interest": ["Lydxn", "filipherle", "gaurav-gogia", "sim0wn"]
 	},
 	{
 		"username": "PrincewillIroka",
@@ -5171,6 +4781,17 @@
 				"language": "JavaScript",
 				"topics": ["react", "redux"]
 			}
+		],
+		"similar_interest": [
+			"aldenluthfi",
+			"armintalaie",
+			"Aashu-Dubey",
+			"luckyjsx",
+			"mathewbushuru",
+			"meleongg",
+			"pi-rate14",
+			"sanjeevyadavIT",
+			"snlimadev"
 		]
 	},
 	{
@@ -5218,15 +4839,9 @@
 				"updated_at": "2024-03-13T18:24:54Z",
 				"stars": 0,
 				"language": "Rust"
-			},
-			{
-				"name": "evilvideo",
-				"description": "The weapon to destroy the foul beast that is Heavy Iron Bik Converter",
-				"updated_at": "2025-02-13T15:53:19Z",
-				"stars": 1,
-				"language": "Rust"
 			}
-		]
+		],
+		"similar_interest": ["nickbabcock"]
 	},
 	{
 		"username": "StTronn",
@@ -5252,28 +4867,18 @@
 				"updated_at": "2023-09-03T10:24:42Z",
 				"stars": 0,
 				"language": "TypeScript"
-			},
-			{
-				"name": "go-block-ledger",
-				"description": null,
-				"updated_at": "2024-10-17T15:55:04Z",
-				"stars": 0,
-				"language": "Go"
-			},
-			{
-				"name": "go-billing",
-				"description": null,
-				"updated_at": "2023-12-04T14:46:00Z",
-				"stars": 0,
-				"language": "Go"
-			},
-			{
-				"name": "go-editor",
-				"description": null,
-				"updated_at": "2024-08-03T22:31:27Z",
-				"stars": 0,
-				"language": "Go"
 			}
+		],
+		"similar_interest": [
+			"frankuyan",
+			"thep2p",
+			"ASCorreia",
+			"Aashu-Dubey",
+			"Beta-test-initiation",
+			"PrincewillIroka",
+			"Tgcohce",
+			"calvbore",
+			"pi-rate14"
 		]
 	},
 	{
@@ -5288,27 +4893,6 @@
 		},
 		"repos": [
 			{
-				"name": "lukso-status",
-				"description": "A mini dApp for LUKSO's The Grid that allows users to post and view short text updates stored directly on their Universal Profiles.",
-				"updated_at": "2025-05-12T17:46:14Z",
-				"stars": 0,
-				"language": "JavaScript"
-			},
-			{
-				"name": "ping2pay-n3xus",
-				"description": "🏆 Solana Nexus Hackathon 3rd Place",
-				"updated_at": "2025-04-13T07:00:30Z",
-				"stars": 0,
-				"language": "TypeScript"
-			},
-			{
-				"name": "dao-proposal-bot",
-				"description": "DAO Proposal Bot is a Discord bot designed to automatically monitor proposals in a specified DAO (Decentralized Autonomous Organization) on the Solana blockchain.",
-				"updated_at": "2024-11-29T00:33:30Z",
-				"stars": 1,
-				"language": "JavaScript"
-			},
-			{
 				"name": "dal-defai",
 				"description": "🏆 Sonic DefAi Hackathon Runner up for Best Social Agent",
 				"updated_at": "2025-03-10T09:08:33Z",
@@ -5322,6 +4906,31 @@
 				"stars": 0,
 				"language": "TypeScript"
 			}
+		],
+		"similar_interest": [
+			"garrethlee",
+			"stankur",
+			"ju1ien1100",
+			"ElianBelot",
+			"Lydxn",
+			"abdurj",
+			"albertkim",
+			"frankuyan",
+			"kewbish",
+			"jribbink",
+			"rheaplex",
+			"thep2p",
+			"wilbowma",
+			"ASCorreia",
+			"StTronn",
+			"asiff00",
+			"birchmd",
+			"calvbore",
+			"gagan3012",
+			"cosmo3769",
+			"gshklovs",
+			"tika",
+			"wiesenthal"
 		]
 	},
 	{
@@ -5343,33 +4952,28 @@
 				"language": "Dart"
 			},
 			{
-				"name": "keywordMapper",
-				"description": "Backend for Revember revision app. Contains all Python files necessary for text preprocessing, text identification, word generation and JSON reqs",
-				"updated_at": "2024-05-30T22:17:36Z",
-				"stars": 1,
-				"language": "Python"
-			},
-			{
-				"name": "blackjack-proj",
-				"description": "Ongoing blackjack game where memory is used as cash. After a certain number of rounds, either player or computer (house) runs out. Using Rules-Based design and OOP pattern",
-				"updated_at": "2025-02-20T00:54:31Z",
-				"stars": 0,
-				"language": "Python"
-			},
-			{
-				"name": "finance_tracker",
-				"description": null,
-				"updated_at": "2024-05-08T07:49:12Z",
-				"stars": 0,
-				"language": "Java"
-			},
-			{
 				"name": "crypto_ts",
 				"description": null,
 				"updated_at": "2024-06-26T18:08:48Z",
 				"stars": 0,
 				"language": "Jupyter Notebook"
 			}
+		],
+		"similar_interest": [
+			"garrethlee",
+			"stankur",
+			"ElianBelot",
+			"Lydxn",
+			"fegicochen",
+			"Aashu-Dubey",
+			"Highfire1",
+			"Nathn",
+			"gagan3012",
+			"gshklovs",
+			"luckyjsx",
+			"meleongg",
+			"naijwu",
+			"wiesenthal"
 		]
 	},
 	{
@@ -5406,13 +5010,6 @@
 				]
 			},
 			{
-				"name": "quartus-hls",
-				"description": null,
-				"updated_at": "2024-04-08T04:00:20Z",
-				"stars": 0,
-				"language": "Verilog"
-			},
-			{
 				"name": "Distributed-Computing",
 				"description": null,
 				"updated_at": "2025-01-31T06:05:48Z",
@@ -5426,7 +5023,8 @@
 				"stars": 0,
 				"language": "Rust"
 			}
-		]
+		],
+		"similar_interest": ["javathunderman", "MrAnderson1971"]
 	},
 	{
 		"username": "Nathn",
@@ -5483,6 +5081,30 @@
 				"language": "TypeScript",
 				"topics": ["chess"]
 			}
+		],
+		"similar_interest": [
+			"laurenyip",
+			"Anmol-Ghadia",
+			"Vaten0x",
+			"aldenluthfi",
+			"fegicochen",
+			"mahalisunil1",
+			"ysaleh03",
+			"Highfire1",
+			"JipFr",
+			"PrincewillIroka",
+			"bistromath25",
+			"irisxu02",
+			"luckyjsx",
+			"meleongg",
+			"mathewbushuru",
+			"naijwu",
+			"s-alad",
+			"pi-rate14",
+			"snlimadev",
+			"wiesenthal",
+			"AdenC123",
+			"Edster1121"
 		]
 	},
 	{
@@ -5546,6 +5168,38 @@
 				"stars": 7,
 				"language": "TypeScript"
 			}
+		],
+		"similar_interest": [
+			"stankur",
+			"FrankWhoee",
+			"omentic",
+			"Jake-Yeo",
+			"KevinL10",
+			"albertkim",
+			"alaviss",
+			"ardeshireshghi",
+			"argonaut0",
+			"armintalaie",
+			"kewbish",
+			"kiedtl",
+			"kickscondor",
+			"mvllow",
+			"oezingle",
+			"rctcwyvrn",
+			"trevorblades",
+			"Tidyrice",
+			"antnks",
+			"brandur",
+			"ethanthoma",
+			"elibroftw",
+			"joshvocal",
+			"meleongg",
+			"starptr",
+			"vsaosuo",
+			"virchau13",
+			"wiesenthal",
+			"zahash",
+			"devon-mar"
 		]
 	},
 	{
@@ -5581,20 +5235,14 @@
 				"language": "Python"
 			},
 			{
-				"name": "hostaway-unofficial",
-				"description": "Unofficial Hostaway",
-				"updated_at": "2024-07-18T19:52:10Z",
-				"stars": 0,
-				"language": "HTML"
-			},
-			{
 				"name": "ownerrez-mapbox-hapijs",
 				"description": "Glitch based app",
 				"updated_at": "2025-01-12T21:56:10Z",
 				"stars": 0,
 				"language": "HTML"
 			}
-		]
+		],
+		"similar_interest": ["hyperknot", "sanjeevyadavIT"]
 	},
 	{
 		"username": "YingjiaLiu99",
@@ -5627,22 +5275,9 @@
 				"updated_at": "2024-06-22T04:38:58Z",
 				"stars": 3,
 				"language": "JavaScript"
-			},
-			{
-				"name": "HIP-Frontend-only-Demo-version",
-				"description": null,
-				"updated_at": "2023-12-21T04:50:21Z",
-				"stars": 0,
-				"language": "JavaScript"
-			},
-			{
-				"name": "BBB-Scraper-System",
-				"description": null,
-				"updated_at": "2025-07-24T20:40:17Z",
-				"stars": 0,
-				"language": "TypeScript"
 			}
-		]
+		],
+		"similar_interest": ["Aashu-Dubey", "PrincewillIroka", "meleongg"]
 	},
 	{
 		"username": "abeaumont",
@@ -5700,6 +5335,14 @@
 				"language": "OCaml",
 				"topics": ["cryptography", "ocaml", "salsa20"]
 			}
+		],
+		"similar_interest": [
+			"Lydxn",
+			"kewbish",
+			"Aeren1564",
+			"agrawal-d",
+			"evansemet",
+			"mfornet"
 		]
 	},
 	{
@@ -5719,13 +5362,6 @@
 				"updated_at": "2025-01-15T05:54:08Z",
 				"stars": 0,
 				"language": "C++"
-			},
-			{
-				"name": "HTH-Ross-Video-FPGA",
-				"description": null,
-				"updated_at": "2024-09-30T23:59:48Z",
-				"stars": 0,
-				"language": "SystemVerilog"
 			},
 			{
 				"name": "PicoW-Macro-Keyboard",
@@ -5748,6 +5384,24 @@
 				"stars": 0,
 				"language": "C#"
 			}
+		],
+		"similar_interest": [
+			"FrankWhoee",
+			"tachibana-marine",
+			"EdwardJXLi",
+			"JustinHuPrime",
+			"PepperLola",
+			"FrozenHydrant",
+			"Mark123M",
+			"StarGazingHomies",
+			"hanmindev",
+			"irisxu02",
+			"mxple",
+			"MrAnderson1971",
+			"AidenKerr",
+			"WinteryFox",
+			"AdenC123",
+			"Edster1121"
 		]
 	},
 	{
@@ -5789,14 +5443,24 @@
 				"updated_at": "2023-09-10T18:23:58Z",
 				"stars": 0,
 				"language": "C++"
-			},
-			{
-				"name": "advent-of-code",
-				"description": null,
-				"updated_at": "2023-12-05T05:26:52Z",
-				"stars": 0,
-				"language": "Python"
 			}
+		],
+		"similar_interest": [
+			"tachibana-marine",
+			"EdwardJXLi",
+			"JustRegularLuna",
+			"JustinHuPrime",
+			"abdurj",
+			"aldenluthfi",
+			"PepperLola",
+			"FrozenHydrant",
+			"Mark123M",
+			"Tidyrice",
+			"hanmindev",
+			"mxple",
+			"MrAnderson1971",
+			"WinteryFox",
+			"AdenC123"
 		]
 	},
 	{
@@ -5839,6 +5503,18 @@
 					"firefox-extension"
 				]
 			}
+		],
+		"similar_interest": [
+			"Lydxn",
+			"aldenluthfi",
+			"mvllow",
+			"theCasm",
+			"Aeren1564",
+			"abeaumont",
+			"birchmd",
+			"elibroftw",
+			"mfornet",
+			"zahash"
 		]
 	},
 	{
@@ -5858,31 +5534,18 @@
 				"updated_at": "2025-07-10T19:26:07Z",
 				"stars": 20,
 				"language": "C"
-			},
-			{
-				"name": "arris-vip5305",
-				"description": "Hacking Telia TV box Arris VIP5305",
-				"updated_at": "2025-05-30T08:36:27Z",
-				"stars": 6
-			},
-			{
-				"name": "motorola-vip1920",
-				"description": "Hacking Telia tv box Motorola VIP1920",
-				"updated_at": "2025-05-30T08:36:02Z",
-				"stars": 2
-			},
-			{
-				"name": "motorola-vip1003",
-				"description": "Hacking Telia tv box Motorola VIP1003",
-				"updated_at": "2025-05-30T08:35:29Z",
-				"stars": 4
-			},
-			{
-				"name": "comigo-quattro-kartina-tv",
-				"description": "Hacking KartinaTV tv box (OEM Comigo Quattro)",
-				"updated_at": "2025-04-04T08:22:42Z",
-				"stars": 0
 			}
+		],
+		"similar_interest": [
+			"KevinL10",
+			"theCasm",
+			"Aeren1564",
+			"Vicente015",
+			"gaurav-gogia",
+			"joshvocal",
+			"saucesteals",
+			"sim0wn",
+			"zahash"
 		]
 	},
 	{
@@ -5909,14 +5572,14 @@
 				"updated_at": "2025-08-07T01:12:34Z",
 				"stars": 1,
 				"language": "TypeScript"
-			},
-			{
-				"name": "imgdb",
-				"description": "image host ",
-				"updated_at": "2024-06-09T13:48:09Z",
-				"stars": 0,
-				"language": "JavaScript"
 			}
+		],
+		"similar_interest": [
+			"ElianBelot",
+			"KevinL10",
+			"aldenluthfi",
+			"abdurj",
+			"fegicochen"
 		]
 	},
 	{
@@ -5945,24 +5608,6 @@
 					"speech-to-speech",
 					"tts",
 					"vad",
-					"voice-assistant"
-				]
-			},
-			{
-				"name": "Orpheus-TTS-Local",
-				"description": "Run Orpheus TTS locally.",
-				"updated_at": "2025-04-14T09:54:50Z",
-				"stars": 6,
-				"language": "Python",
-				"topics": [
-					"audio",
-					"llamacpp",
-					"lmstudio",
-					"ollama",
-					"orpheus",
-					"text-to-speech",
-					"tts",
-					"voice",
 					"voice-assistant"
 				]
 			},
@@ -5998,7 +5643,8 @@
 					"rag"
 				]
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "arnvgh",
@@ -6011,21 +5657,6 @@
 			"blog": ""
 		},
 		"repos": [
-			{
-				"name": "dots",
-				"description": "my boring dotfiles for *nix systems",
-				"updated_at": "2025-05-13T19:19:18Z",
-				"stars": 20,
-				"language": "Shell",
-				"topics": ["archlinux", "dotfiles", "hyprland", "linux"]
-			},
-			{
-				"name": "animedoro",
-				"description": "yet another pomodoro timer app.",
-				"updated_at": "2024-04-09T04:40:17Z",
-				"stars": 12,
-				"language": "TypeScript"
-			},
 			{
 				"name": "links",
 				"description": "elegant looking links manager.",
@@ -6047,16 +5678,9 @@
 				"updated_at": "2024-07-13T18:02:47Z",
 				"stars": 4,
 				"language": "JavaScript"
-			},
-			{
-				"name": "chat-gpt-google-extension",
-				"description": "A browser extension to display ChatGPT response alongside Google Search results only when the query ends withs a question mark(?), supports Chrome/Edge/Firefox. ",
-				"updated_at": "2024-01-26T15:06:01Z",
-				"stars": 13,
-				"language": "CSS",
-				"topics": ["chatgpt", "chatgpt-chrome-extension"]
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "birchmd",
@@ -6084,20 +5708,14 @@
 				"language": "Rust"
 			},
 			{
-				"name": "ratatui-type-and-scroll",
-				"description": null,
-				"updated_at": "2024-11-05T15:41:08Z",
-				"stars": 0,
-				"language": "Rust"
-			},
-			{
 				"name": "zk-map-reduce",
 				"description": null,
 				"updated_at": "2024-03-14T14:01:08Z",
 				"stars": 0,
 				"language": "Rust"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "brandur",
@@ -6132,20 +5750,14 @@
 				"language": "Go"
 			},
 			{
-				"name": "simplebox",
-				"description": "Package simplebox provides a simple, easy-to-use cryptographic API where all of the hard decisions have been made for you in advance.",
-				"updated_at": "2024-05-20T19:47:53Z",
-				"stars": 6,
-				"language": "Go"
-			},
-			{
 				"name": "logfmt",
 				"description": "logfmt parser in Rust.",
 				"updated_at": "2025-07-17T16:45:33Z",
 				"stars": 7,
 				"language": "Rust"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "caoculus",
@@ -6158,27 +5770,6 @@
 			"blog": ""
 		},
 		"repos": [
-			{
-				"name": "audio-clipper",
-				"description": "An audio clipper to use with sentence mining. For personal use.",
-				"updated_at": "2025-08-23T06:17:11Z",
-				"stars": 0,
-				"language": "Python"
-			},
-			{
-				"name": "texthooker",
-				"description": null,
-				"updated_at": "2025-05-25T18:35:52Z",
-				"stars": 0,
-				"language": "Rust"
-			},
-			{
-				"name": "am-i-tired",
-				"description": "An AI web app that detects how tired you are with a backend built using Rust. Runner-up winner in advanced division of Hacktech 2024.",
-				"updated_at": "2024-04-21T20:02:07Z",
-				"stars": 1,
-				"language": "JavaScript"
-			},
 			{
 				"name": "rubiks-race",
 				"description": null,
@@ -6193,7 +5784,8 @@
 				"stars": 0,
 				"language": "Rust"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "calvbore",
@@ -6214,20 +5806,14 @@
 				"language": "TypeScript"
 			},
 			{
-				"name": "hello-noir-solution",
-				"description": null,
-				"updated_at": "2025-04-21T21:58:26Z",
-				"stars": 0,
-				"language": "TypeScript"
-			},
-			{
 				"name": "noir-starter-kit",
 				"description": "A scaffold-eth extension to help you get started with noir.",
 				"updated_at": "2025-04-18T03:48:14Z",
 				"stars": 0,
 				"language": "TypeScript"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "antler5",
@@ -6253,29 +5839,9 @@
 				"updated_at": "2025-02-14T03:00:40Z",
 				"stars": 1,
 				"language": "Scheme"
-			},
-			{
-				"name": "zmk-config",
-				"description": null,
-				"updated_at": "2024-12-03T02:51:48Z",
-				"stars": 0,
-				"language": "Scheme"
-			},
-			{
-				"name": "old-guix-config",
-				"description": "Uploaded for posterity, sans commit history and some sensative files.",
-				"updated_at": "2024-12-03T02:47:21Z",
-				"stars": 2,
-				"language": "Scheme"
-			},
-			{
-				"name": "build123d-parts",
-				"description": null,
-				"updated_at": "2024-11-14T21:53:42Z",
-				"stars": 0,
-				"language": "Python"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "anomius",
@@ -6301,28 +5867,9 @@
 				"updated_at": "2024-10-16T09:07:48Z",
 				"stars": 0,
 				"language": "JavaScript"
-			},
-			{
-				"name": "Ohara",
-				"description": null,
-				"updated_at": "2024-10-13T02:28:03Z",
-				"stars": 0
-			},
-			{
-				"name": "codeboi",
-				"description": null,
-				"updated_at": "2023-10-27T10:17:57Z",
-				"stars": 0,
-				"language": "HTML"
-			},
-			{
-				"name": "boi",
-				"description": null,
-				"updated_at": "2025-02-10T01:08:02Z",
-				"stars": 0,
-				"language": "TypeScript"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "colliand",
@@ -6335,13 +5882,6 @@
 			"blog": "http://colliand.com"
 		},
 		"repos": [
-			{
-				"name": "open-book",
-				"description": "A place for interactive notes.",
-				"updated_at": "2025-01-03T04:19:47Z",
-				"stars": 0,
-				"language": "Jupyter Notebook"
-			},
 			{
 				"name": "right-to-reproducible-execution",
 				"description": "A presentation at AGU24 on interactive content sharing",
@@ -6356,55 +5896,8 @@
 				"stars": 0,
 				"language": "Jupyter Notebook"
 			}
-		]
-	},
-	{
-		"username": "edisonqu",
-		"theme": "democratizing developer tools",
-		"profile": {
-			"login": "edisonqu",
-			"avatar_url": "https://avatars.githubusercontent.com/u/63879791?v=4",
-			"bio": "builders and dreamers, doers and makers.",
-			"location": "toronto",
-			"blog": "http://edisonqu.com/"
-		},
-		"repos": [
-			{
-				"name": "esc",
-				"description": null,
-				"updated_at": "2025-04-08T01:31:25Z",
-				"stars": 0,
-				"language": "TypeScript"
-			},
-			{
-				"name": "thryve-app",
-				"description": "thryve",
-				"updated_at": "2025-03-05T08:46:31Z",
-				"stars": 0,
-				"language": "TypeScript"
-			},
-			{
-				"name": "feline",
-				"description": "Drag and Drop for BracketBot",
-				"updated_at": "2025-02-09T19:52:42Z",
-				"stars": 1,
-				"language": "TypeScript"
-			},
-			{
-				"name": "dml",
-				"description": null,
-				"updated_at": "2023-11-18T23:32:29Z",
-				"stars": 0,
-				"language": "TypeScript"
-			},
-			{
-				"name": "minimal",
-				"description": null,
-				"updated_at": "2023-11-14T02:22:42Z",
-				"stars": 0,
-				"language": "Java"
-			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "dmok22",
@@ -6425,33 +5918,14 @@
 				"language": "Python"
 			},
 			{
-				"name": "Arduino-Claw",
-				"description": null,
-				"updated_at": "2023-09-06T17:10:47Z",
-				"stars": 0,
-				"language": "C++"
-			},
-			{
-				"name": "Simple-RISC-Machine",
-				"description": null,
-				"updated_at": "2025-01-15T21:03:46Z",
-				"stars": 0
-			},
-			{
-				"name": "sailbot-quiz",
-				"description": null,
-				"updated_at": "2023-09-11T17:12:58Z",
-				"stars": 0,
-				"language": "C"
-			},
-			{
 				"name": "cellsim-dmok22",
 				"description": null,
 				"updated_at": "2023-09-06T16:56:42Z",
 				"stars": 0,
 				"language": "Java"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "ethanthoma",
@@ -6473,25 +5947,11 @@
 				"topics": ["machine-learning", "tensor", "zig", "zig-package"]
 			},
 			{
-				"name": "glum",
-				"description": "NativeScript Gleam Game Engine Library",
-				"updated_at": "2025-07-13T17:58:25Z",
-				"stars": 4,
-				"language": "Gleam"
-			},
-			{
 				"name": "effect",
 				"description": "A small library for handling side effects! Particularly promises in Gleam. Inspired by Elm and Lustre's approach to effect handling.",
 				"updated_at": "2025-03-26T05:31:56Z",
 				"stars": 8,
 				"language": "Gleam"
-			},
-			{
-				"name": "blix",
-				"description": "blob storage server written in flix",
-				"updated_at": "2025-04-14T02:30:44Z",
-				"stars": 1,
-				"language": "Nix"
 			},
 			{
 				"name": "nvim",
@@ -6500,7 +5960,8 @@
 				"stars": 1,
 				"language": "Lua"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "erwin-lovecraft",
@@ -6520,37 +5981,9 @@
 				"stars": 0,
 				"language": "Go",
 				"topics": ["go", "htmx", "sse"]
-			},
-			{
-				"name": "image-minimizer",
-				"description": "A simple server for reducing image size written in Go",
-				"updated_at": "2024-12-22T12:11:38Z",
-				"stars": 0,
-				"language": "Go"
-			},
-			{
-				"name": "jwt-auth-server",
-				"description": null,
-				"updated_at": "2024-08-13T08:29:22Z",
-				"stars": 0,
-				"language": "Go"
-			},
-			{
-				"name": "timekeeper",
-				"description": "A sample application using smart contract and Go language",
-				"updated_at": "2024-06-22T06:33:41Z",
-				"stars": 0,
-				"language": "Go",
-				"topics": ["go", "smart-contract"]
-			},
-			{
-				"name": "sample-azure-func-app",
-				"description": null,
-				"updated_at": "2023-12-21T04:03:27Z",
-				"stars": 0,
-				"language": "Go"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "gagan3012",
@@ -6572,20 +6005,6 @@
 				"topics": ["explainable-ai", "interpretability", "llms"]
 			},
 			{
-				"name": "self_rewarding_models",
-				"description": "Paper Implementation of Self-Rewarding Language Models",
-				"updated_at": "2024-02-01T00:30:28Z",
-				"stars": 13,
-				"language": "Python"
-			},
-			{
-				"name": "eagle-llm",
-				"description": null,
-				"updated_at": "2025-07-07T18:08:27Z",
-				"stars": 0,
-				"language": "Python"
-			},
-			{
 				"name": "llama-tldr",
 				"description": "LLama Training code DL-NLP",
 				"updated_at": "2025-08-11T18:36:26Z",
@@ -6600,7 +6019,8 @@
 				"language": "Python",
 				"topics": ["data-deduplication", "multilingual", "nlp"]
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "cosmo3769",
@@ -6613,12 +6033,6 @@
 			"blog": "cosmo3769.github.io"
 		},
 		"repos": [
-			{
-				"name": "ml_notes",
-				"description": "This will contain all my learning notes. It can be from a book, paper, documentation or any learning resources.",
-				"updated_at": "2025-02-05T14:55:48Z",
-				"stars": 2
-			},
 			{
 				"name": "Quantized-LLMs",
 				"description": "Quantization of LLMs and benchmarking.",
@@ -6634,20 +6048,14 @@
 				"language": "TypeScript"
 			},
 			{
-				"name": "react_coursera",
-				"description": "learning react",
-				"updated_at": "2025-08-21T21:56:31Z",
-				"stars": 0,
-				"language": "JavaScript"
-			},
-			{
 				"name": "DataBot",
 				"description": null,
 				"updated_at": "2024-01-31T23:33:50Z",
 				"stars": 0,
 				"language": "TypeScript"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "gshklovs",
@@ -6661,101 +6069,14 @@
 		},
 		"repos": [
 			{
-				"name": "react-codex-starter",
-				"description": "Vite/FastAPI starter code template with CI and AGENTS.MD file for reliable agentic development. Designed for OpenAI Codex, Claude Code, and Devin. ",
-				"updated_at": "2025-06-05T07:07:05Z",
-				"stars": 2,
-				"language": "JavaScript",
-				"topics": [
-					"agents",
-					"claude-code",
-					"fastapi",
-					"github-actions",
-					"openai-codex",
-					"pytest",
-					"react",
-					"template",
-					"vitest"
-				]
-			},
-			{
 				"name": "BerkeleyAIHacks",
 				"description": "Berkeley AI Hackathon 2024 Submission | GraphRAG powered realtime meeting notes.",
 				"updated_at": "2024-07-07T17:51:43Z",
 				"stars": 1,
 				"language": "Python"
-			},
-			{
-				"name": "notes-index",
-				"description": null,
-				"updated_at": "2025-06-05T07:09:47Z",
-				"stars": 0,
-				"language": "Python"
-			},
-			{
-				"name": "gesture-dispatched-mouse",
-				"description": "Control your computer with the wave of a hand",
-				"updated_at": "2024-01-17T06:39:19Z",
-				"stars": 0,
-				"language": "Jupyter Notebook"
-			},
-			{
-				"name": "CVHelloWorld",
-				"description": "Use YOLOv8 to detect horses from video",
-				"updated_at": "2023-10-20T16:27:30Z",
-				"stars": 0,
-				"language": "Python",
-				"topics": ["opencv"]
 			}
-		]
-	},
-	{
-		"username": "devsamuelv",
-		"theme": "embedded systems and robotics experimentation",
-		"profile": {
-			"login": "devsamuelv",
-			"avatar_url": "https://avatars.githubusercontent.com/u/52802289?v=4",
-			"bio": "College student looking to build something cool.",
-			"location": "Florida, USA",
-			"blog": ""
-		},
-		"repos": [
-			{
-				"name": "esp-crsf-component-integration",
-				"description": null,
-				"updated_at": "2025-07-03T03:21:18Z",
-				"stars": 0,
-				"language": "C"
-			},
-			{
-				"name": "esp-uart-pattern-experiment",
-				"description": "uart pattern experiment with esp uart pattern example",
-				"updated_at": "2025-06-04T04:23:50Z",
-				"stars": 0,
-				"language": "C++"
-			},
-			{
-				"name": "esp-crossfire-experiment",
-				"description": null,
-				"updated_at": "2025-05-17T04:55:30Z",
-				"stars": 0,
-				"language": "C++"
-			},
-			{
-				"name": "ros_lidar_experiment",
-				"description": "Working ros2 demo for ldrobot lidar scanner based off ldrobot code",
-				"updated_at": "2024-11-18T17:26:11Z",
-				"stars": 0,
-				"language": "Makefile"
-			},
-			{
-				"name": "nano-connect-servo",
-				"description": null,
-				"updated_at": "2024-10-18T19:04:47Z",
-				"stars": 0,
-				"language": "Rust"
-			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "evansemet",
@@ -6783,73 +6104,14 @@
 				"language": "Jupyter Notebook"
 			},
 			{
-				"name": "t-vwap-options",
-				"description": "A Unified Framework for Adjusting Effective Time to Expiration in TWAP- and VWAP-Settled Options",
-				"updated_at": "2025-07-11T16:31:51Z",
-				"stars": 0,
-				"language": "TeX"
-			},
-			{
 				"name": "cardquant",
 				"description": "A Python library for pricing options based on the sum of cards drawn from a deck.",
 				"updated_at": "2025-05-28T16:54:38Z",
 				"stars": 19,
 				"language": "Python"
-			},
-			{
-				"name": "Puzzles",
-				"description": "Work in Progress....",
-				"updated_at": "2025-07-25T16:57:02Z",
-				"stars": 0
 			}
-		]
-	},
-	{
-		"username": "hakrsh",
-		"theme": "systems performance and design exploration",
-		"profile": {
-			"login": "hakrsh",
-			"avatar_url": "https://avatars.githubusercontent.com/u/61736905?v=4",
-			"bio": null,
-			"location": "Hyderabad",
-			"blog": "https://www.linkedin.com/in/harikrishnanum/"
-		},
-		"repos": [
-			{
-				"name": "System-Design-Experiments",
-				"description": null,
-				"updated_at": "2024-09-02T19:54:16Z",
-				"stars": 0,
-				"language": "Go"
-			},
-			{
-				"name": "http2-vs-http1.1",
-				"description": "HTTP/1.1 versus HTTP/2 performance testing",
-				"updated_at": "2024-06-26T17:01:26Z",
-				"stars": 1,
-				"language": "HTML"
-			},
-			{
-				"name": "LogQube",
-				"description": "A log ingestor system efficiently handles large log data volumes with a simple interface for querying via full-text search or specific field filters.",
-				"updated_at": "2023-11-19T19:56:03Z",
-				"stars": 0,
-				"language": "JavaScript"
-			},
-			{
-				"name": "p2p_file_sharing",
-				"description": null,
-				"updated_at": "2024-03-16T16:28:50Z",
-				"stars": 0
-			},
-			{
-				"name": "image-crunch",
-				"description": null,
-				"updated_at": "2023-10-17T13:18:07Z",
-				"stars": 1,
-				"language": "Go"
-			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "hanmindev",
@@ -6862,13 +6124,6 @@
 			"blog": "hanmin.dev"
 		},
 		"repos": [
-			{
-				"name": "ingot",
-				"description": null,
-				"updated_at": "2024-08-10T23:35:18Z",
-				"stars": 0,
-				"language": "MDX"
-			},
 			{
 				"name": "Hmmm",
 				"description": "Hanmin's Minecraft Math Module | Floating-Point Arithmetic for Minecraft's Function Format! (and more!)",
@@ -6884,21 +6139,9 @@
 				"stars": 34,
 				"language": "Python",
 				"topics": ["animation", "armature", "converter", "minecraft"]
-			},
-			{
-				"name": "mikumikumine",
-				"description": "Converter to turn .VMD files into .mcfunction format",
-				"updated_at": "2024-01-30T18:06:56Z",
-				"stars": 4,
-				"language": "Python"
-			},
-			{
-				"name": "ingot-docs",
-				"description": "Enabling Minecraft Mapmakers to write high quality code with zero cost abstractions.",
-				"updated_at": "2024-01-30T19:17:37Z",
-				"stars": 2
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "gaurav-gogia",
@@ -6926,13 +6169,6 @@
 					"programming-language",
 					"security"
 				]
-			},
-			{
-				"name": "veil",
-				"description": "veil is a toy web application firewall with honeypot capabilities",
-				"updated_at": "2023-10-29T20:30:39Z",
-				"stars": 1,
-				"language": "Go"
 			},
 			{
 				"name": "dfis-utils",
@@ -6971,7 +6207,8 @@
 					"web-app"
 				]
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "elibroftw",
@@ -7020,14 +6257,6 @@
 				"topics": ["justfile", "vscode", "vscode-extension"]
 			},
 			{
-				"name": "c-sharp-console-app-msix-template",
-				"description": "An experiment turned template of a modern Windows distributable command line application using C#",
-				"updated_at": "2025-03-19T13:48:37Z",
-				"stars": 1,
-				"language": "C#",
-				"topics": ["c-sharp", "command-line", "msix"]
-			},
-			{
 				"name": "devops-utilities",
 				"description": null,
 				"updated_at": "2025-05-10T06:51:50Z",
@@ -7042,7 +6271,8 @@
 					"python"
 				]
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "iHildy",
@@ -7061,29 +6291,9 @@
 				"updated_at": "2025-08-18T01:07:54Z",
 				"stars": 2,
 				"language": "TypeScript"
-			},
-			{
-				"name": "google-jules-workflow",
-				"description": "A CLI tool to make working with Google Jules easier with Linear and Github - download via npm",
-				"updated_at": "2025-05-31T08:06:57Z",
-				"stars": 2,
-				"language": "TypeScript"
-			},
-			{
-				"name": "create-hildy-app",
-				"description": "An opinionated version of create-next-app with all my tools setup",
-				"updated_at": "2025-08-13T04:51:18Z",
-				"stars": 1,
-				"language": "TypeScript"
-			},
-			{
-				"name": "ics-from-todoist",
-				"description": null,
-				"updated_at": "2025-02-04T19:14:40Z",
-				"stars": 0,
-				"language": "TypeScript"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "hyperknot",
@@ -7131,14 +6341,9 @@
 					"osm",
 					"vector-tiles"
 				]
-			},
-			{
-				"name": "hyperpilot",
-				"description": "Mapsforge rendering theme for pilots",
-				"updated_at": "2025-06-16T16:13:39Z",
-				"stars": 8
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "gitpancake",
@@ -7152,41 +6357,14 @@
 		},
 		"repos": [
 			{
-				"name": "eden.mint.app",
-				"description": null,
-				"updated_at": "2025-08-18T16:44:27Z",
-				"stars": 0,
-				"language": "TypeScript"
-			},
-			{
-				"name": "eden.shopify",
-				"description": null,
-				"updated_at": "2025-07-27T15:35:59Z",
-				"stars": 0,
-				"language": "TypeScript"
-			},
-			{
-				"name": "farcaster.discovery",
-				"description": null,
-				"updated_at": "2025-07-09T01:02:04Z",
-				"stars": 0,
-				"language": "TypeScript"
-			},
-			{
-				"name": "blackbirds-farcon",
-				"description": null,
-				"updated_at": "2025-04-21T22:47:47Z",
-				"stars": 0,
-				"language": "TypeScript"
-			},
-			{
 				"name": "dinner-party-dao",
 				"description": null,
 				"updated_at": "2023-12-17T23:24:38Z",
 				"stars": 0,
 				"language": "Solidity"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "irisxu02",
@@ -7200,13 +6378,6 @@
 		},
 		"repos": [
 			{
-				"name": "boids-opengl",
-				"description": "C++ simulation of flocking behavior using the Boids algorithm and OpenGL",
-				"updated_at": "2025-04-08T04:52:17Z",
-				"stars": 0,
-				"language": "C++"
-			},
-			{
 				"name": "rubik",
 				"description": "Interactive 3D graphics model of a Rubik's Cube built with Three.js ",
 				"updated_at": "2025-03-11T00:22:25Z",
@@ -7219,73 +6390,9 @@
 				"updated_at": "2024-02-11T21:25:17Z",
 				"stars": 0,
 				"language": "Python"
-			},
-			{
-				"name": "blocky-art",
-				"description": null,
-				"updated_at": "2024-01-21T07:12:21Z",
-				"stars": 0
-			},
-			{
-				"name": "travel-map",
-				"description": "A color coded map marking countries I've travelled to.",
-				"updated_at": "2023-10-10T07:03:48Z",
-				"stars": 0,
-				"language": "HTML",
-				"topics": [
-					"folium-maps",
-					"google-maps-api",
-					"google-sheets-api"
-				]
 			}
-		]
-	},
-	{
-		"username": "harshvp072",
-		"theme": "educational productivity tools",
-		"profile": {
-			"login": "harshvp072",
-			"avatar_url": "https://avatars.githubusercontent.com/u/157698602?v=4",
-			"bio": null,
-			"location": null,
-			"blog": ""
-		},
-		"repos": [
-			{
-				"name": "Study-Hive",
-				"description": "Study Tracker Application",
-				"updated_at": "2025-07-09T17:41:26Z",
-				"stars": 0,
-				"language": "JavaScript"
-			},
-			{
-				"name": "StudyHive",
-				"description": "Stay productive in your learning hive.",
-				"updated_at": "2025-05-16T15:46:52Z",
-				"stars": 0,
-				"language": "Java"
-			},
-			{
-				"name": "FocusFlow",
-				"description": "This application is used to track our study progress",
-				"updated_at": "2025-05-15T12:46:57Z",
-				"stars": 0,
-				"language": "Java"
-			},
-			{
-				"name": "WisdomBot",
-				"description": "It is a small project that summarizes articles into small paragraphs using the Gemini API.",
-				"updated_at": "2025-04-16T08:16:46Z",
-				"stars": 0,
-				"language": "Java"
-			},
-			{
-				"name": "SMS-School-Management-System",
-				"description": "This project will help you to understand Java with OOP's very clearly ",
-				"updated_at": "2024-07-04T18:54:14Z",
-				"stars": 0
-			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "joshvocal",
@@ -7312,22 +6419,9 @@
 				"stars": 1,
 				"language": "Shell",
 				"topics": ["dotfiles"]
-			},
-			{
-				"name": "amex-card-member-amount",
-				"description": "Determine how much each cardholder owes based on an excel sheet.",
-				"updated_at": "2025-02-09T21:45:06Z",
-				"stars": 0,
-				"language": "Python"
-			},
-			{
-				"name": "nix-config",
-				"description": "❄ My nix home manager",
-				"updated_at": "2023-12-27T16:22:29Z",
-				"stars": 0,
-				"language": "Nix"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "gvaghasiya02",
@@ -7341,41 +6435,14 @@
 		},
 		"repos": [
 			{
-				"name": "VoiceRecorderProject",
-				"description": null,
-				"updated_at": "2025-03-19T20:19:12Z",
-				"stars": 0,
-				"language": "HTML"
-			},
-			{
-				"name": "restaurantfinder",
-				"description": null,
-				"updated_at": "2024-05-28T06:28:10Z",
-				"stars": 0,
-				"language": "HTML"
-			},
-			{
-				"name": "Book-Genre-Prediction",
-				"description": null,
-				"updated_at": "2023-09-03T18:18:41Z",
-				"stars": 0,
-				"language": "Jupyter Notebook"
-			},
-			{
 				"name": "SchedularRunnerFinal",
 				"description": null,
 				"updated_at": "2025-05-12T21:15:08Z",
 				"stars": 0,
 				"language": "Java"
-			},
-			{
-				"name": "asterix-tests",
-				"description": "Tests for Optimized Group by",
-				"updated_at": "2025-05-21T16:41:26Z",
-				"stars": 0,
-				"language": "Python"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "luckyjsx",
@@ -7396,34 +6463,14 @@
 				"language": "TypeScript"
 			},
 			{
-				"name": "BlackBus-Backend",
-				"description": null,
-				"updated_at": "2025-08-18T12:42:22Z",
-				"stars": 0,
-				"language": "TypeScript"
-			},
-			{
 				"name": "StudyNotion",
 				"description": "Study Notion is an ED Tech (Education Technology) web application developed using the MERN stack.",
 				"updated_at": "2024-05-06T19:31:24Z",
 				"stars": 0,
 				"language": "JavaScript"
-			},
-			{
-				"name": "WanderLust",
-				"description": null,
-				"updated_at": "2024-01-04T17:06:44Z",
-				"stars": 0,
-				"language": "JavaScript"
-			},
-			{
-				"name": "Gym-Web-App-Backend",
-				"description": null,
-				"updated_at": "2025-02-03T17:40:02Z",
-				"stars": 0,
-				"language": "JavaScript"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "liam-ilan",
@@ -7452,75 +6499,15 @@
 				]
 			},
 			{
-				"name": "crumb-vscode",
-				"description": "The Visual Studio Code syntax highlighter extension for the Crumb programming language.",
-				"updated_at": "2023-11-15T00:27:33Z",
-				"stars": 5,
-				"topics": [
-					"crumb",
-					"syntax-highlighting",
-					"vscode",
-					"vscode-extension"
-				]
-			},
-			{
 				"name": "crumb-template",
 				"description": "A template to help you get started with Crumb.",
 				"updated_at": "2025-02-24T04:36:01Z",
 				"stars": 0,
 				"language": "Shell",
 				"topics": ["crumb", "template"]
-			},
-			{
-				"name": "crumb-show-hn",
-				"description": "A simple Show HN client in Crumb.",
-				"updated_at": "2023-10-02T19:51:11Z",
-				"stars": 1,
-				"language": "Shell",
-				"topics": [
-					"client",
-					"crumb",
-					"hacker-news",
-					"hackernews",
-					"tui"
-				]
-			},
-			{
-				"name": "crumb-cube",
-				"description": "A cube wireframe renderer in a 34x34 Crumb script",
-				"updated_at": "2023-09-16T04:57:56Z",
-				"stars": 1,
-				"language": "Shell",
-				"topics": ["3d", "art", "crumb", "cube", "obfuscation"]
 			}
-		]
-	},
-	{
-		"username": "maggie-j-liu",
-		"theme": "reducing digital friction",
-		"profile": {
-			"login": "maggie-j-liu",
-			"avatar_url": "https://avatars.githubusercontent.com/u/63619830?v=4",
-			"bio": null,
-			"location": null,
-			"blog": "https://maggieliu.dev"
-		},
-		"repos": [
-			{
-				"name": "friction",
-				"description": "https://devpost.com/software/friction",
-				"updated_at": "2024-02-19T07:40:22Z",
-				"stars": 8,
-				"language": "JavaScript"
-			},
-			{
-				"name": "friction-emails",
-				"description": null,
-				"updated_at": "2024-02-18T09:38:12Z",
-				"stars": 0,
-				"language": "TypeScript"
-			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "lukasgolson",
@@ -7534,45 +6521,14 @@
 		},
 		"repos": [
 			{
-				"name": "Digital-Intracanopy-Photogrammetry",
-				"description": "An automated workflow to reconstruct deciduous trees from FPV drone imagery",
-				"updated_at": "2025-02-27T04:41:06Z",
-				"stars": 0,
-				"language": "Python",
-				"topics": [
-					"forestry",
-					"photogrammetry-tools",
-					"research",
-					"workflow"
-				]
-			},
-			{
-				"name": "Comparison-of-Canopy-Cover-Mapping-Methods",
-				"description": "Code used in our paper that compares open-access methods for urban canopy cover mapping.",
-				"updated_at": "2025-08-05T03:02:00Z",
-				"stars": 0
-			},
-			{
 				"name": "Random-Sample-Error-for-Canopy-Classification",
 				"description": null,
 				"updated_at": "2025-08-10T17:58:40Z",
 				"stars": 0,
 				"language": "Python"
-			},
-			{
-				"name": "TreeDelineation",
-				"description": null,
-				"updated_at": "2024-09-18T20:33:20Z",
-				"stars": 0,
-				"language": "R"
-			},
-			{
-				"name": "PhotogrammetricTrimmer",
-				"description": "Tool to trim close-range photogrammetric point clouds based on location of camera",
-				"updated_at": "2024-11-06T20:05:45Z",
-				"stars": 0
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "mathewbushuru",
@@ -7620,7 +6576,8 @@
 				"stars": 0,
 				"language": "TypeScript"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "meleongg",
@@ -7668,7 +6625,8 @@
 				"stars": 0,
 				"language": "TypeScript"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "marianlime",
@@ -7682,40 +6640,14 @@
 		},
 		"repos": [
 			{
-				"name": "crimescoop",
-				"description": "2nd year group project",
-				"updated_at": "2025-06-11T00:56:24Z",
-				"stars": 0,
-				"language": "JavaScript"
-			},
-			{
-				"name": "L4DClone",
-				"description": null,
-				"updated_at": "2025-03-18T14:12:30Z",
-				"stars": 0
-			},
-			{
 				"name": "secure-middleware",
 				"description": null,
 				"updated_at": "2025-03-09T12:09:59Z",
 				"stars": 0,
 				"language": "Go"
-			},
-			{
-				"name": "homima",
-				"description": null,
-				"updated_at": "2025-03-09T11:27:39Z",
-				"stars": 0,
-				"language": "TypeScript"
-			},
-			{
-				"name": "ecomnscript",
-				"description": "Simple synthetic ticker data script",
-				"updated_at": "2023-11-04T15:52:38Z",
-				"stars": 0,
-				"language": "Python"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "nickbabcock",
@@ -7784,7 +6716,8 @@
 					"timescaledb"
 				]
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "mxple",
@@ -7824,15 +6757,9 @@
 				"updated_at": "2023-09-11T14:38:27Z",
 				"stars": 0,
 				"language": "Yacc"
-			},
-			{
-				"name": "FallingSand",
-				"description": null,
-				"updated_at": "2023-09-08T21:58:33Z",
-				"stars": 1,
-				"language": "C++"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "mfornet",
@@ -7854,13 +6781,6 @@
 				"topics": ["acm-icpc", "vscode-extension"]
 			},
 			{
-				"name": "project-euler-lean",
-				"description": "Proofs of Project Euler problems in LEAN",
-				"updated_at": "2024-01-29T23:44:08Z",
-				"stars": 3,
-				"language": "Lean"
-			},
-			{
 				"name": "advent-of-code-2024",
 				"description": "Solutions to Advent of Code 2024 in Lean",
 				"updated_at": "2024-12-27T13:25:58Z",
@@ -7874,7 +6794,8 @@
 				"stars": 4,
 				"language": "C++"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "oltimaloku",
@@ -7895,34 +6816,14 @@
 				"language": "TypeScript"
 			},
 			{
-				"name": "ExplainIt",
-				"description": null,
-				"updated_at": "2024-11-24T20:06:10Z",
-				"stars": 0,
-				"language": "Swift"
-			},
-			{
-				"name": "GitHubMyFollowers",
-				"description": "An iOS app I built that allows you to track and favourite your GitHub followers. I built this app to learn the basics of UIKit. ",
-				"updated_at": "2024-09-24T20:43:07Z",
-				"stars": 0,
-				"language": "Swift"
-			},
-			{
 				"name": "chefAI",
 				"description": "A Swift mobile app that scans food item barcodes to populate your inventory and auto-generates recipes from available ingredients.",
 				"updated_at": "2024-03-02T04:22:01Z",
 				"stars": 2,
 				"language": "Swift"
-			},
-			{
-				"name": "ResumeTailor",
-				"description": null,
-				"updated_at": "2024-09-07T00:43:34Z",
-				"stars": 0,
-				"language": "TypeScript"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "naijwu",
@@ -7950,13 +6851,6 @@
 				"language": "JavaScript"
 			},
 			{
-				"name": "aagg",
-				"description": "(financial) accounts aggregator",
-				"updated_at": "2025-07-11T00:00:39Z",
-				"stars": 0,
-				"language": "TypeScript"
-			},
-			{
 				"name": "twoplates",
 				"description": "basic exercise stats tracking",
 				"updated_at": "2024-02-04T05:59:40Z",
@@ -7970,7 +6864,8 @@
 				"stars": 1,
 				"language": "PHP"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "s-alad",
@@ -8025,15 +6920,9 @@
 				"updated_at": "2024-05-07T04:09:17Z",
 				"stars": 0,
 				"language": "TypeScript"
-			},
-			{
-				"name": "le-AMM",
-				"description": null,
-				"updated_at": "2025-05-07T20:18:40Z",
-				"stars": 1,
-				"language": "TypeScript"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "okarthikb",
@@ -8054,34 +6943,14 @@
 				"language": "Python"
 			},
 			{
-				"name": "jax-mamba-smol",
-				"description": null,
-				"updated_at": "2024-06-27T06:18:39Z",
-				"stars": 8,
-				"language": "Jupyter Notebook"
-			},
-			{
-				"name": "toy-model-experiments",
-				"description": null,
-				"updated_at": "2024-07-05T04:36:40Z",
-				"stars": 1,
-				"language": "Jupyter Notebook"
-			},
-			{
 				"name": "attention-visualizer",
 				"description": "LLM attention pattern visualizer",
 				"updated_at": "2023-10-01T04:37:24Z",
 				"stars": 10,
 				"language": "CSS"
-			},
-			{
-				"name": "mech-interp",
-				"description": null,
-				"updated_at": "2023-10-10T04:25:11Z",
-				"stars": 1,
-				"language": "Jupyter Notebook"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "merouanezouaid",
@@ -8102,34 +6971,14 @@
 				"language": "JavaScript"
 			},
 			{
-				"name": "freeread",
-				"description": null,
-				"updated_at": "2025-04-23T14:19:40Z",
-				"stars": 5,
-				"language": "JavaScript"
-			},
-			{
 				"name": "pwp",
 				"description": "a pip wrapper that automatically manages requirements.txt",
 				"updated_at": "2024-09-15T22:00:47Z",
 				"stars": 7,
 				"language": "Python"
-			},
-			{
-				"name": "watermelon-profile",
-				"description": "Give your Profile Picture a PALESTINIAN theme - FREE 🍉!",
-				"updated_at": "2024-06-17T00:52:43Z",
-				"stars": 16,
-				"language": "JavaScript"
-			},
-			{
-				"name": "youloop-v2",
-				"description": null,
-				"updated_at": "2024-05-05T20:41:53Z",
-				"stars": 0,
-				"language": "JavaScript"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "pi-rate14",
@@ -8157,13 +7006,6 @@
 				"language": "JavaScript"
 			},
 			{
-				"name": "expenseTracker",
-				"description": "Clean expense tracker made using React Context APIs",
-				"updated_at": "2025-07-15T06:20:48Z",
-				"stars": 1,
-				"language": "JavaScript"
-			},
-			{
 				"name": "ethCrowd",
 				"description": "An ethereum blockchain based crowdfunding platform built using Solidity, Web3, Hardhat, React, and Material UI",
 				"updated_at": "2024-07-03T07:09:50Z",
@@ -8177,7 +7019,8 @@
 				"stars": 2,
 				"language": "JavaScript"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "saucesteals",
@@ -8204,75 +7047,9 @@
 				"updated_at": "2025-08-09T08:10:32Z",
 				"stars": 48,
 				"language": "Go"
-			},
-			{
-				"name": "pypatch",
-				"description": "Inject arbitrary code into any running python interpreter",
-				"updated_at": "2023-11-06T22:53:51Z",
-				"stars": 5,
-				"language": "Go"
-			},
-			{
-				"name": "maclid",
-				"description": "Display controls and lid sync for Macbooks on Linux",
-				"updated_at": "2025-05-19T14:03:58Z",
-				"stars": 0,
-				"language": "C"
-			},
-			{
-				"name": "photontools",
-				"description": "Extending Photon",
-				"updated_at": "2025-02-06T06:37:44Z",
-				"stars": 5,
-				"language": "TypeScript"
 			}
-		]
-	},
-	{
-		"username": "s1ntaxe770r",
-		"theme": "experimenting with kubernetes and distributed systems",
-		"profile": {
-			"login": "s1ntaxe770r",
-			"avatar_url": "https://avatars.githubusercontent.com/u/53065463?v=4",
-			"bio": "yet another gopher interested in distributed systems and the cloud.",
-			"location": "space",
-			"blog": "log.jubril.xyz"
-		},
-		"repos": [
-			{
-				"name": "go-k8s-sqlite",
-				"description": "responding to strangers on the interwebs",
-				"updated_at": "2024-12-31T08:12:42Z",
-				"stars": 5,
-				"language": "Go"
-			},
-			{
-				"name": "whyport-this-clock",
-				"description": "Questionable implementation of lamport clocks ",
-				"updated_at": "2024-10-11T15:04:01Z",
-				"stars": 1,
-				"language": "Go"
-			},
-			{
-				"name": "flux-experiments",
-				"description": null,
-				"updated_at": "2023-12-13T01:30:32Z",
-				"stars": 0
-			},
-			{
-				"name": "psst",
-				"description": "persistent volumes anyone?",
-				"updated_at": "2024-03-02T12:47:15Z",
-				"stars": 1
-			},
-			{
-				"name": "promnet",
-				"description": "prometheus exporter for my internet speeds",
-				"updated_at": "2023-10-21T22:32:30Z",
-				"stars": 0,
-				"language": "Go"
-			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "sanjeevyadavIT",
@@ -8315,15 +7092,9 @@
 					"magento2-mobile-app",
 					"mvvm"
 				]
-			},
-			{
-				"name": "react-native-brownfield-example",
-				"description": "An Android app where React native is in brownfield setup ",
-				"updated_at": "2025-05-09T01:41:14Z",
-				"stars": 1,
-				"language": "Kotlin"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "sim0wn",
@@ -8336,32 +7107,6 @@
 			"blog": "https://sim0wn.rocks"
 		},
 		"repos": [
-			{
-				"name": "knowledge-base",
-				"description": null,
-				"updated_at": "2025-06-13T21:19:52Z",
-				"stars": 0
-			},
-			{
-				"name": "templates-ifpr-jacarezinho",
-				"description": "Coleção de modelos para elaboração de trabalhos acadêmicos do IFPR Jacarezinho.",
-				"updated_at": "2023-09-10T22:35:50Z",
-				"stars": 0,
-				"topics": [
-					"academic-writing",
-					"libreoffice-writer",
-					"microsoft-word",
-					"templates"
-				]
-			},
-			{
-				"name": "minicurso-python-2022",
-				"description": "Projetos simples desenvolvidos em Python que foram usados de exemplo durante um curso ministrado no IFPR Jacarezinho de Introdução à Programação em Linguagem Python",
-				"updated_at": "2023-09-10T22:25:58Z",
-				"stars": 0,
-				"language": "Python",
-				"topics": ["examples-python", "pygame", "teaching-materials"]
-			},
 			{
 				"name": "portfolio",
 				"description": "This repository contains the source code and files related to my personal portfolio. Here you will find a collection of projects, works, and experiments that demonstrate my skills and experience as a cybersecurity enthusiast. Feel free to explore the content and reach out if you have any questions or suggestions.",
@@ -8377,7 +7122,8 @@
 					"typescript"
 				]
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "snlimadev",
@@ -8425,7 +7171,8 @@
 				"stars": 4,
 				"language": "JavaScript"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "tika",
@@ -8439,88 +7186,15 @@
 		},
 		"repos": [
 			{
-				"name": "tika",
-				"description": null,
-				"updated_at": "2025-04-29T16:20:36Z",
-				"stars": 0
-			},
-			{
 				"name": "jabber",
 				"description": "Inspired by Vapi, Jabber is a simple conversational voice AI app",
 				"updated_at": "2024-12-26T22:29:06Z",
 				"stars": 0,
 				"language": "TypeScript",
 				"topics": ["ai", "conversation", "voice"]
-			},
-			{
-				"name": "repo2text",
-				"description": "Take a GitHub repo and convert it to a simple (long) string of text",
-				"updated_at": "2024-03-04T21:11:42Z",
-				"stars": 0,
-				"language": "TypeScript",
-				"topics": ["devtools", "repo", "text"]
-			},
-			{
-				"name": "fuzing",
-				"description": "Inspired by neal.fun's Infinite Craft – online mode",
-				"updated_at": "2024-03-01T20:03:40Z",
-				"stars": 0
-			},
-			{
-				"name": "gym-heatmap",
-				"description": "JumboHack 2025",
-				"updated_at": "2025-02-23T21:36:37Z",
-				"stars": 2,
-				"language": "TypeScript"
 			}
-		]
-	},
-	{
-		"username": "trueharuu",
-		"theme": "efficient data storage and retrieval systems",
-		"profile": {
-			"login": "trueharuu",
-			"avatar_url": "https://avatars.githubusercontent.com/u/73959934?v=4",
-			"bio": "yeah",
-			"location": "Fillory",
-			"blog": ""
-		},
-		"repos": [
-			{
-				"name": "storage",
-				"description": null,
-				"updated_at": "2025-08-06T20:49:11Z",
-				"stars": 0
-			},
-			{
-				"name": "preserve",
-				"description": null,
-				"updated_at": "2024-05-10T02:58:43Z",
-				"stars": 0,
-				"language": "TypeScript"
-			},
-			{
-				"name": "sfce",
-				"description": null,
-				"updated_at": "2025-05-04T04:03:12Z",
-				"stars": 0,
-				"language": "Rust"
-			},
-			{
-				"name": "tsr",
-				"description": null,
-				"updated_at": "2023-12-31T03:03:24Z",
-				"stars": 0,
-				"language": "Rust"
-			},
-			{
-				"name": "quill",
-				"description": null,
-				"updated_at": "2023-12-30T07:48:52Z",
-				"stars": 0,
-				"language": "Rust"
-			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "starptr",
@@ -8534,19 +7208,6 @@
 		},
 		"repos": [
 			{
-				"name": "jellyfin-mpv-shim.nix",
-				"description": null,
-				"updated_at": "2025-08-17T07:38:02Z",
-				"stars": 0
-			},
-			{
-				"name": "qmk_devenv_out-of-tree",
-				"description": null,
-				"updated_at": "2025-06-16T06:22:56Z",
-				"stars": 0,
-				"language": "Nix"
-			},
-			{
 				"name": "europa",
 				"description": null,
 				"updated_at": "2025-05-06T06:47:35Z",
@@ -8559,15 +7220,9 @@
 				"updated_at": "2025-03-17T09:31:24Z",
 				"stars": 0,
 				"language": "Nix"
-			},
-			{
-				"name": "nix-img-do-x86-builder",
-				"description": "Builds NixOS for x86 DigitalOcean droplets",
-				"updated_at": "2024-05-29T10:44:12Z",
-				"stars": 0,
-				"language": "Nix"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "vsaosuo",
@@ -8581,41 +7236,14 @@
 		},
 		"repos": [
 			{
-				"name": "Gym-TrAIner",
-				"description": "This is a group project that aims to create an intelligent AI trainer for users to monitor and get feedback on their body posture for the exercises they perform.",
-				"updated_at": "2023-11-17T07:12:54Z",
-				"stars": 0,
-				"language": "Verilog",
-				"topics": [
-					"camera-module",
-					"fpga",
-					"ml",
-					"mobile-app",
-					"server-side"
-				]
-			},
-			{
 				"name": "lazy-read",
 				"description": null,
 				"updated_at": "2025-07-06T17:21:20Z",
 				"stars": 0,
 				"language": "TypeScript"
-			},
-			{
-				"name": "Traffic-App",
-				"description": null,
-				"updated_at": "2024-01-30T16:27:59Z",
-				"stars": 0,
-				"language": "JavaScript"
-			},
-			{
-				"name": "legoblock_wasm",
-				"description": null,
-				"updated_at": "2024-01-16T07:27:26Z",
-				"stars": 0,
-				"language": "Rust"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "tweeres04",
@@ -8641,30 +7269,9 @@
 				"updated_at": "2025-08-24T15:37:34Z",
 				"stars": 0,
 				"language": "TypeScript"
-			},
-			{
-				"name": "victoria-bus-ticket-map",
-				"description": "Everywhere you can buy bus tickets and passes in Greater Victoria on a map",
-				"updated_at": "2025-05-26T13:05:03Z",
-				"stars": 0,
-				"language": "TypeScript"
-			},
-			{
-				"name": "collection-service",
-				"description": "Notifications for collection day",
-				"updated_at": "2025-04-23T19:49:47Z",
-				"stars": 0,
-				"language": "TypeScript",
-				"topics": ["notifications"]
-			},
-			{
-				"name": "realtorca-extension",
-				"description": "Highlight and fade listings that meet your square footage requirements on realtor.ca",
-				"updated_at": "2025-03-07T16:17:33Z",
-				"stars": 0,
-				"language": "JavaScript"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "virchau13",
@@ -8683,13 +7290,6 @@
 				"updated_at": "2025-04-23T16:02:58Z",
 				"stars": 108,
 				"language": "JavaScript"
-			},
-			{
-				"name": "wayproto",
-				"description": "libwayland, rewritten in async Rust",
-				"updated_at": "2024-04-16T13:40:27Z",
-				"stars": 0,
-				"language": "Rust"
 			},
 			{
 				"name": "automatic1111-webui-nix",
@@ -8712,15 +7312,9 @@
 				"updated_at": "2024-08-18T06:52:30Z",
 				"stars": 0,
 				"language": "Rust"
-			},
-			{
-				"name": "dots",
-				"description": "my dotfiles",
-				"updated_at": "2025-08-22T17:41:37Z",
-				"stars": 1,
-				"language": "Nix"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "wiesenthal",
@@ -8733,12 +7327,6 @@
 			"blog": ""
 		},
 		"repos": [
-			{
-				"name": "AI-Voice-Chat",
-				"description": "Node.js + React Web App using deepgram to transcribe voice to text sent to openai api, then stream the response back to be spoken one sentence at a time, optimizing for ultra-fast response times.",
-				"updated_at": "2023-09-19T22:51:53Z",
-				"stars": 4
-			},
 			{
 				"name": "Dungeons-And-Large-Language-Models",
 				"description": "A text-based adventure game powered by OpenAI's GPT-4 and Flask, combining the worlds of Dungeons & Dragons and artificial intelligence.",
@@ -8759,16 +7347,9 @@
 				"updated_at": "2024-02-26T19:36:49Z",
 				"stars": 0,
 				"language": "TypeScript"
-			},
-			{
-				"name": "word-logo",
-				"description": "Generate logos using LoRa fine-tuned image generator on labeled textual logos. Made during AGI House Flux LoRa Hackathon",
-				"updated_at": "2024-09-08T04:22:39Z",
-				"stars": 1,
-				"language": "TypeScript",
-				"topics": ["flux", "lora"]
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "zanedb",
@@ -8794,29 +7375,9 @@
 				"updated_at": "2025-03-20T02:06:23Z",
 				"stars": 3,
 				"language": "Swift"
-			},
-			{
-				"name": "yapboard",
-				"description": "Soundboard for KSFS' Yap City.",
-				"updated_at": "2024-10-29T03:32:35Z",
-				"stars": 0,
-				"language": "TypeScript"
-			},
-			{
-				"name": "phore",
-				"description": "photo collector",
-				"updated_at": "2024-08-12T21:52:29Z",
-				"stars": 0,
-				"language": "Swift"
-			},
-			{
-				"name": "queue",
-				"description": "Allow others to control your Spotify queue",
-				"updated_at": "2023-08-26T22:37:10Z",
-				"stars": 0,
-				"language": "TypeScript"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "zahash",
@@ -8886,7 +7447,8 @@
 				"stars": 29,
 				"language": "Rust"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "devon-mar",
@@ -8936,7 +7498,8 @@
 				"stars": 0,
 				"language": "Go"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "Candyzorua",
@@ -8955,22 +7518,9 @@
 				"updated_at": "2024-10-08T02:12:38Z",
 				"stars": 3,
 				"language": "Dart"
-			},
-			{
-				"name": "1010bookclub_booklist",
-				"description": null,
-				"updated_at": "2024-03-20T05:36:12Z",
-				"stars": 0,
-				"language": "Python"
-			},
-			{
-				"name": "ubc-science-coop-html-parser",
-				"description": "Simplifying writing cover letters for jobs on the UBC Science Coop website.",
-				"updated_at": "2023-10-30T01:45:47Z",
-				"stars": 0,
-				"language": "TypeScript"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "MrAnderson1971",
@@ -9018,7 +7568,8 @@
 				"stars": 0,
 				"language": "Rust"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "AidenKerr",
@@ -9067,20 +7618,14 @@
 				"language": "C++"
 			},
 			{
-				"name": "ascii-canvas",
-				"description": null,
-				"updated_at": "2025-07-27T03:31:16Z",
-				"stars": 0,
-				"language": "JavaScript"
-			},
-			{
 				"name": "WebWork-Green-in-PrairieLearn",
 				"description": "Enjoy the satisfying WebWork green colour when PrairieLearn assignments are complete.",
 				"updated_at": "2025-03-21T08:06:53Z",
 				"stars": 2,
 				"language": "JavaScript"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "WinteryFox",
@@ -9107,31 +7652,9 @@
 					"spirv",
 					"vulkan"
 				]
-			},
-			{
-				"name": "VixenEngineVulkan",
-				"description": null,
-				"updated_at": "2024-03-10T22:09:27Z",
-				"stars": 7,
-				"language": "Mathematica"
-			},
-			{
-				"name": "OpenGL-Example",
-				"description": "A basic OpenGL setup example with GLFW3, GLM and GLEW",
-				"updated_at": "2024-02-09T12:46:40Z",
-				"stars": 0,
-				"language": "C++",
-				"topics": [
-					"glew",
-					"glew-glfw",
-					"glfw",
-					"glfw3",
-					"glm",
-					"glsl",
-					"opengl"
-				]
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "achreto",
@@ -9179,7 +7702,8 @@
 				"stars": 0,
 				"language": "Rust"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "briantist",
@@ -9193,13 +7717,6 @@
 		},
 		"repos": [
 			{
-				"name": "ezenv",
-				"description": "GitHub Action for easily setting persistent environment variables.",
-				"updated_at": "2025-08-19T13:03:55Z",
-				"stars": 1,
-				"language": "Shell"
-			},
-			{
 				"name": "galactory",
 				"description": "An Ansible Galaxy proxy for Artifactory",
 				"updated_at": "2024-02-27T22:19:25Z",
@@ -9212,14 +7729,9 @@
 					"artifactory",
 					"hacktoberfest"
 				]
-			},
-			{
-				"name": "gha-junk",
-				"description": "try out stuff with GitHub actions",
-				"updated_at": "2023-11-04T16:43:05Z",
-				"stars": 0
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "patrickward",
@@ -9238,36 +7750,9 @@
 				"updated_at": "2025-08-05T20:51:49Z",
 				"stars": 0,
 				"language": "Go"
-			},
-			{
-				"name": "dj",
-				"description": "A command-line tool for keeping a daily journal in a single markdown file.",
-				"updated_at": "2025-07-10T09:40:52Z",
-				"stars": 0,
-				"language": "Go"
-			},
-			{
-				"name": "tabcap",
-				"description": "Limit the number of tabs and windows in a browser. ",
-				"updated_at": "2025-04-18T12:31:13Z",
-				"stars": 0,
-				"language": "JavaScript"
-			},
-			{
-				"name": "datacop",
-				"description": "Go validation library with a fluent API and type-safe validation functions.",
-				"updated_at": "2025-01-04T23:19:25Z",
-				"stars": 0,
-				"language": "Go"
-			},
-			{
-				"name": "mailcop",
-				"description": "A Go package for email address validation and verification. Ensures email addresses conform to RFC 5322 standards and common email provider rules.",
-				"updated_at": "2024-12-23T15:32:35Z",
-				"stars": 0,
-				"language": "Go"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "AdenC123",
@@ -9307,48 +7792,9 @@
 				"updated_at": "2024-02-05T09:59:10Z",
 				"stars": 0,
 				"language": "JavaScript"
-			},
-			{
-				"name": "adventofcode",
-				"description": null,
-				"updated_at": "2024-12-07T01:34:01Z",
-				"stars": 0,
-				"language": "Python"
 			}
-		]
-	},
-	{
-		"username": "shayanh",
-		"theme": "exploring programming concepts",
-		"profile": {
-			"login": "shayanh",
-			"avatar_url": "https://avatars.githubusercontent.com/u/1623278?v=4",
-			"bio": "I do distributed systems.",
-			"location": "Vancouver, BC, Canada",
-			"blog": "shayanh.com"
-		},
-		"repos": [
-			{
-				"name": "monorepo",
-				"description": null,
-				"updated_at": "2024-06-26T02:17:55Z",
-				"stars": 0
-			},
-			{
-				"name": "gopromise",
-				"description": "Promise implementation in Go",
-				"updated_at": "2023-09-20T22:00:25Z",
-				"stars": 0,
-				"language": "Go"
-			},
-			{
-				"name": "advent-of-code-2022",
-				"description": "My solutions to Advent of Code 2022",
-				"updated_at": "2023-11-07T17:57:01Z",
-				"stars": 0,
-				"language": "Python"
-			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "manglemix",
@@ -9367,36 +7813,9 @@
 				"updated_at": "2024-09-10T19:57:06Z",
 				"stars": 0,
 				"language": "GDScript"
-			},
-			{
-				"name": "UniverseWithin",
-				"description": null,
-				"updated_at": "2024-12-03T16:54:55Z",
-				"stars": 0,
-				"language": "Game Maker Language"
-			},
-			{
-				"name": "rtc-games",
-				"description": null,
-				"updated_at": "2024-12-17T23:49:50Z",
-				"stars": 0,
-				"language": "TypeScript"
-			},
-			{
-				"name": "mscript",
-				"description": "A free to use, simple, script writing software for films and shows",
-				"updated_at": "2024-03-05T07:32:08Z",
-				"stars": 0,
-				"language": "Svelte"
-			},
-			{
-				"name": "speecher",
-				"description": null,
-				"updated_at": "2025-03-18T18:52:13Z",
-				"stars": 0,
-				"language": "Rust"
 			}
-		]
+		],
+		"similar_interest": []
 	},
 	{
 		"username": "Edster1121",
@@ -9417,19 +7836,6 @@
 				"language": "ShaderLab"
 			},
 			{
-				"name": "Goblin-vs-The-World",
-				"description": "A fun roguelike game using dice to battle!",
-				"updated_at": "2025-06-17T03:22:40Z",
-				"stars": 0
-			},
-			{
-				"name": "HackCamp",
-				"description": "Habit Tracker with fun animals!",
-				"updated_at": "2025-01-19T06:05:36Z",
-				"stars": 0,
-				"language": "C#"
-			},
-			{
 				"name": "mss-game-dev-edd",
 				"description": "Game Dev 2021",
 				"updated_at": "2024-09-18T18:47:52Z",
@@ -9443,49 +7849,7 @@
 				"stars": 0,
 				"language": "Java"
 			}
-		]
-	},
-	{
-		"username": "CrispyButtermilkChickenSalad",
-		"theme": "open-source 3D printer and CNC hardware upgrades",
-		"profile": {
-			"login": "CrispyButtermilkChickenSalad",
-			"avatar_url": "https://avatars.githubusercontent.com/u/62200737?v=4",
-			"bio": "Undergraduate Materials Science and Engineering Student. Huge 3D printing nerd and general fabrication nerd. Rhythm games are cool too.",
-			"location": null,
-			"blog": ""
-		},
-		"repos": [
-			{
-				"name": "X1-V2",
-				"description": "An evolution of TronXY's X1 3D Printer",
-				"updated_at": "2025-07-15T20:33:12Z",
-				"stars": 1
-			},
-			{
-				"name": "HGX-2.0-WC",
-				"description": "An open-source and water cooled version of the HGX 2.0",
-				"updated_at": "2024-07-15T15:26:36Z",
-				"stars": 1
-			},
-			{
-				"name": "Vz-Printhead-STD6",
-				"description": "A modified Vz-Printhead that is compatible with the Trianglelab STD6 hotend.",
-				"updated_at": "2024-06-06T15:48:14Z",
-				"stars": 1
-			},
-			{
-				"name": "VzBot330-X-Beam",
-				"description": "Open source options for Lightweight X-beams for the Vzbot 330",
-				"updated_at": "2024-06-05T09:55:52Z",
-				"stars": 1
-			},
-			{
-				"name": "DM2040",
-				"description": "A dual motor upgrade to motion systems based on 2040 extrusions.",
-				"updated_at": "2024-05-30T03:57:36Z",
-				"stars": 2
-			}
-		]
+		],
+		"similar_interest": []
 	}
 ]

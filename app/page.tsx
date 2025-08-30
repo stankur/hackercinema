@@ -2,8 +2,6 @@
 
 import { useState, useEffect } from "react";
 import LazyBuilderItem from "@/components/LazyBuilderItem";
-import TopRepositories from "@/components/TopRepositories";
-import ByLanguages from "@/components/ByLanguages";
 import type { Builder } from "@/lib/types";
 import { Github } from "lucide-react";
 import { Shimmer } from "@/components/ui/shimmer";
@@ -12,11 +10,9 @@ import { SimpleIcon } from "@/components/ui/SimpleIcon";
 export default function Home() {
 	const [builders, setBuilders] = useState<Builder[]>([]);
 	const [loading, setLoading] = useState(true);
-	const [activeTab, setActiveTab] = useState<
-		"hackers" | "filter" | "explore"
-	>("hackers");
+	const [activeTab, setActiveTab] = useState<"hackers" | "filter">("hackers");
 
-	const handleTabClick = (tab: "hackers" | "filter" | "explore") => {
+	const handleTabClick = (tab: "hackers" | "filter") => {
 		setActiveTab(tab);
 	};
 
@@ -57,16 +53,7 @@ export default function Home() {
 						>
 							Hackers
 						</button>
-						<button
-							onClick={() => handleTabClick("explore")}
-							className={`text-sm transition-colors ${
-								activeTab === "explore"
-									? "text-foreground"
-									: "text-muted-foreground hover:text-foreground"
-							}`}
-						>
-							Explore
-						</button>
+
 						<button
 							onClick={() => handleTabClick("filter")}
 							className={`text-sm transition-colors ${
@@ -90,13 +77,6 @@ export default function Home() {
 								index={index}
 							/>
 						))}
-					</div>
-				)}
-
-				{activeTab === "explore" && (
-					<div className="space-y-12">
-						<TopRepositories builders={builders} />
-						<ByLanguages builders={builders} />
 					</div>
 				)}
 
