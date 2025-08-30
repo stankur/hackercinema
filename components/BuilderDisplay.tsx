@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MapPin, Globe, Github, MessageSquare } from "lucide-react";
 import RepoCard from "./RepoCard";
-import type { Builder } from "@/lib/types";
+import type { Builder, GitHubRepo } from "@/lib/types";
 
 interface BuilderDisplayProps {
 	builder: Builder;
@@ -18,17 +18,34 @@ export default function BuilderDisplay({
 	showOwner = false,
 	className = "py-8",
 }: BuilderDisplayProps) {
+	const [isExpanded, setIsExpanded] = useState(false);
 	const [activeTab, setActiveTab] = useState<
 		"profile" | "repos" | "similar" | null
-	>(null);
+	>(
+		"repos" // Default to Highlights tab when expanded
+	);
+
+	const handleCardClick = () => {
+		setIsExpanded(!isExpanded);
+		if (!isExpanded) {
+			setActiveTab("repos"); // Set to Highlights tab when expanding
+		}
+	};
 
 	const handleTabClick = (tab: "profile" | "repos" | "similar") => {
 		setActiveTab(activeTab === tab ? null : tab);
 	};
 
 	return (
-		<div className={className}>
-			{/* Header with avatar, name, theme - flexbox only for this section */}
+		<div
+			className={`${className} transition-all duration-700 ease-out ${
+				isExpanded
+					? "opacity-100 blur-0 scale-100"
+					: "opacity-100 blur-0 scale-100"
+			}`}
+			onClick={handleCardClick}
+		>
+			{/* Header with avatar, name, theme */}
 			<div className="flex items-start gap-4 mb-8">
 				<div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center overflow-hidden flex-shrink-0">
 					{builder.profile?.avatar_url ? (
@@ -49,6 +66,7 @@ export default function BuilderDisplay({
 						<Link
 							href={`/profile/${builder.username}`}
 							className="hover:text-primary transition-colors"
+							onClick={(e) => e.stopPropagation()}
 						>
 							{builder.username}
 						</Link>
@@ -57,119 +75,150 @@ export default function BuilderDisplay({
 				</div>
 			</div>
 
-			{/* Tabs - full width below the header */}
-			<div className="flex gap-10 mb-6">
-				<button
-					onClick={() => handleTabClick("profile")}
-					className={`text-xs transition-colors ${
-						activeTab === "profile"
-							? "text-foreground"
-							: "text-muted-foreground hover:text-foreground"
-					}`}
-				>
-					Profile
-				</button>
-				<button
-					onClick={() => handleTabClick("repos")}
-					className={`text-xs transition-colors ${
-						activeTab === "repos"
-							? "text-foreground"
-							: "text-muted-foreground hover:text-foreground"
-					}`}
-				>
-					Highlights
-				</button>
-				{builder.similar_interest &&
-					builder.similar_interest.length > 0 && (
+			{/* Collapsed state - show + button */}
+			{!isExpanded && (
+				<div className="flex justify-end">
+					<button
+						className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+						onClick={(e) => {
+							e.stopPropagation();
+							setIsExpanded(true);
+						}}
+					>
+						+
+					</button>
+				</div>
+			)}
+
+			{/* Expanded state - show tabs and content */}
+			{isExpanded && (
+				<>
+					{/* Tabs - full width below the header */}
+					<div className="flex gap-10 mb-6">
 						<button
-							onClick={() => handleTabClick("similar")}
+							onClick={(e) => {
+								e.stopPropagation();
+								handleTabClick("profile");
+							}}
 							className={`text-xs transition-colors ${
-								activeTab === "similar"
+								activeTab === "profile"
 									? "text-foreground"
 									: "text-muted-foreground hover:text-foreground"
 							}`}
 						>
-							Similar
+							Profile
 						</button>
-					)}
-			</div>
-
-			{/* Tab content - full width */}
-			{activeTab === "profile" && (
-				<div className="space-y-4">
-					<div className="space-y-4">
-						{builder.profile.bio && (
-							<div className="flex items-baseline gap-4">
-								<MessageSquare className="w-4 h-4 pt-1 text-muted-foreground mt-0.5 flex-shrink-0" />
-								<div className="text-base text-foreground leading-relaxed">
-									{builder.profile.bio}
-								</div>
-							</div>
-						)}
-						{builder.profile.location && (
-							<div className="flex items-center gap-4">
-								<MapPin className="w-4 h-4 text-muted-foreground flex-shrink-0" />
-								<div className="text-base text-muted-foreground">
-									{builder.profile.location}
-								</div>
-							</div>
-						)}
-						{builder.profile.blog && (
-							<div className="flex items-center gap-4">
-								<Globe className="w-4 h-4 text-muted-foreground flex-shrink-0" />
-								<a
-									href={
-										builder.profile.blog.startsWith("http")
-											? builder.profile.blog
-											: `https://${builder.profile.blog}`
-									}
-									target="_blank"
-									rel="noopener noreferrer"
-									className="text-base text-primary hover:underline"
+						<button
+							onClick={(e) => {
+								e.stopPropagation();
+								handleTabClick("repos");
+							}}
+							className={`text-xs transition-colors ${
+								activeTab === "repos"
+									? "text-foreground"
+									: "text-muted-foreground hover:text-foreground"
+							}`}
+						>
+							Highlights
+						</button>
+						{builder.similar_interest &&
+							builder.similar_interest.length > 0 && (
+								<button
+									onClick={(e) => {
+										e.stopPropagation();
+										handleTabClick("similar");
+									}}
+									className={`text-xs transition-colors ${
+										activeTab === "similar"
+											? "text-foreground"
+											: "text-muted-foreground hover:text-foreground"
+									}`}
 								>
-									{builder.profile.blog}
-								</a>
-							</div>
-						)}
-						<div className="flex items-center gap-4">
-							<Github className="w-4 h-4 text-muted-foreground flex-shrink-0" />
-							<a
-								href={`https://github.com/${builder.username}`}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="text-base text-primary hover:underline"
-							>
-								GitHub Profile
-							</a>
-						</div>
+									Similar
+								</button>
+							)}
 					</div>
-				</div>
-			)}
 
-			{activeTab === "repos" && (
-				<div className="space-y-6">
-					{builder.repos.length > 0 ? (
-						builder.repos.map((repo) => (
-							<RepoCard
-								key={repo.name}
-								repo={repo}
-								owner={builder.username}
-								showOwner={showOwner}
-								showUsernameInsteadOfDate={false}
-							/>
-						))
-					) : (
-						<div className="text-sm text-muted-foreground">
-							No repositories found.
+					{/* Tab content - full width */}
+					{activeTab === "profile" && (
+						<div className="space-y-4">
+							<div className="space-y-4">
+								{builder.profile.bio && (
+									<div className="flex items-baseline gap-4">
+										<MessageSquare className="w-4 h-4 pt-1 text-muted-foreground mt-0.5 flex-shrink-0" />
+										<div className="text-base text-foreground leading-relaxed">
+											{builder.profile.bio}
+										</div>
+									</div>
+								)}
+								{builder.profile.location && (
+									<div className="flex items-center gap-4">
+										<MapPin className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+										<div className="text-base text-muted-foreground">
+											{builder.profile.location}
+										</div>
+									</div>
+								)}
+								{builder.profile.blog && (
+									<div className="flex items-center gap-4">
+										<Globe className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+										<a
+											href={
+												builder.profile.blog.startsWith(
+													"http"
+												)
+													? builder.profile.blog
+													: `https://${builder.profile.blog}`
+											}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="text-base text-primary hover:underline"
+										>
+											{builder.profile.blog}
+										</a>
+									</div>
+								)}
+								<div className="flex items-center gap-4">
+									<Github className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+									<a
+										href={`https://github.com/${builder.username}`}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="text-base text-primary hover:underline"
+									>
+										GitHub Profile
+									</a>
+								</div>
+							</div>
 						</div>
 					)}
-				</div>
-			)}
 
-			{activeTab === "similar" && builder.similar_interest && (
-				<SimilarInterestsSection
-					similarUsernames={builder.similar_interest}
-				/>
+					{activeTab === "repos" && (
+						<div className="space-y-6">
+							{builder.repos.length > 0 ? (
+								builder.repos.map((repo) => (
+									<RepoCard
+										key={repo.name}
+										repo={repo}
+										owner={builder.username}
+										showOwner={showOwner}
+										showUsernameInsteadOfDate={false}
+									/>
+								))
+							) : (
+								<div className="text-sm text-muted-foreground">
+									No repositories found.
+								</div>
+							)}
+						</div>
+					)}
+
+					{activeTab === "similar" && builder.similar_interest && (
+						<SimilarInterestsSection
+							similarUsernames={builder.similar_interest}
+						/>
+					)}
+				</>
 			)}
 		</div>
 	);
@@ -183,9 +232,9 @@ interface SimilarInterestsSectionProps {
 function SimilarInterestsSection({
 	similarUsernames,
 }: SimilarInterestsSectionProps) {
-	const [userData, setUserData] = useState<Record<string, { repos: any[] }>>(
-		{}
-	);
+	const [userData, setUserData] = useState<
+		Record<string, { repos: GitHubRepo[] }>
+	>({});
 	const [showAllRepos, setShowAllRepos] = useState(false);
 
 	// Fetch user data when component mounts
@@ -195,8 +244,8 @@ function SimilarInterestsSection({
 				const response = await fetch("/api/data.json");
 				const data = await response.json();
 
-				const userDataMap: Record<string, { repos: any[] }> = {};
-				data.forEach((user: any) => {
+				const userDataMap: Record<string, { repos: GitHubRepo[] }> = {};
+				data.forEach((user: Builder) => {
 					if (similarUsernames.includes(user.username)) {
 						userDataMap[user.username] = {
 							repos: user.repos || [],
@@ -214,7 +263,7 @@ function SimilarInterestsSection({
 	}, [similarUsernames]);
 
 	// Collect all repos from all similar users
-	const allRepos: Array<{ repo: any; owner: string }> = [];
+	const allRepos: Array<{ repo: GitHubRepo; owner: string }> = [];
 	similarUsernames.forEach((username) => {
 		const userInfo = userData[username];
 		if (userInfo && userInfo.repos.length > 0) {
@@ -243,7 +292,10 @@ function SimilarInterestsSection({
 					{allRepos.length > 5 && (
 						<div className="text-center pt-4">
 							<button
-								onClick={() => setShowAllRepos(!showAllRepos)}
+								onClick={(e) => {
+									e.stopPropagation();
+									setShowAllRepos(!showAllRepos);
+								}}
 								className="text-xs text-muted-foreground hover:text-foreground transition-colors underline"
 							>
 								{showAllRepos ? "show less" : "show more"}
