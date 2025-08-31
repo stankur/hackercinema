@@ -6,6 +6,12 @@ export interface GitHubProfile {
 	blog?: string;
 }
 
+export interface GalleryImage {
+	alt: string;
+	url: string;
+	original_url: string;
+}
+
 export interface GitHubRepo {
 	name: string;
 	description?: string | null;
@@ -13,6 +19,8 @@ export interface GitHubRepo {
 	stars?: number;
 	language?: string | null;
 	topics?: string[];
+	link?: string;
+	gallery?: GalleryImage[];
 }
 
 export interface Builder {

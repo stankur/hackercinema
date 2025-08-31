@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Star } from "lucide-react";
+import { Star, ExternalLink, Images } from "lucide-react";
 import { getCardBackground, getLanguageDotColor } from "@/lib/language-colors";
 import type { GitHubRepo } from "@/lib/types";
+import { useGalleryModal } from "./GalleryModalProvider";
 
 interface RepoCardProps {
 	repo: GitHubRepo;
@@ -20,6 +21,7 @@ export default function RepoCard({
 }: RepoCardProps) {
 	const [cardBackground, setCardBackground] = useState<string>("");
 	const [languageDotColor, setLanguageDotColor] = useState<string>("");
+	const { openGallery } = useGalleryModal();
 
 	// Load card background and language dot color
 	useEffect(() => {
@@ -72,6 +74,32 @@ export default function RepoCard({
 					{repo.description}
 				</div>
 			)}
+
+			{/* Date/Username row */}
+			<div className="text-xs text-muted-foreground/60 mt-2">
+				{showUsernameInsteadOfDate ? (
+					<button
+						onClick={() => {
+							// Navigate to the builder in the hackers tab
+							window.location.hash = owner;
+							// Switch to hackers tab if not already there
+							const hackersTab = document.querySelector(
+								'[data-tab="hackers"]'
+							) as HTMLButtonElement;
+							if (hackersTab) {
+								hackersTab.click();
+							}
+						}}
+						className="font-semibold cursor-pointer hover:text-foreground transition-colors"
+					>
+						{owner}
+					</button>
+				) : (
+					`Updated ${formatDate(repo.updated_at)}`
+				)}
+			</div>
+
+			{/* Bottom row with metadata on left and action icons on right */}
 			<div className="flex items-center justify-between mt-3 pt-2">
 				<div className="flex items-center gap-3 text-xs text-muted-foreground/60">
 					{repo.language && (
@@ -93,26 +121,28 @@ export default function RepoCard({
 						</div>
 					)}
 				</div>
-				<div className="text-xs text-muted-foreground/60">
-					{showUsernameInsteadOfDate ? (
-						<button
-							onClick={() => {
-								// Navigate to the builder in the hackers tab
-								window.location.hash = owner;
-								// Switch to hackers tab if not already there
-								const hackersTab = document.querySelector(
-									'[data-tab="hackers"]'
-								) as HTMLButtonElement;
-								if (hackersTab) {
-									hackersTab.click();
-								}
-							}}
-							className="font-semibold cursor-pointer hover:text-foreground transition-colors"
+
+				{/* Action icons in bottom right corner for easy mobile tapping */}
+				<div className="flex items-start gap-3">
+					{repo.link && (
+						<a
+							href={repo.link}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="text-gray-700 cursor-pointer hover:text-muted-foreground transition-colors p-1"
+							title="Visit project link"
 						>
-							{owner}
+							<ExternalLink size={20} />
+						</a>
+					)}
+					{repo.gallery && repo.gallery.length > 0 && (
+						<button
+							onClick={() => openGallery(repo.gallery!)}
+							className="text-gray-700 cursor-pointer hover:text-muted-foreground transition-colors p-1"
+							title="View gallery"
+						>
+							<Images size={20} />
 						</button>
-					) : (
-						`Updated ${formatDate(repo.updated_at)}`
 					)}
 				</div>
 			</div>

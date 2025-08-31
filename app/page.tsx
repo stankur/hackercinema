@@ -3,9 +3,10 @@
 import { useState, useEffect } from "react";
 import LazyBuilderItem from "@/components/LazyBuilderItem";
 import type { Builder } from "@/lib/types";
-import { Github } from "lucide-react";
+
 import { Shimmer } from "@/components/ui/shimmer";
 import { SimpleIcon } from "@/components/ui/SimpleIcon";
+import { preloadGitHubImages } from "@/lib/imageCache";
 
 export default function Home() {
 	const [builders, setBuilders] = useState<Builder[]>([]);
@@ -19,9 +20,19 @@ export default function Home() {
 	useEffect(() => {
 		fetch("/api/data.json")
 			.then((res) => res.json())
-			.then((data) => {
+			.then(async (data: Builder[]) => {
 				setBuilders(data);
 				setLoading(false);
+
+				// Preload GitHub images in the background
+				try {
+					const galleries = data.flatMap((builder) =>
+						builder.repos.map((repo) => repo.gallery || [])
+					);
+					await preloadGitHubImages(galleries);
+				} catch (error) {
+					console.warn("Failed to preload some images:", error);
+				}
 			})
 			.catch((err) => {
 				console.error("Failed to load builders:", err);
