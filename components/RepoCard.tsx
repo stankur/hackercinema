@@ -47,7 +47,7 @@ export default function RepoCard({
 
 	return (
 		<div
-			className="border border-slate-800 rounded-md p-4 space-y-2 relative overflow-hidden"
+			className="rounded-md py-4 space-y-2 relative overflow-hidden"
 			style={{
 				background: cardBackground || undefined,
 			}}

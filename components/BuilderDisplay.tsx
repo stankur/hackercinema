@@ -34,7 +34,12 @@ export default function BuilderDisplay({
 	};
 
 	const handleTabClick = (tab: "profile" | "repos" | "similar") => {
-		setActiveTab(activeTab === tab ? null : tab);
+		if (activeTab === tab) {
+			setActiveTab(null);
+			setIsExpanded(false); // Collapse when deselecting the active tab
+		} else {
+			setActiveTab(tab);
+		}
 	};
 
 	return (
@@ -95,7 +100,10 @@ export default function BuilderDisplay({
 			{isExpanded && (
 				<>
 					{/* Tabs - full width below the header */}
-					<div className="flex gap-10 mb-6">
+					<div
+						className="flex gap-10 mb-6"
+						onClick={(e) => e.stopPropagation()}
+					>
 						<button
 							onClick={(e) => {
 								e.stopPropagation();
