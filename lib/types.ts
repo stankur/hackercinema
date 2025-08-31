@@ -20,5 +20,5 @@ export interface Builder {
 	theme: string;
 	profile: GitHubProfile;
 	repos: GitHubRepo[];
-	similar_interest?: string[];
+	similar_repos?: Array<{ username: string; repo_name: string }>;
 }

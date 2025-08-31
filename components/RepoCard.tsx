@@ -94,9 +94,26 @@ export default function RepoCard({
 					)}
 				</div>
 				<div className="text-xs text-muted-foreground/60">
-					{showUsernameInsteadOfDate
-						? owner
-						: `Updated ${formatDate(repo.updated_at)}`}
+					{showUsernameInsteadOfDate ? (
+						<button
+							onClick={() => {
+								// Navigate to the builder in the hackers tab
+								window.location.hash = owner;
+								// Switch to hackers tab if not already there
+								const hackersTab = document.querySelector(
+									'[data-tab="hackers"]'
+								) as HTMLButtonElement;
+								if (hackersTab) {
+									hackersTab.click();
+								}
+							}}
+							className="font-semibold cursor-pointer hover:text-foreground transition-colors"
+						>
+							{owner}
+						</button>
+					) : (
+						`Updated ${formatDate(repo.updated_at)}`
+					)}
 				</div>
 			</div>
 		</div>

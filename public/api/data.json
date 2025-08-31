@@ -31,15 +31,307 @@
 				"topics": ["city-council", "edmonton", "politics", "yeg"]
 			}
 		],
-		"similar_interest": [
-			"stankur",
-			"mountainMath",
-			"albertkim",
-			"yhaooo11",
-			"gshklovs",
-			"hyperknot",
-			"naijwu",
-			"wiesenthal"
+		"similar_repos": [
+			{
+				"username": "garrethlee",
+				"repo_name": "gcmt"
+			},
+			{
+				"username": "garrethlee",
+				"repo_name": "research-paper-parser"
+			},
+			{
+				"username": "stankur",
+				"repo_name": "muntah-berak-mencret"
+			},
+			{
+				"username": "mountainMath",
+				"repo_name": "tongfen"
+			},
+			{
+				"username": "FrankWhoee",
+				"repo_name": "workdaytoics"
+			},
+			{
+				"username": "ElianBelot",
+				"repo_name": "web-voyager"
+			},
+			{
+				"username": "Lydxn",
+				"repo_name": "oj"
+			},
+			{
+				"username": "abdurj",
+				"repo_name": "np-gpt"
+			},
+			{
+				"username": "abdurj",
+				"repo_name": "Local-Planner-Visualization-Project"
+			},
+			{
+				"username": "aldenluthfi",
+				"repo_name": "voronoi"
+			},
+			{
+				"username": "aldenluthfi",
+				"repo_name": "savana"
+			},
+			{
+				"username": "albertkim",
+				"repo_name": "gridview-analytics-scraper"
+			},
+			{
+				"username": "fegicochen",
+				"repo_name": "UBC-Course-Insights"
+			},
+			{
+				"username": "fegicochen",
+				"repo_name": "UniMatch"
+			},
+			{
+				"username": "kickscondor",
+				"repo_name": "fraidycat"
+			},
+			{
+				"username": "grhkm21",
+				"repo_name": "advent-of-code-2023"
+			},
+			{
+				"username": "trevorblades",
+				"repo_name": "alchemy"
+			},
+			{
+				"username": "trevorblades",
+				"repo_name": "eslint-config"
+			},
+			{
+				"username": "thep2p",
+				"repo_name": "lightchain-java"
+			},
+			{
+				"username": "yhaooo11",
+				"repo_name": "voter"
+			},
+			{
+				"username": "HudZah",
+				"repo_name": "ConvertlyCLI"
+			},
+			{
+				"username": "PrincewillIroka",
+				"repo_name": "React-Native-UI-Templates"
+			},
+			{
+				"username": "PrincewillIroka",
+				"repo_name": "project_management_mobile_app"
+			},
+			{
+				"username": "PrincewillIroka",
+				"repo_name": "My-Personal-Portfolio"
+			},
+			{
+				"username": "PrincewillIroka",
+				"repo_name": "Free-Courses-Frontend"
+			},
+			{
+				"username": "PrincewillIroka",
+				"repo_name": "World-News"
+			},
+			{
+				"username": "Tgcohce",
+				"repo_name": "dal-defai"
+			},
+			{
+				"username": "Nathn",
+				"repo_name": "MasterQuizz"
+			},
+			{
+				"username": "Nathn",
+				"repo_name": "Squakr"
+			},
+			{
+				"username": "Siliconrob",
+				"repo_name": "ownerrez-api"
+			},
+			{
+				"username": "Siliconrob",
+				"repo_name": "ownerrez-api-tester"
+			},
+			{
+				"username": "YingjiaLiu99",
+				"repo_name": "heal-in-pocket"
+			},
+			{
+				"username": "YingjiaLiu99",
+				"repo_name": "Heal-in-Pocket_backend"
+			},
+			{
+				"username": "YingjiaLiu99",
+				"repo_name": "Heal-in-Pocket_Mobile"
+			},
+			{
+				"username": "asiff00",
+				"repo_name": "Bangla-Llama"
+			},
+			{
+				"username": "colliand",
+				"repo_name": "right-to-reproducible-execution"
+			},
+			{
+				"username": "gagan3012",
+				"repo_name": "ltr"
+			},
+			{
+				"username": "gagan3012",
+				"repo_name": "PolyDeDupe"
+			},
+			{
+				"username": "gshklovs",
+				"repo_name": "BerkeleyAIHacks"
+			},
+			{
+				"username": "hyperknot",
+				"repo_name": "openfreemap"
+			},
+			{
+				"username": "irisxu02",
+				"repo_name": "rubik"
+			},
+			{
+				"username": "luckyjsx",
+				"repo_name": "StudyNotion"
+			},
+			{
+				"username": "meleongg",
+				"repo_name": "flashcard-backend"
+			},
+			{
+				"username": "meleongg",
+				"repo_name": "flashcard-frontend"
+			},
+			{
+				"username": "meleongg",
+				"repo_name": "holistic-health-tracker"
+			},
+			{
+				"username": "naijwu",
+				"repo_name": "open-gavel"
+			},
+			{
+				"username": "naijwu",
+				"repo_name": "open-gavel-server"
+			},
+			{
+				"username": "virchau13",
+				"repo_name": "tree-sitter-astro"
+			},
+			{
+				"username": "wiesenthal",
+				"repo_name": "SubjectiveSort"
+			},
+			{
+				"username": "wiesenthal",
+				"repo_name": "Dungeons-And-Large-Language-Models"
+			},
+			{
+				"username": "wiesenthal",
+				"repo_name": "AI-Powered-Workflow-Engine"
+			},
+			{
+				"username": "devon-mar",
+				"repo_name": "netbox-lists"
+			},
+			{
+				"username": "AidenKerr",
+				"repo_name": "slugs"
+			},
+			{
+				"username": "AdenC123",
+				"repo_name": "OurBoARd"
+			},
+			{
+				"username": "stankur",
+				"repo_name": "prxmpt"
+			},
+			{
+				"username": "mountainMath",
+				"repo_name": "cancensus"
+			},
+			{
+				"username": "mountainMath",
+				"repo_name": "canpumf"
+			},
+			{
+				"username": "Kiroves",
+				"repo_name": "BThere"
+			},
+			{
+				"username": "rheaplex",
+				"repo_name": "artworld-ethereum"
+			},
+			{
+				"username": "trevorblades",
+				"repo_name": "countries"
+			},
+			{
+				"username": "wilbowma",
+				"repo_name": "llm-lang"
+			},
+			{
+				"username": "Highfire1",
+				"repo_name": "sfu-prerequisites-parsing"
+			},
+			{
+				"username": "Highfire1",
+				"repo_name": "langara-coursys-frontend"
+			},
+			{
+				"username": "Jerr-z",
+				"repo_name": "scimon"
+			},
+			{
+				"username": "JuliaPoo",
+				"repo_name": "Cayley-Graph-Plotting"
+			},
+			{
+				"username": "LordMoMA",
+				"repo_name": "blog-aggregator"
+			},
+			{
+				"username": "YashVG",
+				"repo_name": "revember"
+			},
+			{
+				"username": "colliand",
+				"repo_name": "explore-exoplanets"
+			},
+			{
+				"username": "gagan3012",
+				"repo_name": "llama-tldr"
+			},
+			{
+				"username": "nickbabcock",
+				"repo_name": "jomini"
+			},
+			{
+				"username": "okarthikb",
+				"repo_name": "attention-visualizer"
+			},
+			{
+				"username": "pi-rate14",
+				"repo_name": "covid-19-tracker"
+			},
+			{
+				"username": "tika",
+				"repo_name": "jabber"
+			},
+			{
+				"username": "tweeres04",
+				"repo_name": "nuckscountdown"
+			},
+			{
+				"username": "aldenluthfi",
+				"repo_name": "situsluthfi"
+			}
 		]
 	},
 	{
@@ -68,22 +360,127 @@
 				"language": "Python"
 			}
 		],
-		"similar_interest": [
-			"stankur",
-			"ElianBelot",
-			"abdurj",
-			"NathanAW24",
-			"albertkim",
-			"ochen1",
-			"wilbowma",
-			"Jerr-z",
-			"asiff00",
-			"gagan3012",
-			"cosmo3769",
-			"gshklovs",
-			"meleongg",
-			"okarthikb",
-			"wiesenthal"
+		"similar_repos": [
+			{
+				"username": "SamuelmdLow",
+				"repo_name": "EdmontonCityCouncilFeed"
+			},
+			{
+				"username": "stankur",
+				"repo_name": "prxmpt"
+			},
+			{
+				"username": "stankur",
+				"repo_name": "muntah-berak-mencret"
+			},
+			{
+				"username": "ElianBelot",
+				"repo_name": "web-voyager"
+			},
+			{
+				"username": "albertkim",
+				"repo_name": "bun-llm-cli"
+			},
+			{
+				"username": "albertkim",
+				"repo_name": "gridview-analytics-scraper"
+			},
+			{
+				"username": "fegicochen",
+				"repo_name": "UBC-Course-Insights"
+			},
+			{
+				"username": "ochen1",
+				"repo_name": "insanely-fast-whisper-cli"
+			},
+			{
+				"username": "wilbowma",
+				"repo_name": "llm-lang"
+			},
+			{
+				"username": "Highfire1",
+				"repo_name": "sfu-prerequisites-parsing"
+			},
+			{
+				"username": "HudZah",
+				"repo_name": "ConvertlyCLI"
+			},
+			{
+				"username": "Jerr-z",
+				"repo_name": "scimon"
+			},
+			{
+				"username": "Tgcohce",
+				"repo_name": "dal-defai"
+			},
+			{
+				"username": "YashVG",
+				"repo_name": "revember"
+			},
+			{
+				"username": "asiff00",
+				"repo_name": "On-Device-Speech-to-Speech-Conversational-AI"
+			},
+			{
+				"username": "asiff00",
+				"repo_name": "Bangla-Llama"
+			},
+			{
+				"username": "gagan3012",
+				"repo_name": "ltr"
+			},
+			{
+				"username": "gagan3012",
+				"repo_name": "llama-tldr"
+			},
+			{
+				"username": "gagan3012",
+				"repo_name": "PolyDeDupe"
+			},
+			{
+				"username": "cosmo3769",
+				"repo_name": "Quantized-LLMs"
+			},
+			{
+				"username": "gshklovs",
+				"repo_name": "BerkeleyAIHacks"
+			},
+			{
+				"username": "meleongg",
+				"repo_name": "flashcard-frontend"
+			},
+			{
+				"username": "meleongg",
+				"repo_name": "flashcard-backend"
+			},
+			{
+				"username": "meleongg",
+				"repo_name": "holistic-health-tracker"
+			},
+			{
+				"username": "okarthikb",
+				"repo_name": "attention-visualizer"
+			},
+			{
+				"username": "merouanezouaid",
+				"repo_name": "pwp"
+			},
+			{
+				"username": "tika",
+				"repo_name": "jabber"
+			},
+			{
+				"username": "wiesenthal",
+				"repo_name": "Dungeons-And-Large-Language-Models"
+			},
+			{
+				"username": "wiesenthal",
+				"repo_name": "AI-Powered-Workflow-Engine"
+			},
+			{
+				"username": "abdurj",
+				"repo_name": "np-gpt"
+			}
 		]
 	},
 	{
@@ -119,27 +516,183 @@
 				"language": "TypeScript"
 			}
 		],
-		"similar_interest": [
-			"garrethlee",
-			"ElianBelot",
-			"abdurj",
-			"albertkim",
-			"mvllow",
-			"ochen1",
-			"trevorblades",
-			"wilbowma",
-			"Tgcohce",
-			"Vicente015",
-			"asiff00",
-			"cosmo3769",
-			"gagan3012",
-			"gshklovs",
-			"iHildy",
-			"meleongg",
-			"okarthikb",
-			"tika",
-			"vsaosuo",
-			"wiesenthal"
+		"similar_repos": [
+			{
+				"username": "SamuelmdLow",
+				"repo_name": "KnowledgeGrapher"
+			},
+			{
+				"username": "garrethlee",
+				"repo_name": "gcmt"
+			},
+			{
+				"username": "garrethlee",
+				"repo_name": "research-paper-parser"
+			},
+			{
+				"username": "Kiroves",
+				"repo_name": "BThere"
+			},
+			{
+				"username": "ElianBelot",
+				"repo_name": "web-voyager"
+			},
+			{
+				"username": "KevinL10",
+				"repo_name": "bumblebee"
+			},
+			{
+				"username": "abdurj",
+				"repo_name": "np-gpt"
+			},
+			{
+				"username": "aldenluthfi",
+				"repo_name": "savana"
+			},
+			{
+				"username": "albertkim",
+				"repo_name": "bun-llm-cli"
+			},
+			{
+				"username": "albertkim",
+				"repo_name": "gridview-analytics-scraper"
+			},
+			{
+				"username": "armintalaie",
+				"repo_name": "orbit"
+			},
+			{
+				"username": "fegicochen",
+				"repo_name": "UBC-Course-Insights"
+			},
+			{
+				"username": "jo3-l",
+				"repo_name": "obscenity"
+			},
+			{
+				"username": "ochen1",
+				"repo_name": "insanely-fast-whisper-cli"
+			},
+			{
+				"username": "recordcrash",
+				"repo_name": "homestuck-dataset"
+			},
+			{
+				"username": "trevorblades",
+				"repo_name": "alchemy"
+			},
+			{
+				"username": "wilbowma",
+				"repo_name": "llm-lang"
+			},
+			{
+				"username": "Ezzhingy",
+				"repo_name": "personal-website"
+			},
+			{
+				"username": "Highfire1",
+				"repo_name": "langara-coursys-frontend"
+			},
+			{
+				"username": "Highfire1",
+				"repo_name": "sfu-prerequisites-parsing"
+			},
+			{
+				"username": "Tgcohce",
+				"repo_name": "dal-defai"
+			},
+			{
+				"username": "YashVG",
+				"repo_name": "revember"
+			},
+			{
+				"username": "YingjiaLiu99",
+				"repo_name": "heal-in-pocket"
+			},
+			{
+				"username": "asiff00",
+				"repo_name": "On-Device-Speech-to-Speech-Conversational-AI"
+			},
+			{
+				"username": "asiff00",
+				"repo_name": "Bangla-Llama"
+			},
+			{
+				"username": "asiff00",
+				"repo_name": "Training-TTS"
+			},
+			{
+				"username": "gagan3012",
+				"repo_name": "ltr"
+			},
+			{
+				"username": "gagan3012",
+				"repo_name": "llama-tldr"
+			},
+			{
+				"username": "gagan3012",
+				"repo_name": "PolyDeDupe"
+			},
+			{
+				"username": "cosmo3769",
+				"repo_name": "Quantized-LLMs"
+			},
+			{
+				"username": "gshklovs",
+				"repo_name": "BerkeleyAIHacks"
+			},
+			{
+				"username": "elibroftw",
+				"repo_name": "modern-desktop-app-template"
+			},
+			{
+				"username": "elibroftw",
+				"repo_name": "vscode-justfile"
+			},
+			{
+				"username": "iHildy",
+				"repo_name": "jules-task-queue"
+			},
+			{
+				"username": "meleongg",
+				"repo_name": "flashcard-backend"
+			},
+			{
+				"username": "meleongg",
+				"repo_name": "flashcard-frontend"
+			},
+			{
+				"username": "meleongg",
+				"repo_name": "holistic-health-tracker"
+			},
+			{
+				"username": "s-alad",
+				"repo_name": "movelo"
+			},
+			{
+				"username": "okarthikb",
+				"repo_name": "attention-visualizer"
+			},
+			{
+				"username": "merouanezouaid",
+				"repo_name": "streamsafe"
+			},
+			{
+				"username": "tika",
+				"repo_name": "jabber"
+			},
+			{
+				"username": "wiesenthal",
+				"repo_name": "Dungeons-And-Large-Language-Models"
+			},
+			{
+				"username": "wiesenthal",
+				"repo_name": "SubjectiveSort"
+			},
+			{
+				"username": "wiesenthal",
+				"repo_name": "AI-Powered-Workflow-Engine"
+			}
 		]
 	},
 	{
@@ -189,7 +742,32 @@
 				"language": "R"
 			}
 		],
-		"similar_interest": ["albertkim", "ateucher", "hyperknot"]
+		"similar_repos": [
+			{
+				"username": "SamuelmdLow",
+				"repo_name": "EdmontonCityCouncilFeed"
+			},
+			{
+				"username": "albertkim",
+				"repo_name": "gridview-analytics-scraper"
+			},
+			{
+				"username": "ateucher",
+				"repo_name": "rmapshaper"
+			},
+			{
+				"username": "boshek",
+				"repo_name": "rsoi"
+			},
+			{
+				"username": "Moavia-Hassan",
+				"repo_name": "Energy_Consumption_Forecasting"
+			},
+			{
+				"username": "hyperknot",
+				"repo_name": "openfreemap"
+			}
+		]
 	},
 	{
 		"username": "ju1ien1100",
@@ -217,15 +795,83 @@
 				"language": "Java"
 			}
 		],
-		"similar_interest": [
-			"ardeshireshghi",
-			"javathunderman",
-			"ochen1",
-			"yi-jason",
-			"Mark123M",
-			"Tgcohce",
-			"asiff00",
-			"zanedb"
+		"similar_repos": [
+			{
+				"username": "aviwad",
+				"repo_name": "LyricFever"
+			},
+			{
+				"username": "aviwad",
+				"repo_name": "Friend-Activity-for-Spotify"
+			},
+			{
+				"username": "PepperLola",
+				"repo_name": "amdp"
+			},
+			{
+				"username": "javathunderman",
+				"repo_name": "zinnia"
+			},
+			{
+				"username": "kiedtl",
+				"repo_name": "bur_uxn"
+			},
+			{
+				"username": "kickscondor",
+				"repo_name": "duxtape"
+			},
+			{
+				"username": "ochen1",
+				"repo_name": "insanely-fast-whisper-cli"
+			},
+			{
+				"username": "turbolent",
+				"repo_name": "w2c2"
+			},
+			{
+				"username": "Mark123M",
+				"repo_name": "raytracer"
+			},
+			{
+				"username": "Mark123M",
+				"repo_name": "autotune-classifier"
+			},
+			{
+				"username": "Mark123M",
+				"repo_name": "audio-dsp-tools"
+			},
+			{
+				"username": "Suprnova",
+				"repo_name": "Rhythm-Games-Converter"
+			},
+			{
+				"username": "Tgcohce",
+				"repo_name": "dal-defai"
+			},
+			{
+				"username": "Tidyrice",
+				"repo_name": "OpenGL-Voxel-Engine"
+			},
+			{
+				"username": "asiff00",
+				"repo_name": "On-Device-Speech-to-Speech-Conversational-AI"
+			},
+			{
+				"username": "asiff00",
+				"repo_name": "Training-TTS"
+			},
+			{
+				"username": "tika",
+				"repo_name": "jabber"
+			},
+			{
+				"username": "zanedb",
+				"repo_name": "abra"
+			},
+			{
+				"username": "WinteryFox",
+				"repo_name": "Vixen"
+			}
 		]
 	},
 	{
@@ -254,14 +900,175 @@
 				"language": "JavaScript"
 			}
 		],
-		"similar_interest": [
-			"EdwardJXLi",
-			"Highfire1",
-			"HudZah",
-			"Tidyrice",
-			"StarGazingHomies",
-			"hanmindev",
-			"MrAnderson1971"
+		"similar_repos": [
+			{
+				"username": "SamuelmdLow",
+				"repo_name": "EdmontonCityCouncilFeed"
+			},
+			{
+				"username": "garrethlee",
+				"repo_name": "gcmt"
+			},
+			{
+				"username": "ElianBelot",
+				"repo_name": "web-voyager"
+			},
+			{
+				"username": "EdwardJXLi",
+				"repo_name": "ProjectObsidian"
+			},
+			{
+				"username": "JustinHuPrime",
+				"repo_name": "Minecraft-Market"
+			},
+			{
+				"username": "PepperLola",
+				"repo_name": "playerinfo"
+			},
+			{
+				"username": "fegicochen",
+				"repo_name": "UBC-Course-Insights"
+			},
+			{
+				"username": "kspaans",
+				"repo_name": "budget-cli"
+			},
+			{
+				"username": "kspaans",
+				"repo_name": "roasting"
+			},
+			{
+				"username": "grhkm21",
+				"repo_name": "advent-of-code-2023"
+			},
+			{
+				"username": "yhaooo11",
+				"repo_name": "voter"
+			},
+			{
+				"username": "Highfire1",
+				"repo_name": "langara-coursys-frontend"
+			},
+			{
+				"username": "Highfire1",
+				"repo_name": "sfu-prerequisites-parsing"
+			},
+			{
+				"username": "FrozenHydrant",
+				"repo_name": "create-oppenheimered"
+			},
+			{
+				"username": "HudZah",
+				"repo_name": "ConvertlyCLI"
+			},
+			{
+				"username": "Tgcohce",
+				"repo_name": "dal-defai"
+			},
+			{
+				"username": "YashVG",
+				"repo_name": "revember"
+			},
+			{
+				"username": "Nathn",
+				"repo_name": "Squakr"
+			},
+			{
+				"username": "Siliconrob",
+				"repo_name": "ownerrez-api"
+			},
+			{
+				"username": "Siliconrob",
+				"repo_name": "googlevr_calculator"
+			},
+			{
+				"username": "YingjiaLiu99",
+				"repo_name": "Heal-in-Pocket_Mobile"
+			},
+			{
+				"username": "Tidyrice",
+				"repo_name": "OpenGL-Voxel-Engine"
+			},
+			{
+				"username": "StarGazingHomies",
+				"repo_name": "Pathcrafter"
+			},
+			{
+				"username": "gshklovs",
+				"repo_name": "BerkeleyAIHacks"
+			},
+			{
+				"username": "hanmindev",
+				"repo_name": "Hmmm"
+			},
+			{
+				"username": "hanmindev",
+				"repo_name": "MCMV"
+			},
+			{
+				"username": "irisxu02",
+				"repo_name": "rubik"
+			},
+			{
+				"username": "meleongg",
+				"repo_name": "flashcard-backend"
+			},
+			{
+				"username": "nickbabcock",
+				"repo_name": "jomini"
+			},
+			{
+				"username": "naijwu",
+				"repo_name": "open-gavel"
+			},
+			{
+				"username": "s-alad",
+				"repo_name": "movelo"
+			},
+			{
+				"username": "merouanezouaid",
+				"repo_name": "pwp"
+			},
+			{
+				"username": "snlimadev",
+				"repo_name": "api-rock-paper-scissors-online"
+			},
+			{
+				"username": "wiesenthal",
+				"repo_name": "Dungeons-And-Large-Language-Models"
+			},
+			{
+				"username": "zahash",
+				"repo_name": "csc"
+			},
+			{
+				"username": "MrAnderson1971",
+				"repo_name": "cursed_minecraft"
+			},
+			{
+				"username": "AidenKerr",
+				"repo_name": "genetic-v2"
+			},
+			{
+				"username": "AidenKerr",
+				"repo_name": "WebWork-Green-in-PrairieLearn"
+			},
+			{
+				"username": "luckyjsx",
+				"repo_name": "StudyNotion"
+			},
+			{
+				"username": "meleongg",
+				"repo_name": "fitflow"
+			},
+			{
+				"username": "snlimadev",
+				"repo_name": "app-rock-paper-scissors-online"
+			},
+			{
+				"username": "wiesenthal",
+				"repo_name": "AI-Powered-Workflow-Engine"
+			}
 		]
 	},
 	{
@@ -308,24 +1115,331 @@
 				"topics": ["config", "dotfiles"]
 			}
 		],
-		"similar_interest": [
-			"ADSteele916",
-			"alaviss",
-			"funemy",
-			"kiedtl",
-			"kumarpit",
-			"grhkm21",
-			"mvllow",
-			"rctcwyvrn",
-			"ionathanch",
-			"theCasm",
-			"thomasporter522",
-			"wilbowma",
-			"Vicente015",
-			"birchmd",
-			"antler5",
-			"mfornet",
-			"achreto"
+		"similar_repos": [
+			{
+				"username": "ADSteele916",
+				"repo_name": "rand-functors"
+			},
+			{
+				"username": "ADSteele916",
+				"repo_name": "cabal"
+			},
+			{
+				"username": "KevinL10",
+				"repo_name": "wirecrab"
+			},
+			{
+				"username": "KevinL10",
+				"repo_name": "bumblebee"
+			},
+			{
+				"username": "JustinHuPrime",
+				"repo_name": "SolarDawn"
+			},
+			{
+				"username": "Lydxn",
+				"repo_name": "oj"
+			},
+			{
+				"username": "aldenluthfi",
+				"repo_name": "voronoi"
+			},
+			{
+				"username": "aldenluthfi",
+				"repo_name": "anekamacam"
+			},
+			{
+				"username": "alaviss",
+				"repo_name": "tree-sitter-nim"
+			},
+			{
+				"username": "alaviss",
+				"repo_name": "nim-sys"
+			},
+			{
+				"username": "alaviss",
+				"repo_name": "union"
+			},
+			{
+				"username": "alaviss",
+				"repo_name": "nim.nvim"
+			},
+			{
+				"username": "ardeshireshghi",
+				"repo_name": "mac-setup-scripts"
+			},
+			{
+				"username": "argonaut0",
+				"repo_name": "nixconfig"
+			},
+			{
+				"username": "PepperLola",
+				"repo_name": "amdp"
+			},
+			{
+				"username": "funemy",
+				"repo_name": "exercises"
+			},
+			{
+				"username": "funemy",
+				"repo_name": "dt"
+			},
+			{
+				"username": "javathunderman",
+				"repo_name": "zinnia"
+			},
+			{
+				"username": "kewbish",
+				"repo_name": "kintsugi"
+			},
+			{
+				"username": "jo3-l",
+				"repo_name": "yag-template-lsp"
+			},
+			{
+				"username": "kiedtl",
+				"repo_name": "finwe"
+			},
+			{
+				"username": "kiedtl",
+				"repo_name": "huxdemp"
+			},
+			{
+				"username": "kevinmingtarja",
+				"repo_name": "golox"
+			},
+			{
+				"username": "kumarpit",
+				"repo_name": "ramb"
+			},
+			{
+				"username": "grhkm21",
+				"repo_name": "LeanCornerFree"
+			},
+			{
+				"username": "grhkm21",
+				"repo_name": "lean4"
+			},
+			{
+				"username": "grhkm21",
+				"repo_name": "advent-of-code-2023"
+			},
+			{
+				"username": "mlechu",
+				"repo_name": "shape-rotator"
+			},
+			{
+				"username": "mlechu",
+				"repo_name": "tetrominobot"
+			},
+			{
+				"username": "mvllow",
+				"repo_name": "dots"
+			},
+			{
+				"username": "mvllow",
+				"repo_name": "lilvim"
+			},
+			{
+				"username": "oezingle",
+				"repo_name": "dotfiles"
+			},
+			{
+				"username": "rctcwyvrn",
+				"repo_name": "terrarium"
+			},
+			{
+				"username": "rctcwyvrn",
+				"repo_name": "rlox"
+			},
+			{
+				"username": "ionathanch",
+				"repo_name": "CBPV"
+			},
+			{
+				"username": "rheaplex",
+				"repo_name": "rheart"
+			},
+			{
+				"username": "ionathanch",
+				"repo_name": "TTBFL"
+			},
+			{
+				"username": "ionathanch",
+				"repo_name": "parapoly"
+			},
+			{
+				"username": "ionathanch",
+				"repo_name": "MutualInduction"
+			},
+			{
+				"username": "ionathanch",
+				"repo_name": "scraps"
+			},
+			{
+				"username": "theCasm",
+				"repo_name": "syscalls"
+			},
+			{
+				"username": "theCasm",
+				"repo_name": "SMLC"
+			},
+			{
+				"username": "turbolent",
+				"repo_name": "w2c2"
+			},
+			{
+				"username": "thep2p",
+				"repo_name": "skipgraph-rust"
+			},
+			{
+				"username": "wilbowma",
+				"repo_name": "llm-lang"
+			},
+			{
+				"username": "wilbowma",
+				"repo_name": "experimenting-with-redex"
+			},
+			{
+				"username": "wilbowma",
+				"repo_name": "multi-lang-comp"
+			},
+			{
+				"username": "yi-jason",
+				"repo_name": "sim"
+			},
+			{
+				"username": "Beta-test-initiation",
+				"repo_name": "OrderBook_DEX"
+			},
+			{
+				"username": "Mark123M",
+				"repo_name": "raytracer"
+			},
+			{
+				"username": "WorldofKerry",
+				"repo_name": "ToHDL"
+			},
+			{
+				"username": "Vicente015",
+				"repo_name": "dotfiles"
+			},
+			{
+				"username": "abeaumont",
+				"repo_name": "competitive-programming"
+			},
+			{
+				"username": "agrawal-d",
+				"repo_name": "cph"
+			},
+			{
+				"username": "agrawal-d",
+				"repo_name": "cph-submit"
+			},
+			{
+				"username": "brandur",
+				"repo_name": "logfmt"
+			},
+			{
+				"username": "antler5",
+				"repo_name": ".emacs.d"
+			},
+			{
+				"username": "ethanthoma",
+				"repo_name": "effect"
+			},
+			{
+				"username": "ethanthoma",
+				"repo_name": "nvim"
+			},
+			{
+				"username": "evansemet",
+				"repo_name": "Jane-Street-Solutions"
+			},
+			{
+				"username": "gaurav-gogia",
+				"repo_name": "mutant"
+			},
+			{
+				"username": "joshvocal",
+				"repo_name": "dotfiles"
+			},
+			{
+				"username": "liam-ilan",
+				"repo_name": "crumb"
+			},
+			{
+				"username": "nickbabcock",
+				"repo_name": "boxcars"
+			},
+			{
+				"username": "nickbabcock",
+				"repo_name": "bitter"
+			},
+			{
+				"username": "nickbabcock",
+				"repo_name": "highway-rs"
+			},
+			{
+				"username": "mfornet",
+				"repo_name": "acmx"
+			},
+			{
+				"username": "mfornet",
+				"repo_name": "advent-of-code-2024"
+			},
+			{
+				"username": "virchau13",
+				"repo_name": "epimetheus"
+			},
+			{
+				"username": "zahash",
+				"repo_name": "quarantine"
+			},
+			{
+				"username": "zahash",
+				"repo_name": "royalguard"
+			},
+			{
+				"username": "zahash",
+				"repo_name": "csc"
+			},
+			{
+				"username": "zahash",
+				"repo_name": "reactivate"
+			},
+			{
+				"username": "AidenKerr",
+				"repo_name": "genetic-v2"
+			},
+			{
+				"username": "AidenKerr",
+				"repo_name": "brainfuck"
+			},
+			{
+				"username": "achreto",
+				"repo_name": "crustal"
+			},
+			{
+				"username": "achreto",
+				"repo_name": "verified-node-replication"
+			},
+			{
+				"username": "achreto",
+				"repo_name": "rust-smtlib2"
+			},
+			{
+				"username": "achreto",
+				"repo_name": "rust-srcspan"
+			},
+			{
+				"username": "achreto",
+				"repo_name": "rust-tokstream"
+			},
+			{
+				"username": "BriHan-Tech",
+				"repo_name": "aspis"
+			}
 		]
 	},
 	{
@@ -354,36 +1468,123 @@
 				"language": "JavaScript"
 			}
 		],
-		"similar_interest": [
-			"garrethlee",
-			"stankur",
-			"Jake-Yeo",
-			"Anmol-Ghadia",
-			"Vaten0x",
-			"aviwad",
-			"fegicochen",
-			"kickscondor",
-			"Aashu-Dubey",
-			"PrincewillIroka",
-			"Tgcohce",
-			"YashVG",
-			"Nathn",
-			"YingjiaLiu99",
-			"asiff00",
-			"gshklovs",
-			"elibroftw",
-			"luckyjsx",
-			"mathewbushuru",
-			"meleongg",
-			"oltimaloku",
-			"naijwu",
-			"s-alad",
-			"merouanezouaid",
-			"pi-rate14",
-			"snlimadev",
-			"tika",
-			"wiesenthal",
-			"zanedb"
+		"similar_repos": [
+			{
+				"username": "stankur",
+				"repo_name": "prxmpt"
+			},
+			{
+				"username": "aviwad",
+				"repo_name": "Friend-Activity-for-Spotify"
+			},
+			{
+				"username": "fegicochen",
+				"repo_name": "UniMatch"
+			},
+			{
+				"username": "jo3-l",
+				"repo_name": "obscenity"
+			},
+			{
+				"username": "kickscondor",
+				"repo_name": "fraidycat"
+			},
+			{
+				"username": "ochen1",
+				"repo_name": "insanely-fast-whisper-cli"
+			},
+			{
+				"username": "Aashu-Dubey",
+				"repo_name": "React-Native-UI-Templates"
+			},
+			{
+				"username": "Aashu-Dubey",
+				"repo_name": "react-native-animation-samples"
+			},
+			{
+				"username": "Aashu-Dubey",
+				"repo_name": "Ionic-UI-Templates"
+			},
+			{
+				"username": "PrincewillIroka",
+				"repo_name": "React-Native-UI-Templates"
+			},
+			{
+				"username": "Tgcohce",
+				"repo_name": "dal-defai"
+			},
+			{
+				"username": "YashVG",
+				"repo_name": "revember"
+			},
+			{
+				"username": "Nathn",
+				"repo_name": "Squakr"
+			},
+			{
+				"username": "YingjiaLiu99",
+				"repo_name": "heal-in-pocket"
+			},
+			{
+				"username": "YingjiaLiu99",
+				"repo_name": "Heal-in-Pocket_backend"
+			},
+			{
+				"username": "YingjiaLiu99",
+				"repo_name": "Heal-in-Pocket_Mobile"
+			},
+			{
+				"username": "asiff00",
+				"repo_name": "On-Device-Speech-to-Speech-Conversational-AI"
+			},
+			{
+				"username": "gshklovs",
+				"repo_name": "BerkeleyAIHacks"
+			},
+			{
+				"username": "gaurav-gogia",
+				"repo_name": "KameKazi"
+			},
+			{
+				"username": "mathewbushuru",
+				"repo_name": "authentication-kit"
+			},
+			{
+				"username": "meleongg",
+				"repo_name": "holistic-health-tracker"
+			},
+			{
+				"username": "naijwu",
+				"repo_name": "open-gavel"
+			},
+			{
+				"username": "s-alad",
+				"repo_name": "toofake"
+			},
+			{
+				"username": "merouanezouaid",
+				"repo_name": "streamsafe"
+			},
+			{
+				"username": "tika",
+				"repo_name": "jabber"
+			},
+			{
+				"username": "wiesenthal",
+				"repo_name": "AI-Powered-Workflow-Engine"
+			},
+			{
+				"username": "zanedb",
+				"repo_name": "spotifriend"
+			},
+			{
+				"username": "AdenC123",
+				"repo_name": "OurBoARd"
+			},
+			{
+				"username": "wiesenthal",
+				"repo_name": "Dungeons-And-Large-Language-Models"
+			}
 		]
 	},
 	{
@@ -412,46 +1613,207 @@
 				"language": "HTML"
 			}
 		],
-		"similar_interest": [
-			"Jake-Yeo",
-			"Anmol-Ghadia",
-			"albertkim",
-			"ardeshireshghi",
-			"austinlparker",
-			"PepperLola",
-			"fegicochen",
-			"chasefleming",
-			"kspaans",
-			"kickscondor",
-			"mahalisunil1",
-			"mvllow",
-			"trevorblades",
-			"y-dejong",
-			"Aashu-Dubey",
-			"Highfire1",
-			"Ezzhingy",
-			"JipFr",
-			"ManasSin",
-			"PrincewillIroka",
-			"Nathn",
-			"Vicente015",
-			"Siliconrob",
-			"YingjiaLiu99",
-			"arnvgh",
-			"erwin-lovecraft",
-			"elibroftw",
-			"hyperknot",
-			"irisxu02",
-			"luckyjsx",
-			"mathewbushuru",
-			"meleongg",
-			"naijwu",
-			"s-alad",
-			"pi-rate14",
-			"sanjeevyadavIT",
-			"snlimadev",
-			"vsaosuo",
-			"virchau13"
+		"similar_repos": [
+			{
+				"username": "garrethlee",
+				"repo_name": "gcmt"
+			},
+			{
+				"username": "KevinL10",
+				"repo_name": "wirecrab"
+			},
+			{
+				"username": "KevinL10",
+				"repo_name": "blade"
+			},
+			{
+				"username": "aldenluthfi",
+				"repo_name": "malpolys"
+			},
+			{
+				"username": "alaviss",
+				"repo_name": "nim-sys"
+			},
+			{
+				"username": "argonaut0",
+				"repo_name": "nixconfig"
+			},
+			{
+				"username": "bluesign",
+				"repo_name": "mainnet-contracts"
+			},
+			{
+				"username": "chasefleming",
+				"repo_name": "fcl-next-scaffold"
+			},
+			{
+				"username": "javathunderman",
+				"repo_name": "zinnia"
+			},
+			{
+				"username": "kewbish",
+				"repo_name": "kintsugi"
+			},
+			{
+				"username": "kiedtl",
+				"repo_name": "zig-strig"
+			},
+			{
+				"username": "kspaans",
+				"repo_name": "roasting"
+			},
+			{
+				"username": "grhkm21",
+				"repo_name": "lean4"
+			},
+			{
+				"username": "mahalisunil1",
+				"repo_name": "portfolio"
+			},
+			{
+				"username": "rctcwyvrn",
+				"repo_name": "rlox"
+			},
+			{
+				"username": "ionathanch",
+				"repo_name": "scraps"
+			},
+			{
+				"username": "turbolent",
+				"repo_name": "w2c2"
+			},
+			{
+				"username": "routabeta",
+				"repo_name": "jackal_ros1_bridge"
+			},
+			{
+				"username": "trevorblades",
+				"repo_name": "eslint-config"
+			},
+			{
+				"username": "wilbowma",
+				"repo_name": "llm-lang"
+			},
+			{
+				"username": "ASCorreia",
+				"repo_name": "lazy-escrow"
+			},
+			{
+				"username": "Aashu-Dubey",
+				"repo_name": "React-Native-UI-Templates"
+			},
+			{
+				"username": "Aashu-Dubey",
+				"repo_name": "react-native-animation-samples"
+			},
+			{
+				"username": "Ezzhingy",
+				"repo_name": "personal-website"
+			},
+			{
+				"username": "Mark123M",
+				"repo_name": "autotune-classifier"
+			},
+			{
+				"username": "Mark123M",
+				"repo_name": "raytracer"
+			},
+			{
+				"username": "LordMoMA",
+				"repo_name": "Hexagonal-Architecture"
+			},
+			{
+				"username": "LordMoMA",
+				"repo_name": "blog-aggregator"
+			},
+			{
+				"username": "AdnaneKhan",
+				"repo_name": "ActionsTOCTOU"
+			},
+			{
+				"username": "PrincewillIroka",
+				"repo_name": "React-Native-UI-Templates"
+			},
+			{
+				"username": "PrincewillIroka",
+				"repo_name": "My-Personal-Portfolio"
+			},
+			{
+				"username": "WorldofKerry",
+				"repo_name": "Python2Verilog"
+			},
+			{
+				"username": "Vicente015",
+				"repo_name": "dotfiles"
+			},
+			{
+				"username": "Vicente015",
+				"repo_name": "homeserver"
+			},
+			{
+				"username": "abeaumont",
+				"repo_name": "competitive-programming"
+			},
+			{
+				"username": "abeaumont",
+				"repo_name": "ocaml-salsa20-core"
+			},
+			{
+				"username": "Tidyrice",
+				"repo_name": "OpenGL-Voxel-Engine"
+			},
+			{
+				"username": "agrawal-d",
+				"repo_name": "cph"
+			},
+			{
+				"username": "asiff00",
+				"repo_name": "On-Device-Speech-to-Speech-Conversational-AI"
+			},
+			{
+				"username": "calvbore",
+				"repo_name": "zk-hello-world-noir"
+			},
+			{
+				"username": "ethanthoma",
+				"repo_name": "effect"
+			},
+			{
+				"username": "cosmo3769",
+				"repo_name": "Quantized-LLMs"
+			},
+			{
+				"username": "mathewbushuru",
+				"repo_name": "design-system"
+			},
+			{
+				"username": "nickbabcock",
+				"repo_name": "highway-rs"
+			},
+			{
+				"username": "wiesenthal",
+				"repo_name": "SubjectiveSort"
+			},
+			{
+				"username": "wiesenthal",
+				"repo_name": "AI-Powered-Workflow-Engine"
+			},
+			{
+				"username": "zanedb",
+				"repo_name": "spotifriend"
+			},
+			{
+				"username": "zahash",
+				"repo_name": "quarantine"
+			},
+			{
+				"username": "zahash",
+				"repo_name": "royalguard"
+			},
+			{
+				"username": "StarGazingHomies",
+				"repo_name": "Pathcrafter"
+			}
 		]
 	},
 	{
@@ -487,35 +1849,227 @@
 				"language": "TypeScript"
 			}
 		],
-		"similar_interest": [
-			"stankur",
-			"aldenluthfi",
-			"albertkim",
-			"armintalaie",
-			"austinlparker",
-			"fegicochen",
-			"chasefleming",
-			"mvllow",
-			"trevorblades",
-			"wilbowma",
-			"Aashu-Dubey",
-			"Highfire1",
-			"Ezzhingy",
-			"PrincewillIroka",
-			"Tgcohce",
-			"Vicente015",
-			"agrawal-d",
-			"arnvgh",
-			"cosmo3769",
-			"elibroftw",
-			"iHildy",
-			"mathewbushuru",
-			"meleongg",
-			"naijwu",
-			"s-alad",
-			"tika",
-			"snlimadev",
-			"wiesenthal"
+		"similar_repos": [
+			{
+				"username": "ElianBelot",
+				"repo_name": "web-voyager"
+			},
+			{
+				"username": "KevinL10",
+				"repo_name": "wirecrab"
+			},
+			{
+				"username": "KevinL10",
+				"repo_name": "blade"
+			},
+			{
+				"username": "aldenluthfi",
+				"repo_name": "malpolys"
+			},
+			{
+				"username": "alaviss",
+				"repo_name": "nim-sys"
+			},
+			{
+				"username": "argonaut0",
+				"repo_name": "nixconfig"
+			},
+			{
+				"username": "bluesign",
+				"repo_name": "mainnet-contracts"
+			},
+			{
+				"username": "chasefleming",
+				"repo_name": "fcl-next-scaffold"
+			},
+			{
+				"username": "javathunderman",
+				"repo_name": "zinnia"
+			},
+			{
+				"username": "kewbish",
+				"repo_name": "kintsugi"
+			},
+			{
+				"username": "kiedtl",
+				"repo_name": "zig-strig"
+			},
+			{
+				"username": "grhkm21",
+				"repo_name": "lean4"
+			},
+			{
+				"username": "mahalisunil1",
+				"repo_name": "portfolio"
+			},
+			{
+				"username": "rctcwyvrn",
+				"repo_name": "rlox"
+			},
+			{
+				"username": "ionathanch",
+				"repo_name": "scraps"
+			},
+			{
+				"username": "turbolent",
+				"repo_name": "w2c2"
+			},
+			{
+				"username": "trevorblades",
+				"repo_name": "eslint-config"
+			},
+			{
+				"username": "routabeta",
+				"repo_name": "jackal_ros1_bridge"
+			},
+			{
+				"username": "wilbowma",
+				"repo_name": "llm-lang"
+			},
+			{
+				"username": "ASCorreia",
+				"repo_name": "lazy-escrow"
+			},
+			{
+				"username": "Aashu-Dubey",
+				"repo_name": "React-Native-UI-Templates"
+			},
+			{
+				"username": "Aashu-Dubey",
+				"repo_name": "react-native-animation-samples"
+			},
+			{
+				"username": "Ezzhingy",
+				"repo_name": "personal-website"
+			},
+			{
+				"username": "Mark123M",
+				"repo_name": "raytracer"
+			},
+			{
+				"username": "LordMoMA",
+				"repo_name": "Hexagonal-Architecture"
+			},
+			{
+				"username": "LordMoMA",
+				"repo_name": "blog-aggregator"
+			},
+			{
+				"username": "AdnaneKhan",
+				"repo_name": "ActionsTOCTOU"
+			},
+			{
+				"username": "PrincewillIroka",
+				"repo_name": "React-Native-UI-Templates"
+			},
+			{
+				"username": "PrincewillIroka",
+				"repo_name": "My-Personal-Portfolio"
+			},
+			{
+				"username": "WorldofKerry",
+				"repo_name": "Python2Verilog"
+			},
+			{
+				"username": "Vicente015",
+				"repo_name": "homeserver"
+			},
+			{
+				"username": "Vicente015",
+				"repo_name": "dotfiles"
+			},
+			{
+				"username": "YingjiaLiu99",
+				"repo_name": "Heal-in-Pocket_Mobile"
+			},
+			{
+				"username": "abeaumont",
+				"repo_name": "competitive-programming"
+			},
+			{
+				"username": "Tidyrice",
+				"repo_name": "OpenGL-Voxel-Engine"
+			},
+			{
+				"username": "StarGazingHomies",
+				"repo_name": "Pathcrafter"
+			},
+			{
+				"username": "agrawal-d",
+				"repo_name": "cph"
+			},
+			{
+				"username": "asiff00",
+				"repo_name": "On-Device-Speech-to-Speech-Conversational-AI"
+			},
+			{
+				"username": "calvbore",
+				"repo_name": "zk-hello-world-noir"
+			},
+			{
+				"username": "ethanthoma",
+				"repo_name": "effect"
+			},
+			{
+				"username": "cosmo3769",
+				"repo_name": "Quantized-LLMs"
+			},
+			{
+				"username": "mathewbushuru",
+				"repo_name": "design-system"
+			},
+			{
+				"username": "nickbabcock",
+				"repo_name": "highway-rs"
+			},
+			{
+				"username": "snlimadev",
+				"repo_name": "api-battleship-online"
+			},
+			{
+				"username": "wiesenthal",
+				"repo_name": "SubjectiveSort"
+			},
+			{
+				"username": "wiesenthal",
+				"repo_name": "AI-Powered-Workflow-Engine"
+			},
+			{
+				"username": "zanedb",
+				"repo_name": "spotifriend"
+			},
+			{
+				"username": "zahash",
+				"repo_name": "quarantine"
+			},
+			{
+				"username": "zahash",
+				"repo_name": "royalguard"
+			},
+			{
+				"username": "garrethlee",
+				"repo_name": "gcmt"
+			},
+			{
+				"username": "kspaans",
+				"repo_name": "roasting"
+			},
+			{
+				"username": "abeaumont",
+				"repo_name": "ocaml-salsa20-core"
+			},
+			{
+				"username": "calvbore",
+				"repo_name": "noir-starter-kit"
+			},
+			{
+				"username": "thep2p",
+				"repo_name": "go-eth-localnet"
+			},
+			{
+				"username": "Mark123M",
+				"repo_name": "autotune-classifier"
+			}
 		]
 	},
 	{
@@ -537,19 +2091,87 @@
 				"language": "GDScript"
 			}
 		],
-		"similar_interest": [
-			"aldenluthfi",
-			"Mark123M",
-			"Tidyrice",
-			"StarGazingHomies",
-			"irisxu02",
-			"mxple",
-			"snlimadev",
-			"MrAnderson1971",
-			"WinteryFox",
-			"AdenC123",
-			"manglemix",
-			"Edster1121"
+		"similar_repos": [
+			{
+				"username": "omentic",
+				"repo_name": "aoc"
+			},
+			{
+				"username": "Anmol-Ghadia",
+				"repo_name": "c-web-snake"
+			},
+			{
+				"username": "aldenluthfi",
+				"repo_name": "voronoi"
+			},
+			{
+				"username": "aldenluthfi",
+				"repo_name": "malpolys"
+			},
+			{
+				"username": "mlechu",
+				"repo_name": "tetrominobot"
+			},
+			{
+				"username": "yi-jason",
+				"repo_name": "mac-man"
+			},
+			{
+				"username": "JipFr",
+				"repo_name": "space2"
+			},
+			{
+				"username": "Mark123M",
+				"repo_name": "raytracer"
+			},
+			{
+				"username": "Nathn",
+				"repo_name": "FootX"
+			},
+			{
+				"username": "Tidyrice",
+				"repo_name": "OpenGL-Voxel-Engine"
+			},
+			{
+				"username": "irisxu02",
+				"repo_name": "rubik"
+			},
+			{
+				"username": "mxple",
+				"repo_name": "Sandtris-GBA"
+			},
+			{
+				"username": "mxple",
+				"repo_name": "Smedja"
+			},
+			{
+				"username": "snlimadev",
+				"repo_name": "api-battleship-online"
+			},
+			{
+				"username": "wiesenthal",
+				"repo_name": "Dungeons-And-Large-Language-Models"
+			},
+			{
+				"username": "AidenKerr",
+				"repo_name": "genetic-v2"
+			},
+			{
+				"username": "WinteryFox",
+				"repo_name": "Vixen"
+			},
+			{
+				"username": "Edster1121",
+				"repo_name": "CodeBuddies"
+			},
+			{
+				"username": "Edster1121",
+				"repo_name": "mss-game-dev-edd"
+			},
+			{
+				"username": "AdenC123",
+				"repo_name": "MtStringmore"
+			}
 		]
 	},
 	{
@@ -571,21 +2193,115 @@
 				"language": "Python"
 			}
 		],
-		"similar_interest": [
-			"omentic",
-			"abdurj",
-			"NathanAW24",
-			"funemy",
-			"kumarpit",
-			"ionathanch",
-			"thomasporter522",
-			"wilbowma",
-			"Jerr-z",
-			"WorldofKerry",
-			"ethanthoma",
-			"gagan3012",
-			"evansemet",
-			"cosmo3769"
+		"similar_repos": [
+			{
+				"username": "omentic",
+				"repo_name": "mechanicals"
+			},
+			{
+				"username": "ADSteele916",
+				"repo_name": "rand-functors"
+			},
+			{
+				"username": "abdurj",
+				"repo_name": "np-gpt"
+			},
+			{
+				"username": "funemy",
+				"repo_name": "exercises"
+			},
+			{
+				"username": "kevinmingtarja",
+				"repo_name": "golox"
+			},
+			{
+				"username": "kumarpit",
+				"repo_name": "ramb"
+			},
+			{
+				"username": "grhkm21",
+				"repo_name": "LeanCornerFree"
+			},
+			{
+				"username": "grhkm21",
+				"repo_name": "lean4"
+			},
+			{
+				"username": "grhkm21",
+				"repo_name": "advent-of-code-2023"
+			},
+			{
+				"username": "rctcwyvrn",
+				"repo_name": "rlox"
+			},
+			{
+				"username": "ionathanch",
+				"repo_name": "CBPV"
+			},
+			{
+				"username": "ionathanch",
+				"repo_name": "parapoly"
+			},
+			{
+				"username": "ionathanch",
+				"repo_name": "scraps"
+			},
+			{
+				"username": "wilbowma",
+				"repo_name": "llm-lang"
+			},
+			{
+				"username": "wilbowma",
+				"repo_name": "multi-lang-comp"
+			},
+			{
+				"username": "WorldofKerry",
+				"repo_name": "Python2Verilog"
+			},
+			{
+				"username": "abeaumont",
+				"repo_name": "ocaml-salsa20-core"
+			},
+			{
+				"username": "asiff00",
+				"repo_name": "On-Device-Speech-to-Speech-Conversational-AI"
+			},
+			{
+				"username": "ethanthoma",
+				"repo_name": "zensor"
+			},
+			{
+				"username": "ethanthoma",
+				"repo_name": "effect"
+			},
+			{
+				"username": "gagan3012",
+				"repo_name": "llama-tldr"
+			},
+			{
+				"username": "gshklovs",
+				"repo_name": "BerkeleyAIHacks"
+			},
+			{
+				"username": "evansemet",
+				"repo_name": "cardquant"
+			},
+			{
+				"username": "gaurav-gogia",
+				"repo_name": "mutant"
+			},
+			{
+				"username": "meleongg",
+				"repo_name": "flashcard-backend"
+			},
+			{
+				"username": "meleongg",
+				"repo_name": "flashcard-frontend"
+			},
+			{
+				"username": "mfornet",
+				"repo_name": "advent-of-code-2024"
+			}
 		]
 	},
 	{
@@ -614,12 +2330,135 @@
 				"language": "Rust"
 			}
 		],
-		"similar_interest": [
-			"javathunderman",
-			"kumarpit",
-			"Jerr-z",
-			"evansemet",
-			"lukasgolson"
+		"similar_repos": [
+			{
+				"username": "KevinL10",
+				"repo_name": "wirecrab"
+			},
+			{
+				"username": "KevinL10",
+				"repo_name": "bumblebee"
+			},
+			{
+				"username": "aldenluthfi",
+				"repo_name": "voronoi"
+			},
+			{
+				"username": "aldenluthfi",
+				"repo_name": "anekamacam"
+			},
+			{
+				"username": "javathunderman",
+				"repo_name": "zinnia"
+			},
+			{
+				"username": "kewbish",
+				"repo_name": "disparati"
+			},
+			{
+				"username": "kiedtl",
+				"repo_name": "finwe"
+			},
+			{
+				"username": "rctcwyvrn",
+				"repo_name": "terrarium"
+			},
+			{
+				"username": "rctcwyvrn",
+				"repo_name": "rlox"
+			},
+			{
+				"username": "thep2p",
+				"repo_name": "skipgraph-rust"
+			},
+			{
+				"username": "ASCorreia",
+				"repo_name": "lazy-escrow"
+			},
+			{
+				"username": "Beta-test-initiation",
+				"repo_name": "OrderBook_DEX"
+			},
+			{
+				"username": "Jerr-z",
+				"repo_name": "scimon"
+			},
+			{
+				"username": "JuliaPoo",
+				"repo_name": "Cayley-Graph-Plotting"
+			},
+			{
+				"username": "brandur",
+				"repo_name": "logfmt"
+			},
+			{
+				"username": "ethanthoma",
+				"repo_name": "effect"
+			},
+			{
+				"username": "evansemet",
+				"repo_name": "cardquant"
+			},
+			{
+				"username": "irisxu02",
+				"repo_name": "palette-generator-experiment"
+			},
+			{
+				"username": "liam-ilan",
+				"repo_name": "crumb"
+			},
+			{
+				"username": "nickbabcock",
+				"repo_name": "boxcars"
+			},
+			{
+				"username": "nickbabcock",
+				"repo_name": "bitter"
+			},
+			{
+				"username": "nickbabcock",
+				"repo_name": "highway-rs"
+			},
+			{
+				"username": "zahash",
+				"repo_name": "royalguard"
+			},
+			{
+				"username": "zahash",
+				"repo_name": "quarantine"
+			},
+			{
+				"username": "zahash",
+				"repo_name": "reactivate"
+			},
+			{
+				"username": "zahash",
+				"repo_name": "csc"
+			},
+			{
+				"username": "AidenKerr",
+				"repo_name": "genetic-v2"
+			},
+			{
+				"username": "achreto",
+				"repo_name": "rust-smtlib2"
+			},
+			{
+				"username": "achreto",
+				"repo_name": "rust-srcspan"
+			},
+			{
+				"username": "achreto",
+				"repo_name": "crustal"
+			},
+			{
+				"username": "achreto",
+				"repo_name": "verified-node-replication"
+			},
+			{
+				"username": "achreto",
+				"repo_name": "rust-tokstream"
+			}
 		]
 	},
 	{
@@ -662,17 +2501,467 @@
 				"language": "TypeScript"
 			}
 		],
-		"similar_interest": [
-			"fegicochen",
-			"mvllow",
-			"turbolent",
-			"Nathn",
-			"luckyjsx",
-			"mathewbushuru",
-			"naijwu",
-			"sanjeevyadavIT",
-			"snlimadev",
-			"wiesenthal"
+		"similar_repos": [
+			{
+				"username": "FrankWhoee",
+				"repo_name": "Aedifex"
+			},
+			{
+				"username": "omentic",
+				"repo_name": "aoc"
+			},
+			{
+				"username": "Kiroves",
+				"repo_name": "BThere"
+			},
+			{
+				"username": "tachibana-marine",
+				"repo_name": "run3d"
+			},
+			{
+				"username": "KevinL10",
+				"repo_name": "browser"
+			},
+			{
+				"username": "KevinL10",
+				"repo_name": "bumblebee"
+			},
+			{
+				"username": "Lydxn",
+				"repo_name": "oj"
+			},
+			{
+				"username": "Vaten0x",
+				"repo_name": "LectureSurfers"
+			},
+			{
+				"username": "aldenluthfi",
+				"repo_name": "malpolys"
+			},
+			{
+				"username": "aldenluthfi",
+				"repo_name": "situsluthfi"
+			},
+			{
+				"username": "aldenluthfi",
+				"repo_name": "savana"
+			},
+			{
+				"username": "albertkim",
+				"repo_name": "bun-llm-cli"
+			},
+			{
+				"username": "ardeshireshghi",
+				"repo_name": "photos"
+			},
+			{
+				"username": "armintalaie",
+				"repo_name": "orbit"
+			},
+			{
+				"username": "PepperLola",
+				"repo_name": "img-generator"
+			},
+			{
+				"username": "fegicochen",
+				"repo_name": "UBC-Course-Insights"
+			},
+			{
+				"username": "fegicochen",
+				"repo_name": "UniMatch"
+			},
+			{
+				"username": "chasefleming",
+				"repo_name": "elem-go"
+			},
+			{
+				"username": "kiedtl",
+				"repo_name": "huxdemp"
+			},
+			{
+				"username": "kiedtl",
+				"repo_name": "bur_uxn"
+			},
+			{
+				"username": "kspaans",
+				"repo_name": "budget-cli"
+			},
+			{
+				"username": "kspaans",
+				"repo_name": "roasting"
+			},
+			{
+				"username": "kickscondor",
+				"repo_name": "duxtape"
+			},
+			{
+				"username": "kickscondor",
+				"repo_name": "fraidycat"
+			},
+			{
+				"username": "grhkm21",
+				"repo_name": "advent-of-code-2023"
+			},
+			{
+				"username": "mahalisunil1",
+				"repo_name": "portfolio"
+			},
+			{
+				"username": "mlechu",
+				"repo_name": "tetrominobot"
+			},
+			{
+				"username": "mvllow",
+				"repo_name": "next-pwa-template"
+			},
+			{
+				"username": "theCasm",
+				"repo_name": "SMLC"
+			},
+			{
+				"username": "theCasm",
+				"repo_name": "threadSched"
+			},
+			{
+				"username": "recordcrash",
+				"repo_name": "homestuck-motifle"
+			},
+			{
+				"username": "turbolent",
+				"repo_name": "w2c2"
+			},
+			{
+				"username": "turbolent",
+				"repo_name": "W2C2BridgeGenerator"
+			},
+			{
+				"username": "trevorblades",
+				"repo_name": "alchemy"
+			},
+			{
+				"username": "y-dejong",
+				"repo_name": "nfcurl"
+			},
+			{
+				"username": "yi-jason",
+				"repo_name": "jls"
+			},
+			{
+				"username": "yi-jason",
+				"repo_name": "mac-man"
+			},
+			{
+				"username": "yhaooo11",
+				"repo_name": "voter"
+			},
+			{
+				"username": "Aashu-Dubey",
+				"repo_name": "React-Native-UI-Templates"
+			},
+			{
+				"username": "Aashu-Dubey",
+				"repo_name": "capacitor-statusbar-safe-area"
+			},
+			{
+				"username": "Aashu-Dubey",
+				"repo_name": "Ionic-UI-Templates"
+			},
+			{
+				"username": "Ezzhingy",
+				"repo_name": "personal-website"
+			},
+			{
+				"username": "Highfire1",
+				"repo_name": "langara-coursys-frontend"
+			},
+			{
+				"username": "JipFr",
+				"repo_name": "space2"
+			},
+			{
+				"username": "JuliaPoo",
+				"repo_name": "Cayley-Graph-Plotting"
+			},
+			{
+				"username": "Mark123M",
+				"repo_name": "raytracer"
+			},
+			{
+				"username": "PrincewillIroka",
+				"repo_name": "React-Native-UI-Templates"
+			},
+			{
+				"username": "PrincewillIroka",
+				"repo_name": "project_management_mobile_app"
+			},
+			{
+				"username": "PrincewillIroka",
+				"repo_name": "My-Personal-Portfolio"
+			},
+			{
+				"username": "PrincewillIroka",
+				"repo_name": "World-News"
+			},
+			{
+				"username": "PrincewillIroka",
+				"repo_name": "Free-Courses-Frontend"
+			},
+			{
+				"username": "YashVG",
+				"repo_name": "revember"
+			},
+			{
+				"username": "Nathn",
+				"repo_name": "MasterQuizz"
+			},
+			{
+				"username": "Nathn",
+				"repo_name": "FootX"
+			},
+			{
+				"username": "Nathn",
+				"repo_name": "GeoDraw"
+			},
+			{
+				"username": "Nathn",
+				"repo_name": "Squakr"
+			},
+			{
+				"username": "Nathn",
+				"repo_name": "ChessX"
+			},
+			{
+				"username": "Vicente015",
+				"repo_name": "homeserver"
+			},
+			{
+				"username": "Vicente015",
+				"repo_name": "blog"
+			},
+			{
+				"username": "Siliconrob",
+				"repo_name": "ownerrez-api-tester"
+			},
+			{
+				"username": "YingjiaLiu99",
+				"repo_name": "Heal-in-Pocket_backend"
+			},
+			{
+				"username": "YingjiaLiu99",
+				"repo_name": "Heal-in-Pocket_Mobile"
+			},
+			{
+				"username": "Tidyrice",
+				"repo_name": "OpenGL-Voxel-Engine"
+			},
+			{
+				"username": "Tidyrice",
+				"repo_name": "PicoW-Macro-Keyboard"
+			},
+			{
+				"username": "Tidyrice",
+				"repo_name": "TidyBJ"
+			},
+			{
+				"username": "antnks",
+				"repo_name": "arris-vip1113"
+			},
+			{
+				"username": "arnvgh",
+				"repo_name": "newtab"
+			},
+			{
+				"username": "gaurav-gogia",
+				"repo_name": "KameKazi"
+			},
+			{
+				"username": "elibroftw",
+				"repo_name": "modern-desktop-app-template"
+			},
+			{
+				"username": "irisxu02",
+				"repo_name": "rubik"
+			},
+			{
+				"username": "joshvocal",
+				"repo_name": "homelab"
+			},
+			{
+				"username": "luckyjsx",
+				"repo_name": "StudyNotion"
+			},
+			{
+				"username": "liam-ilan",
+				"repo_name": "crumb"
+			},
+			{
+				"username": "mathewbushuru",
+				"repo_name": "todoist-monorepo"
+			},
+			{
+				"username": "mathewbushuru",
+				"repo_name": "acme-ecommerce"
+			},
+			{
+				"username": "mathewbushuru",
+				"repo_name": "apple-store"
+			},
+			{
+				"username": "mathewbushuru",
+				"repo_name": "authentication-kit"
+			},
+			{
+				"username": "mathewbushuru",
+				"repo_name": "design-system"
+			},
+			{
+				"username": "meleongg",
+				"repo_name": "flashcard-backend"
+			},
+			{
+				"username": "meleongg",
+				"repo_name": "flashcard-frontend"
+			},
+			{
+				"username": "meleongg",
+				"repo_name": "fitflow"
+			},
+			{
+				"username": "mxple",
+				"repo_name": "Sandtris-GBA"
+			},
+			{
+				"username": "mxple",
+				"repo_name": "Smedja"
+			},
+			{
+				"username": "naijwu",
+				"repo_name": "open-gavel"
+			},
+			{
+				"username": "naijwu",
+				"repo_name": "open-gavel-server"
+			},
+			{
+				"username": "s-alad",
+				"repo_name": "toofake"
+			},
+			{
+				"username": "naijwu",
+				"repo_name": "pacificmun-ipc"
+			},
+			{
+				"username": "s-alad",
+				"repo_name": "movelo"
+			},
+			{
+				"username": "merouanezouaid",
+				"repo_name": "streamsafe"
+			},
+			{
+				"username": "pi-rate14",
+				"repo_name": "goFinder"
+			},
+			{
+				"username": "pi-rate14",
+				"repo_name": "CryptoTracker"
+			},
+			{
+				"username": "pi-rate14",
+				"repo_name": "covid-19-tracker"
+			},
+			{
+				"username": "sanjeevyadavIT",
+				"repo_name": "magento_react_native"
+			},
+			{
+				"username": "snlimadev",
+				"repo_name": "app-jogo-da-velha"
+			},
+			{
+				"username": "snlimadev",
+				"repo_name": "app-battleship-online"
+			},
+			{
+				"username": "snlimadev",
+				"repo_name": "app-rock-paper-scissors-online"
+			},
+			{
+				"username": "snlimadev",
+				"repo_name": "api-battleship-online"
+			},
+			{
+				"username": "snlimadev",
+				"repo_name": "api-rock-paper-scissors-online"
+			},
+			{
+				"username": "tika",
+				"repo_name": "jabber"
+			},
+			{
+				"username": "tweeres04",
+				"repo_name": "nuckscountdown"
+			},
+			{
+				"username": "wiesenthal",
+				"repo_name": "Dungeons-And-Large-Language-Models"
+			},
+			{
+				"username": "wiesenthal",
+				"repo_name": "SubjectiveSort"
+			},
+			{
+				"username": "zahash",
+				"repo_name": "csc"
+			},
+			{
+				"username": "MrAnderson1971",
+				"repo_name": "Laurel-Nest"
+			},
+			{
+				"username": "MrAnderson1971",
+				"repo_name": "ReversiBot"
+			},
+			{
+				"username": "AidenKerr",
+				"repo_name": "slugs"
+			},
+			{
+				"username": "AidenKerr",
+				"repo_name": "brainfuck"
+			},
+			{
+				"username": "AidenKerr",
+				"repo_name": "genetic-v2"
+			},
+			{
+				"username": "AidenKerr",
+				"repo_name": "WebWork-Green-in-PrairieLearn"
+			},
+			{
+				"username": "WinteryFox",
+				"repo_name": "Vixen"
+			},
+			{
+				"username": "AdenC123",
+				"repo_name": "OurBoARd"
+			},
+			{
+				"username": "Edster1121",
+				"repo_name": "mss-game-dev-edd"
+			},
+			{
+				"username": "yi-jason",
+				"repo_name": "sim"
+			},
+			{
+				"username": "virchau13",
+				"repo_name": "tree-sitter-astro"
+			},
+			{
+				"username": "irisxu02",
+				"repo_name": "palette-generator-experiment"
+			}
 		]
 	},
 	{
@@ -703,21 +2992,131 @@
 				"topics": ["convolutional-neural-networks", "keras"]
 			}
 		],
-		"similar_interest": [
-			"stankur",
-			"garrethlee",
-			"KevinL10",
-			"Lydxn",
-			"abdurj",
-			"albertkim",
-			"wilbowma",
-			"asiff00",
-			"gagan3012",
-			"gshklovs",
-			"meleongg",
-			"okarthikb",
-			"saucesteals",
-			"wiesenthal"
+		"similar_repos": [
+			{
+				"username": "garrethlee",
+				"repo_name": "gcmt"
+			},
+			{
+				"username": "garrethlee",
+				"repo_name": "research-paper-parser"
+			},
+			{
+				"username": "stankur",
+				"repo_name": "prxmpt"
+			},
+			{
+				"username": "KevinL10",
+				"repo_name": "blade"
+			},
+			{
+				"username": "KevinL10",
+				"repo_name": "browser"
+			},
+			{
+				"username": "KevinL10",
+				"repo_name": "bumblebee"
+			},
+			{
+				"username": "abdurj",
+				"repo_name": "np-gpt"
+			},
+			{
+				"username": "albertkim",
+				"repo_name": "gridview-analytics-scraper"
+			},
+			{
+				"username": "grhkm21",
+				"repo_name": "advent-of-code-2023"
+			},
+			{
+				"username": "ochen1",
+				"repo_name": "insanely-fast-whisper-cli"
+			},
+			{
+				"username": "wilbowma",
+				"repo_name": "llm-lang"
+			},
+			{
+				"username": "Jerr-z",
+				"repo_name": "scimon"
+			},
+			{
+				"username": "Mark123M",
+				"repo_name": "autotune-classifier"
+			},
+			{
+				"username": "Tgcohce",
+				"repo_name": "dal-defai"
+			},
+			{
+				"username": "asiff00",
+				"repo_name": "On-Device-Speech-to-Speech-Conversational-AI"
+			},
+			{
+				"username": "asiff00",
+				"repo_name": "Training-TTS"
+			},
+			{
+				"username": "asiff00",
+				"repo_name": "Bangla-Llama"
+			},
+			{
+				"username": "gagan3012",
+				"repo_name": "ltr"
+			},
+			{
+				"username": "gagan3012",
+				"repo_name": "llama-tldr"
+			},
+			{
+				"username": "gagan3012",
+				"repo_name": "PolyDeDupe"
+			},
+			{
+				"username": "cosmo3769",
+				"repo_name": "Quantized-LLMs"
+			},
+			{
+				"username": "gshklovs",
+				"repo_name": "BerkeleyAIHacks"
+			},
+			{
+				"username": "meleongg",
+				"repo_name": "flashcard-backend"
+			},
+			{
+				"username": "meleongg",
+				"repo_name": "flashcard-frontend"
+			},
+			{
+				"username": "meleongg",
+				"repo_name": "holistic-health-tracker"
+			},
+			{
+				"username": "okarthikb",
+				"repo_name": "attention-visualizer"
+			},
+			{
+				"username": "saucesteals",
+				"repo_name": "mimic"
+			},
+			{
+				"username": "tika",
+				"repo_name": "jabber"
+			},
+			{
+				"username": "wiesenthal",
+				"repo_name": "Dungeons-And-Large-Language-Models"
+			},
+			{
+				"username": "wiesenthal",
+				"repo_name": "AI-Powered-Workflow-Engine"
+			},
+			{
+				"username": "Beta-test-initiation",
+				"repo_name": "Platepal"
+			}
 		]
 	},
 	{
@@ -767,7 +3166,24 @@
 				"topics": ["encryption", "public-key-cryptography"]
 			}
 		],
-		"similar_interest": ["CallumMackenzie"]
+		"similar_repos": [
+			{
+				"username": "CallumMackenzie",
+				"repo_name": "exvi-client"
+			},
+			{
+				"username": "kewbish",
+				"repo_name": "kintsugi"
+			},
+			{
+				"username": "gaurav-gogia",
+				"repo_name": "KameKazi"
+			},
+			{
+				"username": "sanjeevyadavIT",
+				"repo_name": "magento-android"
+			}
+		]
 	},
 	{
 		"username": "EdwardJXLi",
@@ -800,16 +3216,63 @@
 				]
 			}
 		],
-		"similar_interest": [
-			"KevinL10",
-			"JustinHuPrime",
-			"abdurj",
-			"austinlparker",
-			"Tidyrice",
-			"StarGazingHomies",
-			"hanmindev",
-			"wiesenthal",
-			"MrAnderson1971"
+		"similar_repos": [
+			{
+				"username": "FrankWhoee",
+				"repo_name": "Aedifex"
+			},
+			{
+				"username": "BriHan-Tech",
+				"repo_name": "aspis"
+			},
+			{
+				"username": "KevinL10",
+				"repo_name": "browser"
+			},
+			{
+				"username": "JustinHuPrime",
+				"repo_name": "Minecraft-Market"
+			},
+			{
+				"username": "austinlparker",
+				"repo_name": "smolval"
+			},
+			{
+				"username": "grhkm21",
+				"repo_name": "advent-of-code-2023"
+			},
+			{
+				"username": "HudZah",
+				"repo_name": "ConvertlyCLI"
+			},
+			{
+				"username": "Tidyrice",
+				"repo_name": "OpenGL-Voxel-Engine"
+			},
+			{
+				"username": "StarGazingHomies",
+				"repo_name": "Pathcrafter"
+			},
+			{
+				"username": "hanmindev",
+				"repo_name": "Hmmm"
+			},
+			{
+				"username": "hanmindev",
+				"repo_name": "MCMV"
+			},
+			{
+				"username": "meleongg",
+				"repo_name": "flashcard-backend"
+			},
+			{
+				"username": "wiesenthal",
+				"repo_name": "Dungeons-And-Large-Language-Models"
+			},
+			{
+				"username": "MrAnderson1971",
+				"repo_name": "cursed_minecraft"
+			}
 		]
 	},
 	{
@@ -858,18 +3321,239 @@
 				"language": "Rust"
 			}
 		],
-		"similar_interest": [
-			"ElianBelot",
-			"Lydxn",
-			"kewbish",
-			"rctcwyvrn",
-			"Aeren1564",
-			"AdnaneKhan",
-			"birchmd",
-			"gaurav-gogia",
-			"saucesteals",
-			"sim0wn",
-			"zahash"
+		"similar_repos": [
+			{
+				"username": "omentic",
+				"repo_name": "helix-ext"
+			},
+			{
+				"username": "ADSteele916",
+				"repo_name": "rand-functors"
+			},
+			{
+				"username": "ElianBelot",
+				"repo_name": "web-voyager"
+			},
+			{
+				"username": "ElianBelot",
+				"repo_name": "captcha-breaker"
+			},
+			{
+				"username": "Calvin-LL",
+				"repo_name": "SecretDrop.io"
+			},
+			{
+				"username": "Lydxn",
+				"repo_name": "crypy"
+			},
+			{
+				"username": "abdurj",
+				"repo_name": "np-gpt"
+			},
+			{
+				"username": "filipherle",
+				"repo_name": "pySE"
+			},
+			{
+				"username": "javathunderman",
+				"repo_name": "zinnia"
+			},
+			{
+				"username": "jo3-l",
+				"repo_name": "yag-template-lsp"
+			},
+			{
+				"username": "kewbish",
+				"repo_name": "kintsugi"
+			},
+			{
+				"username": "kiedtl",
+				"repo_name": "huxdemp"
+			},
+			{
+				"username": "kevinmingtarja",
+				"repo_name": "golox"
+			},
+			{
+				"username": "rctcwyvrn",
+				"repo_name": "terrarium"
+			},
+			{
+				"username": "rctcwyvrn",
+				"repo_name": "rlox"
+			},
+			{
+				"username": "ochen1",
+				"repo_name": "insanely-fast-whisper-cli"
+			},
+			{
+				"username": "theCasm",
+				"repo_name": "syscalls"
+			},
+			{
+				"username": "theCasm",
+				"repo_name": "SMLC"
+			},
+			{
+				"username": "turbolent",
+				"repo_name": "w2c2"
+			},
+			{
+				"username": "thep2p",
+				"repo_name": "skipgraph-rust"
+			},
+			{
+				"username": "y-dejong",
+				"repo_name": "nfcurl"
+			},
+			{
+				"username": "Beta-test-initiation",
+				"repo_name": "OrderBook_DEX"
+			},
+			{
+				"username": "AdnaneKhan",
+				"repo_name": "Cacheract"
+			},
+			{
+				"username": "AdnaneKhan",
+				"repo_name": "ActionsTOCTOU"
+			},
+			{
+				"username": "AdnaneKhan",
+				"repo_name": "gato-x"
+			},
+			{
+				"username": "AdnaneKhan",
+				"repo_name": "ActionsCacheBlasting"
+			},
+			{
+				"username": "AdnaneKhan",
+				"repo_name": "GhEmailBrute"
+			},
+			{
+				"username": "Tgcohce",
+				"repo_name": "dal-defai"
+			},
+			{
+				"username": "WorldofKerry",
+				"repo_name": "ToHDL"
+			},
+			{
+				"username": "abeaumont",
+				"repo_name": "ocaml-salsa20-core"
+			},
+			{
+				"username": "antnks",
+				"repo_name": "arris-vip1113"
+			},
+			{
+				"username": "bistromath25",
+				"repo_name": "moraband"
+			},
+			{
+				"username": "brandur",
+				"repo_name": "redis-cell"
+			},
+			{
+				"username": "brandur",
+				"repo_name": "logfmt"
+			},
+			{
+				"username": "erwin-lovecraft",
+				"repo_name": "pistol"
+			},
+			{
+				"username": "gshklovs",
+				"repo_name": "BerkeleyAIHacks"
+			},
+			{
+				"username": "gaurav-gogia",
+				"repo_name": "mutant"
+			},
+			{
+				"username": "gaurav-gogia",
+				"repo_name": "dfis-utils"
+			},
+			{
+				"username": "gaurav-gogia",
+				"repo_name": "synfo"
+			},
+			{
+				"username": "joshvocal",
+				"repo_name": "dotfiles"
+			},
+			{
+				"username": "liam-ilan",
+				"repo_name": "crumb"
+			},
+			{
+				"username": "nickbabcock",
+				"repo_name": "boxcars"
+			},
+			{
+				"username": "nickbabcock",
+				"repo_name": "bitter"
+			},
+			{
+				"username": "nickbabcock",
+				"repo_name": "highway-rs"
+			},
+			{
+				"username": "saucesteals",
+				"repo_name": "mimic"
+			},
+			{
+				"username": "saucesteals",
+				"repo_name": "utlsproxy"
+			},
+			{
+				"username": "zahash",
+				"repo_name": "quarantine"
+			},
+			{
+				"username": "zahash",
+				"repo_name": "royalguard"
+			},
+			{
+				"username": "zahash",
+				"repo_name": "sandboxrs"
+			},
+			{
+				"username": "zahash",
+				"repo_name": "reactivate"
+			},
+			{
+				"username": "zahash",
+				"repo_name": "csc"
+			},
+			{
+				"username": "AidenKerr",
+				"repo_name": "brainfuck"
+			},
+			{
+				"username": "achreto",
+				"repo_name": "crustal"
+			},
+			{
+				"username": "achreto",
+				"repo_name": "rust-smtlib2"
+			},
+			{
+				"username": "achreto",
+				"repo_name": "verified-node-replication"
+			},
+			{
+				"username": "achreto",
+				"repo_name": "rust-tokstream"
+			},
+			{
+				"username": "achreto",
+				"repo_name": "rust-srcspan"
+			},
+			{
+				"username": "virchau13",
+				"repo_name": "epimetheus"
+			}
 		]
 	},
 	{
@@ -912,7 +3596,7 @@
 				"language": "Assembly"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "CallumMackenzie",
@@ -947,21 +3631,91 @@
 				"language": "Kotlin"
 			}
 		],
-		"similar_interest": [
-			"ju1ien1100",
-			"Calvin-LL",
-			"aviwad",
-			"ochen1",
-			"Aashu-Dubey",
-			"Mark123M",
-			"asiff00",
-			"elibroftw",
-			"meleongg",
-			"oltimaloku",
-			"naijwu",
-			"s-alad",
-			"wiesenthal",
-			"zanedb"
+		"similar_repos": [
+			{
+				"username": "Calvin-LL",
+				"repo_name": "Reorderable"
+			},
+			{
+				"username": "Calvin-LL",
+				"repo_name": "AutoLinkText"
+			},
+			{
+				"username": "Aashu-Dubey",
+				"repo_name": "React-Native-UI-Templates"
+			},
+			{
+				"username": "Aashu-Dubey",
+				"repo_name": "flutter-samples"
+			},
+			{
+				"username": "Aashu-Dubey",
+				"repo_name": "Ionic-UI-Templates"
+			},
+			{
+				"username": "Aashu-Dubey",
+				"repo_name": "capacitor-statusbar-safe-area"
+			},
+			{
+				"username": "Highfire1",
+				"repo_name": "langara-coursys-frontend"
+			},
+			{
+				"username": "PrincewillIroka",
+				"repo_name": "project_management_mobile_app"
+			},
+			{
+				"username": "YashVG",
+				"repo_name": "revember"
+			},
+			{
+				"username": "YingjiaLiu99",
+				"repo_name": "heal-in-pocket"
+			},
+			{
+				"username": "YingjiaLiu99",
+				"repo_name": "Heal-in-Pocket_Mobile"
+			},
+			{
+				"username": "elibroftw",
+				"repo_name": "modern-desktop-app-template"
+			},
+			{
+				"username": "mathewbushuru",
+				"repo_name": "authentication-kit"
+			},
+			{
+				"username": "meleongg",
+				"repo_name": "fitflow"
+			},
+			{
+				"username": "meleongg",
+				"repo_name": "holistic-health-tracker"
+			},
+			{
+				"username": "oltimaloku",
+				"repo_name": "chefAI"
+			},
+			{
+				"username": "naijwu",
+				"repo_name": "twoplates"
+			},
+			{
+				"username": "s-alad",
+				"repo_name": "movelo"
+			},
+			{
+				"username": "sanjeevyadavIT",
+				"repo_name": "magento-android"
+			},
+			{
+				"username": "tweeres04",
+				"repo_name": "nuckscountdown"
+			},
+			{
+				"username": "mathewbushuru",
+				"repo_name": "design-system"
+			}
 		]
 	},
 	{
@@ -990,23 +3744,231 @@
 				"language": "Lua"
 			}
 		],
-		"similar_interest": [
-			"ADSteele916",
-			"EdwardJXLi",
-			"aldenluthfi",
-			"PepperLola",
-			"rctcwyvrn",
-			"thep2p",
-			"Beta-test-initiation",
-			"FrozenHydrant",
-			"JipFr",
-			"Tidyrice",
-			"StarGazingHomies",
-			"birchmd",
-			"caoculus",
-			"hanmindev",
-			"nickbabcock",
-			"mxple"
+		"similar_repos": [
+			{
+				"username": "FrankWhoee",
+				"repo_name": "Aedifex"
+			},
+			{
+				"username": "ADSteele916",
+				"repo_name": "rand-functors"
+			},
+			{
+				"username": "EdwardJXLi",
+				"repo_name": "ProjectObsidian"
+			},
+			{
+				"username": "KevinL10",
+				"repo_name": "wirecrab"
+			},
+			{
+				"username": "KevinL10",
+				"repo_name": "bumblebee"
+			},
+			{
+				"username": "aldenluthfi",
+				"repo_name": "malpolys"
+			},
+			{
+				"username": "aldenluthfi",
+				"repo_name": "anekamacam"
+			},
+			{
+				"username": "austinlparker",
+				"repo_name": "smolval"
+			},
+			{
+				"username": "PepperLola",
+				"repo_name": "playerinfo"
+			},
+			{
+				"username": "javathunderman",
+				"repo_name": "zinnia"
+			},
+			{
+				"username": "jo3-l",
+				"repo_name": "yag-template-lsp"
+			},
+			{
+				"username": "kewbish",
+				"repo_name": "kintsugi"
+			},
+			{
+				"username": "kiedtl",
+				"repo_name": "finwe"
+			},
+			{
+				"username": "kevinmingtarja",
+				"repo_name": "golox"
+			},
+			{
+				"username": "mvllow",
+				"repo_name": "dots"
+			},
+			{
+				"username": "mvllow",
+				"repo_name": "lilvim"
+			},
+			{
+				"username": "oezingle",
+				"repo_name": "LuaX"
+			},
+			{
+				"username": "rctcwyvrn",
+				"repo_name": "terrarium"
+			},
+			{
+				"username": "rctcwyvrn",
+				"repo_name": "rlox"
+			},
+			{
+				"username": "oezingle",
+				"repo_name": "lua-bundler"
+			},
+			{
+				"username": "thep2p",
+				"repo_name": "skipgraph-rust"
+			},
+			{
+				"username": "ASCorreia",
+				"repo_name": "NFT-staking"
+			},
+			{
+				"username": "ASCorreia",
+				"repo_name": "lazy-escrow"
+			},
+			{
+				"username": "Beta-test-initiation",
+				"repo_name": "OrderBook_DEX"
+			},
+			{
+				"username": "FrozenHydrant",
+				"repo_name": "create-oppenheimered"
+			},
+			{
+				"username": "JipFr",
+				"repo_name": "space2"
+			},
+			{
+				"username": "Mark123M",
+				"repo_name": "raytracer"
+			},
+			{
+				"username": "Tidyrice",
+				"repo_name": "OpenGL-Voxel-Engine"
+			},
+			{
+				"username": "StarGazingHomies",
+				"repo_name": "Pathcrafter"
+			},
+			{
+				"username": "brandur",
+				"repo_name": "redis-cell"
+			},
+			{
+				"username": "ethanthoma",
+				"repo_name": "nvim"
+			},
+			{
+				"username": "hanmindev",
+				"repo_name": "Hmmm"
+			},
+			{
+				"username": "hanmindev",
+				"repo_name": "MCMV"
+			},
+			{
+				"username": "nickbabcock",
+				"repo_name": "boxcars"
+			},
+			{
+				"username": "nickbabcock",
+				"repo_name": "bitter"
+			},
+			{
+				"username": "nickbabcock",
+				"repo_name": "jomini"
+			},
+			{
+				"username": "nickbabcock",
+				"repo_name": "highway-rs"
+			},
+			{
+				"username": "mxple",
+				"repo_name": "Smedja"
+			},
+			{
+				"username": "snlimadev",
+				"repo_name": "app-battleship-online"
+			},
+			{
+				"username": "snlimadev",
+				"repo_name": "api-battleship-online"
+			},
+			{
+				"username": "virchau13",
+				"repo_name": "epimetheus"
+			},
+			{
+				"username": "wiesenthal",
+				"repo_name": "Dungeons-And-Large-Language-Models"
+			},
+			{
+				"username": "zahash",
+				"repo_name": "quarantine"
+			},
+			{
+				"username": "zahash",
+				"repo_name": "reactivate"
+			},
+			{
+				"username": "zahash",
+				"repo_name": "csc"
+			},
+			{
+				"username": "MrAnderson1971",
+				"repo_name": "cursed_minecraft"
+			},
+			{
+				"username": "AidenKerr",
+				"repo_name": "genetic-v2"
+			},
+			{
+				"username": "WinteryFox",
+				"repo_name": "Vixen"
+			},
+			{
+				"username": "achreto",
+				"repo_name": "crustal"
+			},
+			{
+				"username": "achreto",
+				"repo_name": "rust-smtlib2"
+			},
+			{
+				"username": "achreto",
+				"repo_name": "verified-node-replication"
+			},
+			{
+				"username": "achreto",
+				"repo_name": "rust-srcspan"
+			},
+			{
+				"username": "achreto",
+				"repo_name": "rust-tokstream"
+			},
+			{
+				"username": "AdenC123",
+				"repo_name": "MtStringmore"
+			},
+			{
+				"username": "Edster1121",
+				"repo_name": "mss-game-dev-edd"
+			},
+			{
+				"username": "MrAnderson1971",
+				"repo_name": "ReversiBot"
+			}
 		]
 	},
 	{
@@ -1035,17 +3997,179 @@
 				"language": "Python"
 			}
 		],
-		"similar_interest": [
-			"KevinL10",
-			"frankuyan",
-			"kewbish",
-			"Aeren1564",
-			"AdnaneKhan",
-			"abeaumont",
-			"agrawal-d",
-			"gaurav-gogia",
-			"mfornet",
-			"sim0wn"
+		"similar_repos": [
+			{
+				"username": "garrethlee",
+				"repo_name": "gcmt"
+			},
+			{
+				"username": "omentic",
+				"repo_name": "aoc"
+			},
+			{
+				"username": "ElianBelot",
+				"repo_name": "web-voyager"
+			},
+			{
+				"username": "ElianBelot",
+				"repo_name": "captcha-breaker"
+			},
+			{
+				"username": "Calvin-LL",
+				"repo_name": "SecretDrop.io"
+			},
+			{
+				"username": "KevinL10",
+				"repo_name": "wirecrab"
+			},
+			{
+				"username": "KevinL10",
+				"repo_name": "blade"
+			},
+			{
+				"username": "abdurj",
+				"repo_name": "np-gpt"
+			},
+			{
+				"username": "fxamacker",
+				"repo_name": "circlehash"
+			},
+			{
+				"username": "kewbish",
+				"repo_name": "kintsugi"
+			},
+			{
+				"username": "grhkm21",
+				"repo_name": "advent-of-code-2023"
+			},
+			{
+				"username": "rctcwyvrn",
+				"repo_name": "rlox"
+			},
+			{
+				"username": "theCasm",
+				"repo_name": "syscalls"
+			},
+			{
+				"username": "thep2p",
+				"repo_name": "go-eth-localnet"
+			},
+			{
+				"username": "yhaooo11",
+				"repo_name": "voter"
+			},
+			{
+				"username": "Beta-test-initiation",
+				"repo_name": "OrderBook_DEX"
+			},
+			{
+				"username": "AdnaneKhan",
+				"repo_name": "gato-x"
+			},
+			{
+				"username": "AdnaneKhan",
+				"repo_name": "ActionsCacheBlasting"
+			},
+			{
+				"username": "AdnaneKhan",
+				"repo_name": "GhEmailBrute"
+			},
+			{
+				"username": "AdnaneKhan",
+				"repo_name": "ActionsTOCTOU"
+			},
+			{
+				"username": "WorldofKerry",
+				"repo_name": "ToHDL"
+			},
+			{
+				"username": "Tgcohce",
+				"repo_name": "dal-defai"
+			},
+			{
+				"username": "WorldofKerry",
+				"repo_name": "Python2Verilog"
+			},
+			{
+				"username": "abeaumont",
+				"repo_name": "competitive-programming"
+			},
+			{
+				"username": "agrawal-d",
+				"repo_name": "cph"
+			},
+			{
+				"username": "agrawal-d",
+				"repo_name": "cph-submit"
+			},
+			{
+				"username": "gshklovs",
+				"repo_name": "BerkeleyAIHacks"
+			},
+			{
+				"username": "evansemet",
+				"repo_name": "Jane-Street-Solutions"
+			},
+			{
+				"username": "evansemet",
+				"repo_name": "cardquant"
+			},
+			{
+				"username": "gaurav-gogia",
+				"repo_name": "dfis-utils"
+			},
+			{
+				"username": "gaurav-gogia",
+				"repo_name": "synfo"
+			},
+			{
+				"username": "mfornet",
+				"repo_name": "acmx"
+			},
+			{
+				"username": "mfornet",
+				"repo_name": "advent-of-code-2024"
+			},
+			{
+				"username": "s-alad",
+				"repo_name": "fakesta"
+			},
+			{
+				"username": "pi-rate14",
+				"repo_name": "CryptoTracker"
+			},
+			{
+				"username": "pi-rate14",
+				"repo_name": "ethCrowd"
+			},
+			{
+				"username": "saucesteals",
+				"repo_name": "utlsproxy"
+			},
+			{
+				"username": "sim0wn",
+				"repo_name": "portfolio"
+			},
+			{
+				"username": "wiesenthal",
+				"repo_name": "Dungeons-And-Large-Language-Models"
+			},
+			{
+				"username": "zahash",
+				"repo_name": "quarantine"
+			},
+			{
+				"username": "zahash",
+				"repo_name": "royalguard"
+			},
+			{
+				"username": "AidenKerr",
+				"repo_name": "brainfuck"
+			},
+			{
+				"username": "filipherle",
+				"repo_name": "pySE"
+			}
 		]
 	},
 	{
@@ -1067,25 +4191,75 @@
 				"language": "CSS"
 			}
 		],
-		"similar_interest": [
-			"stankur",
-			"aldenluthfi",
-			"Aashu-Dubey",
-			"Highfire1",
-			"PrincewillIroka",
-			"YashVG",
-			"Nathn",
-			"luckyjsx",
-			"meleongg",
-			"mxple",
-			"naijwu",
-			"snlimadev",
-			"wiesenthal",
-			"Candyzorua",
-			"MrAnderson1971",
-			"AidenKerr",
-			"AdenC123",
-			"Edster1121"
+		"similar_repos": [
+			{
+				"username": "tachibana-marine",
+				"repo_name": "run3d"
+			},
+			{
+				"username": "Kiroves",
+				"repo_name": "BThere"
+			},
+			{
+				"username": "Anmol-Ghadia",
+				"repo_name": "c-web-snake"
+			},
+			{
+				"username": "ElianBelot",
+				"repo_name": "web-voyager"
+			},
+			{
+				"username": "JustRegularLuna",
+				"repo_name": "ancient-johto"
+			},
+			{
+				"username": "JustRegularLuna",
+				"repo_name": "pokegold-retro"
+			},
+			{
+				"username": "aldenluthfi",
+				"repo_name": "malpolys"
+			},
+			{
+				"username": "mlechu",
+				"repo_name": "tetrominobot"
+			},
+			{
+				"username": "recordcrash",
+				"repo_name": "homestuck-motifle"
+			},
+			{
+				"username": "yi-jason",
+				"repo_name": "mac-man"
+			},
+			{
+				"username": "yhaooo11",
+				"repo_name": "ytpv"
+			},
+			{
+				"username": "Highfire1",
+				"repo_name": "langara-coursys-frontend"
+			},
+			{
+				"username": "JipFr",
+				"repo_name": "space2"
+			},
+			{
+				"username": "PrincewillIroka",
+				"repo_name": "React-Native-UI-Templates"
+			},
+			{
+				"username": "PrincewillIroka",
+				"repo_name": "Free-Courses-Frontend"
+			},
+			{
+				"username": "YashVG",
+				"repo_name": "revember"
+			},
+			{
+				"username": "Tgcohce",
+				"repo_name": "dal-defai"
+			}
 		]
 	},
 	{
@@ -1126,18 +4300,7 @@
 				]
 			}
 		],
-		"similar_interest": [
-			"stankur",
-			"ElianBelot",
-			"javathunderman",
-			"wilbowma",
-			"asiff00",
-			"cosmo3769",
-			"gagan3012",
-			"meleongg",
-			"okarthikb",
-			"wiesenthal"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "aldenluthfi",
@@ -1218,22 +4381,7 @@
 				]
 			}
 		],
-		"similar_interest": [
-			"ADSteele916",
-			"abdurj",
-			"mlechu",
-			"rctcwyvrn",
-			"ysaleh03",
-			"JuliaPoo",
-			"Mark123M",
-			"bistromath25",
-			"birchmd",
-			"irisxu02",
-			"nickbabcock",
-			"mfornet",
-			"AidenKerr",
-			"manglemix"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "albertkim",
@@ -1275,22 +4423,7 @@
 				"language": "TypeScript"
 			}
 		],
-		"similar_interest": [
-			"SamuelmdLow",
-			"stankur",
-			"garrethlee",
-			"mountainMath",
-			"ElianBelot",
-			"abdurj",
-			"fegicochen",
-			"wilbowma",
-			"yhaooo11",
-			"gagan3012",
-			"cosmo3769",
-			"gshklovs",
-			"naijwu",
-			"wiesenthal"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "NathanAW24",
@@ -1332,29 +4465,7 @@
 				"language": "Python"
 			}
 		],
-		"similar_interest": [
-			"stankur",
-			"ElianBelot",
-			"armintalaie",
-			"Tenzinomics",
-			"fxamacker",
-			"thep2p",
-			"Beta-test-initiation",
-			"Moavia-Hassan",
-			"LordMoMA",
-			"NK-GO",
-			"brandur",
-			"colliand",
-			"gagan3012",
-			"cosmo3769",
-			"gshklovs",
-			"gaurav-gogia",
-			"evansemet",
-			"lukasgolson",
-			"marianlime",
-			"wiesenthal",
-			"patrickward"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "alaviss",
@@ -1406,7 +4517,7 @@
 				]
 			}
 		],
-		"similar_interest": ["omentic", "mvllow", "virchau13"]
+		"similar_repos": []
 	},
 	{
 		"username": "aviwad",
@@ -1448,7 +4559,7 @@
 				"language": "Swift"
 			}
 		],
-		"similar_interest": ["PepperLola", "zanedb"]
+		"similar_repos": []
 	},
 	{
 		"username": "ardeshireshghi",
@@ -1483,25 +4594,7 @@
 				"language": "JavaScript"
 			}
 		],
-		"similar_interest": [
-			"ju1ien1100",
-			"FrankWhoee",
-			"Anmol-Ghadia",
-			"argonaut0",
-			"kickscondor",
-			"mvllow",
-			"Aashu-Dubey",
-			"HudZah",
-			"PrincewillIroka",
-			"Nathn",
-			"Vicente015",
-			"elibroftw",
-			"irisxu02",
-			"joshvocal",
-			"pi-rate14",
-			"sanjeevyadavIT",
-			"tika"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "argonaut0",
@@ -1536,32 +4629,7 @@
 				"language": "Nix"
 			}
 		],
-		"similar_interest": [
-			"omentic",
-			"KevinL10",
-			"armintalaie",
-			"kewbish",
-			"kevinmingtarja",
-			"mvllow",
-			"peterargue",
-			"rctcwyvrn",
-			"theCasm",
-			"thep2p",
-			"LordMoMA",
-			"NK-GO",
-			"Vicente015",
-			"antnks",
-			"brandur",
-			"erwin-lovecraft",
-			"gaurav-gogia",
-			"joshvocal",
-			"marianlime",
-			"saucesteals",
-			"starptr",
-			"virchau13",
-			"devon-mar",
-			"patrickward"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "armintalaie",
@@ -1606,27 +4674,7 @@
 				]
 			}
 		],
-		"similar_interest": [
-			"stankur",
-			"Jake-Yeo",
-			"chasefleming",
-			"kewbish",
-			"thep2p",
-			"NK-GO",
-			"PrincewillIroka",
-			"Vicente015",
-			"brandur",
-			"erwin-lovecraft",
-			"gaurav-gogia",
-			"elibroftw",
-			"iHildy",
-			"joshvocal",
-			"mathewbushuru",
-			"marianlime",
-			"wiesenthal",
-			"zahash",
-			"patrickward"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "austinlparker",
@@ -1661,19 +4709,7 @@
 				"language": "TypeScript"
 			}
 		],
-		"similar_interest": [
-			"stankur",
-			"FrankWhoee",
-			"EdwardJXLi",
-			"thep2p",
-			"wilbowma",
-			"FrozenHydrant",
-			"Tidyrice",
-			"StarGazingHomies",
-			"hanmindev",
-			"saucesteals",
-			"wiesenthal"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "PepperLola",
@@ -1717,20 +4753,7 @@
 				"topics": ["hacktoberfest", "minecraft"]
 			}
 		],
-		"similar_interest": [
-			"laurenyip",
-			"Anmol-Ghadia",
-			"EdwardJXLi",
-			"JustinHuPrime",
-			"aviwad",
-			"FrozenHydrant",
-			"HudZah",
-			"Tidyrice",
-			"StarGazingHomies",
-			"hanmindev",
-			"wiesenthal",
-			"MrAnderson1971"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "Tenzinomics",
@@ -1751,30 +4774,7 @@
 				"language": "Jupyter Notebook"
 			}
 		],
-		"similar_interest": [
-			"SamuelmdLow",
-			"garrethlee",
-			"ElianBelot",
-			"abdurj",
-			"aldenluthfi",
-			"albertkim",
-			"NathanAW24",
-			"kevinmingtarja",
-			"recordcrash",
-			"wilbowma",
-			"yhaooo11",
-			"Beta-test-initiation",
-			"Moavia-Hassan",
-			"YashVG",
-			"Vicente015",
-			"asiff00",
-			"colliand",
-			"gagan3012",
-			"cosmo3769",
-			"gshklovs",
-			"evansemet",
-			"wiesenthal"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "bluesign",
@@ -1809,15 +4809,7 @@
 				"language": "Cadence"
 			}
 		],
-		"similar_interest": [
-			"alaviss",
-			"chasefleming",
-			"jribbink",
-			"nvdtf",
-			"peterargue",
-			"rheaplex",
-			"virchau13"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "ateucher",
@@ -1846,7 +4838,7 @@
 				"language": "R"
 			}
 		],
-		"similar_interest": ["mountainMath", "hyperknot"]
+		"similar_repos": []
 	},
 	{
 		"username": "fegicochen",
@@ -1881,25 +4873,7 @@
 				"language": "JavaScript"
 			}
 		],
-		"similar_interest": [
-			"stankur",
-			"Jake-Yeo",
-			"albertkim",
-			"Highfire1",
-			"ManasSin",
-			"PrincewillIroka",
-			"YashVG",
-			"Nathn",
-			"iHildy",
-			"elibroftw",
-			"luckyjsx",
-			"mathewbushuru",
-			"meleongg",
-			"oltimaloku",
-			"naijwu",
-			"snlimadev",
-			"wiesenthal"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "fxamacker",
@@ -1950,7 +4924,7 @@
 				]
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "frankuyan",
@@ -1971,30 +4945,7 @@
 				"language": "Solidity"
 			}
 		],
-		"similar_interest": [
-			"KevinL10",
-			"Lydxn",
-			"armintalaie",
-			"bluesign",
-			"kewbish",
-			"jribbink",
-			"nvdtf",
-			"ionathanch",
-			"rheaplex",
-			"thep2p",
-			"wilbowma",
-			"Aeren1564",
-			"ASCorreia",
-			"StTronn",
-			"Tgcohce",
-			"calvbore",
-			"gaurav-gogia",
-			"gitpancake",
-			"mfornet",
-			"pi-rate14",
-			"zahash",
-			"Edster1121"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "boshek",
@@ -2016,7 +4967,7 @@
 				"topics": ["cran", "oceanic-nino", "oceanography", "r"]
 			}
 		],
-		"similar_interest": ["mountainMath", "Moavia-Hassan", "colliand"]
+		"similar_repos": []
 	},
 	{
 		"username": "chasefleming",
@@ -2054,25 +5005,7 @@
 				"topics": ["cadence", "fcl", "flow", "web3"]
 			}
 		],
-		"similar_interest": [
-			"Anmol-Ghadia",
-			"bluesign",
-			"jribbink",
-			"nvdtf",
-			"mvllow",
-			"oezingle",
-			"peterargue",
-			"rheaplex",
-			"Highfire1",
-			"LordMoMA",
-			"PrincewillIroka",
-			"StTronn",
-			"Vicente015",
-			"brandur",
-			"erwin-lovecraft",
-			"meleongg",
-			"patrickward"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "filipherle",
@@ -2106,24 +5039,7 @@
 				]
 			}
 		],
-		"similar_interest": [
-			"stankur",
-			"ElianBelot",
-			"KevinL10",
-			"Lydxn",
-			"kewbish",
-			"theCasm",
-			"Aeren1564",
-			"y-dejong",
-			"AdnaneKhan",
-			"Tgcohce",
-			"antnks",
-			"gaurav-gogia",
-			"s-alad",
-			"saucesteals",
-			"sim0wn",
-			"zahash"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "funemy",
@@ -2151,23 +5067,7 @@
 				"language": "Agda"
 			}
 		],
-		"similar_interest": [
-			"omentic",
-			"BriHan-Tech",
-			"aldenluthfi",
-			"kiedtl",
-			"kumarpit",
-			"grhkm21",
-			"ionathanch",
-			"thomasporter522",
-			"wilbowma",
-			"JuliaPoo",
-			"WorldofKerry",
-			"agrawal-d",
-			"antler5",
-			"evansemet",
-			"mfornet"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "javathunderman",
@@ -2195,13 +5095,7 @@
 				"language": "TeX"
 			}
 		],
-		"similar_interest": [
-			"ADSteele916",
-			"ochen1",
-			"WorldofKerry",
-			"ethanthoma",
-			"nickbabcock"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "jo3-l",
@@ -2255,7 +5149,7 @@
 				"language": "Go"
 			}
 		],
-		"similar_interest": ["stankur"]
+		"similar_repos": []
 	},
 	{
 		"username": "kewbish",
@@ -2291,33 +5185,7 @@
 				"language": "Go"
 			}
 		],
-		"similar_interest": [
-			"ADSteele916",
-			"Calvin-LL",
-			"KevinL10",
-			"Lydxn",
-			"argonaut0",
-			"javathunderman",
-			"kickscondor",
-			"rctcwyvrn",
-			"theCasm",
-			"thep2p",
-			"y-dejong",
-			"ASCorreia",
-			"Beta-test-initiation",
-			"LordMoMA",
-			"StTronn",
-			"Tgcohce",
-			"birchmd",
-			"brandur",
-			"calvbore",
-			"gaurav-gogia",
-			"marianlime",
-			"pi-rate14",
-			"saucesteals",
-			"sim0wn",
-			"zahash"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "jribbink",
@@ -2359,14 +5227,7 @@
 				"language": "TypeScript"
 			}
 		],
-		"similar_interest": [
-			"bluesign",
-			"chasefleming",
-			"nvdtf",
-			"peterargue",
-			"Tgcohce",
-			"pi-rate14"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "kiedtl",
@@ -2424,14 +5285,7 @@
 				"language": "Zig"
 			}
 		],
-		"similar_interest": [
-			"rctcwyvrn",
-			"theCasm",
-			"turbolent",
-			"ethanthoma",
-			"liam-ilan",
-			"MrAnderson1971"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "kevinmingtarja",
@@ -2452,24 +5306,7 @@
 				"language": "Go"
 			}
 		],
-		"similar_interest": [
-			"omentic",
-			"NathanAW24",
-			"fxamacker",
-			"kiedtl",
-			"kumarpit",
-			"rctcwyvrn",
-			"ionathanch",
-			"theCasm",
-			"thep2p",
-			"wilbowma",
-			"LordMoMA",
-			"WorldofKerry",
-			"brandur",
-			"liam-ilan",
-			"MrAnderson1971",
-			"patrickward"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "kspaans",
@@ -2504,17 +5341,7 @@
 				"language": "HTML"
 			}
 		],
-		"similar_interest": [
-			"Anmol-Ghadia",
-			"fegicochen",
-			"Beta-test-initiation",
-			"JipFr",
-			"PrincewillIroka",
-			"joshvocal",
-			"mathewbushuru",
-			"meleongg",
-			"sanjeevyadavIT"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "kumarpit",
@@ -2535,7 +5362,7 @@
 				"language": "Racket"
 			}
 		],
-		"similar_interest": ["sherlockjack", "thomasporter522", "wilbowma"]
+		"similar_repos": []
 	},
 	{
 		"username": "kickscondor",
@@ -2570,7 +5397,7 @@
 				"language": "HTML"
 			}
 		],
-		"similar_interest": ["kewbish"]
+		"similar_repos": []
 	},
 	{
 		"username": "grhkm21",
@@ -2605,7 +5432,7 @@
 				"language": "Python"
 			}
 		],
-		"similar_interest": ["omentic", "ionathanch", "mfornet"]
+		"similar_repos": []
 	},
 	{
 		"username": "mahalisunil1",
@@ -2626,44 +5453,7 @@
 				"language": "HTML"
 			}
 		],
-		"similar_interest": [
-			"laurenyip",
-			"Jake-Yeo",
-			"Anmol-Ghadia",
-			"albertkim",
-			"PepperLola",
-			"fegicochen",
-			"chasefleming",
-			"kspaans",
-			"mvllow",
-			"trevorblades",
-			"Aashu-Dubey",
-			"Ezzhingy",
-			"Highfire1",
-			"JuliaPoo",
-			"JipFr",
-			"ManasSin",
-			"Rainerino",
-			"PrincewillIroka",
-			"Nathn",
-			"Siliconrob",
-			"YingjiaLiu99",
-			"arnvgh",
-			"elibroftw",
-			"irisxu02",
-			"luckyjsx",
-			"meleongg",
-			"mathewbushuru",
-			"naijwu",
-			"s-alad",
-			"pi-rate14",
-			"sanjeevyadavIT",
-			"snlimadev",
-			"vsaosuo",
-			"tweeres04",
-			"wiesenthal",
-			"AidenKerr"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "mlechu",
@@ -2691,20 +5481,7 @@
 				"language": "C"
 			}
 		],
-		"similar_interest": [
-			"tachibana-marine",
-			"aldenluthfi",
-			"kiedtl",
-			"kevinmingtarja",
-			"theCasm",
-			"sherlockjack",
-			"JuliaPoo",
-			"Tidyrice",
-			"caoculus",
-			"irisxu02",
-			"mxple",
-			"AidenKerr"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "nvdtf",
@@ -2732,13 +5509,7 @@
 				"language": "Cadence"
 			}
 		],
-		"similar_interest": [
-			"bluesign",
-			"jribbink",
-			"rheaplex",
-			"ASCorreia",
-			"pi-rate14"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "mvllow",
@@ -2813,20 +5584,7 @@
 				]
 			}
 		],
-		"similar_interest": [
-			"stankur",
-			"alaviss",
-			"argonaut0",
-			"oezingle",
-			"trevorblades",
-			"Aashu-Dubey",
-			"PrincewillIroka",
-			"Vicente015",
-			"ethanthoma",
-			"elibroftw",
-			"joshvocal",
-			"meleongg"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "oezingle",
@@ -2862,14 +5620,7 @@
 				"topics": ["dotfiles", "linux", "theme"]
 			}
 		],
-		"similar_interest": [
-			"JustinHuPrime",
-			"mvllow",
-			"Aashu-Dubey",
-			"PrincewillIroka",
-			"ethanthoma",
-			"pi-rate14"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "peterargue",
@@ -2897,13 +5648,7 @@
 				"language": "Go"
 			}
 		],
-		"similar_interest": [
-			"KevinL10",
-			"bluesign",
-			"thep2p",
-			"gaurav-gogia",
-			"devon-mar"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "rctcwyvrn",
@@ -2932,19 +5677,7 @@
 				"topics": ["crafting-interpreters", "lox-language", "rust"]
 			}
 		],
-		"similar_interest": [
-			"KevinL10",
-			"kevinmingtarja",
-			"kiedtl",
-			"theCasm",
-			"wilbowma",
-			"birchmd",
-			"brandur",
-			"liam-ilan",
-			"zahash",
-			"MrAnderson1971",
-			"achreto"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "ochen1",
@@ -2965,17 +5698,7 @@
 				"language": "Python"
 			}
 		],
-		"similar_interest": [
-			"stankur",
-			"ElianBelot",
-			"Mark123M",
-			"asiff00",
-			"gagan3012",
-			"cosmo3769",
-			"gshklovs",
-			"tika",
-			"wiesenthal"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "rheaplex",
@@ -3017,21 +5740,7 @@
 				"language": "Common Lisp"
 			}
 		],
-		"similar_interest": [
-			"frankuyan",
-			"chasefleming",
-			"jribbink",
-			"nvdtf",
-			"thep2p",
-			"ASCorreia",
-			"Beta-test-initiation",
-			"Tgcohce",
-			"StTronn",
-			"calvbore",
-			"gitpancake",
-			"s-alad",
-			"pi-rate14"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "ionathanch",
@@ -3088,12 +5797,7 @@
 				"language": "Agda"
 			}
 		],
-		"similar_interest": [
-			"omentic",
-			"grhkm21",
-			"thomasporter522",
-			"WorldofKerry"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "theCasm",
@@ -3128,14 +5832,7 @@
 				"language": "C"
 			}
 		],
-		"similar_interest": [
-			"kiedtl",
-			"rctcwyvrn",
-			"antnks",
-			"zahash",
-			"MrAnderson1971",
-			"AidenKerr"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "sherlockjack",
@@ -3163,33 +5860,7 @@
 				"language": "MDX"
 			}
 		],
-		"similar_interest": [
-			"SamuelmdLow",
-			"stankur",
-			"omentic",
-			"BriHan-Tech",
-			"ElianBelot",
-			"abdurj",
-			"aldenluthfi",
-			"fegicochen",
-			"kumarpit",
-			"mahalisunil1",
-			"mlechu",
-			"rheaplex",
-			"ionathanch",
-			"theCasm",
-			"thomasporter522",
-			"trevorblades",
-			"wilbowma",
-			"Highfire1",
-			"JuliaPoo",
-			"WorldofKerry",
-			"gagan3012",
-			"liam-ilan",
-			"mfornet",
-			"sim0wn",
-			"wiesenthal"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "recordcrash",
@@ -3233,7 +5904,7 @@
 				"language": "Jupyter Notebook"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "thomasporter522",
@@ -3254,14 +5925,7 @@
 				"language": "Agda"
 			}
 		],
-		"similar_interest": [
-			"funemy",
-			"kumarpit",
-			"grhkm21",
-			"ionathanch",
-			"wilbowma",
-			"WorldofKerry"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "turbolent",
@@ -3313,7 +5977,7 @@
 				"language": "Swift"
 			}
 		],
-		"similar_interest": ["achreto"]
+		"similar_repos": []
 	},
 	{
 		"username": "trevorblades",
@@ -3388,20 +6052,7 @@
 				]
 			}
 		],
-		"similar_interest": [
-			"stankur",
-			"fegicochen",
-			"chasefleming",
-			"mvllow",
-			"Aashu-Dubey",
-			"Highfire1",
-			"PrincewillIroka",
-			"Vicente015",
-			"elibroftw",
-			"iHildy",
-			"mathewbushuru",
-			"meleongg"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "routabeta",
@@ -3422,7 +6073,7 @@
 				"language": "C++"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "thep2p",
@@ -3464,12 +6115,7 @@
 				"language": "Java"
 			}
 		],
-		"similar_interest": [
-			"kewbish",
-			"Beta-test-initiation",
-			"StTronn",
-			"marianlime"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "wilbowma",
@@ -3504,18 +6150,7 @@
 				"language": "TeX"
 			}
 		],
-		"similar_interest": [
-			"stankur",
-			"omentic",
-			"kevinmingtarja",
-			"kumarpit",
-			"ionathanch",
-			"theCasm",
-			"thomasporter522",
-			"antler5",
-			"wiesenthal",
-			"MrAnderson1971"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "y-dejong",
@@ -3537,17 +6172,7 @@
 				"topics": ["flipper", "flipperzero"]
 			}
 		],
-		"similar_interest": [
-			"laurenyip",
-			"ElianBelot",
-			"chasefleming",
-			"kewbish",
-			"kickscondor",
-			"Aashu-Dubey",
-			"LordMoMA",
-			"PrincewillIroka",
-			"joshvocal"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "yi-jason",
@@ -3602,19 +6227,7 @@
 				]
 			}
 		],
-		"similar_interest": [
-			"ju1ien1100",
-			"KevinL10",
-			"kiedtl",
-			"theCasm",
-			"Aeren1564",
-			"Mark123M",
-			"Tidyrice",
-			"liam-ilan",
-			"mxple",
-			"AidenKerr",
-			"MrAnderson1971"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "ysaleh03",
@@ -3664,29 +6277,7 @@
 				"language": "HTML"
 			}
 		],
-		"similar_interest": [
-			"stankur",
-			"BriHan-Tech",
-			"Anmol-Ghadia",
-			"aldenluthfi",
-			"funemy",
-			"rctcwyvrn",
-			"wilbowma",
-			"Aeren1564",
-			"FrozenHydrant",
-			"JoshuaWu7",
-			"Nathn",
-			"StarGazingHomies",
-			"bistromath25",
-			"evansemet",
-			"mxple",
-			"mfornet",
-			"snlimadev",
-			"wiesenthal",
-			"MrAnderson1971",
-			"AdenC123",
-			"Edster1121"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "yhaooo11",
@@ -3714,20 +6305,7 @@
 				"language": "TypeScript"
 			}
 		],
-		"similar_interest": [
-			"stankur",
-			"fegicochen",
-			"kickscondor",
-			"Highfire1",
-			"HudZah",
-			"Tgcohce",
-			"Nathn",
-			"erwin-lovecraft",
-			"gshklovs",
-			"naijwu",
-			"s-alad",
-			"wiesenthal"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "Aeren1564",
@@ -3776,16 +6354,7 @@
 				"language": "C++"
 			}
 		],
-		"similar_interest": [
-			"KevinL10",
-			"Lydxn",
-			"aldenluthfi",
-			"theCasm",
-			"abeaumont",
-			"agrawal-d",
-			"mfornet",
-			"sim0wn"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "ASCorreia",
@@ -3820,14 +6389,7 @@
 				"language": "Rust"
 			}
 		],
-		"similar_interest": [
-			"frankuyan",
-			"rheaplex",
-			"StTronn",
-			"Tgcohce",
-			"birchmd",
-			"pi-rate14"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "Aashu-Dubey",
@@ -3932,20 +6494,7 @@
 				]
 			}
 		],
-		"similar_interest": [
-			"aldenluthfi",
-			"mvllow",
-			"PrincewillIroka",
-			"YashVG",
-			"Nathn",
-			"YingjiaLiu99",
-			"elibroftw",
-			"mathewbushuru",
-			"meleongg",
-			"s-alad",
-			"sanjeevyadavIT",
-			"snlimadev"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "Beta-test-initiation",
@@ -3973,14 +6522,7 @@
 				"language": "Rust"
 			}
 		],
-		"similar_interest": [
-			"ElianBelot",
-			"LordMoMA",
-			"StTronn",
-			"birchmd",
-			"oltimaloku",
-			"wiesenthal"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "Ezzhingy",
@@ -4015,33 +6557,7 @@
 				"language": "TypeScript"
 			}
 		],
-		"similar_interest": [
-			"stankur",
-			"Anmol-Ghadia",
-			"ElianBelot",
-			"aldenluthfi",
-			"albertkim",
-			"armintalaie",
-			"fegicochen",
-			"chasefleming",
-			"mvllow",
-			"trevorblades",
-			"Aashu-Dubey",
-			"Highfire1",
-			"JuliaPoo",
-			"PrincewillIroka",
-			"Vicente015",
-			"cosmo3769",
-			"elibroftw",
-			"iHildy",
-			"lukasgolson",
-			"meleongg",
-			"sim0wn",
-			"tika",
-			"vsaosuo",
-			"tweeres04",
-			"wiesenthal"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "Highfire1",
@@ -4076,13 +6592,7 @@
 				"language": "TypeScript"
 			}
 		],
-		"similar_interest": [
-			"stankur",
-			"fegicochen",
-			"Aashu-Dubey",
-			"luckyjsx",
-			"wiesenthal"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "FrozenHydrant",
@@ -4103,15 +6613,7 @@
 				"language": "Java"
 			}
 		],
-		"similar_interest": [
-			"FrankWhoee",
-			"JustinHuPrime",
-			"PepperLola",
-			"Tidyrice",
-			"StarGazingHomies",
-			"hanmindev",
-			"MrAnderson1971"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "HudZah",
@@ -4132,7 +6634,7 @@
 				"language": "Python"
 			}
 		],
-		"similar_interest": ["garrethlee", "ochen1"]
+		"similar_repos": []
 	},
 	{
 		"username": "Jerr-z",
@@ -4160,41 +6662,7 @@
 				"language": "Java"
 			}
 		],
-		"similar_interest": [
-			"garrethlee",
-			"stankur",
-			"mountainMath",
-			"BriHan-Tech",
-			"ADSteele916",
-			"ElianBelot",
-			"KevinL10",
-			"Lydxn",
-			"abdurj",
-			"aldenluthfi",
-			"NathanAW24",
-			"rctcwyvrn",
-			"ysaleh03",
-			"Aeren1564",
-			"yhaooo11",
-			"HudZah",
-			"AdnaneKhan",
-			"WorldofKerry",
-			"YingjiaLiu99",
-			"asiff00",
-			"colliand",
-			"dmok22",
-			"cosmo3769",
-			"gagan3012",
-			"gshklovs",
-			"gaurav-gogia",
-			"hyperknot",
-			"joshvocal",
-			"gvaghasiya02",
-			"lukasgolson",
-			"mxple",
-			"wiesenthal",
-			"briantist"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "JipFr",
@@ -4222,24 +6690,7 @@
 				"language": "TypeScript"
 			}
 		],
-		"similar_interest": [
-			"laurenyip",
-			"JustinHuPrime",
-			"aldenluthfi",
-			"fegicochen",
-			"kspaans",
-			"mahalisunil1",
-			"Highfire1",
-			"PrincewillIroka",
-			"Nathn",
-			"Tidyrice",
-			"StarGazingHomies",
-			"mxple",
-			"snlimadev",
-			"wiesenthal",
-			"AdenC123",
-			"Edster1121"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "JoshuaWu7",
@@ -4260,18 +6711,7 @@
 				"language": "Java"
 			}
 		],
-		"similar_interest": [
-			"armintalaie",
-			"austinlparker",
-			"fegicochen",
-			"fxamacker",
-			"thep2p",
-			"yhaooo11",
-			"LordMoMA",
-			"brandur",
-			"gagan3012",
-			"gvaghasiya02"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "JuliaPoo",
@@ -4306,14 +6746,7 @@
 				"language": "Typst"
 			}
 		],
-		"similar_interest": [
-			"funemy",
-			"grhkm21",
-			"mlechu",
-			"ionathanch",
-			"thomasporter522",
-			"irisxu02"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "ManasSin",
@@ -4334,33 +6767,7 @@
 				"language": "JavaScript"
 			}
 		],
-		"similar_interest": [
-			"laurenyip",
-			"Anmol-Ghadia",
-			"armintalaie",
-			"fegicochen",
-			"kspaans",
-			"kickscondor",
-			"mahalisunil1",
-			"trevorblades",
-			"Aashu-Dubey",
-			"Highfire1",
-			"NK-GO",
-			"PrincewillIroka",
-			"StTronn",
-			"Siliconrob",
-			"Nathn",
-			"YingjiaLiu99",
-			"luckyjsx",
-			"mathewbushuru",
-			"meleongg",
-			"naijwu",
-			"s-alad",
-			"pi-rate14",
-			"sanjeevyadavIT",
-			"snlimadev",
-			"wiesenthal"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "Mark123M",
@@ -4402,14 +6809,7 @@
 				"language": "C#"
 			}
 		],
-		"similar_interest": [
-			"ju1ien1100",
-			"javathunderman",
-			"Tidyrice",
-			"asiff00",
-			"WinteryFox",
-			"AdenC123"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "Moavia-Hassan",
@@ -4437,7 +6837,7 @@
 				"language": "Jupyter Notebook"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "LordMoMA",
@@ -4513,17 +6913,7 @@
 				]
 			}
 		],
-		"similar_interest": [
-			"kewbish",
-			"kickscondor",
-			"thep2p",
-			"NK-GO",
-			"brandur",
-			"mathewbushuru",
-			"marianlime",
-			"sanjeevyadavIT",
-			"wiesenthal"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "Rainerino",
@@ -4544,75 +6934,7 @@
 				"language": "TypeScript"
 			}
 		],
-		"similar_interest": [
-			"SamuelmdLow",
-			"stankur",
-			"laurenyip",
-			"Jake-Yeo",
-			"Anmol-Ghadia",
-			"ElianBelot",
-			"KevinL10",
-			"abdurj",
-			"aldenluthfi",
-			"albertkim",
-			"armintalaie",
-			"fegicochen",
-			"austinlparker",
-			"chasefleming",
-			"kewbish",
-			"jribbink",
-			"kevinmingtarja",
-			"kiedtl",
-			"mvllow",
-			"rheaplex",
-			"ionathanch",
-			"turbolent",
-			"trevorblades",
-			"wilbowma",
-			"yhaooo11",
-			"ASCorreia",
-			"Beta-test-initiation",
-			"Aashu-Dubey",
-			"Ezzhingy",
-			"Highfire1",
-			"JuliaPoo",
-			"Mark123M",
-			"AdnaneKhan",
-			"PrincewillIroka",
-			"StTronn",
-			"Tgcohce",
-			"WorldofKerry",
-			"Nathn",
-			"Vicente015",
-			"YingjiaLiu99",
-			"agrawal-d",
-			"asiff00",
-			"arnvgh",
-			"calvbore",
-			"erwin-lovecraft",
-			"gagan3012",
-			"cosmo3769",
-			"gshklovs",
-			"gaurav-gogia",
-			"elibroftw",
-			"iHildy",
-			"irisxu02",
-			"mathewbushuru",
-			"meleongg",
-			"nickbabcock",
-			"oltimaloku",
-			"naijwu",
-			"s-alad",
-			"pi-rate14",
-			"sanjeevyadavIT",
-			"sim0wn",
-			"snlimadev",
-			"tika",
-			"vsaosuo",
-			"tweeres04",
-			"virchau13",
-			"wiesenthal"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "NK-GO",
@@ -4647,22 +6969,7 @@
 				"language": "Go"
 			}
 		],
-		"similar_interest": [
-			"NathanAW24",
-			"argonaut0",
-			"armintalaie",
-			"fxamacker",
-			"jo3-l",
-			"peterargue",
-			"thep2p",
-			"LordMoMA",
-			"brandur",
-			"erwin-lovecraft",
-			"gaurav-gogia",
-			"marianlime",
-			"devon-mar",
-			"patrickward"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "AdnaneKhan",
@@ -4722,7 +7029,7 @@
 				"language": "Python"
 			}
 		],
-		"similar_interest": ["Lydxn", "filipherle", "gaurav-gogia", "sim0wn"]
+		"similar_repos": []
 	},
 	{
 		"username": "PrincewillIroka",
@@ -4782,17 +7089,7 @@
 				"topics": ["react", "redux"]
 			}
 		],
-		"similar_interest": [
-			"aldenluthfi",
-			"armintalaie",
-			"Aashu-Dubey",
-			"luckyjsx",
-			"mathewbushuru",
-			"meleongg",
-			"pi-rate14",
-			"sanjeevyadavIT",
-			"snlimadev"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "Suprnova",
@@ -4841,7 +7138,7 @@
 				"language": "Rust"
 			}
 		],
-		"similar_interest": ["nickbabcock"]
+		"similar_repos": []
 	},
 	{
 		"username": "StTronn",
@@ -4869,17 +7166,7 @@
 				"language": "TypeScript"
 			}
 		],
-		"similar_interest": [
-			"frankuyan",
-			"thep2p",
-			"ASCorreia",
-			"Aashu-Dubey",
-			"Beta-test-initiation",
-			"PrincewillIroka",
-			"Tgcohce",
-			"calvbore",
-			"pi-rate14"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "Tgcohce",
@@ -4907,31 +7194,7 @@
 				"language": "TypeScript"
 			}
 		],
-		"similar_interest": [
-			"garrethlee",
-			"stankur",
-			"ju1ien1100",
-			"ElianBelot",
-			"Lydxn",
-			"abdurj",
-			"albertkim",
-			"frankuyan",
-			"kewbish",
-			"jribbink",
-			"rheaplex",
-			"thep2p",
-			"wilbowma",
-			"ASCorreia",
-			"StTronn",
-			"asiff00",
-			"birchmd",
-			"calvbore",
-			"gagan3012",
-			"cosmo3769",
-			"gshklovs",
-			"tika",
-			"wiesenthal"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "YashVG",
@@ -4959,22 +7222,7 @@
 				"language": "Jupyter Notebook"
 			}
 		],
-		"similar_interest": [
-			"garrethlee",
-			"stankur",
-			"ElianBelot",
-			"Lydxn",
-			"fegicochen",
-			"Aashu-Dubey",
-			"Highfire1",
-			"Nathn",
-			"gagan3012",
-			"gshklovs",
-			"luckyjsx",
-			"meleongg",
-			"naijwu",
-			"wiesenthal"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "WorldofKerry",
@@ -5024,7 +7272,7 @@
 				"language": "Rust"
 			}
 		],
-		"similar_interest": ["javathunderman", "MrAnderson1971"]
+		"similar_repos": []
 	},
 	{
 		"username": "Nathn",
@@ -5082,30 +7330,7 @@
 				"topics": ["chess"]
 			}
 		],
-		"similar_interest": [
-			"laurenyip",
-			"Anmol-Ghadia",
-			"Vaten0x",
-			"aldenluthfi",
-			"fegicochen",
-			"mahalisunil1",
-			"ysaleh03",
-			"Highfire1",
-			"JipFr",
-			"PrincewillIroka",
-			"bistromath25",
-			"irisxu02",
-			"luckyjsx",
-			"meleongg",
-			"mathewbushuru",
-			"naijwu",
-			"s-alad",
-			"pi-rate14",
-			"snlimadev",
-			"wiesenthal",
-			"AdenC123",
-			"Edster1121"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "Vicente015",
@@ -5169,38 +7394,7 @@
 				"language": "TypeScript"
 			}
 		],
-		"similar_interest": [
-			"stankur",
-			"FrankWhoee",
-			"omentic",
-			"Jake-Yeo",
-			"KevinL10",
-			"albertkim",
-			"alaviss",
-			"ardeshireshghi",
-			"argonaut0",
-			"armintalaie",
-			"kewbish",
-			"kiedtl",
-			"kickscondor",
-			"mvllow",
-			"oezingle",
-			"rctcwyvrn",
-			"trevorblades",
-			"Tidyrice",
-			"antnks",
-			"brandur",
-			"ethanthoma",
-			"elibroftw",
-			"joshvocal",
-			"meleongg",
-			"starptr",
-			"vsaosuo",
-			"virchau13",
-			"wiesenthal",
-			"zahash",
-			"devon-mar"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "Siliconrob",
@@ -5242,7 +7436,7 @@
 				"language": "HTML"
 			}
 		],
-		"similar_interest": ["hyperknot", "sanjeevyadavIT"]
+		"similar_repos": []
 	},
 	{
 		"username": "YingjiaLiu99",
@@ -5277,7 +7471,7 @@
 				"language": "JavaScript"
 			}
 		],
-		"similar_interest": ["Aashu-Dubey", "PrincewillIroka", "meleongg"]
+		"similar_repos": []
 	},
 	{
 		"username": "abeaumont",
@@ -5336,14 +7530,7 @@
 				"topics": ["cryptography", "ocaml", "salsa20"]
 			}
 		],
-		"similar_interest": [
-			"Lydxn",
-			"kewbish",
-			"Aeren1564",
-			"agrawal-d",
-			"evansemet",
-			"mfornet"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "Tidyrice",
@@ -5385,24 +7572,7 @@
 				"language": "C#"
 			}
 		],
-		"similar_interest": [
-			"FrankWhoee",
-			"tachibana-marine",
-			"EdwardJXLi",
-			"JustinHuPrime",
-			"PepperLola",
-			"FrozenHydrant",
-			"Mark123M",
-			"StarGazingHomies",
-			"hanmindev",
-			"irisxu02",
-			"mxple",
-			"MrAnderson1971",
-			"AidenKerr",
-			"WinteryFox",
-			"AdenC123",
-			"Edster1121"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "StarGazingHomies",
@@ -5445,23 +7615,7 @@
 				"language": "C++"
 			}
 		],
-		"similar_interest": [
-			"tachibana-marine",
-			"EdwardJXLi",
-			"JustRegularLuna",
-			"JustinHuPrime",
-			"abdurj",
-			"aldenluthfi",
-			"PepperLola",
-			"FrozenHydrant",
-			"Mark123M",
-			"Tidyrice",
-			"hanmindev",
-			"mxple",
-			"MrAnderson1971",
-			"WinteryFox",
-			"AdenC123"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "agrawal-d",
@@ -5504,18 +7658,7 @@
 				]
 			}
 		],
-		"similar_interest": [
-			"Lydxn",
-			"aldenluthfi",
-			"mvllow",
-			"theCasm",
-			"Aeren1564",
-			"abeaumont",
-			"birchmd",
-			"elibroftw",
-			"mfornet",
-			"zahash"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "antnks",
@@ -5536,17 +7679,7 @@
 				"language": "C"
 			}
 		],
-		"similar_interest": [
-			"KevinL10",
-			"theCasm",
-			"Aeren1564",
-			"Vicente015",
-			"gaurav-gogia",
-			"joshvocal",
-			"saucesteals",
-			"sim0wn",
-			"zahash"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "bistromath25",
@@ -5574,13 +7707,7 @@
 				"language": "TypeScript"
 			}
 		],
-		"similar_interest": [
-			"ElianBelot",
-			"KevinL10",
-			"aldenluthfi",
-			"abdurj",
-			"fegicochen"
-		]
+		"similar_repos": []
 	},
 	{
 		"username": "asiff00",
@@ -5644,7 +7771,7 @@
 				]
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "arnvgh",
@@ -5680,7 +7807,7 @@
 				"language": "JavaScript"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "birchmd",
@@ -5715,7 +7842,7 @@
 				"language": "Rust"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "brandur",
@@ -5757,7 +7884,7 @@
 				"language": "Rust"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "caoculus",
@@ -5785,7 +7912,7 @@
 				"language": "Rust"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "calvbore",
@@ -5813,7 +7940,7 @@
 				"language": "TypeScript"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "antler5",
@@ -5841,7 +7968,7 @@
 				"language": "Scheme"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "anomius",
@@ -5869,7 +7996,7 @@
 				"language": "JavaScript"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "colliand",
@@ -5897,7 +8024,7 @@
 				"language": "Jupyter Notebook"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "dmok22",
@@ -5925,7 +8052,7 @@
 				"language": "Java"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "ethanthoma",
@@ -5961,7 +8088,7 @@
 				"language": "Lua"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "erwin-lovecraft",
@@ -5983,7 +8110,7 @@
 				"topics": ["go", "htmx", "sse"]
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "gagan3012",
@@ -6020,7 +8147,7 @@
 				"topics": ["data-deduplication", "multilingual", "nlp"]
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "cosmo3769",
@@ -6055,7 +8182,7 @@
 				"language": "TypeScript"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "gshklovs",
@@ -6076,7 +8203,7 @@
 				"language": "Python"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "evansemet",
@@ -6111,7 +8238,7 @@
 				"language": "Python"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "hanmindev",
@@ -6141,7 +8268,7 @@
 				"topics": ["animation", "armature", "converter", "minecraft"]
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "gaurav-gogia",
@@ -6208,7 +8335,7 @@
 				]
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "elibroftw",
@@ -6272,7 +8399,7 @@
 				]
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "iHildy",
@@ -6293,7 +8420,7 @@
 				"language": "TypeScript"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "hyperknot",
@@ -6343,7 +8470,7 @@
 				]
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "gitpancake",
@@ -6364,7 +8491,7 @@
 				"language": "Solidity"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "irisxu02",
@@ -6392,7 +8519,7 @@
 				"language": "Python"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "joshvocal",
@@ -6421,7 +8548,7 @@
 				"topics": ["dotfiles"]
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "gvaghasiya02",
@@ -6442,7 +8569,7 @@
 				"language": "Java"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "luckyjsx",
@@ -6470,7 +8597,7 @@
 				"language": "JavaScript"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "liam-ilan",
@@ -6507,7 +8634,7 @@
 				"topics": ["crumb", "template"]
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "lukasgolson",
@@ -6528,7 +8655,7 @@
 				"language": "Python"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "mathewbushuru",
@@ -6577,7 +8704,7 @@
 				"language": "TypeScript"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "meleongg",
@@ -6626,7 +8753,7 @@
 				"language": "TypeScript"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "marianlime",
@@ -6647,7 +8774,7 @@
 				"language": "Go"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "nickbabcock",
@@ -6717,7 +8844,7 @@
 				]
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "mxple",
@@ -6759,7 +8886,7 @@
 				"language": "Yacc"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "mfornet",
@@ -6795,7 +8922,7 @@
 				"language": "C++"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "oltimaloku",
@@ -6823,7 +8950,7 @@
 				"language": "Swift"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "naijwu",
@@ -6865,7 +8992,7 @@
 				"language": "PHP"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "s-alad",
@@ -6922,7 +9049,7 @@
 				"language": "TypeScript"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "okarthikb",
@@ -6950,7 +9077,7 @@
 				"language": "CSS"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "merouanezouaid",
@@ -6978,7 +9105,7 @@
 				"language": "Python"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "pi-rate14",
@@ -7020,7 +9147,7 @@
 				"language": "JavaScript"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "saucesteals",
@@ -7049,7 +9176,7 @@
 				"language": "Go"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "sanjeevyadavIT",
@@ -7094,7 +9221,7 @@
 				]
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "sim0wn",
@@ -7123,7 +9250,7 @@
 				]
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "snlimadev",
@@ -7172,7 +9299,7 @@
 				"language": "JavaScript"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "tika",
@@ -7194,7 +9321,7 @@
 				"topics": ["ai", "conversation", "voice"]
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "starptr",
@@ -7222,7 +9349,7 @@
 				"language": "Nix"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "vsaosuo",
@@ -7243,7 +9370,7 @@
 				"language": "TypeScript"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "tweeres04",
@@ -7271,7 +9398,7 @@
 				"language": "TypeScript"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "virchau13",
@@ -7314,7 +9441,7 @@
 				"language": "Rust"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "wiesenthal",
@@ -7349,7 +9476,7 @@
 				"language": "TypeScript"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "zanedb",
@@ -7377,7 +9504,7 @@
 				"language": "Swift"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "zahash",
@@ -7448,7 +9575,7 @@
 				"language": "Rust"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "devon-mar",
@@ -7499,7 +9626,7 @@
 				"language": "Go"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "Candyzorua",
@@ -7520,7 +9647,7 @@
 				"language": "Dart"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "MrAnderson1971",
@@ -7569,7 +9696,7 @@
 				"language": "Rust"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "AidenKerr",
@@ -7625,7 +9752,7 @@
 				"language": "JavaScript"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "WinteryFox",
@@ -7654,7 +9781,7 @@
 				]
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "achreto",
@@ -7703,7 +9830,7 @@
 				"language": "Rust"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "briantist",
@@ -7731,7 +9858,7 @@
 				]
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "patrickward",
@@ -7752,7 +9879,7 @@
 				"language": "Go"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "AdenC123",
@@ -7794,7 +9921,7 @@
 				"language": "JavaScript"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "manglemix",
@@ -7815,7 +9942,7 @@
 				"language": "GDScript"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	},
 	{
 		"username": "Edster1121",
@@ -7850,6 +9977,6 @@
 				"language": "Java"
 			}
 		],
-		"similar_interest": []
+		"similar_repos": []
 	}
 ]

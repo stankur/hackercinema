@@ -29,6 +29,34 @@ export default function Home() {
 			});
 	}, []);
 
+	// Handle hash changes for anchor navigation
+	useEffect(() => {
+		const handleHashChange = () => {
+			const hash = window.location.hash.slice(1); // Remove the #
+			if (hash && builders.length > 0) {
+				// Switch to hackers tab if not already there
+				if (activeTab !== "hackers") {
+					setActiveTab("hackers");
+				}
+
+				// Wait a bit for the tab to switch, then scroll to the builder
+				setTimeout(() => {
+					const element = document.getElementById(hash);
+					if (element) {
+						element.scrollIntoView({ behavior: "smooth" });
+					}
+				}, 100);
+			}
+		};
+
+		// Handle initial hash on page load
+		handleHashChange();
+
+		// Listen for hash changes
+		window.addEventListener("hashchange", handleHashChange);
+		return () => window.removeEventListener("hashchange", handleHashChange);
+	}, [builders, activeTab]);
+
 	if (loading) {
 		return (
 			<div className="min-h-screen flex items-center justify-center">
@@ -45,6 +73,7 @@ export default function Home() {
 					<div className="flex gap-10">
 						<button
 							onClick={() => handleTabClick("hackers")}
+							data-tab="hackers"
 							className={`text-sm transition-colors ${
 								activeTab === "hackers"
 									? "text-foreground"
@@ -71,11 +100,12 @@ export default function Home() {
 				{activeTab === "hackers" && (
 					<div className="divide-y">
 						{builders.map((builder, index) => (
-							<LazyBuilderItem
-								key={builder.username}
-								builder={builder}
-								index={index}
-							/>
+							<div key={builder.username} id={builder.username}>
+								<LazyBuilderItem
+									builder={builder}
+									index={index}
+								/>
+							</div>
 						))}
 					</div>
 				)}

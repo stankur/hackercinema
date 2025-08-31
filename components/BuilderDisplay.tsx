@@ -1,11 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { MapPin, Globe, Github, MessageSquare } from "lucide-react";
 import RepoCard from "./RepoCard";
-import type { Builder, GitHubRepo } from "@/lib/types";
+import SimilarReposSection from "./SimilarReposSection";
+import type { Builder } from "@/lib/types";
 
 interface BuilderDisplayProps {
 	builder: Builder;
@@ -121,8 +122,8 @@ export default function BuilderDisplay({
 						>
 							Highlights
 						</button>
-						{builder.similar_interest &&
-							builder.similar_interest.length > 0 && (
+						{builder.similar_repos &&
+							builder.similar_repos.length > 0 && (
 								<button
 									onClick={(e) => {
 										e.stopPropagation();
@@ -141,7 +142,10 @@ export default function BuilderDisplay({
 
 					{/* Tab content - full width */}
 					{activeTab === "profile" && (
-						<div className="space-y-4">
+						<div
+							className="space-y-4"
+							onClick={(e) => e.stopPropagation()}
+						>
 							<div className="space-y-4">
 								{builder.profile.bio && (
 									<div className="flex items-baseline gap-4">
@@ -194,7 +198,10 @@ export default function BuilderDisplay({
 					)}
 
 					{activeTab === "repos" && (
-						<div className="space-y-6">
+						<div
+							className="space-y-6"
+							onClick={(e) => e.stopPropagation()}
+						>
 							{builder.repos.length > 0 ? (
 								builder.repos.map((repo) => (
 									<RepoCard
@@ -213,100 +220,14 @@ export default function BuilderDisplay({
 						</div>
 					)}
 
-					{activeTab === "similar" && builder.similar_interest && (
-						<SimilarInterestsSection
-							similarUsernames={builder.similar_interest}
-						/>
-					)}
-				</>
-			)}
-		</div>
-	);
-}
-
-// Similar Interests Section Component
-interface SimilarInterestsSectionProps {
-	similarUsernames: string[];
-}
-
-function SimilarInterestsSection({
-	similarUsernames,
-}: SimilarInterestsSectionProps) {
-	const [userData, setUserData] = useState<
-		Record<string, { repos: GitHubRepo[] }>
-	>({});
-	const [showAllRepos, setShowAllRepos] = useState(false);
-
-	// Fetch user data when component mounts
-	useEffect(() => {
-		const fetchUserData = async () => {
-			try {
-				const response = await fetch("/api/data.json");
-				const data = await response.json();
-
-				const userDataMap: Record<string, { repos: GitHubRepo[] }> = {};
-				data.forEach((user: Builder) => {
-					if (similarUsernames.includes(user.username)) {
-						userDataMap[user.username] = {
-							repos: user.repos || [],
-						};
-					}
-				});
-
-				setUserData(userDataMap);
-			} catch (error) {
-				console.error("Failed to fetch user data:", error);
-			}
-		};
-
-		fetchUserData();
-	}, [similarUsernames]);
-
-	// Collect all repos from all similar users
-	const allRepos: Array<{ repo: GitHubRepo; owner: string }> = [];
-	similarUsernames.forEach((username) => {
-		const userInfo = userData[username];
-		if (userInfo && userInfo.repos.length > 0) {
-			userInfo.repos.forEach((repo) => {
-				allRepos.push({ repo, owner: username });
-			});
-		}
-	});
-
-	const displayedRepos = showAllRepos ? allRepos : allRepos.slice(0, 5);
-
-	return (
-		<div className="space-y-4">
-			{displayedRepos.length > 0 ? (
-				<>
-					{displayedRepos.map(({ repo, owner }) => (
-						<RepoCard
-							key={`${owner}-${repo.name}`}
-							repo={repo}
-							owner={owner}
-							showOwner={false}
-							showUsernameInsteadOfDate={true}
-						/>
-					))}
-
-					{allRepos.length > 5 && (
-						<div className="text-center pt-4">
-							<button
-								onClick={(e) => {
-									e.stopPropagation();
-									setShowAllRepos(!showAllRepos);
-								}}
-								className="text-xs text-muted-foreground hover:text-foreground transition-colors underline"
-							>
-								{showAllRepos ? "show less" : "show more"}
-							</button>
+					{activeTab === "similar" && builder.similar_repos && (
+						<div onClick={(e) => e.stopPropagation()}>
+							<SimilarReposSection
+								similarRepos={builder.similar_repos}
+							/>
 						</div>
 					)}
 				</>
-			) : (
-				<div className="text-sm text-muted-foreground">
-					No repositories found for similar users.
-				</div>
 			)}
 		</div>
 	);
