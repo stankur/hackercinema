@@ -101,7 +101,7 @@ export default function BuilderDisplay({
 				<>
 					{/* Tabs - full width below the header */}
 					<div
-						className="flex gap-10 mb-6"
+						className="flex gap-10 mb-12"
 						onClick={(e) => e.stopPropagation()}
 					>
 						<button

@@ -2,19 +2,63 @@
 
 import { useState, useEffect } from "react";
 import LazyBuilderItem from "@/components/LazyBuilderItem";
+import Navigation from "@/components/Navigation";
 import type { Builder } from "@/lib/types";
-
-import { Shimmer } from "@/components/ui/shimmer";
-import { SimpleIcon } from "@/components/ui/SimpleIcon";
 import { preloadGitHubImages } from "@/lib/imageCache";
 
 export default function Home() {
 	const [builders, setBuilders] = useState<Builder[]>([]);
 	const [loading, setLoading] = useState(true);
-	const [activeTab, setActiveTab] = useState<"hackers" | "filter">("hackers");
 
-	const handleTabClick = (tab: "hackers" | "filter") => {
-		setActiveTab(tab);
+	// Add single shimmer effect to highlight the focused element
+	const triggerShimmerOnce = (element: Element) => {
+		// Prevent multiple shimmers on the same element
+		if (
+			(element as HTMLElement & { _shimmerActive?: boolean })
+				._shimmerActive
+		)
+			return;
+		(element as HTMLElement & { _shimmerActive?: boolean })._shimmerActive =
+			true;
+
+		// Add shimmer CSS class
+		element.classList.add("hash-shimmer");
+
+		// Add CSS if not already present
+		if (!document.querySelector("#hash-shimmer-styles")) {
+			const style = document.createElement("style");
+			style.id = "hash-shimmer-styles";
+			style.textContent = `
+				.hash-shimmer {
+					position: relative;
+					overflow: hidden;
+				}
+				.hash-shimmer::after {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: -100%;
+					width: 100%;
+					height: 100%;
+					background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.15) 50%, transparent 100%);
+					animation: shimmer-once 1.2s ease-out forwards;
+					pointer-events: none;
+				}
+				@keyframes shimmer-once {
+					0% { left: -100%; }
+					100% { left: 100%; }
+				}
+			`;
+			document.head.appendChild(style);
+		}
+
+		// Remove shimmer class after animation completes
+		setTimeout(() => {
+			element.classList.remove("hash-shimmer");
+			(
+				element as HTMLElement & { _shimmerActive?: boolean }
+			)._shimmerActive = false;
+		}, 1200);
 	};
 
 	useEffect(() => {
@@ -40,33 +84,99 @@ export default function Home() {
 			});
 	}, []);
 
+	// Handle hash navigation after builders are loaded
+	useEffect(() => {
+		if (builders.length > 0) {
+			const hash = window.location.hash.slice(1);
+			if (hash) {
+				// Scroll immediately, then correct if needed
+				const scrollToElement = (attempt = 1) => {
+					const element = document.getElementById(hash);
+					if (element) {
+						const performScroll = () => {
+							const rect = element.getBoundingClientRect();
+							const currentScroll = window.pageYOffset;
+							const elementTop = rect.top;
+							const scrollTop = currentScroll + elementTop - 20;
+
+							window.scrollTo({
+								top: scrollTop,
+								behavior: "smooth",
+							});
+
+							// Check if we need to correct the position
+							setTimeout(() => {
+								const newRect = element.getBoundingClientRect();
+								const finalTop = newRect.top;
+
+								// If position is significantly off and we haven't tried too many times, retry
+								if (
+									Math.abs(finalTop - 20) > 50 &&
+									attempt < 3
+								) {
+									setTimeout(
+										() => scrollToElement(attempt + 1),
+										300
+									);
+								} else {
+									// Position is good, add shimmer effect
+									triggerShimmerOnce(element);
+								}
+							}, 600);
+						};
+
+						// Wait longer on first attempt to let most content load
+						setTimeout(performScroll, attempt === 1 ? 1000 : 200);
+					} else {
+						// If element not found, try again after a short delay
+						setTimeout(() => scrollToElement(attempt), 100);
+					}
+				};
+
+				// Delay to ensure content is rendered
+				setTimeout(scrollToElement, 100);
+			}
+		}
+	}, [builders]);
+
 	// Handle hash changes for anchor navigation
 	useEffect(() => {
 		const handleHashChange = () => {
 			const hash = window.location.hash.slice(1); // Remove the #
 			if (hash && builders.length > 0) {
-				// Switch to hackers tab if not already there
-				if (activeTab !== "hackers") {
-					setActiveTab("hackers");
+				// Navigate to hackers page if not already there
+				if (window.location.pathname !== "/") {
+					window.location.href = `/#${hash}`;
+					return;
 				}
 
-				// Wait a bit for the tab to switch, then scroll to the builder
+				// Scroll to the builder
 				setTimeout(() => {
 					const element = document.getElementById(hash);
 					if (element) {
-						element.scrollIntoView({ behavior: "smooth" });
+						const rect = element.getBoundingClientRect();
+						const currentScroll = window.pageYOffset;
+						const elementTop = rect.top;
+						const scrollTop = currentScroll + elementTop - 20; // 20px offset from top
+
+						window.scrollTo({
+							top: scrollTop,
+							behavior: "smooth",
+						});
+
+						// Add shimmer effect after scroll completes
+						setTimeout(() => {
+							triggerShimmerOnce(element);
+						}, 500);
 					}
 				}, 100);
 			}
 		};
 
-		// Handle initial hash on page load
-		handleHashChange();
-
 		// Listen for hash changes
 		window.addEventListener("hashchange", handleHashChange);
 		return () => window.removeEventListener("hashchange", handleHashChange);
-	}, [builders, activeTab]);
+	}, [builders]);
 
 	if (loading) {
 		return (
@@ -79,118 +189,15 @@ export default function Home() {
 	return (
 		<div className="min-h-screen bg-background">
 			<div className="max-w-3xl mx-auto py-12 px-6">
-				{/* Tabs */}
-				<div className="flex justify-center mb-12 relative z-20">
-					<div className="flex gap-10">
-						<button
-							onClick={() => handleTabClick("hackers")}
-							data-tab="hackers"
-							className={`text-sm transition-colors ${
-								activeTab === "hackers"
-									? "text-foreground"
-									: "text-muted-foreground hover:text-foreground"
-							}`}
-						>
-							Hackers
-						</button>
+				<Navigation />
 
-						<button
-							onClick={() => handleTabClick("filter")}
-							className={`text-sm transition-colors ${
-								activeTab === "filter"
-									? "text-foreground"
-									: "text-muted-foreground hover:text-foreground"
-							}`}
-						>
-							Filter
-						</button>
-					</div>
-				</div>
-
-				{/* Tab content */}
-				{activeTab === "hackers" && (
-					<div className="divide-y">
-						{builders.map((builder, index) => (
-							<div key={builder.username} id={builder.username}>
-								<LazyBuilderItem
-									builder={builder}
-									index={index}
-								/>
-							</div>
-						))}
-					</div>
-				)}
-
-				{activeTab === "filter" && (
-					<>
-						{/* Full page gradient background */}
-						<div
-							className="fixed inset-0 bg-slate-900"
-							style={{
-								background: `
-									radial-gradient(circle at 60% 50%, rgba(71, 85, 105, 0.25) 0%, rgba(71, 85, 105, 0.15) 30%, rgba(71, 85, 105, 0.08) 60%, transparent 80%),
-									radial-gradient(circle at 80% 20%, rgba(71, 85, 105, 0.18) 0%, rgba(71, 85, 105, 0.10) 35%, rgba(71, 85, 105, 0.04) 65%, transparent 80%)
-								`,
-							}}
-						></div>
-
-						{/* Text content */}
-						<div className="relative z-10 pt-4 font-mono text-sm px-8 max-w-4xl mx-auto">
-							<div className="flex flex-col items-center mb-8">
-								{" "}
-								<p className="mb-6 font-black text-2xl">
-									THE HACKER FILTER
-								</p>
-								<div className="mb-8 font-semibold">
-									<Shimmer>
-										<a
-											href="https://github.com/join"
-											target="_blank"
-											rel="noopener noreferrer"
-											className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-gradient-to-r from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300 text-gray-800 transition-all border border-gray-300 hover:border-gray-400 cursor-pointer shadow-sm"
-										>
-											<span>join with github</span>
-											<SimpleIcon
-												name="github"
-												size={16}
-											/>
-										</a>
-									</Shimmer>
-								</div>
-							</div>
-
-							<p className=" mb-8">
-								there are people who build things for hobby, in
-								their free time, what they do is building stuff,
-								and they are technically inclined and curious,
-								and ambitious.
-							</p>
-
-							<p className="tracking-wide leading-relaxed mb-8">
-								People who code professionally but not in free
-								time, people who do it for school, uni
-								assignments, people who seem to be doing
-								projects to hit keywords for job search, people
-								who only do projects at hackathons do not pass.
-							</p>
-
-							<p className="tracking-wide leading-relaxed mb-8">
-								does this person seem to have a taste, do their
-								project show that they have a passion for some
-								particular theme, like an obsession because they
-								are pursuing it, the type of person who would
-								work or start a startup pursuing an ambitious
-								vision, rather than starting startups for the
-								sake of starting one type.
-							</p>
-
-							<p className="tracking-wide leading-relaxed">
-								curious, exeprimental, learner, builder type.
-								YES or NO. One word answer, just one answer.
-							</p>
+				<div className="divide-y">
+					{builders.map((builder, index) => (
+						<div key={builder.username} id={builder.username}>
+							<LazyBuilderItem builder={builder} index={index} />
 						</div>
-					</>
-				)}
+					))}
+				</div>
 			</div>
 		</div>
 	);

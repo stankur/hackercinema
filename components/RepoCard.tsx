@@ -11,6 +11,7 @@ interface RepoCardProps {
 	owner: string;
 	showOwner?: boolean;
 	showUsernameInsteadOfDate?: boolean;
+	showOwnerAndDate?: boolean;
 }
 
 export default function RepoCard({
@@ -18,6 +19,7 @@ export default function RepoCard({
 	owner,
 	showOwner = false,
 	showUsernameInsteadOfDate = false,
+	showOwnerAndDate = false,
 }: RepoCardProps) {
 	const [cardBackground, setCardBackground] = useState<string>("");
 	const [languageDotColor, setLanguageDotColor] = useState<string>("");
@@ -75,9 +77,9 @@ export default function RepoCard({
 				</div>
 			)}
 
-			{/* Date/Username row */}
-			<div className="text-xs text-muted-foreground/60 mt-2">
-				{showUsernameInsteadOfDate ? (
+			{/* Username row */}
+			{showOwnerAndDate ? (
+				<div className="text-xs text-muted-foreground/60 mt-2">
 					<button
 						onClick={() => {
 							// Navigate to the builder in the hackers tab
@@ -94,10 +96,24 @@ export default function RepoCard({
 					>
 						{owner}
 					</button>
-				) : (
-					`Updated ${formatDate(repo.updated_at)}`
-				)}
-			</div>
+				</div>
+			) : (
+				<div className="text-xs text-muted-foreground/60 mt-2">
+					{showUsernameInsteadOfDate ? (
+						<button
+							onClick={() => {
+								// Navigate to the builder on hackers page
+								window.location.href = `/#${owner}`;
+							}}
+							className="font-semibold cursor-pointer hover:text-foreground transition-colors"
+						>
+							{owner}
+						</button>
+					) : (
+						`Updated ${formatDate(repo.updated_at)}`
+					)}
+				</div>
+			)}
 
 			{/* Bottom row with metadata on left and action icons on right */}
 			<div className="flex items-center justify-between mt-3 pt-2">
@@ -129,7 +145,7 @@ export default function RepoCard({
 							href={repo.link}
 							target="_blank"
 							rel="noopener noreferrer"
-							className="text-gray-700 cursor-pointer hover:text-muted-foreground transition-colors p-1"
+							className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
 							title="Visit project link"
 						>
 							<ExternalLink size={20} />
@@ -138,7 +154,7 @@ export default function RepoCard({
 					{repo.gallery && repo.gallery.length > 0 && (
 						<button
 							onClick={() => openGallery(repo.gallery!)}
-							className="text-gray-700 cursor-pointer hover:text-muted-foreground transition-colors p-1"
+							className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
 							title="View gallery"
 						>
 							<Images size={20} />

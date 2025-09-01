@@ -21,15 +21,19 @@ export default function GalleryModal({
 	const [currentIndex, setCurrentIndex] = useState(initialIndex);
 	const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set());
 	const [failedImages, setFailedImages] = useState<Set<number>>(new Set());
+	const [loadingImages, setLoadingImages] = useState<Set<number>>(new Set());
 
 	// Filter out failed images
 	const validImages = images.filter((_, index) => !failedImages.has(index));
 	const validCurrentIndex = Math.min(currentIndex, validImages.length - 1);
 
-	// Reset index when modal opens
+	// Reset index and loading state when modal opens
 	useEffect(() => {
 		if (isOpen) {
 			setCurrentIndex(initialIndex);
+			setLoadedImages(new Set());
+			setFailedImages(new Set());
+			setLoadingImages(new Set());
 		}
 	}, [isOpen, initialIndex]);
 
@@ -75,29 +79,69 @@ export default function GalleryModal({
 		};
 	}, [isOpen]);
 
+	// Preload image and handle loading state
+	const preloadImage = useCallback(
+		(index: number, url: string) => {
+			if (loadedImages.has(index) || loadingImages.has(index)) return;
+
+			setLoadingImages((prev) => new Set(prev).add(index));
+
+			const img = new Image();
+			img.onload = () => handleImageLoad(index);
+			img.onerror = () => handleImageError(index);
+			img.src = url;
+		},
+		[loadedImages, loadingImages]
+	);
+
 	// Handle image load success
 	const handleImageLoad = (index: number) => {
 		setLoadedImages((prev) => new Set(prev).add(index));
+		setLoadingImages((prev) => {
+			const newSet = new Set(prev);
+			newSet.delete(index);
+			return newSet;
+		});
 	};
 
 	// Handle image load failure
 	const handleImageError = (index: number) => {
 		setFailedImages((prev) => new Set(prev).add(index));
+		setLoadingImages((prev) => {
+			const newSet = new Set(prev);
+			newSet.delete(index);
+			return newSet;
+		});
 	};
 
 	// Navigate to previous image
 	const goToPrevious = () => {
-		setCurrentIndex((prev) =>
-			prev > 0 ? prev - 1 : validImages.length - 1
-		);
+		const newIndex =
+			currentIndex > 0 ? currentIndex - 1 : validImages.length - 1;
+		setCurrentIndex(newIndex);
+		// Preload the new image
+		if (validImages[newIndex]) {
+			preloadImage(newIndex, validImages[newIndex].url);
+		}
 	};
 
 	// Navigate to next image
 	const goToNext = () => {
-		setCurrentIndex((prev) =>
-			prev < validImages.length - 1 ? prev + 1 : 0
-		);
+		const newIndex =
+			currentIndex < validImages.length - 1 ? currentIndex + 1 : 0;
+		setCurrentIndex(newIndex);
+		// Preload the new image
+		if (validImages[newIndex]) {
+			preloadImage(newIndex, validImages[newIndex].url);
+		}
 	};
+
+	// Preload current image when index changes
+	useEffect(() => {
+		if (isOpen && validImages[validCurrentIndex]) {
+			preloadImage(validCurrentIndex, validImages[validCurrentIndex].url);
+		}
+	}, [validCurrentIndex, isOpen, validImages, preloadImage]);
 
 	if (!isOpen || validImages.length === 0) return null;
 
@@ -136,13 +180,27 @@ export default function GalleryModal({
 
 			{/* Image container */}
 			<div className="flex items-center justify-center w-full h-full p-8 md:p-16">
-				<img
-					src={currentImage.url}
-					alt={currentImage.alt}
-					className="max-w-full max-h-[75vh] md:max-w-[50vw] md:max-h-[80vh] object-contain"
-					onLoad={() => handleImageLoad(validCurrentIndex)}
-					onError={() => handleImageError(validCurrentIndex)}
-				/>
+				{/* Show loading skeleton when image is loading or not loaded yet */}
+				{(!loadedImages.has(validCurrentIndex) ||
+					loadingImages.has(validCurrentIndex)) && (
+					<div className="flex items-center justify-center">
+						<div className="w-96 h-64 max-w-full max-h-[75vh] md:max-w-[50vw] md:max-h-[80vh] bg-gray-700 rounded-lg animate-pulse flex items-center justify-center">
+							<div className="text-gray-400 text-sm">
+								Loading image...
+							</div>
+						</div>
+					</div>
+				)}
+
+				{/* Only show image when fully loaded */}
+				{loadedImages.has(validCurrentIndex) &&
+					!loadingImages.has(validCurrentIndex) && (
+						<img
+							src={currentImage.url}
+							alt={currentImage.alt}
+							className="max-w-full max-h-[75vh] md:max-w-[50vw] md:max-h-[80vh] object-contain animate-in fade-in duration-300"
+						/>
+					)}
 			</div>
 
 			{/* Image counter */}
