@@ -39,7 +39,7 @@ export default function Navigation() {
 							: "text-muted-foreground hover:text-foreground"
 					}`}
 				>
-					Filter
+					Join
 				</Link>
 			</div>
 		</div>

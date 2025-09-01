@@ -44,7 +44,7 @@ export default function BuilderDisplay({
 
 	return (
 		<div
-			className={`${className} transition-all duration-700 ease-out ${
+			className={`${className} transition-all px-4 duration-700 ease-out ${
 				isExpanded
 					? "opacity-100 blur-0 scale-100"
 					: "opacity-100 blur-0 scale-100"
@@ -85,7 +85,7 @@ export default function BuilderDisplay({
 			{!isExpanded && (
 				<div className="flex justify-end">
 					<button
-						className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+						className="text-lg text-muted-foreground hover:text-foreground transition-colors"
 						onClick={(e) => {
 							e.stopPropagation();
 							setIsExpanded(true);
