@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import LazyBuilderItem from "@/components/LazyBuilderItem";
 import Navigation from "@/components/Navigation";
+import AvatarGlobe from "@/components/AvatarGlobe";
 import type { Builder } from "@/lib/types";
 import { preloadGitHubImages } from "@/lib/imageCache";
 
@@ -190,6 +191,11 @@ export default function Home() {
 		<div className="min-h-screen bg-background">
 			<div className="max-w-3xl mx-auto py-12 px-6">
 				<Navigation />
+
+				{/* Avatar Globe */}
+				<div className="mb-4">
+					<AvatarGlobe maxUsers={170} />
+				</div>
 
 				<div className="divide-y">
 					{builders.map((builder, index) => (
