@@ -197,10 +197,11 @@ export default function Home() {
 							typeof window !== "undefined"
 								? window.location.hash.slice(1)
 								: "";
-						const autoExpand =
+						const autoExpand = !!(
 							hash &&
 							hash.toLowerCase() ===
-								builder.username.toLowerCase();
+								builder.username.toLowerCase()
+						);
 						return (
 							<div key={builder.username} id={builder.username}>
 								<LazyBuilderItem
