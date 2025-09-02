@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import LazyBuilderItem from "@/components/LazyBuilderItem";
 import Navigation from "@/components/Navigation";
-import AvatarGlobe from "@/components/AvatarGlobe";
 import type { Builder } from "@/lib/types";
 import { preloadGitHubImages } from "@/lib/imageCache";
 
@@ -192,17 +191,26 @@ export default function Home() {
 			<div className="max-w-3xl mx-auto py-12 px-6">
 				<Navigation />
 
-				{/* Avatar Globe */}
-				<div className="mb-4">
-					<AvatarGlobe maxUsers={170} />
-				</div>
-
 				<div className="divide-y">
-					{builders.map((builder, index) => (
-						<div key={builder.username} id={builder.username}>
-							<LazyBuilderItem builder={builder} index={index} />
-						</div>
-					))}
+					{builders.map((builder, index) => {
+						const hash =
+							typeof window !== "undefined"
+								? window.location.hash.slice(1)
+								: "";
+						const autoExpand =
+							hash &&
+							hash.toLowerCase() ===
+								builder.username.toLowerCase();
+						return (
+							<div key={builder.username} id={builder.username}>
+								<LazyBuilderItem
+									builder={builder}
+									index={index}
+									autoExpand={autoExpand}
+								/>
+							</div>
+						);
+					})}
 				</div>
 			</div>
 		</div>

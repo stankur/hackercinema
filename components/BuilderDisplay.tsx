@@ -12,21 +12,28 @@ interface BuilderDisplayProps {
 	builder: Builder;
 	showOwner?: boolean;
 	className?: string;
+	autoExpand?: boolean;
 }
 
 export default function BuilderDisplay({
 	builder,
 	showOwner = false,
 	className = "py-8",
+	autoExpand = false,
 }: BuilderDisplayProps) {
-	const [isExpanded, setIsExpanded] = useState(false);
+	const [isExpanded, setIsExpanded] = useState(!!autoExpand);
 	const [activeTab, setActiveTab] = useState<
 		"profile" | "repos" | "similar" | null
 	>(
 		"repos" // Default to Highlights tab when expanded
 	);
+	const [isFlashing, setIsFlashing] = useState(false);
 
 	const handleCardClick = () => {
+		// Trigger flash effect
+		setIsFlashing(true);
+		setTimeout(() => setIsFlashing(false), 200);
+
 		setIsExpanded(!isExpanded);
 		if (!isExpanded) {
 			setActiveTab("repos"); // Set to Highlights tab when expanding
@@ -44,11 +51,16 @@ export default function BuilderDisplay({
 
 	return (
 		<div
-			className={`${className} transition-all px-4 duration-700 ease-out ${
+			className={`${className} transition-all px-4 duration-700 ease-out cursor-pointer ${
 				isExpanded
 					? "opacity-100 blur-0 scale-100"
 					: "opacity-100 blur-0 scale-100"
-			}`}
+			} ${isFlashing ? "bg-muted/40" : ""}`}
+			style={{
+				transition: isFlashing
+					? "background-color 0.2s ease-out"
+					: "background-color 0.3s ease-out, opacity 0.7s ease-out, filter 0.7s ease-out, transform 0.7s ease-out",
+			}}
 			onClick={handleCardClick}
 		>
 			{/* Header with avatar, name, theme */}
@@ -88,6 +100,9 @@ export default function BuilderDisplay({
 						className="text-lg text-muted-foreground hover:text-foreground transition-colors"
 						onClick={(e) => {
 							e.stopPropagation();
+							// Trigger flash effect
+							setIsFlashing(true);
+							setTimeout(() => setIsFlashing(false), 200);
 							setIsExpanded(true);
 						}}
 					>

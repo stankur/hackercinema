@@ -1,0 +1,265 @@
+{
+	"profile": {
+		"id": "KevinL10",
+		"name": "Kevin Liu",
+		"links": {
+			"personal": "https://kevinliu.me/",
+			"github": "https://github.com/KevinL10",
+			"linkedin": "https://www.linkedin.com/in/kevinliu0/"
+		}
+	},
+	"contacts": {},
+	"experiences": [
+		{
+			"org": "OpenAI",
+			"role": "Member of Technical Staff",
+			"location": "San Francisco, California, United States",
+			"period": "Jun 2025 - Aug 2025 · 3 mos",
+			"tech": [],
+			"highlights": []
+		},
+		{
+			"org": "Google DeepMind",
+			"role": "Student Researcher",
+			"location": "London, UK",
+			"period": "Dec 2024 - May 2025 · 6 mos",
+			"tech": [],
+			"highlights": [
+				"I worked on Big Sleep, an AI agent to autonomously find security vulnerabilities in low-level software."
+			]
+		},
+		{
+			"org": "Orbstack",
+			"role": "Software Engineering Intern",
+			"location": "",
+			"period": "Sep 2024 - Dec 2024 · 4 mos",
+			"tech": [],
+			"highlights": []
+		},
+		{
+			"org": "Sentry (sentry.io)",
+			"role": "Software Engineer Intern",
+			"location": "Toronto, Ontario, Canada",
+			"period": "May 2024 - Aug 2024 · 4 mos",
+			"tech": [],
+			"highlights": []
+		},
+		{
+			"org": "X",
+			"role": "Software Engineer Intern",
+			"location": "San Francisco, California, United States",
+			"period": "Jan 2024 - Apr 2024 · 4 mos",
+			"tech": [],
+			"highlights": ["Search and trends."]
+		},
+		{
+			"org": "BMO Capital Markets",
+			"role": "Quantitative Analyst Intern",
+			"location": "Toronto, Ontario, Canada",
+			"period": "Sep 2023 - Dec 2023 · 4 mos",
+			"tech": [
+				"Large Language Models (LLM)",
+				"Apache Druid",
+				"React.js",
+				"Python (Programming Language)"
+			],
+			"highlights": [
+				"Built LLM products and developed internal data visualization tooling for traders."
+			]
+		},
+		{
+			"org": "The University of British Columbia",
+			"role": "Research Assistant",
+			"location": "",
+			"period": "Jan 2023 - Sep 2023 · 9 mos",
+			"tech": [
+				"Java",
+				"Operating Systems",
+				"Reverse Engineering",
+				"Android",
+				"Malware Analysis"
+			],
+			"highlights": [
+				"Partnered with WhatsApp's security team to identify malicious clients with data flow analysis techniques."
+			]
+		},
+		{
+			"org": "Ntropy",
+			"role": "Software Engineer Intern",
+			"location": "",
+			"period": "May 2022 - Jan 2023 · 9 mos",
+			"tech": [
+				"REST APIs",
+				"Python (Programming Language)",
+				"Kubernetes",
+				"Flask",
+				"Object-Oriented Programming (OOP)"
+			],
+			"highlights": [
+				"Worked on the financial transaction enrichment backend and public Python SDK."
+			]
+		},
+		{
+			"org": "Duowei Education",
+			"role": "Instructor",
+			"location": "Toronto, Ontario, Canada",
+			"period": "Mar 2021 - Aug 2021 · 6 mos",
+			"tech": ["Algorithms", "Teaching", "Data Structures"],
+			"highlights": [
+				"Taught advanced algorithms to 10+ high-school students for national computer science olympiads."
+			]
+		}
+	],
+	"projects": [
+		{
+			"name": "CheetCode",
+			"subtitle": "A Chrome extension to solve all your interview problems.",
+			"period": "Sep. 2023",
+			"tech": [],
+			"details": ["Hack the North 🏆"],
+			"links": {
+				"website": "https://devpost.com/software/llm-interview",
+				"youtube": "https://youtu.be/7sVzflHqHAo?t=100"
+			}
+		},
+		{
+			"name": "Chroma",
+			"subtitle": "A toy web browser built from scratch in C++ and Python.",
+			"period": "Jun. 2023",
+			"tech": [],
+			"details": [],
+			"links": {
+				"github": "https://github.com/KevinL10/browser"
+			}
+		},
+		{
+			"name": "CyberHack",
+			"subtitle": "An educational cybersecurity platform designed for teenagers.",
+			"period": "Feb. 2023",
+			"tech": [],
+			"details": ["Rise Global Winner"],
+			"links": {
+				"website": "https://cyberhack.site/"
+			}
+		},
+		{
+			"name": "Knetwork",
+			"subtitle": "An offline-first, customizable learning management system.",
+			"period": "Dec. 2022",
+			"tech": [],
+			"details": ["Hack the Change 🏆"],
+			"links": {
+				"github": "https://github.com/KevinL10/Knetwork",
+				"website": "https://devpost.com/software/knetwork"
+			}
+		},
+		{
+			"name": "Lorentz",
+			"subtitle": "An interactive website for visualizing Lorentz transformations.",
+			"period": "Oct. 2022",
+			"tech": [],
+			"details": [],
+			"links": {
+				"github": "https://github.com/KevinL10/lorentz"
+			}
+		},
+		{
+			"name": "Linalg",
+			"subtitle": "A pure Python linear algebra library.",
+			"period": "Apr. 2022",
+			"tech": [],
+			"details": [],
+			"links": {
+				"github": "https://github.com/KevinL10/linalg"
+			}
+		},
+		{
+			"name": "Blocky",
+			"subtitle": "A hands-on application for building custom block ciphers.",
+			"period": "Mar. 2022",
+			"tech": [],
+			"details": [],
+			"links": {
+				"github": "https://github.com/KevinL10/Blocky"
+			}
+		},
+		{
+			"name": "Derivify",
+			"subtitle": "A web tool for calculating derivative graphs of hand-drawn functions.",
+			"period": "Jan. 2022",
+			"tech": [],
+			"details": [],
+			"links": {
+				"github": "https://github.com/KevinL10/Derivify"
+			}
+		},
+		{
+			"name": "Cryptanalysis",
+			"subtitle": "Key-recovery attacks using linear cryptanalysis on a toy cipher.",
+			"period": "Nov. 2021",
+			"tech": [],
+			"details": [],
+			"links": {
+				"github": "https://github.com/KevinL10/Linear-Cryptanalysis"
+			}
+		}
+	],
+	"writings": [
+		{
+			"title": "Running Windows on Mac",
+			"link": "https://kevinliu.me/posts/running-windows-on-mac/",
+			"date": "Feb 18, 2025"
+		},
+		{
+			"title": "Building a Browser from Scratch",
+			"link": "https://kevinliu.me/posts/building-a-browser/",
+			"date": "Sep 4, 2023"
+		},
+		{
+			"title": "Can Machines Think?",
+			"link": "https://kevinliu.me/posts/can-machines-think/",
+			"date": "Jul 27, 2023"
+		},
+		{
+			"title": "A Beginner's Guide to Diffie Hellman",
+			"link": "https://kevinliu.me/posts/diffie-hellman/",
+			"date": "Nov 5, 2022"
+		},
+		{
+			"title": "Winning Cryptoverse 2022",
+			"link": "https://kevinliu.me/posts/cryptoverse/",
+			"date": "Oct 22, 2022"
+		},
+		{
+			"title": "Organizing Maple CTF",
+			"link": "https://kevinliu.me/posts/maple-ctf-2022/",
+			"date": "Aug 28, 2022"
+		},
+		{
+			"title": "Line CTF - Cryptography Challenges",
+			"link": "https://kevinliu.me/posts/line-ctf/",
+			"date": "Mar 27, 2022"
+		},
+		{
+			"title": "CSAW CTF Finals",
+			"link": "https://kevinliu.me/posts/csaw-ctf/",
+			"date": "Nov 14, 2021"
+		},
+		{
+			"title": "Hack.lu CTF",
+			"link": "https://kevinliu.me/posts/hacklu-ctf/",
+			"date": "Oct 30, 2021"
+		},
+		{
+			"title": "An Introduction to Linear Cryptanalysis",
+			"link": "https://kevinliu.me/posts/linear-cryptanalysis/",
+			"date": "Sep 25, 2021"
+		},
+		{
+			"title": "RC4 – Fluhrer, Mantin, Shamir attack",
+			"link": "https://kevinliu.me/posts/rc4/",
+			"date": "Jul 1, 2021"
+		}
+	],
+	"about": "Hi! I'm Kevin. I currently study at the University of British Columbia. On the side, I'm working on a couple of projects like Vulnix and CTF Search.\n\nI'm interested in security, agentic reasoning, computing history, and building beautiful products. These days, I've been thinking about:\n\n- technology in the next 10-100 years\n- stories behind new theories and ideas\n- conviction and the ability to execute\n- engineering as a craft\n\nPreviously, I worked at startups ranging from Series A to Series E, researched static analysis techniques for malware, and built an AI-curated news feed at Twitter.\n\nFeel free to reach out anytime!"
+}

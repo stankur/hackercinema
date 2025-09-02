@@ -92,14 +92,14 @@ export default function ProfilePage({ params }: PageProps) {
 		console.log("Setting up intersection observer");
 		const observer = new IntersectionObserver(handleIntersection, {
 			root: null,
-			rootMargin: "100px",
-			threshold: 0.1,
+			rootMargin: "0px",
+			threshold: 0,
 		});
 
 		// Small delay to ensure DOM is fully rendered
 		setTimeout(() => {
 			// Observe all sections
-			[
+			const refs = [
 				headerRef,
 				aboutRef,
 				workingOnRef,
@@ -107,12 +107,28 @@ export default function ProfilePage({ params }: PageProps) {
 				projectsRef,
 				writingsRef,
 				contactsRef,
-			].forEach((ref) => {
+			];
+
+			refs.forEach((ref) => {
 				if (ref.current) {
-					console.log("Observing ref:", ref.current);
 					observer.observe(ref.current);
-				} else {
-					console.log("Ref is null:", ref);
+				}
+			});
+
+			// Immediately mark sections visible if already in viewport
+			refs.forEach((ref) => {
+				const el = ref.current;
+				if (!el) return;
+				const rect = el.getBoundingClientRect();
+				const isPartiallyVisible =
+					rect.top < window.innerHeight && rect.bottom > 0;
+				if (isPartiallyVisible) {
+					const sectionId = el.getAttribute("data-section");
+					if (sectionId) {
+						setVisibleSections(
+							(prev) => new Set([...prev, sectionId])
+						);
+					}
 				}
 			});
 		}, 100);
@@ -383,9 +399,54 @@ export default function ProfilePage({ params }: PageProps) {
 						</div>
 						{expandedSections.has("about") && (
 							<div className="space-y-6">
-								<p className="text-sm leading-relaxed text-foreground font-light pl-4 md:pl-5">
-									{about}
-								</p>
+								{about.split("\n\n").map((paragraph, index) => {
+									// Check if this paragraph is a list (starts with bullet points)
+									if (paragraph.includes("\n- ")) {
+										const lines = paragraph.split("\n");
+										const beforeList = lines.find(
+											(line) =>
+												!line.startsWith("- ") &&
+												line.trim() !== ""
+										);
+										const listItems = lines.filter((line) =>
+											line.startsWith("- ")
+										);
+
+										return (
+											<div
+												key={index}
+												className="pl-4 md:pl-5"
+											>
+												{beforeList && (
+													<p className="text-sm leading-relaxed text-foreground font-light mb-3">
+														{beforeList}
+													</p>
+												)}
+												<ul className="text-sm leading-relaxed text-foreground font-light space-y-1 list-disc list-inside">
+													{listItems.map(
+														(item, itemIndex) => (
+															<li key={itemIndex}>
+																{item.substring(
+																	2
+																)}
+															</li>
+														)
+													)}
+												</ul>
+											</div>
+										);
+									}
+
+									// Regular paragraph
+									return (
+										<p
+											key={index}
+											className="text-sm leading-relaxed text-foreground font-light pl-4 md:pl-5"
+										>
+											{paragraph}
+										</p>
+									);
+								})}
 							</div>
 						)}
 					</section>

@@ -7,11 +7,13 @@ import type { Builder } from "@/lib/types";
 interface LazyBuilderItemProps {
 	builder: Builder;
 	index: number;
+	autoExpand?: boolean;
 }
 
 export default function LazyBuilderItem({
 	builder,
 	index,
+	autoExpand = false,
 }: LazyBuilderItemProps) {
 	const [isVisible, setIsVisible] = useState(false);
 	const [shouldRender, setShouldRender] = useState(false);
@@ -58,7 +60,7 @@ export default function LazyBuilderItem({
 			`}
 		>
 			{shouldRender ? (
-				<BuilderItem builder={builder} />
+				<BuilderItem builder={builder} autoExpand={autoExpand} />
 			) : (
 				// Placeholder while not rendered
 				<div className="py-8">

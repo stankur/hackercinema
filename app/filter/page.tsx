@@ -3,6 +3,7 @@
 import { Shimmer } from "@/components/ui/shimmer";
 import { SimpleIcon } from "@/components/ui/SimpleIcon";
 import Navigation from "@/components/Navigation";
+import AvatarGlobe from "@/components/AvatarGlobe";
 
 export default function FilterPage() {
 	return (
@@ -20,6 +21,11 @@ export default function FilterPage() {
 						`,
 					}}
 				></div>
+
+				{/* Globe in document flow */}
+				<div className="relative z-10 mb-8">
+					<AvatarGlobe maxUsers={170} />
+				</div>
 
 				{/* Text content */}
 				<div className="relative z-10 pt-4 font-mono text-sm px-8 max-w-4xl mx-auto">

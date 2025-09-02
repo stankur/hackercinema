@@ -17,5 +17,14 @@
 	"Cruise": "#ff6b35",
 	"SAP": "#0057D2",
 	"HP": "#0096d6",
-	"Amazon Web Services (AWS)": "#ff9900"
+	"Amazon Web Services (AWS)": "#ff9900",
+	"OpenAI": "#10A37F",
+	"Google DeepMind": "#1A73E8",
+	"Orbstack": "#0EA5E9",
+	"Sentry (sentry.io)": "#6E56CF",
+	"X": "#ffffff",
+	"BMO Capital Markets": "#0056B8",
+	"The University of British Columbia": "#0099ff",
+	"Ntropy": "#6E56CF",
+	"Duowei Education": "#0EA5E9"
 }
