@@ -29,6 +29,7 @@ interface ClusterData {
 interface RepoWithOwner {
 	name: string;
 	description?: string | null;
+	generated_description?: string | null;
 	updated_at: string;
 	stars?: number;
 	language?: string | null;

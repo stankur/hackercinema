@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Star, ExternalLink, Images } from "lucide-react";
+import { Star, ExternalLink, Images, Sparkles, ZoomOut } from "lucide-react";
 import { getCardBackground, getLanguageDotColor } from "@/lib/language-colors";
 import type { GitHubRepo } from "@/lib/types";
 import { useGalleryModal } from "./GalleryModalProvider";
@@ -23,6 +23,8 @@ export default function RepoCard({
 }: RepoCardProps) {
 	const [cardBackground, setCardBackground] = useState<string>("");
 	const [languageDotColor, setLanguageDotColor] = useState<string>("");
+	const [showGeneratedDescription, setShowGeneratedDescription] =
+		useState<boolean>(false);
 	const { openGallery } = useGalleryModal();
 
 	// Load card background and language dot color
@@ -71,9 +73,13 @@ export default function RepoCard({
 					</span>
 				)}
 			</div>
-			{repo.description && (
+			{/* Description - toggles between original and generated */}
+			{(repo.description ||
+				(showGeneratedDescription && repo.generated_description)) && (
 				<div className="text-sm text-muted-foreground leading-relaxed">
-					{repo.description}
+					{showGeneratedDescription && repo.generated_description
+						? repo.generated_description
+						: repo.description}
 				</div>
 			)}
 
@@ -158,6 +164,27 @@ export default function RepoCard({
 							title="View gallery"
 						>
 							<Images size={20} />
+						</button>
+					)}
+					{repo.generated_description && (
+						<button
+							onClick={() =>
+								setShowGeneratedDescription(
+									!showGeneratedDescription
+								)
+							}
+							className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
+							title={
+								showGeneratedDescription
+									? "Show concise description"
+									: "Show AI-generated description"
+							}
+						>
+							{showGeneratedDescription ? (
+								<ZoomOut size={20} />
+							) : (
+								<Sparkles size={20} />
+							)}
 						</button>
 					)}
 				</div>
