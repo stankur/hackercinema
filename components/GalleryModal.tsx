@@ -148,7 +148,10 @@ export default function GalleryModal({
 	const currentImage = validImages[validCurrentIndex];
 
 	const modalContent = (
-		<div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-md">
+		<div
+			className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-md"
+			onClick={onClose}
+		>
 			{/* Close button */}
 			<button
 				onClick={onClose}
@@ -162,14 +165,20 @@ export default function GalleryModal({
 			{validImages.length > 1 && (
 				<>
 					<button
-						onClick={goToPrevious}
+						onClick={(e) => {
+							e.stopPropagation();
+							goToPrevious();
+						}}
 						className="absolute left-4 z-10 p-2 text-white hover:text-gray-300 transition-colors"
 						aria-label="Previous image"
 					>
 						<ChevronLeft size={32} />
 					</button>
 					<button
-						onClick={goToNext}
+						onClick={(e) => {
+							e.stopPropagation();
+							goToNext();
+						}}
 						className="absolute right-4 z-10 p-2 text-white hover:text-gray-300 transition-colors"
 						aria-label="Next image"
 					>
@@ -179,7 +188,10 @@ export default function GalleryModal({
 			)}
 
 			{/* Image container */}
-			<div className="flex items-center justify-center w-full h-full p-8 md:p-16">
+			<div
+				className="flex items-center justify-center w-full h-full p-8 md:p-16"
+				onClick={(e) => e.stopPropagation()}
+			>
 				{/* Show loading skeleton when image is loading or not loaded yet */}
 				{(!loadedImages.has(validCurrentIndex) ||
 					loadingImages.has(validCurrentIndex)) && (
@@ -205,17 +217,13 @@ export default function GalleryModal({
 
 			{/* Image counter */}
 			{validImages.length > 1 && (
-				<div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm">
+				<div
+					className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm"
+					onClick={(e) => e.stopPropagation()}
+				>
 					{validCurrentIndex + 1} / {validImages.length}
 				</div>
 			)}
-
-			{/* Background click to close */}
-			<div
-				className="absolute inset-0 -z-10"
-				onClick={onClose}
-				aria-label="Close gallery"
-			/>
 		</div>
 	);
 

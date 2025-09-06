@@ -12098,6 +12098,1097 @@
 		]
 	},
 	{
+		"username": "jessekorzan",
+		"theme": "experimenting with AI agent workflows and web tools",
+		"profile": {
+			"login": "jessekorzan",
+			"avatar_url": "https://avatars.githubusercontent.com/u/1870759?v=4",
+			"bio": "Product Design @ Klue.       \r\nI don't like reggae. I love it.",
+			"location": "Kelowna, BC, CANADA",
+			"blog": "http://www.emptycan.com"
+		},
+		"repos": [
+			{
+				"name": "Agent-Oasis",
+				"description": "Starter kit for experimenting with AI agentic workflows in a chatbot UI.",
+				"updated_at": "2025-03-18T15:58:15Z",
+				"stars": 2,
+				"language": "JavaScript",
+				"topics": [
+					"agent",
+					"ai",
+					"chatbot",
+					"js",
+					"prototype",
+					"starter-kit",
+					"ux"
+				],
+				"link": "https://agent-oasis.replit.app/",
+				"gallery": [],
+				"generated_description": "Agent Oasis is a chatbot interface that enables AI agentic workflows with web search capabilities for text, image, and video content. It uses a Vite-based frontend with client-side JavaScript for UI interactions and an Express.js backend with OpenAI's GPT-4o-mini model. The system processes user queries through function calls to external APIs and web scraping with Puppeteer, returning responses via server-sent events."
+			},
+			{
+				"name": "duelin-agents",
+				"description": "A machine to pit two n8n AI Agents against each other... Bot Battle.",
+				"updated_at": "2025-06-17T15:21:49Z",
+				"stars": 4,
+				"language": "JavaScript",
+				"topics": [
+					"agents",
+					"artificial-intelligence",
+					"demo-app",
+					"javascript",
+					"n8n",
+					"template",
+					"webhooks"
+				],
+				"link": "https://duelinagent.com",
+				"gallery": [],
+				"generated_description": "Duelin' Agents is a web application that enables two AI agents to communicate through a split-screen chat interface. It uses vanilla JavaScript for the frontend with modular components, CSS for responsive styling, and localStorage for configuration persistence. The application connects to external AI services via webhooks configured through n8n workflows, implementing turn-based conversation flow where each agent's response becomes the input for the next agent."
+			},
+			{
+				"name": "Steve-Chat",
+				"description": "Chat UI front-end, ideal for hooking up to n8n. Just need a webhook and/or optional webhook for images.",
+				"updated_at": "2025-07-07T16:25:32Z",
+				"stars": 1,
+				"language": "JavaScript",
+				"topics": [
+					"chatbot",
+					"chatgpt",
+					"html",
+					"js",
+					"n8n",
+					"template"
+				],
+				"link": "https://agent-jesse.netlify.app/?p=who is jesse korzan",
+				"gallery": [],
+				"generated_description": "This project is a web-based chat interface that connects to AI agents through webhook endpoints. It uses vanilla JavaScript for functionality, HTML and CSS for structure and styling, and leverages browser localStorage for session management. The interface handles real-time message streaming, image uploads via base64 encoding, and supports slash commands and URL parameters for user interaction."
+			},
+			{
+				"name": "coder-playground",
+				"description": "An AI-powered code editor designed for learning web development.",
+				"updated_at": "2025-06-18T22:04:12Z",
+				"stars": 4,
+				"language": "TypeScript",
+				"topics": [
+					"ai",
+					"art",
+					"educational",
+					"learn-to-code",
+					"open-source"
+				],
+				"link": "https://trycoderai.com",
+				"gallery": [],
+				"generated_description": "Coder is a web-based code editor that provides HTML, CSS, and JavaScript editing with real-time preview functionality. It uses React and TypeScript for the frontend interface, Express.js and Node.js for the backend server, and WebSocket connections to synchronize code updates across multiple client sessions. The system stores code in browser sessions and generates preview pages by combining user code with WebSocket reload capabilities."
+			},
+			{
+				"name": "tabs-2-md",
+				"description": "save all tabs to a markdown file with LLM summary, tagging and grouping. Save to Obsidian folder!",
+				"updated_at": "2025-09-01T19:49:18Z",
+				"stars": 0,
+				"language": "JavaScript",
+				"topics": [
+					"ai",
+					"chrome",
+					"chrome-extensions",
+					"extension",
+					"management",
+					"tab"
+				],
+				"link": null,
+				"gallery": [],
+				"generated_description": "This Chrome extension captures all open browser tabs, sends their titles and URLs to the OpenAI GPT-4o mini API to generate a summary and categorize the tabs, and presents a preview in a side panel before saving the output as a Markdown file. It uses a Material Design interface and requires a user-provided API key for operation."
+			},
+			{
+				"name": "voice-visualizer",
+				"description": "Simple CSS visualizer for voice UI ",
+				"updated_at": "2025-02-07T19:40:18Z",
+				"stars": 21,
+				"language": "HTML",
+				"topics": ["css", "css-animations", "grid", "sass", "voice"],
+				"link": "https://voice-visualizer-002.netlify.com/",
+				"gallery": [
+					{
+						"alt": "demo",
+						"url": "https://github.com/jessekorzan/voice-visualizer/blob/master/example.gif?raw=true",
+						"original_url": "https://github.com/jessekorzan/voice-visualizer/blob/master/example.gif"
+					}
+				],
+				"generated_description": "This project is a voice UI visualizer implemented using pure CSS. It utilizes CSS grid layouts and keyframe animations to create dynamic visual representations of voice interactions. The visualizer displays waveform patterns that respond to audio input, providing a visual feedback mechanism for voice-enabled interfaces without requiring JavaScript."
+			},
+			{
+				"name": "masonry-css-js",
+				"description": "CSS masonry layout, only needs JS to re-order an array, no DOM manipulation",
+				"updated_at": "2025-06-20T16:58:31Z",
+				"stars": 71,
+				"language": "CSS",
+				"topics": ["css", "masonry", "masonry-layout", "react"],
+				"link": "https://masonry-css-js.netlify.com/",
+				"gallery": [
+					{
+						"alt": "problem image",
+						"url": "https://github.com/jessekorzan/masonry-css-js/raw/master/public/problem-css-masonry.png?raw=true \"the problem\"",
+						"original_url": "https://github.com/jessekorzan/masonry-css-js/blob/master/public/problem-css-masonry.png \"the problem\""
+					}
+				],
+				"generated_description": "This project implements a masonry-style layout using CSS column-count to arrange content cards in columns with a left-to-right reading flow. It uses React to fetch and reorder an array of data before rendering, ensuring the visual order matches the desired content sequence without relying on JavaScript for the actual layout. The solution involves a simple algorithm that redistributes the array elements based on the column count, then applies minimal CSS for the final presentation."
+			},
+			{
+				"name": "poc-kdcc-strapi",
+				"description": "POC for the KDCC backend stuff",
+				"updated_at": "2025-08-05T02:18:14Z",
+				"stars": 0,
+				"link": null,
+				"gallery": [],
+				"generated_description": "This project processes natural language queries to retrieve information from a database. It uses a Python backend with the LangChain framework to structure the data handling and a large language model to interpret user intent. The system converts queries into SQL statements, executes them against a PostgreSQL database, and returns the results."
+			},
+			{
+				"name": "klue-intro-002",
+				"description": "https://klue-intro-002.netlify.app/",
+				"updated_at": "2025-06-12T21:16:13Z",
+				"stars": 0,
+				"language": "HTML",
+				"link": null,
+				"gallery": [],
+				"generated_description": "This project is a web application built with React and TypeScript that displays data fetched from a JSON file. It uses CSS modules for styling and is deployed on Netlify."
+			},
+			{
+				"name": "engage-composer-clone",
+				"description": null,
+				"updated_at": "2025-04-10T13:38:30Z",
+				"stars": 0,
+				"language": "TypeScript",
+				"link": null,
+				"gallery": [],
+				"generated_description": "This project is a web application built with React and TypeScript using Vite as the build tool, featuring an email composition interface with contact management panels, routing capabilities through React Router, and styling handled by Tailwind CSS with shadcn-ui components."
+			}
+		],
+		"similar_repos": [
+			{
+				"username": "SamuelmdLow",
+				"repo_name": "KnowledgeGrapher"
+			},
+			{
+				"username": "garrethlee",
+				"repo_name": "gcmt"
+			},
+			{
+				"username": "stankur",
+				"repo_name": "textcinema"
+			},
+			{
+				"username": "stankur",
+				"repo_name": "prxmpt"
+			},
+			{
+				"username": "stankur",
+				"repo_name": "muntah-berak-mencret"
+			},
+			{
+				"username": "Kiroves",
+				"repo_name": "BThere"
+			},
+			{
+				"username": "FrankWhoee",
+				"repo_name": "Aedifex"
+			},
+			{
+				"username": "Anmol-Ghadia",
+				"repo_name": "note-that-down"
+			},
+			{
+				"username": "ElianBelot",
+				"repo_name": "web-voyager"
+			},
+			{
+				"username": "abdurj",
+				"repo_name": "np-gpt"
+			},
+			{
+				"username": "Vaten0x",
+				"repo_name": "LectureSurfers"
+			},
+			{
+				"username": "aldenluthfi",
+				"repo_name": "situsluthfi"
+			},
+			{
+				"username": "albertkim",
+				"repo_name": "bun-llm-cli"
+			},
+			{
+				"username": "armintalaie",
+				"repo_name": "orbit"
+			},
+			{
+				"username": "austinlparker",
+				"repo_name": "smolval"
+			},
+			{
+				"username": "PepperLola",
+				"repo_name": "img-generator"
+			},
+			{
+				"username": "chasefleming",
+				"repo_name": "elem-go"
+			},
+			{
+				"username": "kickscondor",
+				"repo_name": "fraidycat"
+			},
+			{
+				"username": "mahalisunil1",
+				"repo_name": "portfolio"
+			},
+			{
+				"username": "mvllow",
+				"repo_name": "tailwindcss-safe-area"
+			},
+			{
+				"username": "mvllow",
+				"repo_name": "next-pwa-template"
+			},
+			{
+				"username": "oezingle",
+				"repo_name": "LuaX"
+			},
+			{
+				"username": "ochen1",
+				"repo_name": "insanely-fast-whisper-cli"
+			},
+			{
+				"username": "trevorblades",
+				"repo_name": "alchemy"
+			},
+			{
+				"username": "wilbowma",
+				"repo_name": "llm-lang"
+			},
+			{
+				"username": "yhaooo11",
+				"repo_name": "ytpv"
+			},
+			{
+				"username": "Aashu-Dubey",
+				"repo_name": "React-Native-UI-Templates"
+			},
+			{
+				"username": "Aashu-Dubey",
+				"repo_name": "Ionic-UI-Templates"
+			},
+			{
+				"username": "Ezzhingy",
+				"repo_name": "personal-website"
+			},
+			{
+				"username": "JipFr",
+				"repo_name": "space2"
+			},
+			{
+				"username": "PrincewillIroka",
+				"repo_name": "My-Personal-Portfolio"
+			},
+			{
+				"username": "PrincewillIroka",
+				"repo_name": "Free-Courses-Frontend"
+			},
+			{
+				"username": "Tgcohce",
+				"repo_name": "dal-defai"
+			},
+			{
+				"username": "Nathn",
+				"repo_name": "MasterQuizz"
+			},
+			{
+				"username": "Nathn",
+				"repo_name": "GeoDraw"
+			},
+			{
+				"username": "Nathn",
+				"repo_name": "FootX"
+			},
+			{
+				"username": "Nathn",
+				"repo_name": "Squakr"
+			},
+			{
+				"username": "Vicente015",
+				"repo_name": "garden"
+			},
+			{
+				"username": "Tidyrice",
+				"repo_name": "TidyBJ"
+			},
+			{
+				"username": "asiff00",
+				"repo_name": "On-Device-Speech-to-Speech-Conversational-AI"
+			},
+			{
+				"username": "arnvgh",
+				"repo_name": "newtab"
+			},
+			{
+				"username": "arnvgh",
+				"repo_name": "links"
+			},
+			{
+				"username": "calvbore",
+				"repo_name": "noir-starter-kit"
+			},
+			{
+				"username": "calvbore",
+				"repo_name": "zk-hello-world-noir"
+			},
+			{
+				"username": "gagan3012",
+				"repo_name": "ltr"
+			},
+			{
+				"username": "erwin-lovecraft",
+				"repo_name": "pistol"
+			},
+			{
+				"username": "gshklovs",
+				"repo_name": "BerkeleyAIHacks"
+			},
+			{
+				"username": "elibroftw",
+				"repo_name": "modern-desktop-app-template"
+			},
+			{
+				"username": "elibroftw",
+				"repo_name": "vscode-justfile"
+			},
+			{
+				"username": "iHildy",
+				"repo_name": "jules-task-queue"
+			},
+			{
+				"username": "irisxu02",
+				"repo_name": "palette-generator-experiment"
+			},
+			{
+				"username": "irisxu02",
+				"repo_name": "rubik"
+			},
+			{
+				"username": "luckyjsx",
+				"repo_name": "StudyNotion"
+			},
+			{
+				"username": "mathewbushuru",
+				"repo_name": "todoist-monorepo"
+			},
+			{
+				"username": "meleongg",
+				"repo_name": "flashcard-frontend"
+			},
+			{
+				"username": "meleongg",
+				"repo_name": "flashcard-backend"
+			},
+			{
+				"username": "meleongg",
+				"repo_name": "holistic-health-tracker"
+			},
+			{
+				"username": "naijwu",
+				"repo_name": "open-gavel-server"
+			},
+			{
+				"username": "okarthikb",
+				"repo_name": "attention-visualizer"
+			},
+			{
+				"username": "merouanezouaid",
+				"repo_name": "streamsafe"
+			},
+			{
+				"username": "snlimadev",
+				"repo_name": "api-battleship-online"
+			},
+			{
+				"username": "snlimadev",
+				"repo_name": "api-rock-paper-scissors-online"
+			},
+			{
+				"username": "wiesenthal",
+				"repo_name": "Dungeons-And-Large-Language-Models"
+			},
+			{
+				"username": "wiesenthal",
+				"repo_name": "SubjectiveSort"
+			},
+			{
+				"username": "tika",
+				"repo_name": "jabber"
+			},
+			{
+				"username": "wiesenthal",
+				"repo_name": "AI-Powered-Workflow-Engine"
+			},
+			{
+				"username": "zahash",
+				"repo_name": "quarantine"
+			},
+			{
+				"username": "AidenKerr",
+				"repo_name": "genetic-v2"
+			},
+			{
+				"username": "AidenKerr",
+				"repo_name": "slugs"
+			},
+			{
+				"username": "AidenKerr",
+				"repo_name": "WebWork-Green-in-PrairieLearn"
+			},
+			{
+				"username": "AdenC123",
+				"repo_name": "OurBoARd"
+			},
+			{
+				"username": "DemoVersion",
+				"repo_name": "cf-llm-finetune"
+			},
+			{
+				"username": "DemoVersion",
+				"repo_name": "chat-completion-inspector"
+			},
+			{
+				"username": "omentic",
+				"repo_name": "aoc"
+			},
+			{
+				"username": "fegicochen",
+				"repo_name": "UniMatch"
+			},
+			{
+				"username": "chasefleming",
+				"repo_name": "fcl-next-scaffold"
+			},
+			{
+				"username": "trevorblades",
+				"repo_name": "eslint-config"
+			},
+			{
+				"username": "Ezzhingy",
+				"repo_name": "thank-you"
+			},
+			{
+				"username": "AdnaneKhan",
+				"repo_name": "Cacheract"
+			},
+			{
+				"username": "Nathn",
+				"repo_name": "ChessX"
+			},
+			{
+				"username": "agrawal-d",
+				"repo_name": "cph-submit"
+			},
+			{
+				"username": "gagan3012",
+				"repo_name": "llama-tldr"
+			},
+			{
+				"username": "mathewbushuru",
+				"repo_name": "design-system"
+			},
+			{
+				"username": "naijwu",
+				"repo_name": "open-gavel"
+			},
+			{
+				"username": "devon-mar",
+				"repo_name": "regexupdater"
+			},
+			{
+				"username": "KevinL10",
+				"repo_name": "bumblebee"
+			},
+			{
+				"username": "jo3-l",
+				"repo_name": "yag-template-lsp"
+			},
+			{
+				"username": "kevinmingtarja",
+				"repo_name": "golox"
+			},
+			{
+				"username": "cosmo3769",
+				"repo_name": "Quantized-LLMs"
+			}
+		]
+	},
+	{
+		"username": "aastha12",
+		"theme": "applied AI for practical problem-solving",
+		"profile": {
+			"login": "aastha12",
+			"avatar_url": "https://avatars.githubusercontent.com/u/23125050?v=4",
+			"bio": null,
+			"location": null,
+			"blog": ""
+		},
+		"repos": [
+			{
+				"name": "devops_gpt",
+				"description": null,
+				"updated_at": "2025-07-04T04:25:57Z",
+				"stars": 0,
+				"language": "Python",
+				"link": null,
+				"gallery": [
+					{
+						"alt": "Alt text",
+						"url": "https://github.com/aastha12/devops_gpt/raw/main/images/ss_1.png",
+						"original_url": "images/ss_1.png"
+					},
+					{
+						"alt": "Alt text",
+						"url": "https://github.com/aastha12/devops_gpt/raw/main/images/ss_2.png",
+						"original_url": "images/ss_2.png"
+					}
+				],
+				"generated_description": "This project is a Streamlit web application that analyzes IT incident logs. It uses MongoDB Atlas for retrieving similar historical incidents, HuggingFace embeddings for semantic search, and Google's Gemini LLM through the BAML framework to generate root cause analysis and troubleshooting steps. The system includes an LLM-as-judge evaluation component to assess response quality and runs in a Docker container with health check monitoring."
+			},
+			{
+				"name": "corrective_rag",
+				"description": null,
+				"updated_at": "2025-04-21T04:42:38Z",
+				"stars": 1,
+				"language": "Jupyter Notebook",
+				"link": null,
+				"gallery": [
+					{
+						"alt": "alt text",
+						"url": "https://github.com/aastha12/corrective_rag/raw/master/crag-diagram.png",
+						"original_url": "crag-diagram.png"
+					}
+				],
+				"generated_description": "This project implements a retrieval-augmented generation system using Qdrant as a vector database for storing and querying embeddings. It utilizes FastEmbed for generating embeddings and integrates with the LlamaIndex framework to structure data pipelines. The system incorporates multiple LLM providers through Ollama and Google GenAI and includes DuckDuckGo for web search capabilities to enhance data retrieval."
+			},
+			{
+				"name": "deepseek_data_analyst",
+				"description": null,
+				"updated_at": "2025-01-30T22:45:07Z",
+				"stars": 0,
+				"language": "Python",
+				"link": null,
+				"gallery": [],
+				"generated_description": "This project uses Python to process data with pandas, scikit-learn, and visualization libraries including matplotlib, seaborn, and plotly. It integrates external APIs through the groq and phidata packages while managing environment variables with python-dotenv. The application runs on Python version 3.11.5."
+			},
+			{
+				"name": "financial_ai_agent",
+				"description": null,
+				"updated_at": "2025-01-14T18:25:07Z",
+				"stars": 0,
+				"language": "Python",
+				"link": null,
+				"gallery": [
+					{
+						"alt": "output",
+						"url": "https://github.com/aastha12/financial_ai_agent/raw/master/images/output.png",
+						"original_url": "images/output.png"
+					}
+				],
+				"generated_description": "This project uses FastAPI and Uvicorn to build a web service that integrates data processing libraries like yfinance for financial data and duckduckgo-search for web queries, along with document handling through python-docx and environment management via python-dotenv, while utilizing Groq for API interactions and Phidata for data workflows."
+			},
+			{
+				"name": "ats_parser",
+				"description": null,
+				"updated_at": "2024-12-22T06:31:45Z",
+				"stars": 0,
+				"language": "Python",
+				"link": null,
+				"gallery": [
+					{
+						"alt": "first_page",
+						"url": "https://github.com/aastha12/ats_parser/raw/main/images/first_page.png",
+						"original_url": "images/first_page.png"
+					},
+					{
+						"alt": "second_page",
+						"url": "https://github.com/aastha12/ats_parser/raw/main/images/second_page.png",
+						"original_url": "images/second_page.png"
+					}
+				],
+				"generated_description": "This project is a web application built with Streamlit that analyzes resumes against job descriptions. It uses PyPDF2 to extract text from uploaded PDF resumes and the Google Generative AI API to process the content. The application compares the resume text with the provided job description, calculates a match percentage, identifies missing keywords, and generates a profile summary."
+			},
+			{
+				"name": "query_pdf_rag",
+				"description": null,
+				"updated_at": "2024-12-17T07:48:55Z",
+				"stars": 0,
+				"language": "Jupyter Notebook",
+				"link": null,
+				"gallery": [],
+				"generated_description": "This project implements a basic Retrieval-Augmented Generation (RAG) application that queries information from PDF documents. It uses the LlamaIndex framework for document indexing and retrieval, OpenAI's language models for generating responses, PyPDF for PDF text extraction, and python-dotenv for environment variable management. The system processes PDF files to create a searchable knowledge base and uses natural language queries to retrieve and synthesize relevant information."
+			},
+			{
+				"name": "bank-marketing-campaign",
+				"description": null,
+				"updated_at": "2024-09-11T05:52:17Z",
+				"stars": 0,
+				"language": "Jupyter Notebook",
+				"link": null,
+				"gallery": [],
+				"generated_description": "This project analyzes datasets using machine learning pipelines that incorporate data processing with pandas, model training with scikit-learn, TensorFlow, and CatBoost, hyperparameter optimization with scikit-optimize, handling of imbalanced data with imbalanced-learn, experiment tracking with MLflow, and visualization with matplotlib and seaborn."
+			},
+			{
+				"name": "superstore-customer-segmentation",
+				"description": null,
+				"updated_at": "2024-08-30T06:20:04Z",
+				"stars": 0,
+				"language": "Jupyter Notebook",
+				"link": null,
+				"gallery": [],
+				"generated_description": "This project segments customers of a superstore using clustering techniques. It utilizes pandas for data manipulation, scikit-learn for machine learning algorithms, and feature-engine for feature engineering to group customers based on their purchasing behavior."
+			},
+			{
+				"name": "Machine-Learning",
+				"description": "This repository contains the explanation and implementation of the common machine learning algorithms.",
+				"updated_at": "2024-07-02T00:01:59Z",
+				"stars": 0,
+				"language": "Jupyter Notebook",
+				"link": null,
+				"gallery": [],
+				"generated_description": "This project provides explanations and implementations of common machine learning algorithms. It covers fundamental concepts and demonstrates their practical application through code."
+			},
+			{
+				"name": "Loan_Prediction",
+				"description": "This repository is part of Assignment 3 of the Dphi ML Bootcamp. The objective was to is to build an ML model and web application that the bank can use to classify if a user can be granted a loan or not.",
+				"updated_at": "2024-04-07T05:45:23Z",
+				"stars": 0,
+				"language": "Jupyter Notebook",
+				"link": null,
+				"gallery": [],
+				"generated_description": "This project is a machine learning web application that classifies loan applicants as approved or rejected. It uses PyCaret for model training and prediction, Streamlit for the web interface, and is deployed via Docker on Heroku. Users can input applicant details individually or upload a CSV file for batch processing, and the application returns predictions along with an option to download the results."
+			}
+		],
+		"similar_repos": [
+			{
+				"username": "ElianBelot",
+				"repo_name": "captcha-breaker"
+			},
+			{
+				"username": "KevinL10",
+				"repo_name": "bumblebee"
+			},
+			{
+				"username": "abdurj",
+				"repo_name": "np-gpt"
+			},
+			{
+				"username": "theCasm",
+				"repo_name": "SMLC"
+			},
+			{
+				"username": "recordcrash",
+				"repo_name": "homestuck-dataset"
+			},
+			{
+				"username": "Beta-test-initiation",
+				"repo_name": "Platepal"
+			},
+			{
+				"username": "Jerr-z",
+				"repo_name": "scimon"
+			},
+			{
+				"username": "Mark123M",
+				"repo_name": "autotune-classifier"
+			},
+			{
+				"username": "Moavia-Hassan",
+				"repo_name": "Energy_Consumption_Forecasting"
+			},
+			{
+				"username": "asiff00",
+				"repo_name": "On-Device-Speech-to-Speech-Conversational-AI"
+			},
+			{
+				"username": "asiff00",
+				"repo_name": "Training-TTS"
+			},
+			{
+				"username": "asiff00",
+				"repo_name": "Bangla-Llama"
+			},
+			{
+				"username": "colliand",
+				"repo_name": "explore-exoplanets"
+			},
+			{
+				"username": "gagan3012",
+				"repo_name": "llama-tldr"
+			},
+			{
+				"username": "gagan3012",
+				"repo_name": "ltr"
+			},
+			{
+				"username": "cosmo3769",
+				"repo_name": "Quantized-LLMs"
+			},
+			{
+				"username": "gshklovs",
+				"repo_name": "BerkeleyAIHacks"
+			},
+			{
+				"username": "irisxu02",
+				"repo_name": "palette-generator-experiment"
+			},
+			{
+				"username": "meleongg",
+				"repo_name": "flashcard-backend"
+			},
+			{
+				"username": "okarthikb",
+				"repo_name": "attention-visualizer"
+			},
+			{
+				"username": "wiesenthal",
+				"repo_name": "AI-Powered-Workflow-Engine"
+			},
+			{
+				"username": "yhaooo11",
+				"repo_name": "voter"
+			},
+			{
+				"username": "DemoVersion",
+				"repo_name": "chat-completion-inspector"
+			},
+			{
+				"username": "DemoVersion",
+				"repo_name": "cf-llm-finetune"
+			},
+			{
+				"username": "jessekorzan",
+				"repo_name": "duelin-agents"
+			},
+			{
+				"username": "garrethlee",
+				"repo_name": "research-paper-parser"
+			},
+			{
+				"username": "ElianBelot",
+				"repo_name": "web-voyager"
+			},
+			{
+				"username": "evansemet",
+				"repo_name": "Jane-Street-Solutions"
+			},
+			{
+				"username": "jessekorzan",
+				"repo_name": "Agent-Oasis"
+			},
+			{
+				"username": "abdurj",
+				"repo_name": "Local-Planner-Visualization-Project"
+			},
+			{
+				"username": "gagan3012",
+				"repo_name": "PolyDeDupe"
+			},
+			{
+				"username": "colliand",
+				"repo_name": "right-to-reproducible-execution"
+			},
+			{
+				"username": "wiesenthal",
+				"repo_name": "Dungeons-And-Large-Language-Models"
+			}
+		]
+	},
+	{
+		"username": "DemoVersion",
+		"theme": "democratizing AI development",
+		"profile": {
+			"login": "DemoVersion",
+			"avatar_url": "https://avatars.githubusercontent.com/u/8710948?v=4",
+			"bio": "Machine Learning Engineer, Programmer, Blogger, Podcaster #NLProc #AI",
+			"location": "Amsterdam, Netherlands",
+			"blog": "DemoVersion.dev"
+		},
+		"repos": [
+			{
+				"name": "chat-completion-inspector",
+				"description": "Inspect what request is being made to LLM endpoints under the hood",
+				"updated_at": "2025-08-26T18:30:07Z",
+				"stars": 0,
+				"language": "Python",
+				"link": null,
+				"gallery": [],
+				"generated_description": "Chat Completion Inspector is a tool that logs requests made to large language model endpoints by running an API server that intercepts and records interactions. It uses FastAPI and Uvicorn for the server, LangChain and LangGraph for agent workflows, and leverages uv for dependency management. The tool writes the intercepted request data to JSON files for inspection."
+			},
+			{
+				"name": "cf-llm-finetune",
+				"description": "Fine-tuning LLMs for Code Generation",
+				"updated_at": "2025-07-28T09:33:40Z",
+				"stars": 5,
+				"language": "Python",
+				"link": null,
+				"gallery": [],
+				"generated_description": "This project converts C++ ICPC solutions from Codeforces into Python code by generating a synthetic parallel dataset using GPT-4.1, then fine-tunes a LLaMA 3.2 3B model using the Axolotl framework with LoRA configuration. The system verifies translation correctness by running generated Python code against sample inputs and uses tools like Transformers, DeepSpeed, and flash-attention for training and inference."
+			},
+			{
+				"name": "ubuntu-sandbox",
+				"description": "Ubuntu sandbox for having an isolated enviroment",
+				"updated_at": "2025-08-07T12:24:47Z",
+				"stars": 0,
+				"language": "Dockerfile",
+				"link": null,
+				"gallery": [],
+				"generated_description": "This project creates a Docker container based on Ubuntu 20.04 that provides a development environment with Node.js 18, SSH server access, and the Claude CLI tool. It uses Docker Compose to build and manage the container, which includes user setup with sudo privileges, SSH configuration for secure remote access, and volume mounting for persistent data storage. The container exposes SSH on port 2222 for external connections."
+			}
+		],
+		"similar_repos": [
+			{
+				"username": "garrethlee",
+				"repo_name": "gcmt"
+			},
+			{
+				"username": "stankur",
+				"repo_name": "prxmpt"
+			},
+			{
+				"username": "garrethlee",
+				"repo_name": "research-paper-parser"
+			},
+			{
+				"username": "stankur",
+				"repo_name": "muntah-berak-mencret"
+			},
+			{
+				"username": "ADSteele916",
+				"repo_name": "rand-functors"
+			},
+			{
+				"username": "ElianBelot",
+				"repo_name": "web-voyager"
+			},
+			{
+				"username": "ElianBelot",
+				"repo_name": "captcha-breaker"
+			},
+			{
+				"username": "KevinL10",
+				"repo_name": "bumblebee"
+			},
+			{
+				"username": "abdurj",
+				"repo_name": "np-gpt"
+			},
+			{
+				"username": "albertkim",
+				"repo_name": "bun-llm-cli"
+			},
+			{
+				"username": "austinlparker",
+				"repo_name": "smolval"
+			},
+			{
+				"username": "kevinmingtarja",
+				"repo_name": "golox"
+			},
+			{
+				"username": "grhkm21",
+				"repo_name": "advent-of-code-2023"
+			},
+			{
+				"username": "mvllow",
+				"repo_name": "lilvim"
+			},
+			{
+				"username": "ochen1",
+				"repo_name": "insanely-fast-whisper-cli"
+			},
+			{
+				"username": "theCasm",
+				"repo_name": "syscalls"
+			},
+			{
+				"username": "trevorblades",
+				"repo_name": "alchemy"
+			},
+			{
+				"username": "thep2p",
+				"repo_name": "go-eth-localnet"
+			},
+			{
+				"username": "wilbowma",
+				"repo_name": "llm-lang"
+			},
+			{
+				"username": "Jerr-z",
+				"repo_name": "scimon"
+			},
+			{
+				"username": "AdnaneKhan",
+				"repo_name": "gato-x"
+			},
+			{
+				"username": "AdnaneKhan",
+				"repo_name": "ActionsCacheBlasting"
+			},
+			{
+				"username": "Tgcohce",
+				"repo_name": "dal-defai"
+			},
+			{
+				"username": "WorldofKerry",
+				"repo_name": "ToHDL"
+			},
+			{
+				"username": "WorldofKerry",
+				"repo_name": "Python2Verilog"
+			},
+			{
+				"username": "asiff00",
+				"repo_name": "On-Device-Speech-to-Speech-Conversational-AI"
+			},
+			{
+				"username": "asiff00",
+				"repo_name": "Training-TTS"
+			},
+			{
+				"username": "asiff00",
+				"repo_name": "Bangla-Llama"
+			},
+			{
+				"username": "gagan3012",
+				"repo_name": "ltr"
+			},
+			{
+				"username": "gagan3012",
+				"repo_name": "llama-tldr"
+			},
+			{
+				"username": "cosmo3769",
+				"repo_name": "Quantized-LLMs"
+			},
+			{
+				"username": "gshklovs",
+				"repo_name": "BerkeleyAIHacks"
+			},
+			{
+				"username": "gagan3012",
+				"repo_name": "PolyDeDupe"
+			},
+			{
+				"username": "elibroftw",
+				"repo_name": "devcontainers"
+			},
+			{
+				"username": "joshvocal",
+				"repo_name": "dotfiles"
+			},
+			{
+				"username": "meleongg",
+				"repo_name": "flashcard-backend"
+			},
+			{
+				"username": "meleongg",
+				"repo_name": "flashcard-frontend"
+			},
+			{
+				"username": "okarthikb",
+				"repo_name": "attention-visualizer"
+			},
+			{
+				"username": "saucesteals",
+				"repo_name": "utlsproxy"
+			},
+			{
+				"username": "merouanezouaid",
+				"repo_name": "pwp"
+			},
+			{
+				"username": "tika",
+				"repo_name": "jabber"
+			},
+			{
+				"username": "wiesenthal",
+				"repo_name": "Dungeons-And-Large-Language-Models"
+			},
+			{
+				"username": "wiesenthal",
+				"repo_name": "AI-Powered-Workflow-Engine"
+			},
+			{
+				"username": "zahash",
+				"repo_name": "quarantine"
+			},
+			{
+				"username": "zahash",
+				"repo_name": "sandboxrs"
+			},
+			{
+				"username": "jessekorzan",
+				"repo_name": "Agent-Oasis"
+			},
+			{
+				"username": "jessekorzan",
+				"repo_name": "duelin-agents"
+			},
+			{
+				"username": "jessekorzan",
+				"repo_name": "Steve-Chat"
+			},
+			{
+				"username": "jessekorzan",
+				"repo_name": "tabs-2-md"
+			},
+			{
+				"username": "aastha12",
+				"repo_name": "Machine-Learning"
+			},
+			{
+				"username": "jessekorzan",
+				"repo_name": "coder-playground"
+			},
+			{
+				"username": "Vicente015",
+				"repo_name": "dotfiles"
+			},
+			{
+				"username": "agrawal-d",
+				"repo_name": "cph-submit"
+			},
+			{
+				"username": "liam-ilan",
+				"repo_name": "crumb"
+			},
+			{
+				"username": "Lydxn",
+				"repo_name": "oj"
+			},
+			{
+				"username": "aldenluthfi",
+				"repo_name": "voronoi"
+			},
+			{
+				"username": "jo3-l",
+				"repo_name": "yag-template-lsp"
+			},
+			{
+				"username": "rctcwyvrn",
+				"repo_name": "rlox"
+			},
+			{
+				"username": "ethanthoma",
+				"repo_name": "effect"
+			},
+			{
+				"username": "elibroftw",
+				"repo_name": "modern-desktop-app-template"
+			}
+		]
+	},
+	{
 		"username": "nvdtf",
 		"theme": "building on the Flow blockchain",
 		"profile": {
