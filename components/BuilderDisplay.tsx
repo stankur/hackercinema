@@ -29,15 +29,6 @@ export default function BuilderDisplay({
 	);
 	const [isFlashing, setIsFlashing] = useState(false);
 
-	// Random 25% chance to show Builder badge based on username (deterministic)
-	const isBuilder = () => {
-		const hash = builder.username.split("").reduce((a, b) => {
-			a = (a << 5) - a + b.charCodeAt(0);
-			return a & a;
-		}, 0);
-		return Math.abs(hash) % 100 < 25;
-	};
-
 	const handleCardClick = () => {
 		// Trigger flash effect
 		setIsFlashing(true);
@@ -89,7 +80,7 @@ export default function BuilderDisplay({
 				</div>
 
 				<div className="flex-1 min-w-0">
-					<div className="text-xl font-semibold text-foreground mb-2 flex items-center gap-4">
+					<div className="text-xl font-semibold text-foreground mb-2">
 						<Link
 							href={`/profile/${builder.username}`}
 							className="hover:text-primary transition-colors"
@@ -97,11 +88,6 @@ export default function BuilderDisplay({
 						>
 							{builder.username}
 						</Link>
-						{isBuilder() && (
-							<span className="inline-flex font-normal items-center px-2 py-0.5 rounded-full text-xs border border-purple-800 text-purple-800 dark:border-purple-400 dark:text-purple-400">
-								Builder
-							</span>
-						)}
 					</div>
 					<div className="text-sm font-light">{builder.theme}</div>
 				</div>

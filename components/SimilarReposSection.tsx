@@ -54,7 +54,7 @@ export default function SimilarReposSection({
 	const displayedRepos = showAllRepos ? foundRepos : foundRepos.slice(0, 5);
 
 	return (
-		<div className="space-y-4">
+		<div className="space-y-6">
 			{isLoading ? (
 				<div className="flex justify-center py-8">
 					<div className="relative">
