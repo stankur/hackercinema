@@ -5,7 +5,7 @@ import ExperienceSection from "@/components/ExperienceSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import WritingsSection from "@/components/WritingsSection";
 import { validateProfileData, type ProfileData } from "@/lib/schemas";
-import { Mail, Globe, ExternalLink } from "lucide-react";
+import { Mail, Globe } from "lucide-react";
 import { SocialIcon } from "@/components/ui/OrganizationIcon";
 
 interface PageProps {
@@ -138,6 +138,9 @@ export default function ProfilePage({ params }: PageProps) {
 
 	useEffect(() => {
 		// Load all profiles from the consolidated file
+		// Note: We intentionally don't include 'data' in dependencies
+		// because we only want to run this effect when username changes
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 		fetch("/api/profiles.json")
 			.then((res) => {
 				if (!res.ok) {

@@ -52,7 +52,7 @@ export default function RepoCard({
 	};
 
 	return (
-		<div className="border border-muted/70 rounded-lg p-4">
+		<div className="border border-muted rounded-lg p-4">
 			<div
 				className="rounded-md py-2 space-y-2 relative overflow-hidden"
 				style={{

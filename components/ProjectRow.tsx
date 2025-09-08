@@ -6,14 +6,12 @@ import { type Project } from "./ProjectItem";
 interface ProjectRowProps {
 	projects: [Project, Project?]; // First project required, second optional
 	rowIndex: number;
-	isLastRow: boolean;
 	totalProjects: number;
 }
 
 export default function ProjectRow({
 	projects,
 	rowIndex,
-	isLastRow,
 	totalProjects,
 }: ProjectRowProps) {
 	const [leftProject, rightProject] = projects;

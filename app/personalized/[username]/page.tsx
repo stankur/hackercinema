@@ -2,8 +2,10 @@
 
 import { useEffect, useState, use } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import SimilarReposSection from "@/components/SimilarReposSection";
+import CursorGradient from "@/components/CursorGradient";
 import type { Builder } from "@/lib/types";
 
 interface PageProps {
@@ -65,7 +67,8 @@ export default function ForYouPage({ params }: PageProps) {
 	}
 
 	return (
-		<div className="min-h-screen">
+		<div className="min-h-screen relative">
+			<CursorGradient />
 			{/* Navigation */}
 			<div className="max-w-3xl mx-auto pt-10 px-6 mb-12">
 				<div className="flex justify-between items-center relative z-20">
@@ -104,9 +107,11 @@ export default function ForYouPage({ params }: PageProps) {
 					>
 						<div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center overflow-hidden hover:opacity-80 transition-opacity">
 							{data.profile?.avatar_url ? (
-								<img
+								<Image
 									src={data.profile.avatar_url}
 									alt={`${data.username}'s avatar`}
+									width={32}
+									height={32}
 									className="w-full h-full object-cover"
 								/>
 							) : (

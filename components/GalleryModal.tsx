@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
+import Image from "next/image";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import type { GalleryImage } from "@/lib/types";
 
@@ -86,7 +87,7 @@ export default function GalleryModal({
 
 			setLoadingImages((prev) => new Set(prev).add(index));
 
-			const img = new Image();
+			const img = new window.Image();
 			img.onload = () => handleImageLoad(index);
 			img.onerror = () => handleImageError(index);
 			img.src = url;
@@ -207,9 +208,11 @@ export default function GalleryModal({
 				{/* Only show image when fully loaded */}
 				{loadedImages.has(validCurrentIndex) &&
 					!loadingImages.has(validCurrentIndex) && (
-						<img
+						<Image
 							src={currentImage.url}
 							alt={currentImage.alt}
+							width={800}
+							height={600}
 							className="max-w-full max-h-[75vh] md:max-w-[50vw] md:max-h-[80vh] object-contain animate-in fade-in duration-300"
 						/>
 					)}

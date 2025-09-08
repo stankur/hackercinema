@@ -192,7 +192,7 @@ export default function Home() {
 				<Navigation />
 
 				<div className="divide-y">
-					{builders.map((builder, index) => {
+					{builders.map((builder) => {
 						const hash =
 							typeof window !== "undefined"
 								? window.location.hash.slice(1)
@@ -206,7 +206,6 @@ export default function Home() {
 							<div key={builder.username} id={builder.username}>
 								<LazyBuilderItem
 									builder={builder}
-									index={index}
 									autoExpand={autoExpand}
 								/>
 							</div>

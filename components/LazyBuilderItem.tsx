@@ -6,13 +6,11 @@ import type { Builder } from "@/lib/types";
 
 interface LazyBuilderItemProps {
 	builder: Builder;
-	index: number;
 	autoExpand?: boolean;
 }
 
 export default function LazyBuilderItem({
 	builder,
-	index,
 	autoExpand = false,
 }: LazyBuilderItemProps) {
 	const [isVisible, setIsVisible] = useState(false);
@@ -40,13 +38,14 @@ export default function LazyBuilderItem({
 			threshold: 0.1,
 		});
 
-		if (itemRef.current) {
-			observer.observe(itemRef.current);
+		const currentRef = itemRef.current;
+		if (currentRef) {
+			observer.observe(currentRef);
 		}
 
 		return () => {
-			if (itemRef.current) {
-				observer.unobserve(itemRef.current);
+			if (currentRef) {
+				observer.unobserve(currentRef);
 			}
 		};
 	}, [handleIntersection]);

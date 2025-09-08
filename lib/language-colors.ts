@@ -17,19 +17,6 @@ function seededRandom(seed: number): () => number {
 	};
 }
 
-function hexToRgb(hex: string): { r: number; g: number; b: number } {
-	const cleanHex = hex.replace("#", "");
-	const r = parseInt(cleanHex.substring(0, 2), 16);
-	const g = parseInt(cleanHex.substring(2, 4), 16);
-	const b = parseInt(cleanHex.substring(4, 6), 16);
-	return { r, g, b };
-}
-
-function getBrightness(hex: string): number {
-	const rgb = hexToRgb(hex);
-	return (rgb.r * 299 + rgb.g * 587 + rgb.b * 114) / 1000;
-}
-
 // Convert percentage (0-100) to hex opacity format (00-FF)
 function percentageToHexOpacity(percentage: number): string {
 	const clampedPercentage = Math.max(0, Math.min(100, percentage));
