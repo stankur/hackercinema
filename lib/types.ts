@@ -22,6 +22,8 @@ export interface GitHubRepo {
 	topics?: string[];
 	link?: string;
 	gallery?: GalleryImage[];
+	tech_doc?: string;
+	toy_implementation?: string;
 }
 
 export interface Builder {

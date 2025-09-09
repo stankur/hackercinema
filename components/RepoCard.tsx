@@ -1,10 +1,18 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Star, ExternalLink, Images, Sparkles, ZoomOut } from "lucide-react";
+import {
+	Star,
+	ExternalLink,
+	Images,
+	Sparkles,
+	ZoomOut,
+	ZoomIn,
+} from "lucide-react";
 import { getCardBackground, getLanguageDotColor } from "@/lib/language-colors";
 import type { GitHubRepo } from "@/lib/types";
 import { useGalleryModal } from "./GalleryModalProvider";
+import Link from "next/link";
 
 interface RepoCardProps {
 	repo: GitHubRepo;
@@ -12,6 +20,8 @@ interface RepoCardProps {
 	showOwner?: boolean;
 	showUsernameInsteadOfDate?: boolean;
 	showOwnerAndDate?: boolean;
+	hideDetailIcon?: boolean;
+	showGeneratedDescriptionByDefault?: boolean;
 }
 
 export default function RepoCard({
@@ -20,11 +30,13 @@ export default function RepoCard({
 	showOwner = false,
 	showUsernameInsteadOfDate = false,
 	showOwnerAndDate = false,
+	hideDetailIcon = false,
+	showGeneratedDescriptionByDefault = false,
 }: RepoCardProps) {
 	const [cardBackground, setCardBackground] = useState<string>("");
 	const [languageDotColor, setLanguageDotColor] = useState<string>("");
 	const [showGeneratedDescription, setShowGeneratedDescription] =
-		useState<boolean>(false);
+		useState<boolean>(showGeneratedDescriptionByDefault);
 	const { openGallery } = useGalleryModal();
 
 	// Load card background and language dot color
@@ -170,14 +182,23 @@ export default function RepoCard({
 						)}
 						{repo.generated_description && (
 							<button
-								onClick={() =>
-									setShowGeneratedDescription(
-										!showGeneratedDescription
-									)
-								}
+								onClick={() => {
+									if (
+										hideDetailIcon &&
+										showGeneratedDescription
+									) {
+										window.history.back();
+									} else {
+										setShowGeneratedDescription(
+											!showGeneratedDescription
+										);
+									}
+								}}
 								className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
 								title={
-									showGeneratedDescription
+									hideDetailIcon && showGeneratedDescription
+										? "Go back"
+										: showGeneratedDescription
 										? "Show concise description"
 										: "Show AI-generated description"
 								}
@@ -189,6 +210,18 @@ export default function RepoCard({
 								)}
 							</button>
 						)}
+						{/* Detail icon - only show when AI description is active and both tech_doc and toy_implementation exist */}
+						{!hideDetailIcon &&
+							showGeneratedDescription &&
+							repo.tech_doc && (
+								<Link
+									href={`/personalized/detail/${owner}/${repo.name}`}
+									className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
+									title="View detailed explanation"
+								>
+									<ZoomIn size={20} />
+								</Link>
+							)}
 					</div>
 				</div>
 			</div>
