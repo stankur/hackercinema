@@ -24,6 +24,7 @@ export interface GitHubRepo {
 	gallery?: GalleryImage[];
 	tech_doc?: string;
 	toy_implementation?: string;
+	emphasis?: string[];
 }
 
 export interface Builder {

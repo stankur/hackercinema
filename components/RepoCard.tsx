@@ -12,6 +12,7 @@ import {
 import { getCardBackground, getLanguageDotColor } from "@/lib/language-colors";
 import type { GitHubRepo } from "@/lib/types";
 import { useGalleryModal } from "./GalleryModalProvider";
+import EmphasizedText from "./EmphasizedText";
 import Link from "next/link";
 
 interface RepoCardProps {
@@ -91,9 +92,15 @@ export default function RepoCard({
 					(showGeneratedDescription &&
 						repo.generated_description)) && (
 					<div className="text-sm text-muted-foreground leading-relaxed">
-						{showGeneratedDescription && repo.generated_description
-							? repo.generated_description
-							: repo.description}
+						{showGeneratedDescription &&
+						repo.generated_description ? (
+							<EmphasizedText
+								text={repo.generated_description}
+								emphasisWords={repo.emphasis || []}
+							/>
+						) : (
+							repo.description
+						)}
 					</div>
 				)}
 
