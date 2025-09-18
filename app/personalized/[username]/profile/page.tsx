@@ -71,6 +71,40 @@ export default function ProfilePage({ params }: PageProps) {
 	// Active tab state
 	const [activeTab, setActiveTab] = useState<string>("highlights");
 
+	// Function to determine visible tabs based on content
+	const getVisibleTabs = useCallback(() => {
+		const tabs = [];
+
+		// HIGHLIGHTS - always show if there are repos
+		if (data?.repos && data.repos.length > 0) {
+			tabs.push({ id: "highlights", label: "HIGHLIGHTS" });
+		}
+
+		// ABOUT - show if there's about content
+		if (profileData?.about && profileData.about.trim()) {
+			tabs.push({ id: "about", label: "ABOUT" });
+		}
+
+		// PROJECTS - show if there are projects
+		if (profileData?.projects && profileData.projects.length > 0) {
+			tabs.push({ id: "projects", label: "PROJECTS" });
+		}
+
+		// WORKING ON - show if there's current work
+		if (profileData?.workingOn && profileData.workingOn.trim()) {
+			tabs.push({ id: "workingOn", label: "WORKING ON" });
+		}
+
+		// WRITINGS - show if there are writings
+		if (profileData?.writings && profileData.writings.length > 0) {
+			tabs.push({ id: "writings", label: "WRITINGS" });
+		}
+
+		return tabs;
+	}, [data, profileData]);
+
+	const visibleTabs = getVisibleTabs();
+
 	const handleIntersection = useCallback(
 		(entries: IntersectionObserverEntry[]) => {
 			entries.forEach((entry) => {
@@ -258,12 +292,7 @@ export default function ProfilePage({ params }: PageProps) {
 						<h1 className="text-2xl font-semibold text-foreground">
 							{data.username}
 						</h1>
-						{/* Real name from profiles.json */}
-						{profileData?.profile?.name && (
-							<p className="text-sm text-muted-foreground font-light">
-								{profileData.profile.name}
-							</p>
-						)}
+
 						{profileData?.profile?.headline && (
 							<p className="text-sm font-light mt-1">
 								{profileData.profile.headline}
@@ -361,89 +390,51 @@ export default function ProfilePage({ params }: PageProps) {
 								</a>
 							)}
 						</div>
+						{/* Inferred Theme - always at the top when available */}
+						{data?.theme && (
+							<div className="border border-muted-foreground/20 rounded-lg p-4 bg-gray-500/10 mb-6 mt-6">
+								<h3 className="text-xs font-mono tracking-widest uppercase text-muted-foreground mb-2">
+									Inferred Interest
+								</h3>
+								<p className="text-sm font-medium text-muted-foreground">
+									{data.theme}
+								</p>
+							</div>
+						)}
 					</div>
 				</header>
 
-				{/* Tab Navigation */}
-				<div
-					ref={tabsRef}
-					data-section="tabs"
-					className={`
-						mb-16 transition-all duration-700 ease-out
-						${
-							visibleSections.has("tabs")
-								? "opacity-100 blur-0 scale-100"
-								: "opacity-0 blur-sm scale-95"
-						}
-					`}
-				>
-					<div className="flex flex-wrap gap-6 sm:gap-10">
-						<button
-							onClick={() => setActiveTab("highlights")}
-							className={`text-xs font-mono tracking-widest uppercase transition-all px-3 py-2 rounded-full border ${
-								activeTab === "highlights"
-									? "text-foreground border-foreground"
-									: "text-muted-foreground border-muted-foreground/30 hover:text-foreground hover:border-foreground/50"
-							}`}
-						>
-							HIGHLIGHTS
-						</button>
-
-						{profileData?.about && (
-							<button
-								onClick={() => setActiveTab("about")}
-								className={`text-xs font-mono tracking-widest uppercase transition-all px-3 py-2 rounded-full border ${
-									activeTab === "about"
-										? "text-foreground border-foreground"
-										: "text-muted-foreground border-muted-foreground/30 hover:text-foreground hover:border-foreground/50"
-								}`}
-							>
-								ABOUT
-							</button>
-						)}
-
-						{profileData?.projects &&
-							profileData.projects.length > 0 && (
+				{/* Tab Navigation - only show when there are 2+ tabs */}
+				{visibleTabs.length > 1 && (
+					<div
+						ref={tabsRef}
+						data-section="tabs"
+						className={`
+							mb-16 transition-all duration-700 ease-out
+							${
+								visibleSections.has("tabs")
+									? "opacity-100 blur-0 scale-100"
+									: "opacity-0 blur-sm scale-95"
+							}
+						`}
+					>
+						<div className="flex flex-wrap gap-6 sm:gap-10">
+							{visibleTabs.map((tab) => (
 								<button
-									onClick={() => setActiveTab("projects")}
+									key={tab.id}
+									onClick={() => setActiveTab(tab.id)}
 									className={`text-xs font-mono tracking-widest uppercase transition-all px-3 py-2 rounded-full border ${
-										activeTab === "projects"
+										activeTab === tab.id
 											? "text-foreground border-foreground"
 											: "text-muted-foreground border-muted-foreground/30 hover:text-foreground hover:border-foreground/50"
 									}`}
 								>
-									PROJECTS
+									{tab.label}
 								</button>
-							)}
-
-						{profileData?.workingOn && (
-							<button
-								onClick={() => setActiveTab("workingOn")}
-								className={`text-xs font-mono tracking-widest uppercase transition-all px-3 py-2 rounded-full border ${
-									activeTab === "workingOn"
-										? "text-foreground border-foreground"
-										: "text-muted-foreground border-muted-foreground/30 hover:text-foreground hover:border-foreground/50"
-								}`}
-							>
-								WORKING ON
-							</button>
-						)}
-
-						{profileData?.writings &&
-							profileData.writings.length > 0 && (
-								<button
-									onClick={() => setActiveTab("writings")}
-									className={`text-xs font-mono tracking-widest uppercase transition-all px-3 py-2 rounded-full border ${
-										activeTab === "writings"
-											? "text-foreground border-foreground"
-											: "text-muted-foreground border-muted-foreground/30 hover:text-foreground hover:border-foreground/50"
-									}`}
-								>
-									WRITINGS
-								</button>
-							)}
+							))}
+						</div>
 					</div>
-				</div>
+				)}
 
 				{/* Tab Content */}
 				<div
@@ -458,155 +449,279 @@ export default function ProfilePage({ params }: PageProps) {
 						}
 					`}
 				>
-					{/* Highlights Content */}
-					{activeTab === "highlights" && (
+					{/* When only 1 tab, show content directly without tab switching */}
+					{visibleTabs.length === 1 ? (
 						<div className="space-y-6">
-							{/* Theme appears here, below HIGHLIGHTS title */}
-							{data.theme && (
-								<p className="text-sm font-light text-foreground">
-									{data.theme}
-								</p>
+							{/* Show the single tab's content directly */}
+							{visibleTabs[0].id === "highlights" && (
+								<>
+									{data?.repos && data.repos.length > 0 ? (
+										data.repos
+											.slice(0, 5)
+											.map((repo) => (
+												<RepoCard
+													key={repo.name}
+													repo={repo}
+													owner={data.username}
+													showOwner={false}
+													showUsernameInsteadOfDate={
+														false
+													}
+												/>
+											))
+									) : (
+										<div className="text-sm text-muted-foreground">
+											No repositories found.
+										</div>
+									)}
+								</>
 							)}
-							{data.repos.length > 0 ? (
-								data.repos
-									.slice(0, 5)
-									.map((repo) => (
-										<RepoCard
-											key={repo.name}
-											repo={repo}
-											owner={data.username}
-											showOwner={false}
-											showUsernameInsteadOfDate={false}
-										/>
-									))
-							) : (
-								<div className="text-sm text-muted-foreground">
-									No repositories found.
+							{visibleTabs[0].id === "about" &&
+								profileData?.about && (
+									<div>
+										{profileData.about
+											.split("\n\n")
+											.map((paragraph, index) => (
+												<p
+													key={index}
+													className="text-sm text-muted-foreground leading-relaxed mb-4 last:mb-0"
+												>
+													{paragraph}
+												</p>
+											))}
+									</div>
+								)}
+							{visibleTabs[0].id === "projects" &&
+								profileData?.projects && (
+									<ProjectsSection
+										projects={profileData.projects}
+									/>
+								)}
+							{visibleTabs[0].id === "workingOn" &&
+								profileData?.workingOn && (
+									<div>
+										<p className="text-sm text-muted-foreground leading-relaxed">
+											{profileData.workingOn}
+										</p>
+									</div>
+								)}
+							{visibleTabs[0].id === "writings" &&
+								profileData?.writings && (
+									<div className="space-y-4">
+										{profileData.writings.map(
+											(writing, index) => (
+												<div
+													key={index}
+													className="border-b border-muted pb-4 last:border-b-0"
+												>
+													<a
+														href={writing.link}
+														target="_blank"
+														rel="noopener noreferrer"
+														className="block group"
+													>
+														<h3 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors mb-1">
+															{writing.title}
+														</h3>
+														{writing.description && (
+															<p className="text-xs text-muted-foreground leading-relaxed mb-2">
+																{
+																	writing.description
+																}
+															</p>
+														)}
+														{writing.date && (
+															<p className="text-xs text-muted-foreground/60">
+																{writing.date}
+															</p>
+														)}
+													</a>
+												</div>
+											)
+										)}
+									</div>
+								)}
+						</div>
+					) : (
+						<>
+							{/* Normal tab switching for multiple tabs */}
+							{/* Highlights Content */}
+							{activeTab === "highlights" && (
+								<div className="space-y-6">
+									{data.repos.length > 0 ? (
+										data.repos
+											.slice(0, 5)
+											.map((repo) => (
+												<RepoCard
+													key={repo.name}
+													repo={repo}
+													owner={data.username}
+													showOwner={false}
+													showUsernameInsteadOfDate={
+														false
+													}
+												/>
+											))
+									) : (
+										<div className="text-sm text-muted-foreground">
+											No repositories found.
+										</div>
+									)}
 								</div>
 							)}
-						</div>
-					)}
 
-					{/* About Content */}
-					{activeTab === "about" && profileData?.about && (
-						<div className="space-y-6">
-							{profileData.about
-								.split("\n\n")
-								.map((paragraph: string, index: number) => {
-									// Check if this paragraph is a list (starts with bullet points)
-									if (paragraph.includes("\n- ")) {
-										const lines = paragraph.split("\n");
-										const beforeList = lines.find(
-											(line) =>
-												!line.startsWith("- ") &&
-												line.trim() !== ""
-										);
-										const listItems = lines.filter((line) =>
-											line.startsWith("- ")
-										);
+							{/* About Content */}
+							{activeTab === "about" && profileData?.about && (
+								<div className="space-y-6">
+									{profileData.about
+										.split("\n\n")
+										.map(
+											(
+												paragraph: string,
+												index: number
+											) => {
+												// Check if this paragraph is a list (starts with bullet points)
+												if (
+													paragraph.includes("\n- ")
+												) {
+													const lines =
+														paragraph.split("\n");
+													const beforeList =
+														lines.find(
+															(line) =>
+																!line.startsWith(
+																	"- "
+																) &&
+																line.trim() !==
+																	""
+														);
+													const listItems =
+														lines.filter((line) =>
+															line.startsWith(
+																"- "
+															)
+														);
 
-										return (
-											<div key={index}>
-												{beforeList && (
-													<p className="text-sm leading-relaxed text-foreground font-light mb-3">
-														{beforeList}
-													</p>
-												)}
-												<ul className="text-sm leading-relaxed text-foreground font-light space-y-1 list-disc list-inside">
-													{listItems.map(
-														(item, itemIndex) => (
-															<li key={itemIndex}>
-																{item.substring(
-																	2
+													return (
+														<div key={index}>
+															{beforeList && (
+																<p className="text-sm leading-relaxed text-foreground font-light mb-3">
+																	{beforeList}
+																</p>
+															)}
+															<ul className="text-sm leading-relaxed text-foreground font-light space-y-1 list-disc list-inside">
+																{listItems.map(
+																	(
+																		item,
+																		itemIndex
+																	) => (
+																		<li
+																			key={
+																				itemIndex
+																			}
+																		>
+																			{item.substring(
+																				2
+																			)}
+																		</li>
+																	)
 																)}
-															</li>
-														)
-													)}
-												</ul>
-											</div>
-										);
-									}
+															</ul>
+														</div>
+													);
+												}
 
-									// Regular paragraph
-									return (
-										<p
-											key={index}
-											className="text-sm leading-relaxed text-foreground font-light"
-										>
-											{paragraph}
-										</p>
-									);
-								})}
-						</div>
-					)}
+												// Regular paragraph
+												return (
+													<p
+														key={index}
+														className="text-sm leading-relaxed text-foreground font-light"
+													>
+														{paragraph}
+													</p>
+												);
+											}
+										)}
+								</div>
+							)}
 
-					{/* Projects Content */}
-					{activeTab === "projects" &&
-						profileData?.projects &&
-						profileData.projects.length > 0 && (
-							<div>
-								<ProjectsSection
-									projects={profileData.projects}
-								/>
-							</div>
-						)}
-
-					{/* Working On Content */}
-					{activeTab === "workingOn" && profileData?.workingOn && (
-						<div className="space-y-6">
-							<p className="text-sm leading-relaxed text-foreground font-light">
-								{profileData.workingOn}
-							</p>
-						</div>
-					)}
-
-					{/* Writings Content */}
-					{activeTab === "writings" &&
-						profileData?.writings &&
-						profileData.writings.length > 0 && (
-							<div className="space-y-6">
-								{profileData.writings.map(
-									(
-										writing: {
-											title: string;
-											link: string;
-											description?: string;
-											date?: string;
-										},
-										index: number
-									) => (
-										<div key={index} className="space-y-2">
-											<div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4">
-												<div className="flex-1 min-w-0">
-													<h3 className="text-sm font-medium text-foreground leading-tight">
-														<a
-															href={writing.link}
-															target="_blank"
-															rel="noopener noreferrer"
-															className="hover:opacity-80 transition-opacity"
-														>
-															{writing.title}
-														</a>
-													</h3>
-													{writing.description && (
-														<p className="text-sm text-muted-foreground font-light mt-1 leading-relaxed">
-															{
-																writing.description
-															}
-														</p>
-													)}
-												</div>
-												{writing.date && (
-													<div className="text-xs text-muted-foreground font-mono sm:whitespace-nowrap">
-														{writing.date}
-													</div>
-												)}
-											</div>
-										</div>
-									)
+							{/* Projects Content */}
+							{activeTab === "projects" &&
+								profileData?.projects &&
+								profileData.projects.length > 0 && (
+									<div>
+										<ProjectsSection
+											projects={profileData.projects}
+										/>
+									</div>
 								)}
-							</div>
-						)}
+
+							{/* Working On Content */}
+							{activeTab === "workingOn" &&
+								profileData?.workingOn && (
+									<div className="space-y-6">
+										<p className="text-sm leading-relaxed text-foreground font-light">
+											{profileData.workingOn}
+										</p>
+									</div>
+								)}
+
+							{/* Writings Content */}
+							{activeTab === "writings" &&
+								profileData?.writings &&
+								profileData.writings.length > 0 && (
+									<div className="space-y-6">
+										{profileData.writings.map(
+											(
+												writing: {
+													title: string;
+													link: string;
+													description?: string;
+													date?: string;
+												},
+												index: number
+											) => (
+												<div
+													key={index}
+													className="space-y-2"
+												>
+													<div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4">
+														<div className="flex-1 min-w-0">
+															<h3 className="text-sm font-medium text-foreground leading-tight">
+																<a
+																	href={
+																		writing.link
+																	}
+																	target="_blank"
+																	rel="noopener noreferrer"
+																	className="hover:opacity-80 transition-opacity"
+																>
+																	{
+																		writing.title
+																	}
+																</a>
+															</h3>
+															{writing.description && (
+																<p className="text-sm text-muted-foreground font-light mt-1 leading-relaxed">
+																	{
+																		writing.description
+																	}
+																</p>
+															)}
+														</div>
+														{writing.date && (
+															<div className="text-xs text-muted-foreground font-mono sm:whitespace-nowrap">
+																{writing.date}
+															</div>
+														)}
+													</div>
+												</div>
+											)
+										)}
+									</div>
+								)}
+						</>
+					)}
 				</div>
 			</div>
 		</div>

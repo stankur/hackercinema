@@ -1,14 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import {
-	Star,
-	ExternalLink,
-	Images,
-	Sparkles,
-	ZoomOut,
-	ZoomIn,
-} from "lucide-react";
+import { ExternalLink, Images, Sparkles, ZoomOut, ZoomIn } from "lucide-react";
 import { getCardBackground, getLanguageDotColor } from "@/lib/language-colors";
 import type { GitHubRepo } from "@/lib/types";
 import { useGalleryModal } from "./GalleryModalProvider";
@@ -56,36 +49,105 @@ export default function RepoCard({
 		loadStyles();
 	}, [repo.name, repo.language]);
 
-	const formatDate = (dateString: string) => {
-		return new Date(dateString).toLocaleDateString("en-US", {
-			month: "short",
-			day: "numeric",
-			year: "numeric",
-		});
-	};
-
 	return (
-		<div className="border border-muted rounded-lg p-4">
+		<div className="border border-muted rounded-lg p-3 md:border-0 md:p-0">
 			<div
-				className="rounded-md py-2 space-y-2 relative overflow-hidden"
+				className="rounded-md py-1.5 md:py-2 space-y-2 relative overflow-hidden"
 				style={{
 					background: cardBackground || undefined,
 				}}
 			>
-				<div>
-					<a
-						href={`https://github.com/${owner}/${repo.name}`}
-						target="_blank"
-						rel="noopener noreferrer"
-						className="text-base font-semibold text-foreground hover:text-primary hover:underline"
-					>
-						{repo.name}
-					</a>
-					{showOwner && (
-						<span className="text-sm text-muted-foreground ml-2">
-							by {owner}
-						</span>
-					)}
+				{/* Top row with repo title, language info, and desktop action icons */}
+				<div className="flex items-center justify-between">
+					<div className="flex items-center gap-3 flex-1 min-w-0">
+						<a
+							href={`https://github.com/${owner}/${repo.name}`}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="text-base font-semibold text-foreground hover:text-primary hover:underline"
+						>
+							{repo.name}
+						</a>
+						{/* Language info */}
+						{repo.language && (
+							<div className="flex items-center gap-1.5 text-xs text-muted-foreground/60">
+								<div
+									className="w-2 h-2 rounded-full"
+									style={{
+										backgroundColor:
+											languageDotColor || "#6b7280",
+									}}
+								></div>
+								<span>{repo.language}</span>
+							</div>
+						)}
+					</div>
+
+					{/* Desktop action icons in top right */}
+					<div className="hidden md:flex items-center gap-2 ml-4">
+						{repo.link && (
+							<a
+								href={repo.link}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
+								title="Visit project link"
+							>
+								<ExternalLink size={14} />
+							</a>
+						)}
+						{repo.gallery && repo.gallery.length > 0 && (
+							<button
+								onClick={() => openGallery(repo.gallery!)}
+								className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
+								title="View gallery"
+							>
+								<Images size={14} />
+							</button>
+						)}
+						{repo.generated_description && (
+							<button
+								onClick={() => {
+									if (
+										hideDetailIcon &&
+										showGeneratedDescription
+									) {
+										window.history.back();
+									} else {
+										setShowGeneratedDescription(
+											!showGeneratedDescription
+										);
+									}
+								}}
+								className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
+								title={
+									hideDetailIcon && showGeneratedDescription
+										? "Go back"
+										: showGeneratedDescription
+										? "Show concise description"
+										: "Show AI-generated description"
+								}
+							>
+								{showGeneratedDescription ? (
+									<ZoomOut size={14} />
+								) : (
+									<Sparkles size={14} />
+								)}
+							</button>
+						)}
+						{/* Detail icon - only show when AI description is active and both tech_doc and toy_implementation exist */}
+						{!hideDetailIcon &&
+							showGeneratedDescription &&
+							repo.tech_doc && (
+								<Link
+									href={`/personalized/detail/${owner}/${repo.name}`}
+									className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
+									title="View detailed explanation"
+								>
+									<ZoomIn size={14} />
+								</Link>
+							)}
+					</div>
 				</div>
 				{/* Description - toggles between original and generated */}
 				{(repo.description ||
@@ -104,7 +166,7 @@ export default function RepoCard({
 					</div>
 				)}
 
-				{/* Username row */}
+				{/* Username row - only show for explore/for you pages with clickable usernames */}
 				{showOwnerAndDate ? (
 					<div className="text-xs text-muted-foreground/60 mt-2">
 						<button
@@ -124,48 +186,22 @@ export default function RepoCard({
 							{owner}
 						</button>
 					</div>
-				) : (
+				) : showUsernameInsteadOfDate ? (
 					<div className="text-xs text-muted-foreground/60 mt-2">
-						{showUsernameInsteadOfDate ? (
-							<button
-								onClick={() => {
-									// Navigate to the builder on hackers page
-									window.location.href = `/#${owner}`;
-								}}
-								className="font-semibold cursor-pointer hover:text-foreground transition-colors"
-							>
-								{owner}
-							</button>
-						) : (
-							`Updated ${formatDate(repo.updated_at)}`
-						)}
+						<button
+							onClick={() => {
+								// Navigate to the builder on hackers page
+								window.location.href = `/#${owner}`;
+							}}
+							className="font-semibold cursor-pointer hover:text-foreground transition-colors"
+						>
+							{owner}
+						</button>
 					</div>
-				)}
+				) : null}
 
-				{/* Bottom row with metadata on left and action icons on right */}
-				<div className="flex items-center justify-between mt-3 pt-2">
-					<div className="flex items-center gap-3 text-xs text-muted-foreground/60">
-						{repo.language && (
-							<div className="flex items-center gap-1.5">
-								<div
-									className="w-2 h-2 rounded-full"
-									style={{
-										backgroundColor:
-											languageDotColor || "#6b7280",
-									}}
-								></div>
-								<span>{repo.language}</span>
-							</div>
-						)}
-						{repo.stars !== undefined && repo.stars > 0 && (
-							<div className="flex items-center gap-1.5">
-								<Star className="w-3 h-3 text-muted-foreground/40" />
-								<span>{repo.stars}</span>
-							</div>
-						)}
-					</div>
-
-					{/* Action icons in bottom right corner for easy mobile tapping */}
+				{/* Mobile action icons in bottom right corner for easy mobile tapping */}
+				<div className="flex items-center justify-end mt-3 pt-2 md:hidden">
 					<div className="flex items-start gap-3">
 						{repo.link && (
 							<a
