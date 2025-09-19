@@ -119,6 +119,26 @@
 	body {
 		@apply bg-background text-foreground;
 	}
+
+	/* Skeleton theme colors wired to Tailwind tokens */
+	:root {
+		--base-color: theme(colors.slate.200);
+		--highlight-color: theme(colors.slate.100);
+	}
+	.dark {
+		--base-color: theme(colors.slate.700);
+		--highlight-color: theme(colors.slate.600);
+	}
+
+	/* Override library defaults set on the element itself */
+	:root .react-loading-skeleton {
+		--base-color: theme(colors.slate.200);
+		--highlight-color: theme(colors.slate.100);
+	}
+	.dark .react-loading-skeleton {
+		--base-color: theme(colors.slate.700);
+		--highlight-color: theme(colors.slate.600);
+	}
 }
 
 /* Blob animations for filter tab */
@@ -175,4 +195,14 @@
 
 .animate-shimmer {
 	animation: shimmer 1.5s linear 2;
+}
+
+/* Unlayered overrides so they outrank library CSS (which is also unlayered) */
+:root .react-loading-skeleton {
+	--base-color: theme(colors.slate.200);
+	--highlight-color: theme(colors.slate.100);
+}
+.dark .react-loading-skeleton {
+	--base-color: theme(colors.slate.700);
+	--highlight-color: theme(colors.slate.600);
 }

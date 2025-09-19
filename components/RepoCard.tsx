@@ -105,36 +105,42 @@ export default function RepoCard({
 								<Images size={14} />
 							</button>
 						)}
-						{repo.generated_description && (
-							<button
-								onClick={() => {
-									if (
-										hideDetailIcon &&
-										showGeneratedDescription
-									) {
-										window.history.back();
-									} else {
-										setShowGeneratedDescription(
-											!showGeneratedDescription
-										);
-									}
-								}}
-								className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
-								title={
-									hideDetailIcon && showGeneratedDescription
-										? "Go back"
-										: showGeneratedDescription
-										? "Show concise description"
-										: "Show AI-generated description"
+						<button
+							onClick={() => {
+								if (!repo.generated_description) return;
+								if (
+									hideDetailIcon &&
+									showGeneratedDescription
+								) {
+									window.history.back();
+								} else {
+									setShowGeneratedDescription(
+										!showGeneratedDescription
+									);
 								}
-							>
-								{showGeneratedDescription ? (
-									<ZoomOut size={14} />
-								) : (
-									<Sparkles size={14} />
-								)}
-							</button>
-						)}
+							}}
+							disabled={!repo.generated_description}
+							className={`cursor-pointer transition-colors p-1 ${
+								!repo.generated_description
+									? "text-muted-foreground/40 animate-pulse cursor-not-allowed"
+									: "text-muted-foreground hover:text-foreground"
+							}`}
+							title={
+								!repo.generated_description
+									? "AI description generating..."
+									: hideDetailIcon && showGeneratedDescription
+									? "Go back"
+									: showGeneratedDescription
+									? "Show concise description"
+									: "Show AI-generated description"
+							}
+						>
+							{showGeneratedDescription ? (
+								<ZoomOut size={14} />
+							) : (
+								<Sparkles size={14} />
+							)}
+						</button>
 						{/* Detail icon - only show when AI description is active and both tech_doc and toy_implementation exist */}
 						{!hideDetailIcon &&
 							showGeneratedDescription &&
@@ -223,36 +229,42 @@ export default function RepoCard({
 								<Images size={20} />
 							</button>
 						)}
-						{repo.generated_description && (
-							<button
-								onClick={() => {
-									if (
-										hideDetailIcon &&
-										showGeneratedDescription
-									) {
-										window.history.back();
-									} else {
-										setShowGeneratedDescription(
-											!showGeneratedDescription
-										);
-									}
-								}}
-								className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
-								title={
-									hideDetailIcon && showGeneratedDescription
-										? "Go back"
-										: showGeneratedDescription
-										? "Show concise description"
-										: "Show AI-generated description"
+						<button
+							onClick={() => {
+								if (!repo.generated_description) return;
+								if (
+									hideDetailIcon &&
+									showGeneratedDescription
+								) {
+									window.history.back();
+								} else {
+									setShowGeneratedDescription(
+										!showGeneratedDescription
+									);
 								}
-							>
-								{showGeneratedDescription ? (
-									<ZoomOut size={20} />
-								) : (
-									<Sparkles size={20} />
-								)}
-							</button>
-						)}
+							}}
+							disabled={!repo.generated_description}
+							className={`cursor-pointer transition-colors p-1 ${
+								!repo.generated_description
+									? "text-muted-foreground/40 animate-pulse cursor-not-allowed"
+									: "text-muted-foreground hover:text-foreground"
+							}`}
+							title={
+								!repo.generated_description
+									? "AI description generating..."
+									: hideDetailIcon && showGeneratedDescription
+									? "Go back"
+									: showGeneratedDescription
+									? "Show concise description"
+									: "Show AI-generated description"
+							}
+						>
+							{showGeneratedDescription ? (
+								<ZoomOut size={20} />
+							) : (
+								<Sparkles size={20} />
+							)}
+						</button>
 						{/* Detail icon - only show when AI description is active and both tech_doc and toy_implementation exist */}
 						{!hideDetailIcon &&
 							showGeneratedDescription &&
