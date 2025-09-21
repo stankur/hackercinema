@@ -25,6 +25,7 @@ export interface GitHubRepo {
 	tech_doc?: string;
 	toy_implementation?: string;
 	emphasis?: string[];
+	keywords?: string[];
 }
 
 export interface Builder {

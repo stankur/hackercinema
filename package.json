@@ -24,6 +24,7 @@
 		"next": "15.5.0",
 		"react": "19.1.0",
 		"react-dom": "19.1.0",
+		"react-fast-marquee": "^1.6.5",
 		"react-loading-skeleton": "^3.5.0",
 		"rehype-rewrite": "^4.0.2",
 		"simple-icons": "^15.12.0",

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { SocialIcon } from "@/components/ui/OrganizationIcon";
 import { Mail, Globe } from "lucide-react";
 import type { Builder } from "@/lib/types";
+import KeywordsBelts from "@/components/KeywordsBelts";
 
 interface ProfileData {
 	profile?: {
@@ -30,6 +31,17 @@ export default function ProfileHeader({
 	profileData,
 	visibleSections,
 }: ProfileHeaderProps) {
+	// Collect all keywords from repos
+	const allKeywords = (data?.repos || [])
+		.flatMap((r) => r.keywords || [])
+		.filter(Boolean);
+
+	if (typeof window !== "undefined") {
+		console.log("[Header] allKeywords", {
+			count: allKeywords.length,
+			sample: allKeywords.slice(0, 10),
+		});
+	}
 	return (
 		<header
 			data-section="header"
@@ -141,6 +153,12 @@ export default function ProfileHeader({
 						</a>
 					)}
 				</div>
+				{/* Keywords Belts */}
+				{allKeywords.length > 0 && (
+					<div className="mt-2">
+						<KeywordsBelts keywords={allKeywords} />
+					</div>
+				)}
 				{/* Inferred Theme - always at the top when available */}
 				{data?.theme && (
 					<div className="border border-muted-foreground/20 rounded-lg p-4 bg-gray-500/10 mb-6 mt-6">

@@ -20,6 +20,8 @@ interface BackendRepo {
 	}>;
 	/** Words to emphasize in generated_description */
 	emphasis?: string[];
+	/** New: keywords describing the repo */
+	keywords?: string[];
 }
 
 interface ProfileData {
@@ -201,15 +203,21 @@ export function useProfileData(username: string): UseProfileDataReturn {
 										link: repo.link,
 										gallery: repo.gallery || [],
 										emphasis: repo.emphasis,
+										keywords: repo.keywords || [],
 									} as const;
 									if (typeof window !== "undefined") {
-										console.debug(
+										console.log(
 											"[PDP] mapped repo (initial)",
 											{
 												name: mapped.name,
 												hasGen: !!mapped.generated_description,
 												emphasisLen:
 													mapped.emphasis?.length,
+												keywordsLen:
+													mapped.keywords?.length,
+												sampleKeywords: (
+													mapped.keywords || []
+												).slice(0, 5),
 											}
 										);
 									}
@@ -218,6 +226,19 @@ export function useProfileData(username: string): UseProfileDataReturn {
 							),
 							similar_repos: backendData.similar_repos || [],
 						};
+						if (typeof window !== "undefined") {
+							const reposWithKw = mappedBuilder.repos.filter(
+								(r) => (r.keywords || []).length > 0
+							).length;
+							const totalKw = mappedBuilder.repos.reduce(
+								(sum, r) => sum + (r.keywords?.length || 0),
+								0
+							);
+							console.log("[PDP] totals (initial)", {
+								reposWithKeywords: reposWithKw,
+								totalKeywords: totalKw,
+							});
+						}
 						setData(mappedBuilder);
 						// Capture highlighted repo names (may be undefined while generating)
 						setHighlightedRepoNames(
@@ -283,15 +304,21 @@ export function useProfileData(username: string): UseProfileDataReturn {
 										link: repo.link,
 										gallery: repo.gallery || [],
 										emphasis: repo.emphasis,
+										keywords: repo.keywords || [],
 									} as const;
 									if (typeof window !== "undefined") {
-										console.debug(
+										console.log(
 											"[PDP] mapped repo (poll)",
 											{
 												name: mapped.name,
 												hasGen: !!mapped.generated_description,
 												emphasisLen:
 													mapped.emphasis?.length,
+												keywordsLen:
+													mapped.keywords?.length,
+												sampleKeywords: (
+													mapped.keywords || []
+												).slice(0, 5),
 											}
 										);
 									}
@@ -300,6 +327,19 @@ export function useProfileData(username: string): UseProfileDataReturn {
 							),
 							similar_repos: backendData.similar_repos || [],
 						};
+						if (typeof window !== "undefined") {
+							const reposWithKw = mappedBuilder.repos.filter(
+								(r) => (r.keywords || []).length > 0
+							).length;
+							const totalKw = mappedBuilder.repos.reduce(
+								(sum, r) => sum + (r.keywords?.length || 0),
+								0
+							);
+							console.log("[PDP] totals (poll)", {
+								reposWithKeywords: reposWithKw,
+								totalKeywords: totalKw,
+							});
+						}
 						setData(mappedBuilder);
 						// Update highlighted repo names during polling
 						setHighlightedRepoNames(
