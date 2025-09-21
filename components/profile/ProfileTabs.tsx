@@ -28,7 +28,7 @@ export default function ProfileTabs({
 		<div
 			data-section="tabs"
 			className={`
-				mb-16 transition-all duration-700 ease-out
+				transition-all duration-700 ease-out
 				${
 					visibleSections.has("tabs")
 						? "opacity-100 blur-0 scale-100"
@@ -36,7 +36,7 @@ export default function ProfileTabs({
 				}
 			`}
 		>
-			<div className="flex flex-wrap gap-6 sm:gap-10">
+			<div className="flex flex-wrap gap-4 sm:gap-6">
 				{visibleTabs.map((tab) => (
 					<button
 						key={tab.id}

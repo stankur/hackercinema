@@ -55,110 +55,106 @@ export default function ProfileHeader({
 			`}
 		>
 			<div className="flex-1 min-w-0 space-y-2">
-				<h1 className="text-2xl font-semibold text-foreground">
-					{data.username}
-				</h1>
+				<div className="flex gap-4 items-center">
+					<h1 className="text-2xl font-semibold text-foreground">
+						{data.username}
+					</h1>
 
-				{profileData?.profile?.headline && (
+					{/* {profileData?.profile?.headline && (
 					<p className="text-sm font-light mt-1">
 						{profileData.profile.headline}
 					</p>
-				)}
+				)} */}
 
-				{/* Social Links */}
-				<div className="flex gap-4 items-center mt-8">
-					{/* GitHub - default from data.json */}
-					<a
-						href={`https://github.com/${data.username}`}
-						target="_blank"
-						rel="noopener noreferrer"
-						className="text-foreground hover:opacity-80 transition-opacity"
-						title="GitHub"
-					>
-						<SocialIcon
-							platformName="github"
-							size={20}
-							color="currentColor"
-						/>
-					</a>
-
-					{/* Additional links from profiles.json */}
-					{profileData?.profile?.links?.email && (
+					{/* Social Links */}
+					<div className="flex gap-4 items-center">
+						{/* GitHub - default from data.json */}
 						<a
-							href={`mailto:${profileData.profile.links.email}`}
-							className="text-foreground hover:opacity-80 transition-opacity"
-							title="Email"
-						>
-							<Mail className="w-5 h-5" strokeWidth={1} />
-						</a>
-					)}
-
-					{profileData?.profile?.links?.linkedin && (
-						<a
-							href={profileData.profile.links.linkedin}
+							href={`https://github.com/${data.username}`}
 							target="_blank"
 							rel="noopener noreferrer"
-							className="text-foreground hover:opacity-80 transition-opacity"
-							title="LinkedIn"
+							className="text-muted-foreground hover:opacity-80 transition-opacity"
+							title="GitHub"
 						>
 							<SocialIcon
-								platformName="linkedin"
+								platformName="github"
 								size={20}
 								color="currentColor"
 							/>
 						</a>
-					)}
 
-					{profileData?.profile?.links?.x && (
-						<a
-							href={profileData.profile.links.x}
-							target="_blank"
-							rel="noopener noreferrer"
-							className="text-foreground hover:opacity-80 transition-opacity"
-							title="X (Twitter)"
-						>
-							<SocialIcon
-								platformName="x"
-								size={20}
-								color="currentColor"
-							/>
-						</a>
-					)}
+						{/* Additional links from profiles.json */}
+						{profileData?.profile?.links?.email && (
+							<a
+								href={`mailto:${profileData.profile.links.email}`}
+								className="text-muted-foreground hover:opacity-80 transition-opacity"
+								title="Email"
+							>
+								<Mail className="w-5 h-5" strokeWidth={1} />
+							</a>
+						)}
 
-					{profileData?.profile?.links?.yc && (
-						<a
-							href={profileData.profile.links.yc}
-							target="_blank"
-							rel="noopener noreferrer"
-							className="text-foreground hover:opacity-80 transition-opacity"
-							title="Y Combinator"
-						>
-							<SocialIcon
-								platformName="yc"
-								size={20}
-								color="currentColor"
-							/>
-						</a>
-					)}
+						{profileData?.profile?.links?.linkedin && (
+							<a
+								href={profileData.profile.links.linkedin}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-muted-foreground hover:opacity-80 transition-opacity"
+								title="LinkedIn"
+							>
+								<SocialIcon
+									platformName="linkedin"
+									size={20}
+									color="currentColor"
+								/>
+							</a>
+						)}
 
-					{profileData?.profile?.links?.personal && (
-						<a
-							href={profileData.profile.links.personal}
-							target="_blank"
-							rel="noopener noreferrer"
-							className="text-foreground hover:opacity-80 transition-opacity"
-							title="Personal Website"
-						>
-							<Globe className="w-5 h-5" strokeWidth={1} />
-						</a>
-					)}
-				</div>
-				{/* Keywords Belts */}
-				{allKeywords.length > 0 && (
-					<div className="mt-2">
-						<KeywordsBelts keywords={allKeywords} />
+						{profileData?.profile?.links?.x && (
+							<a
+								href={profileData.profile.links.x}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-muted-foreground hover:opacity-80 transition-opacity"
+								title="X (Twitter)"
+							>
+								<SocialIcon
+									platformName="x"
+									size={20}
+									color="currentColor"
+								/>
+							</a>
+						)}
+
+						{profileData?.profile?.links?.yc && (
+							<a
+								href={profileData.profile.links.yc}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-muted-foreground hover:opacity-80 transition-opacity"
+								title="Y Combinator"
+							>
+								<SocialIcon
+									platformName="yc"
+									size={20}
+									color="currentColor"
+								/>
+							</a>
+						)}
+
+						{profileData?.profile?.links?.personal && (
+							<a
+								href={profileData.profile.links.personal}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-muted-foreground hover:opacity-80 transition-opacity"
+								title="Personal Website"
+							>
+								<Globe className="w-5 h-5" strokeWidth={1} />
+							</a>
+						)}
 					</div>
-				)}
+				</div>
 				{/* Inferred Theme - always at the top when available */}
 				{data?.theme && (
 					<div className="border border-muted-foreground/20 rounded-lg p-4 bg-gray-500/10 mb-6 mt-6">
@@ -168,6 +164,13 @@ export default function ProfileHeader({
 						<p className="text-sm font-medium text-muted-foreground">
 							{data.theme}
 						</p>
+					</div>
+				)}
+
+				{/* Keywords Belts */}
+				{allKeywords.length > 0 && (
+					<div className="mt-8">
+						<KeywordsBelts keywords={allKeywords} />
 					</div>
 				)}
 			</div>

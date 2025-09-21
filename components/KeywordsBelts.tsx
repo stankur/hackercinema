@@ -47,12 +47,12 @@ export default function KeywordsBelts({
 
 	return (
 		<div className={`w-full ${className || ""}`}>
-			<div className="space-y-1.5">
+			<div className="space-y-2 md:space-y-4">
 				{belts.map((items, idx) => (
-					<div key={idx} className="kb-belt overflow-hidden">
+					<div key={idx} className="kb-belt-mask">
 						<Marquee
 							autoFill
-							speed={28}
+							speed={20}
 							pauseOnHover={false}
 							pauseOnClick={false}
 							gradient={false}
@@ -61,7 +61,7 @@ export default function KeywordsBelts({
 							{items.map((kw, i) => (
 								<span
 									key={`${idx}-${i}-${kw}`}
-									className="mx-6 text-sm text-muted-foreground/80 font-medium"
+									className="mx-2 md:mx-3 text-sm md:text-base text-muted-foreground/70 font-semibold italic"
 								>
 									{kw}
 								</span>
@@ -72,8 +72,28 @@ export default function KeywordsBelts({
 			</div>
 
 			<style jsx>{`
-				.kb-belt {
+				.kb-belt-mask {
+					--fade: 100px;
 					overflow: hidden;
+					-webkit-mask-image: linear-gradient(
+						to right,
+						transparent 0,
+						black var(--fade),
+						black calc(100% - var(--fade)),
+						transparent 100%
+					);
+					mask-image: linear-gradient(
+						to right,
+						transparent 0,
+						black var(--fade),
+						black calc(100% - var(--fade)),
+						transparent 100%
+					);
+				}
+				@media (max-width: 768px) {
+					.kb-belt-mask {
+						--fade: 50px;
+					}
 				}
 			`}</style>
 		</div>

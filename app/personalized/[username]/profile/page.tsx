@@ -112,7 +112,7 @@ export default function ProfilePage({ params }: PageProps) {
 			{/* Navigation */}
 			<ProfileNavigation username={username} data={data} />
 
-			<div className="max-w-3xl mx-auto py-10 px-6 space-y-16">
+			<div className="max-w-3xl mx-auto py-10 px-6 space-y-30">
 				{/* Header */}
 				<header ref={headerRef} data-section="header">
 					<ProfileHeader
@@ -122,21 +122,22 @@ export default function ProfilePage({ params }: PageProps) {
 					/>
 				</header>
 
-				{/* Tab Navigation */}
-				<div ref={tabsRef} data-section="tabs">
-					<ProfileTabs
-						visibleTabs={visibleTabs}
-						activeTab={activeTab}
-						setActiveTab={setActiveTab}
-						visibleSections={visibleSections}
-					/>
-				</div>
+				<div className="flex flex-col gap-12">
+					{/* Tab Navigation */}
+					<div ref={tabsRef} data-section="tabs">
+						<ProfileTabs
+							visibleTabs={visibleTabs}
+							activeTab={activeTab}
+							setActiveTab={setActiveTab}
+							visibleSections={visibleSections}
+						/>
+					</div>
 
-				{/* Tab Content */}
-				<div
-					ref={contentRef}
-					data-section="content"
-					className={`
+					{/* Tab Content */}
+					<div
+						ref={contentRef}
+						data-section="content"
+						className={`
 						transition-all duration-700 ease-out
 						${
 							visibleSections.has("content")
@@ -144,89 +145,103 @@ export default function ProfilePage({ params }: PageProps) {
 								: "opacity-0 blur-sm scale-95"
 						}
 					`}
-				>
-					{/* When only 1 tab, show content directly without tab switching */}
-					{visibleTabs.length === 1 ? (
-						<div className="space-y-6">
-							{visibleTabs[0].id === "all" && (
-								<AllReposSection
-									username={data.username}
-									repos={data.repos}
-									highlightedRepoNames={highlightedRepoNames}
-								/>
-							)}
-							{visibleTabs[0].id === "highlights" && (
-								<HighlightsSection
-									highlightedRepoNames={highlightedRepoNames}
-									highlightedRepos={highlightedRepos}
-									username={data.username}
-									aiEnabled={!!highlightedRepoNames}
-								/>
-							)}
-							{visibleTabs[0].id === "about" &&
-								profileData?.about && (
-									<AboutSection about={profileData.about} />
-								)}
-							{visibleTabs[0].id === "projects" &&
-								profileData?.projects && (
-									<ProjectsSection
-										projects={profileData.projects}
+					>
+						{/* When only 1 tab, show content directly without tab switching */}
+						{visibleTabs.length === 1 ? (
+							<div className="space-y-6">
+								{visibleTabs[0].id === "all" && (
+									<AllReposSection
+										username={data.username}
+										repos={data.repos}
+										highlightedRepoNames={
+											highlightedRepoNames
+										}
 									/>
 								)}
-							{visibleTabs[0].id === "workingOn" &&
-								profileData?.workingOn && (
-									<WorkingOnSection
-										workingOn={profileData.workingOn}
+								{visibleTabs[0].id === "highlights" && (
+									<HighlightsSection
+										highlightedRepoNames={
+											highlightedRepoNames
+										}
+										highlightedRepos={highlightedRepos}
+										username={data.username}
+										aiEnabled={!!highlightedRepoNames}
 									/>
 								)}
-							{visibleTabs[0].id === "writings" &&
-								profileData?.writings && (
-									<WritingsSection
-										writings={profileData.writings}
+								{visibleTabs[0].id === "about" &&
+									profileData?.about && (
+										<AboutSection
+											about={profileData.about}
+										/>
+									)}
+								{visibleTabs[0].id === "projects" &&
+									profileData?.projects && (
+										<ProjectsSection
+											projects={profileData.projects}
+										/>
+									)}
+								{visibleTabs[0].id === "workingOn" &&
+									profileData?.workingOn && (
+										<WorkingOnSection
+											workingOn={profileData.workingOn}
+										/>
+									)}
+								{visibleTabs[0].id === "writings" &&
+									profileData?.writings && (
+										<WritingsSection
+											writings={profileData.writings}
+										/>
+									)}
+							</div>
+						) : (
+							<>
+								{/* Normal tab switching for multiple tabs */}
+								{activeTab === "all" && (
+									<AllReposSection
+										username={data.username}
+										repos={data.repos}
+										highlightedRepoNames={
+											highlightedRepoNames
+										}
 									/>
 								)}
-						</div>
-					) : (
-						<>
-							{/* Normal tab switching for multiple tabs */}
-							{activeTab === "all" && (
-								<AllReposSection
-									username={data.username}
-									repos={data.repos}
-									highlightedRepoNames={highlightedRepoNames}
-								/>
-							)}
-							{activeTab === "highlights" && (
-								<HighlightsSection
-									highlightedRepoNames={highlightedRepoNames}
-									highlightedRepos={highlightedRepos}
-									username={data.username}
-									aiEnabled={!!highlightedRepoNames}
-								/>
-							)}
-							{activeTab === "about" && profileData?.about && (
-								<AboutSection about={profileData.about} />
-							)}
-							{activeTab === "projects" &&
-								profileData?.projects && (
-									<ProjectsSection
-										projects={profileData.projects}
+								{activeTab === "highlights" && (
+									<HighlightsSection
+										highlightedRepoNames={
+											highlightedRepoNames
+										}
+										highlightedRepos={highlightedRepos}
+										username={data.username}
+										aiEnabled={!!highlightedRepoNames}
 									/>
 								)}
-							{activeTab === "workingOn" &&
-								profileData?.workingOn && (
-									<WorkingOnSection
-										workingOn={profileData.workingOn}
-									/>
-								)}
-							{activeTab === "writings" &&
-								profileData?.writings && (
-									<WritingsSection
-										writings={profileData.writings}
-									/>
-								)}
-						</>
-					)}
+								{activeTab === "about" &&
+									profileData?.about && (
+										<AboutSection
+											about={profileData.about}
+										/>
+									)}
+								{activeTab === "projects" &&
+									profileData?.projects && (
+										<ProjectsSection
+											projects={profileData.projects}
+										/>
+									)}
+								{activeTab === "workingOn" &&
+									profileData?.workingOn && (
+										<WorkingOnSection
+											workingOn={profileData.workingOn}
+										/>
+									)}
+								{activeTab === "writings" &&
+									profileData?.writings && (
+										<WritingsSection
+											writings={profileData.writings}
+										/>
+									)}
+							</>
+						)}
+					</div>
 				</div>
 			</div>
 		</div>
