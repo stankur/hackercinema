@@ -14,6 +14,11 @@ export default function EmphasizedText({
 	emphasisWords,
 }: EmphasizedTextProps) {
 	if (!emphasisWords || emphasisWords.length === 0) {
+		if (typeof window !== "undefined") {
+			console.debug("[EmphasizedText] no emphasis words", {
+				textPreview: text?.slice?.(0, 100),
+			});
+		}
 		return <>{text}</>;
 	}
 
@@ -30,6 +35,17 @@ export default function EmphasizedText({
 	// Split the text by the pattern while preserving the matched words
 	const parts = text.split(pattern);
 
+	if (typeof window !== "undefined") {
+		const matched = parts.filter((part) =>
+			emphasisWords.some((w) => part.toLowerCase() === w.toLowerCase())
+		);
+		console.debug("[EmphasizedText] matches", {
+			textPreview: text.slice(0, 100),
+			emphasisWords,
+			matchedUnique: Array.from(new Set(matched)),
+		});
+	}
+
 	const result: React.ReactNode[] = [];
 
 	parts.forEach((part, index) => {
@@ -42,7 +58,7 @@ export default function EmphasizedText({
 			result.push(
 				<span
 					key={`emphasis-${index}`}
-					className="inline-flex tracking-tight items-baseline gap-1 font-mono font-extrabold leading-1.5"
+					className="inline-flex tracking-tight items-baseline gap-1 font-mono border border-muted-foreground/50 border-r-2 border-b-2 bg-muted/70 rounded-sm py-2 px-1 font-bold leading-1.5"
 				>
 					<span>{part}</span>
 				</span>

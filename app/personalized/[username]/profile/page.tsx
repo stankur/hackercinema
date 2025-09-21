@@ -8,6 +8,7 @@ import ProfileNavigation from "@/components/profile/ProfileNavigation";
 import ProfileHeader from "@/components/profile/ProfileHeader";
 import ProfileTabs from "@/components/profile/ProfileTabs";
 import HighlightsSection from "@/components/profile/sections/HighlightsSection";
+import AllReposSection from "@/components/profile/sections/AllReposSection";
 import AboutSection from "@/components/profile/sections/AboutSection";
 import WorkingOnSection from "@/components/profile/sections/WorkingOnSection";
 import WritingsSection from "@/components/profile/sections/WritingsSection";
@@ -147,11 +148,19 @@ export default function ProfilePage({ params }: PageProps) {
 					{/* When only 1 tab, show content directly without tab switching */}
 					{visibleTabs.length === 1 ? (
 						<div className="space-y-6">
+							{visibleTabs[0].id === "all" && (
+								<AllReposSection
+									username={data.username}
+									repos={data.repos}
+									highlightedRepoNames={highlightedRepoNames}
+								/>
+							)}
 							{visibleTabs[0].id === "highlights" && (
 								<HighlightsSection
 									highlightedRepoNames={highlightedRepoNames}
 									highlightedRepos={highlightedRepos}
 									username={data.username}
+									aiEnabled={!!highlightedRepoNames}
 								/>
 							)}
 							{visibleTabs[0].id === "about" &&
@@ -180,11 +189,19 @@ export default function ProfilePage({ params }: PageProps) {
 					) : (
 						<>
 							{/* Normal tab switching for multiple tabs */}
+							{activeTab === "all" && (
+								<AllReposSection
+									username={data.username}
+									repos={data.repos}
+									highlightedRepoNames={highlightedRepoNames}
+								/>
+							)}
 							{activeTab === "highlights" && (
 								<HighlightsSection
 									highlightedRepoNames={highlightedRepoNames}
 									highlightedRepos={highlightedRepos}
 									username={data.username}
+									aiEnabled={!!highlightedRepoNames}
 								/>
 							)}
 							{activeTab === "about" && profileData?.about && (

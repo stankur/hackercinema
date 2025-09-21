@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback, useMemo } from "react";
+import { useEffect, useState, useCallback, useMemo, useRef } from "react";
 import type { Builder } from "@/lib/types";
 
 interface BackendRepo {
@@ -18,6 +18,8 @@ interface BackendRepo {
 		url: string;
 		original_url: string;
 	}>;
+	/** Words to emphasize in generated_description */
+	emphasis?: string[];
 }
 
 interface ProfileData {
@@ -60,7 +62,7 @@ interface UseProfileDataReturn {
 	loading: boolean;
 	highlightedRepoNames: string[] | undefined;
 	highlightedRepos: Builder["repos"];
-	visibleTabs: Array<{ id: string; label: string }>;
+	visibleTabs: Array<{ id: string; label: string; loading?: boolean }>;
 	activeTab: string;
 	setActiveTab: (tabId: string) => void;
 }
@@ -72,18 +74,32 @@ export function useProfileData(username: string): UseProfileDataReturn {
 	const [highlightedRepoNames, setHighlightedRepoNames] = useState<
 		string[] | undefined
 	>(undefined);
-	const [activeTab, setActiveTab] = useState<string>("highlights");
+	const [activeTab, setActiveTab] = useState<string>("all");
 
 	// Function to determine visible tabs based on content
 	const getVisibleTabs = useCallback(() => {
-		const tabs = [];
+		const tabs: Array<{ id: string; label: string; loading?: boolean }> =
+			[];
 
-		// HIGHLIGHTS - show when generating (names undefined) or when repos exist
+		// HIGHLIGHTS - show while generating or when repos exist (shown first)
 		if (
 			highlightedRepoNames === undefined ||
 			(data?.repos && data.repos.length > 0)
 		) {
-			tabs.push({ id: "highlights", label: "HIGHLIGHTS" });
+			tabs.push({
+				id: "highlights",
+				label: "HIGHLIGHTS",
+				loading: highlightedRepoNames === undefined,
+			});
+		}
+
+		// RECENT PROJECTS - always show when we have data; show loading when repos empty (shown second)
+		if (data) {
+			tabs.push({
+				id: "all",
+				label: "RECENT PROJECTS",
+				loading: !data.repos || data.repos.length === 0,
+			});
 		}
 
 		// ABOUT - show if there's about content
@@ -122,6 +138,24 @@ export function useProfileData(username: string): UseProfileDataReturn {
 
 	const visibleTabs = getVisibleTabs();
 
+	// Auto-switch logic: start on Recent Projects, switch to Highlights once repos load
+	const hasAutoSwitchedRef = useRef(false);
+	useEffect(() => {
+		if (hasAutoSwitchedRef.current) return;
+		const reposReady = !!data?.repos && data.repos.length > 0;
+		if (activeTab === "all" && reposReady) {
+			// Auto-switch to Highlights once Recent Projects is filled
+			setActiveTab("highlights");
+			hasAutoSwitchedRef.current = true;
+		}
+	}, [activeTab, data?.repos?.length]);
+
+	// Reset to Recent Projects on username change (reload/navigation)
+	useEffect(() => {
+		setActiveTab("all");
+		hasAutoSwitchedRef.current = false;
+	}, [username]);
+
 	useEffect(() => {
 		// Trigger restart on mount
 		fetch(`/api/backend/users/${username}/restart`, {
@@ -153,19 +187,34 @@ export function useProfileData(username: string): UseProfileDataReturn {
 								blog: backendData.user.blog || "",
 							},
 							repos: (backendData.repos || []).map(
-								(repo: BackendRepo) => ({
-									name: repo.name,
-									description: repo.description,
-									generated_description:
-										repo.generated_description,
-									updated_at:
-										repo.updated_at || repo.pushed_at,
-									stars: repo.stargazers_count,
-									language: repo.language,
-									topics: repo.topics || [],
-									link: repo.link,
-									gallery: repo.gallery || [],
-								})
+								(repo: BackendRepo) => {
+									const mapped = {
+										name: repo.name,
+										description: repo.description,
+										generated_description:
+											repo.generated_description,
+										updated_at:
+											repo.updated_at || repo.pushed_at,
+										stars: repo.stargazers_count,
+										language: repo.language,
+										topics: repo.topics || [],
+										link: repo.link,
+										gallery: repo.gallery || [],
+										emphasis: repo.emphasis,
+									} as const;
+									if (typeof window !== "undefined") {
+										console.debug(
+											"[PDP] mapped repo (initial)",
+											{
+												name: mapped.name,
+												hasGen: !!mapped.generated_description,
+												emphasisLen:
+													mapped.emphasis?.length,
+											}
+										);
+									}
+									return mapped;
+								}
 							),
 							similar_repos: backendData.similar_repos || [],
 						};
@@ -220,19 +269,34 @@ export function useProfileData(username: string): UseProfileDataReturn {
 								blog: backendData.user.blog || "",
 							},
 							repos: (backendData.repos || []).map(
-								(repo: BackendRepo) => ({
-									name: repo.name,
-									description: repo.description,
-									generated_description:
-										repo.generated_description,
-									updated_at:
-										repo.updated_at || repo.pushed_at,
-									stars: repo.stargazers_count,
-									language: repo.language,
-									topics: repo.topics || [],
-									link: repo.link,
-									gallery: repo.gallery || [],
-								})
+								(repo: BackendRepo) => {
+									const mapped = {
+										name: repo.name,
+										description: repo.description,
+										generated_description:
+											repo.generated_description,
+										updated_at:
+											repo.updated_at || repo.pushed_at,
+										stars: repo.stargazers_count,
+										language: repo.language,
+										topics: repo.topics || [],
+										link: repo.link,
+										gallery: repo.gallery || [],
+										emphasis: repo.emphasis,
+									} as const;
+									if (typeof window !== "undefined") {
+										console.debug(
+											"[PDP] mapped repo (poll)",
+											{
+												name: mapped.name,
+												hasGen: !!mapped.generated_description,
+												emphasisLen:
+													mapped.emphasis?.length,
+											}
+										);
+									}
+									return mapped;
+								}
 							),
 							similar_repos: backendData.similar_repos || [],
 						};

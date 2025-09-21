@@ -3,6 +3,7 @@
 interface Tab {
 	id: string;
 	label: string;
+	loading?: boolean;
 }
 
 interface ProfileTabsProps {
@@ -46,7 +47,12 @@ export default function ProfileTabs({
 								: "text-muted-foreground border-muted-foreground/30 hover:text-foreground hover:border-foreground/50"
 						}`}
 					>
-						{tab.label}
+						<span className="inline-flex items-center gap-2">
+							{tab.label}
+							{tab.loading && (
+								<span className="inline-block w-3 h-3 rounded-full border-2 border-muted-foreground/40 border-t-transparent animate-spin" />
+							)}
+						</span>
 					</button>
 				))}
 			</div>
