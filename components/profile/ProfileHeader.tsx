@@ -5,6 +5,7 @@ import { SocialIcon } from "@/components/ui/OrganizationIcon";
 import { Mail, Globe } from "lucide-react";
 import type { Builder } from "@/lib/types";
 import KeywordsBelts from "@/components/KeywordsBelts";
+import EmphasisBelts from "@/components/EmphasisBelts";
 
 interface ProfileData {
 	profile?: {
@@ -34,6 +35,11 @@ export default function ProfileHeader({
 	// Collect all keywords from repos
 	const allKeywords = (data?.repos || [])
 		.flatMap((r) => r.keywords || [])
+		.filter(Boolean);
+
+	// Collect all emphasis from repos
+	const allEmphasis = (data?.repos || [])
+		.flatMap((r) => r.emphasis || [])
 		.filter(Boolean);
 
 	if (typeof window !== "undefined") {
@@ -167,10 +173,31 @@ export default function ProfileHeader({
 					</div>
 				)}
 
-				{/* Keywords Belts */}
-				{allKeywords.length > 0 && (
-					<div className="mt-8">
-						<KeywordsBelts keywords={allKeywords} />
+				{/* Keywords and Emphasis Belts */}
+				{(allKeywords.length > 0 || allEmphasis.length > 0) && (
+					<div className="mt-10 space-y-10 md:space-y-10">
+						{allKeywords.length > 0 && (
+							<KeywordsBelts
+								keywords={allKeywords}
+								startDirection="left"
+							/>
+						)}
+						{allEmphasis.length > 0 && (
+							<EmphasisBelts
+								emphasis={allEmphasis}
+								startDirection={
+									// Opposite of the last keywords belt
+									// If keywords start left and alternate, last belt index = belts-1
+									// Opposite = right when last keywords belt would be ...
+									// Simplify: flip based on number of belts derived from count
+									(Math.ceil(allKeywords.length / 8) - 1) %
+										2 ===
+									0
+										? "right"
+										: "left"
+								}
+							/>
+						)}
 					</div>
 				)}
 			</div>

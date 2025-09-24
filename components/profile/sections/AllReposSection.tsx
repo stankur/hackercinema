@@ -34,7 +34,7 @@ export default function AllReposSection({
 				const aiEnabled = !isGeneratingHighlights && !!isHighlighted;
 				return (
 					<RepoCard
-						key={repo.name}
+						key={`${username}-${repo.name}`}
 						repo={repo}
 						owner={username}
 						showOwner={false}

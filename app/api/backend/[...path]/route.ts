@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 const BACKEND_BASE_URL =
-	process.env.BACKEND_BASE_URL || "http://localhost:5000";
+	process.env.BACKEND_BASE_URL || "http://localhost:8080";
 
 export async function GET(
 	request: NextRequest,
