@@ -3,6 +3,7 @@
 import RepoCard from "@/components/RepoCard";
 import SharedSkeletonRows from "./SharedSkeletonRows";
 import type { Builder } from "@/lib/types";
+import { useDevUser } from "@/hooks/useDevUser";
 
 interface HighlightsSectionProps {
 	highlightedRepoNames: string[] | undefined;
@@ -17,6 +18,8 @@ export default function HighlightsSection({
 	username,
 	aiEnabled = false,
 }: HighlightsSectionProps) {
+	const { login } = useDevUser();
+	const canEdit = login === username;
 	if (highlightedRepoNames === undefined) {
 		return <SharedSkeletonRows count={5} height={100} />;
 	}
@@ -47,6 +50,7 @@ export default function HighlightsSection({
 						showOwner={false}
 						showUsernameInsteadOfDate={false}
 						aiEnabled={aiEnabled && !!repo.generated_description}
+						canEdit={canEdit}
 					/>
 				))}
 			</div>

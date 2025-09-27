@@ -1,7 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ExternalLink, Images, Sparkles, ZoomOut, ZoomIn } from "lucide-react";
+import {
+	ExternalLink,
+	Images,
+	Sparkles,
+	ZoomOut,
+	ZoomIn,
+	Pencil,
+} from "lucide-react";
 import { getCardBackground, getLanguageDotColor } from "@/lib/language-colors";
 import type { GitHubRepo } from "@/lib/types";
 import { useGalleryModal } from "./GalleryModalProvider";
@@ -18,6 +25,7 @@ interface RepoCardProps {
 	showGeneratedDescriptionByDefault?: boolean;
 	aiEnabled?: boolean;
 	aiShowLoadingIfMissing?: boolean;
+	canEdit?: boolean;
 }
 
 export default function RepoCard({
@@ -30,6 +38,7 @@ export default function RepoCard({
 	showGeneratedDescriptionByDefault = false,
 	aiEnabled = true,
 	aiShowLoadingIfMissing = true,
+	canEdit = false,
 }: RepoCardProps) {
 	const [cardBackground, setCardBackground] = useState<string>("");
 	const [languageDotColor, setLanguageDotColor] = useState<string>("");
@@ -201,6 +210,21 @@ export default function RepoCard({
 									)}
 							</>
 						)}
+						{canEdit && (
+							<button
+								onClick={() => {
+									// Placeholder: open edit UI; to be implemented
+									console.debug("Edit repo", {
+										owner,
+										name: repo.name,
+									});
+								}}
+								className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
+								title="Edit repository"
+							>
+								<Pencil size={14} />
+							</button>
+						)}
 					</div>
 				</div>
 				{/* Description - toggles between original and generated */}
@@ -332,6 +356,20 @@ export default function RepoCard({
 										</Link>
 									)}
 							</>
+						)}
+						{canEdit && (
+							<button
+								onClick={() => {
+									console.debug("Edit repo", {
+										owner,
+										name: repo.name,
+									});
+								}}
+								className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
+								title="Edit repository"
+							>
+								<Pencil size={20} />
+							</button>
 						)}
 					</div>
 				</div>
