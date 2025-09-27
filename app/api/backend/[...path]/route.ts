@@ -57,6 +57,9 @@ async function forwardRequest(
 			}
 		});
 
+		// Ensure upstream returns uncompressed payload to avoid encoding mismatches
+		headers["accept-encoding"] = "identity";
+
 		const options: RequestInit = {
 			method,
 			headers,
@@ -72,23 +75,9 @@ async function forwardRequest(
 
 		const response = await fetch(fullUrl, options);
 
-		const responseHeaders = new Headers();
-		response.headers.forEach((value, key) => {
-			if (
-				!key.toLowerCase().startsWith("transfer-encoding") &&
-				!key.toLowerCase().startsWith("connection")
-			) {
-				responseHeaders.set(key, value);
-			}
-		});
-
-		const responseBody = await response.text();
-
-		return new NextResponse(responseBody, {
-			status: response.status,
-			statusText: response.statusText,
-			headers: responseHeaders,
-		});
+		// Normalize to JSON response for the app layer API
+		const data = await response.json();
+		return NextResponse.json(data, { status: response.status });
 	} catch (error) {
 		console.error("Backend proxy error:", error);
 		return NextResponse.json(

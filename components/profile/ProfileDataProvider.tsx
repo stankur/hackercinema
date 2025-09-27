@@ -160,7 +160,7 @@ export function useProfileData(username: string): UseProfileDataReturn {
 
 	useEffect(() => {
 		// Trigger restart on mount
-		fetch(`/api/backend/users/${username}/restart`, {
+		fetch(`/api/backend/users/${username}/start`, {
 			method: "POST",
 		}).catch((error) => {
 			console.error(`Failed to restart pipeline for ${username}:`, error);
