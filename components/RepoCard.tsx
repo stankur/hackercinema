@@ -1,14 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import {
-	ExternalLink,
-	Images,
-	Sparkles,
-	ZoomOut,
-	ZoomIn,
-	Pencil,
-} from "lucide-react";
+import { ExternalLink, Sparkles, ZoomOut, ZoomIn, Pencil } from "lucide-react";
+import Image from "next/image";
 import { getCardBackground, getLanguageDotColor } from "@/lib/language-colors";
 import type { GitHubRepo } from "@/lib/types";
 import { useGalleryModal } from "./GalleryModalProvider";
@@ -101,11 +95,33 @@ export default function RepoCard({
 	return (
 		<div className="border border-muted rounded-lg p-3 md:border-0 md:p-0">
 			<div
-				className="rounded-md py-1.5 md:py-2 space-y-2 relative overflow-hidden"
+				className="rounded-md py-1.5 md:py-2 space-y-2 relative overflow-hidden md:flow-root"
 				style={{
 					background: cardBackground || undefined,
 				}}
 			>
+				{/* Hero thumbnail with +N badge */}
+				{repo.gallery && repo.gallery.length > 0 && (
+					<button
+						onClick={() => openGallery(repo.gallery!, 0)}
+						className="relative w-full md:w-[28%] md:min-w-[280px] md:max-w-[420px] md:h-[144px] lg:h-[160px] md:float-left md:mr-4 md:mb-2 rounded-md overflow-hidden group"
+						title={repo.gallery[0].alt || repo.name}
+						style={{ aspectRatio: `${1899 / 1165}` }}
+					>
+						<Image
+							src={repo.gallery[0].url}
+							alt={repo.gallery[0].alt || repo.name}
+							fill
+							className="object-cover"
+						/>
+						<div className="absolute inset-0 pointer-events-none bg-background/20 dark:bg-background/25 mix-blend-multiply" />
+						{repo.gallery.length > 1 && (
+							<div className="absolute bottom-2 right-2 z-10 px-2 py-0.5 text-[11px] font-medium rounded-full bg-background/70 backdrop-blur-md border border-white/10 text-foreground/80">
+								+{repo.gallery.length - 1}
+							</div>
+						)}
+					</button>
+				)}
 				{/* Top row with repo title, language info, and desktop action icons */}
 				<div className="flex items-center justify-between">
 					<div className="flex items-center gap-3 flex-1 min-w-0">
@@ -144,15 +160,6 @@ export default function RepoCard({
 							>
 								<ExternalLink size={14} />
 							</a>
-						)}
-						{repo.gallery && repo.gallery.length > 0 && (
-							<button
-								onClick={() => openGallery(repo.gallery!)}
-								className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
-								title="View gallery"
-							>
-								<Images size={14} />
-							</button>
 						)}
 						{aiEnabled && (
 							<>
@@ -291,15 +298,6 @@ export default function RepoCard({
 							>
 								<ExternalLink size={20} />
 							</a>
-						)}
-						{repo.gallery && repo.gallery.length > 0 && (
-							<button
-								onClick={() => openGallery(repo.gallery!)}
-								className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
-								title="View gallery"
-							>
-								<Images size={20} />
-							</button>
 						)}
 						{aiEnabled && (
 							<>
