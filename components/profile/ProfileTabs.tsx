@@ -1,5 +1,7 @@
 "use client";
 
+import {  Clock, Info, Star } from "lucide-react";
+
 interface Tab {
 	id: string;
 	label: string;
@@ -36,26 +38,63 @@ export default function ProfileTabs({
 				}
 			`}
 		>
-			<div className="flex flex-wrap gap-4 sm:gap-6">
-				{visibleTabs.map((tab) => (
-					<button
-						key={tab.id}
-						onClick={() => setActiveTab(tab.id)}
-						className={`text-xs font-mono tracking-widest uppercase transition-all px-3 py-2 rounded-full border ${
-							activeTab === tab.id
-								? "text-foreground border-foreground"
-								: "text-muted-foreground border-muted-foreground/30 hover:text-foreground hover:border-foreground/50"
-						}`}
+			{(() => {
+				const allowed = new Set(["highlights", "recent", "about"]);
+				const order = ["highlights", "recent", "about"] as const;
+				const filtered = visibleTabs
+					.filter((t) => allowed.has(t.id))
+					.sort(
+						(a, b) =>
+							order.indexOf(a.id as (typeof order)[number]) -
+							order.indexOf(b.id as (typeof order)[number])
+					);
+
+				return (
+					<div
+						role="tablist"
+						className="flex justify-start gap-4"
 					>
-						<span className="inline-flex items-center gap-2">
-							{tab.label}
-							{tab.loading && (
-								<span className="inline-block w-3 h-3 rounded-full border-2 border-muted-foreground/40 border-t-transparent animate-spin" />
-							)}
-						</span>
-					</button>
-				))}
-			</div>
+						{filtered.map((tab) => {
+							const isActive = activeTab === tab.id;
+							const Icon =
+								tab.id === "highlights"
+									? Star
+									: tab.id === "recent"
+									? Clock
+									: Info;
+							return (
+								<button
+									key={tab.id}
+									role="tab"
+									aria-selected={isActive}
+									onClick={() => setActiveTab(tab.id)}
+									className={`relative inline-flex items-center gap-2 text-xs md:text-xs px-1 py-2 transition-colors after:absolute after:left-0 after:right-0 after:-bottom-1 after:h-[2px] after:rounded after:transition-all after:duration-200 ${
+										isActive
+											? "text-foreground/60 after:bg-foreground/60 after:opacity-100"
+											: "text-muted-foreground/60 hover:text-foreground/80 after:opacity-0"
+									}`}
+								>
+									<Icon size={14} className="md:hidden" />
+									<Icon
+										size={16}
+										className="hidden md:inline"
+									/>
+									<span>
+										{tab.id === "recent"
+											? "Recent"
+											: tab.id === "highlights"
+											? "Highlights"
+											: "About"}
+									</span>
+									{tab.loading && (
+										<span className="inline-block w-2 h-2 rounded-full bg-muted-foreground/50 animate-pulse" />
+									)}
+								</button>
+							);
+						})}
+					</div>
+				);
+			})()}
 		</div>
 	);
 }

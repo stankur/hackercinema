@@ -112,7 +112,7 @@ export default function ProfilePage({ params }: PageProps) {
 			{/* Navigation */}
 			<ProfileNavigation username={username} data={data} />
 
-			<div className="max-w-3xl mx-auto py-10 px-6 space-y-30">
+			<div className="max-w-3xl mx-auto py-10 px-6 space-y-20">
 				{/* Header */}
 				<header ref={headerRef} data-section="header">
 					<ProfileHeader
@@ -149,7 +149,7 @@ export default function ProfilePage({ params }: PageProps) {
 						{/* When only 1 tab, show content directly without tab switching */}
 						{visibleTabs.length === 1 ? (
 							<div className="space-y-6">
-								{visibleTabs[0].id === "all" && (
+								{visibleTabs[0].id === "recent" && (
 									<AllReposSection
 										username={data.username}
 										repos={data.repos}
@@ -196,7 +196,7 @@ export default function ProfilePage({ params }: PageProps) {
 						) : (
 							<>
 								{/* Normal tab switching for multiple tabs */}
-								{activeTab === "all" && (
+								{activeTab === "recent" && (
 									<AllReposSection
 										username={data.username}
 										repos={data.repos}

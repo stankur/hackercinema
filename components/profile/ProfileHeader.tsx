@@ -175,8 +175,8 @@ export default function ProfileHeader({
 
 				{/* Keywords and Emphasis Belts */}
 				{(allKeywords.length > 0 || allEmphasis.length > 0) && (
-					<div className="mt-10 space-y-10 md:space-y-10">
-						{allKeywords.length > 0 && (
+					<div className="mt-10 space-y-5 md:space-y-5">
+						{/* {allKeywords.length > 0 && (
 							<KeywordsBelts
 								keywords={allKeywords}
 								startDirection="left"
@@ -190,14 +190,14 @@ export default function ProfileHeader({
 									// If keywords start left and alternate, last belt index = belts-1
 									// Opposite = right when last keywords belt would be ...
 									// Simplify: flip based on number of belts derived from count
-									(Math.ceil(allKeywords.length / 8) - 1) %
+									(Math.ceil(allKeywords.length / 20) - 1) %
 										2 ===
 									0
 										? "right"
 										: "left"
 								}
 							/>
-						)}
+						)} */}
 					</div>
 				)}
 			</div>

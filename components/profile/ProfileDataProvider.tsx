@@ -76,7 +76,7 @@ export function useProfileData(username: string): UseProfileDataReturn {
 	const [highlightedRepoNames, setHighlightedRepoNames] = useState<
 		string[] | undefined
 	>(undefined);
-	const [activeTab, setActiveTab] = useState<string>("all");
+	const [activeTab, setActiveTab] = useState<string>("recent");
 
 	// Function to determine visible tabs based on content
 	const getVisibleTabs = useCallback(() => {
@@ -98,7 +98,7 @@ export function useProfileData(username: string): UseProfileDataReturn {
 		// RECENT PROJECTS - always show when we have data; show loading when repos empty (shown second)
 		if (data) {
 			tabs.push({
-				id: "all",
+				id: "recent",
 				label: "RECENT PROJECTS",
 				loading: !data.repos || data.repos.length === 0,
 			});
@@ -145,7 +145,7 @@ export function useProfileData(username: string): UseProfileDataReturn {
 	useEffect(() => {
 		if (hasAutoSwitchedRef.current) return;
 		const reposReady = !!data?.repos && data.repos.length > 0;
-		if (activeTab === "all" && reposReady) {
+		if (activeTab === "recent" && reposReady) {
 			// Auto-switch to Highlights once Recent Projects is filled
 			setActiveTab("highlights");
 			hasAutoSwitchedRef.current = true;
@@ -154,7 +154,7 @@ export function useProfileData(username: string): UseProfileDataReturn {
 
 	// Reset to Recent Projects on username change (reload/navigation)
 	useEffect(() => {
-		setActiveTab("all");
+		setActiveTab("recent");
 		hasAutoSwitchedRef.current = false;
 	}, [username]);
 

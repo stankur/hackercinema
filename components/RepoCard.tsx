@@ -162,7 +162,7 @@ export default function RepoCard({
 		<div className="border border-muted rounded-lg p-3 md:border-0 md:p-0">
 			<div
 				{...(canEdit ? getRootProps() : {})}
-				className="rounded-md py-1.5 md:py-2 space-y-2 relative overflow-hidden md:flow-root"
+				className="rounded-md py-1.5 md:py-2 space-y-2 md:space-y-0 relative overflow-hidden md:flex md:items-start md:gap-4"
 				style={{
 					background: cardBackground || undefined,
 				}}
@@ -195,7 +195,7 @@ export default function RepoCard({
 								},
 							});
 						}}
-						className="relative w-full md:w-[28%] md:min-w-[280px] md:max-w-[420px] md:h-[144px] lg:h-[160px] md:float-left md:mr-4 md:mb-2 rounded-md overflow-hidden group"
+						className="relative w-full md:w-[28%] md:min-w-[280px] md:max-w-[420px] md:h-[144px] lg:h-[160px] md:shrink-0 md:self-start rounded-md overflow-hidden group"
 						title={localGallery[0].alt || repo.name}
 						style={{ aspectRatio: `${1899 / 1165}` }}
 					>
@@ -213,253 +213,261 @@ export default function RepoCard({
 						)}
 					</button>
 				)}
-				{/* Top row with repo title, language info, and desktop action icons */}
-				<div className="flex items-center justify-between">
-					<div className="flex items-center gap-3 flex-1 min-w-0">
-						<a
-							href={`https://github.com/${owner}/${repo.name}`}
-							target="_blank"
-							rel="noopener noreferrer"
-							className="text-base font-semibold text-foreground hover:text-primary hover:underline"
-						>
-							{repo.name}
-						</a>
-						{/* Language info */}
-						{repo.language && (
-							<div className="flex items-center gap-1.5 text-xs text-muted-foreground/60">
-								<div
-									className="w-2 h-2 rounded-full"
-									style={{
-										backgroundColor:
-											languageDotColor || "#6b7280",
+
+				{/* Content column */}
+				<div className="flex-1 min-w-0 space-y-2">
+					{/* Top row with repo title, language info, and desktop action icons */}
+					<div className="flex items-center justify-between">
+						<div className="flex items-center gap-3 flex-1 min-w-0">
+							<a
+								href={`https://github.com/${owner}/${repo.name}`}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-base font-semibold text-foreground hover:text-primary hover:underline"
+							>
+								{repo.name}
+							</a>
+							{/* Language info */}
+							{repo.language && (
+								<div className="flex items-center gap-1.5 text-xs text-muted-foreground/60">
+									<div
+										className="w-2 h-2 rounded-full"
+										style={{
+											backgroundColor:
+												languageDotColor || "#6b7280",
+										}}
+									></div>
+									<span>{repo.language}</span>
+								</div>
+							)}
+						</div>
+
+						{/* Desktop action icons in top right */}
+						<div className="hidden md:flex items-center gap-2 ml-4">
+							{repo.link && (
+								<a
+									href={repo.link}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
+									title="Visit project link"
+								>
+									<ExternalLink size={14} />
+								</a>
+							)}
+							{aiEnabled && (
+								<>
+									{(repo.generated_description ||
+										aiShowLoadingIfMissing) && (
+										<button
+											onClick={() => {
+												if (!repo.generated_description)
+													return;
+												if (
+													hideDetailIcon &&
+													showGeneratedDescription
+												) {
+													window.history.back();
+												} else {
+													setShowGeneratedDescription(
+														!showGeneratedDescription
+													);
+												}
+											}}
+											disabled={
+												!repo.generated_description
+											}
+											className={`cursor-pointer transition-colors p-1 ${
+												!repo.generated_description
+													? "text-muted-foreground/40 animate-pulse cursor-not-allowed"
+													: "text-muted-foreground hover:text-foreground"
+											}`}
+											title={
+												!repo.generated_description
+													? "AI description generating..."
+													: hideDetailIcon &&
+													  showGeneratedDescription
+													? "Go back"
+													: showGeneratedDescription
+													? "Show concise description"
+													: "Show AI-generated description"
+											}
+										>
+											{showGeneratedDescription ? (
+												<ZoomOut size={14} />
+											) : (
+												<Sparkles size={14} />
+											)}
+										</button>
+									)}
+									{!hideDetailIcon &&
+										showGeneratedDescription &&
+										repo.tech_doc && (
+											<Link
+												href={`/personalized/detail/${owner}/${repo.name}`}
+												className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
+												title="View detailed explanation"
+											>
+												<ZoomIn size={14} />
+											</Link>
+										)}
+								</>
+							)}
+							{canEdit && (
+								<button
+									onClick={() => {
+										// Placeholder: open edit UI; to be implemented
+										console.debug("Edit repo", {
+											owner,
+											name: repo.name,
+										});
 									}}
-								></div>
-								<span>{repo.language}</span>
-							</div>
-						)}
+									className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
+									title="Edit repository"
+								>
+									<Pencil size={14} />
+								</button>
+							)}
+						</div>
 					</div>
+					{/* Description - toggles between original and generated */}
+					{(repo.description ||
+						(showGeneratedDescription &&
+							repo.generated_description)) && (
+						<div className="text-sm text-muted-foreground leading-relaxed">
+							{showGeneratedDescription &&
+							repo.generated_description ? (
+								<EmphasizedText
+									text={repo.generated_description}
+									emphasisWords={repo.emphasis || []}
+								/>
+							) : (
+								repo.description
+							)}
+						</div>
+					)}
 
-					{/* Desktop action icons in top right */}
-					<div className="hidden md:flex items-center gap-2 ml-4">
-						{repo.link && (
-							<a
-								href={repo.link}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
-								title="Visit project link"
-							>
-								<ExternalLink size={14} />
-							</a>
-						)}
-						{aiEnabled && (
-							<>
-								{(repo.generated_description ||
-									aiShowLoadingIfMissing) && (
-									<button
-										onClick={() => {
-											if (!repo.generated_description)
-												return;
-											if (
-												hideDetailIcon &&
-												showGeneratedDescription
-											) {
-												window.history.back();
-											} else {
-												setShowGeneratedDescription(
-													!showGeneratedDescription
-												);
-											}
-										}}
-										disabled={!repo.generated_description}
-										className={`cursor-pointer transition-colors p-1 ${
-											!repo.generated_description
-												? "text-muted-foreground/40 animate-pulse cursor-not-allowed"
-												: "text-muted-foreground hover:text-foreground"
-										}`}
-										title={
-											!repo.generated_description
-												? "AI description generating..."
-												: hideDetailIcon &&
-												  showGeneratedDescription
-												? "Go back"
-												: showGeneratedDescription
-												? "Show concise description"
-												: "Show AI-generated description"
-										}
-									>
-										{showGeneratedDescription ? (
-											<ZoomOut size={14} />
-										) : (
-											<Sparkles size={14} />
-										)}
-									</button>
-								)}
-								{!hideDetailIcon &&
-									showGeneratedDescription &&
-									repo.tech_doc && (
-										<Link
-											href={`/personalized/detail/${owner}/${repo.name}`}
-											className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
-											title="View detailed explanation"
-										>
-											<ZoomIn size={14} />
-										</Link>
-									)}
-							</>
-						)}
-						{canEdit && (
+					{/* Username row - only show for explore/for you pages with clickable usernames */}
+					{showOwnerAndDate ? (
+						<div className="text-xs text-muted-foreground/60 mt-2">
 							<button
 								onClick={() => {
-									// Placeholder: open edit UI; to be implemented
-									console.debug("Edit repo", {
-										owner,
-										name: repo.name,
-									});
+									// Navigate to the builder in the hackers tab
+									window.location.hash = owner;
+									// Switch to hackers tab if not already there
+									const hackersTab = document.querySelector(
+										'[data-tab="hackers"]'
+									) as HTMLButtonElement;
+									if (hackersTab) {
+										hackersTab.click();
+									}
 								}}
-								className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
-								title="Edit repository"
+								className="font-semibold cursor-pointer hover:text-foreground transition-colors"
 							>
-								<Pencil size={14} />
+								{owner}
 							</button>
-						)}
-					</div>
-				</div>
-				{/* Description - toggles between original and generated */}
-				{(repo.description ||
-					(showGeneratedDescription &&
-						repo.generated_description)) && (
-					<div className="text-sm text-muted-foreground leading-relaxed">
-						{showGeneratedDescription &&
-						repo.generated_description ? (
-							<EmphasizedText
-								text={repo.generated_description}
-								emphasisWords={repo.emphasis || []}
-							/>
-						) : (
-							repo.description
-						)}
-					</div>
-				)}
-
-				{/* Username row - only show for explore/for you pages with clickable usernames */}
-				{showOwnerAndDate ? (
-					<div className="text-xs text-muted-foreground/60 mt-2">
-						<button
-							onClick={() => {
-								// Navigate to the builder in the hackers tab
-								window.location.hash = owner;
-								// Switch to hackers tab if not already there
-								const hackersTab = document.querySelector(
-									'[data-tab="hackers"]'
-								) as HTMLButtonElement;
-								if (hackersTab) {
-									hackersTab.click();
-								}
-							}}
-							className="font-semibold cursor-pointer hover:text-foreground transition-colors"
-						>
-							{owner}
-						</button>
-					</div>
-				) : showUsernameInsteadOfDate ? (
-					<div className="text-xs text-muted-foreground/60 mt-2">
-						<button
-							onClick={() => {
-								// Navigate to the builder on hackers page
-								window.location.href = `/#${owner}`;
-							}}
-							className="font-semibold cursor-pointer hover:text-foreground transition-colors"
-						>
-							{owner}
-						</button>
-					</div>
-				) : null}
-
-				{/* Mobile action icons in bottom right corner for easy mobile tapping */}
-				<div className="flex items-center justify-end mt-3 pt-2 md:hidden">
-					<div className="flex items-start gap-3">
-						{repo.link && (
-							<a
-								href={repo.link}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
-								title="Visit project link"
-							>
-								<ExternalLink size={20} />
-							</a>
-						)}
-						{aiEnabled && (
-							<>
-								{(repo.generated_description ||
-									aiShowLoadingIfMissing) && (
-									<button
-										onClick={() => {
-											if (!repo.generated_description)
-												return;
-											if (
-												hideDetailIcon &&
-												showGeneratedDescription
-											) {
-												window.history.back();
-											} else {
-												setShowGeneratedDescription(
-													!showGeneratedDescription
-												);
-											}
-										}}
-										disabled={!repo.generated_description}
-										className={`cursor-pointer transition-colors p-1 ${
-											!repo.generated_description
-												? "text-muted-foreground/40 animate-pulse cursor-not-allowed"
-												: "text-muted-foreground hover:text-foreground"
-										}`}
-										title={
-											!repo.generated_description
-												? "AI description generating..."
-												: hideDetailIcon &&
-												  showGeneratedDescription
-												? "Go back"
-												: showGeneratedDescription
-												? "Show concise description"
-												: "Show AI-generated description"
-										}
-									>
-										{showGeneratedDescription ? (
-											<ZoomOut size={20} />
-										) : (
-											<Sparkles size={20} />
-										)}
-									</button>
-								)}
-								{!hideDetailIcon &&
-									showGeneratedDescription &&
-									repo.tech_doc && (
-										<Link
-											href={`/personalized/detail/${owner}/${repo.name}`}
-											className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
-											title="View detailed explanation"
-										>
-											<ZoomIn size={20} />
-										</Link>
-									)}
-							</>
-						)}
-						{canEdit && (
+						</div>
+					) : showUsernameInsteadOfDate ? (
+						<div className="text-xs text-muted-foreground/60 mt-2">
 							<button
 								onClick={() => {
-									console.debug("Edit repo", {
-										owner,
-										name: repo.name,
-									});
+									// Navigate to the builder on hackers page
+									window.location.href = `/#${owner}`;
 								}}
-								className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
-								title="Edit repository"
+								className="font-semibold cursor-pointer hover:text-foreground transition-colors"
 							>
-								<Pencil size={20} />
+								{owner}
 							</button>
-						)}
+						</div>
+					) : null}
+
+					{/* Mobile action icons in bottom right corner for easy mobile tapping */}
+					<div className="flex items-center justify-end mt-3 pt-2 md:hidden">
+						<div className="flex items-start gap-3">
+							{repo.link && (
+								<a
+									href={repo.link}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
+									title="Visit project link"
+								>
+									<ExternalLink size={20} />
+								</a>
+							)}
+							{aiEnabled && (
+								<>
+									{(repo.generated_description ||
+										aiShowLoadingIfMissing) && (
+										<button
+											onClick={() => {
+												if (!repo.generated_description)
+													return;
+												if (
+													hideDetailIcon &&
+													showGeneratedDescription
+												) {
+													window.history.back();
+												} else {
+													setShowGeneratedDescription(
+														!showGeneratedDescription
+													);
+												}
+											}}
+											disabled={
+												!repo.generated_description
+											}
+											className={`cursor-pointer transition-colors p-1 ${
+												!repo.generated_description
+													? "text-muted-foreground/40 animate-pulse cursor-not-allowed"
+													: "text-muted-foreground hover:text-foreground"
+											}`}
+											title={
+												!repo.generated_description
+													? "AI description generating..."
+													: hideDetailIcon &&
+													  showGeneratedDescription
+													? "Go back"
+													: showGeneratedDescription
+													? "Show concise description"
+													: "Show AI-generated description"
+											}
+										>
+											{showGeneratedDescription ? (
+												<ZoomOut size={20} />
+											) : (
+												<Sparkles size={20} />
+											)}
+										</button>
+									)}
+									{!hideDetailIcon &&
+										showGeneratedDescription &&
+										repo.tech_doc && (
+											<Link
+												href={`/personalized/detail/${owner}/${repo.name}`}
+												className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
+												title="View detailed explanation"
+											>
+												<ZoomIn size={20} />
+											</Link>
+										)}
+								</>
+							)}
+							{canEdit && (
+								<button
+									onClick={() => {
+										console.debug("Edit repo", {
+											owner,
+											name: repo.name,
+										});
+									}}
+									className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
+									title="Edit repository"
+								>
+									<Pencil size={20} />
+								</button>
+							)}
+						</div>
 					</div>
 				</div>
 
