@@ -4,10 +4,15 @@ import { useState, useEffect } from "react";
 import { ExternalLink, Sparkles, ZoomOut, ZoomIn, Pencil } from "lucide-react";
 import Image from "next/image";
 import { getCardBackground, getLanguageDotColor } from "@/lib/language-colors";
-import type { GitHubRepo } from "@/lib/types";
+import type { GitHubRepo, GalleryImage } from "@/lib/types";
 import { useGalleryModal } from "./GalleryModalProvider";
 import EmphasizedText from "./EmphasizedText";
 import Link from "next/link";
+import { useDropzone } from "react-dropzone";
+import {
+	uploadRepoImageAndPersist,
+	parseOwnerRepoFromLink,
+} from "@/lib/repoGallery";
 
 interface RepoCardProps {
 	repo: GitHubRepo;
@@ -38,7 +43,68 @@ export default function RepoCard({
 	const [languageDotColor, setLanguageDotColor] = useState<string>("");
 	const [showGeneratedDescription, setShowGeneratedDescription] =
 		useState<boolean>(showGeneratedDescriptionByDefault);
+	const [localGallery, setLocalGallery] = useState<
+		GalleryImage[] | undefined
+	>(repo.gallery && Array.isArray(repo.gallery) ? [...repo.gallery] : []);
+	const [isUploading, setIsUploading] = useState<boolean>(false);
 	const { openGallery } = useGalleryModal();
+
+	// Enable image drop only when the viewer can edit this repo (profile owner)
+	const {
+		getRootProps,
+		getInputProps,
+		isDragActive,
+		isDragAccept,
+		isDragReject,
+	} = useDropzone({
+		disabled: !canEdit,
+		noClick: true,
+		noKeyboard: true,
+		multiple: false,
+		accept: { "image/*": [] },
+		onDrop: async (acceptedFiles) => {
+			const file = acceptedFiles?.[0];
+			if (!file || isUploading) return;
+			try {
+				setIsUploading(true);
+				// Resolve repo owner for subject id
+				const parsed = parseOwnerRepoFromLink(repo.link || "");
+				const repoOwner = parsed?.owner || owner;
+				const repoName = repo.name;
+				const username = owner; // page username when canEdit is true
+
+				const { secureUrl } = await uploadRepoImageAndPersist({
+					username,
+					owner: repoOwner,
+					repoName,
+					file,
+					alt: repo.name,
+				});
+
+				// Update local gallery
+				setLocalGallery((prev) => [
+					...(prev || []),
+					{ url: secureUrl, original_url: secureUrl, alt: repo.name },
+				]);
+			} catch (e) {
+				console.error("Failed to upload/persist image", e);
+				if (typeof window !== "undefined") {
+					try {
+						console.error("Failed to add image. Please try again.");
+					} catch {}
+				}
+			} finally {
+				setIsUploading(false);
+			}
+		},
+	});
+
+	// Keep local gallery in sync when repo prop changes
+	useEffect(() => {
+		setLocalGallery(
+			repo.gallery && Array.isArray(repo.gallery) ? [...repo.gallery] : []
+		);
+	}, [repo.gallery]);
 
 	// Load card background and language dot color
 	useEffect(() => {
@@ -95,29 +161,54 @@ export default function RepoCard({
 	return (
 		<div className="border border-muted rounded-lg p-3 md:border-0 md:p-0">
 			<div
+				{...(canEdit ? getRootProps() : {})}
 				className="rounded-md py-1.5 md:py-2 space-y-2 relative overflow-hidden md:flow-root"
 				style={{
 					background: cardBackground || undefined,
 				}}
 			>
+				{canEdit && <input {...getInputProps()} />}
 				{/* Hero thumbnail with +N badge */}
-				{repo.gallery && repo.gallery.length > 0 && (
+				{localGallery && localGallery.length > 0 && (
 					<button
-						onClick={() => openGallery(repo.gallery!, 0)}
+						onClick={() => {
+							// Determine repo owner for delete functionality
+							const parsed = parseOwnerRepoFromLink(
+								repo.link || ""
+							);
+							const repoOwner = parsed?.owner || owner;
+
+							openGallery(localGallery!, 0, {
+								username: owner, // page username when canEdit is true
+								owner: repoOwner,
+								repoName: repo.name,
+								repoLink: repo.link,
+								canEdit,
+								onImageDeleted: (deletedUrl: string) => {
+									// Remove from local gallery
+									setLocalGallery(
+										(prev) =>
+											prev?.filter(
+												(img) => img.url !== deletedUrl
+											) || []
+									);
+								},
+							});
+						}}
 						className="relative w-full md:w-[28%] md:min-w-[280px] md:max-w-[420px] md:h-[144px] lg:h-[160px] md:float-left md:mr-4 md:mb-2 rounded-md overflow-hidden group"
-						title={repo.gallery[0].alt || repo.name}
+						title={localGallery[0].alt || repo.name}
 						style={{ aspectRatio: `${1899 / 1165}` }}
 					>
 						<Image
-							src={repo.gallery[0].url}
-							alt={repo.gallery[0].alt || repo.name}
+							src={localGallery[0].url}
+							alt={localGallery[0].alt || repo.name}
 							fill
 							className="object-cover"
 						/>
 						<div className="absolute inset-0 pointer-events-none bg-background/20 dark:bg-background/25 mix-blend-multiply" />
-						{repo.gallery.length > 1 && (
+						{localGallery.length > 1 && (
 							<div className="absolute bottom-2 right-2 z-10 px-2 py-0.5 text-[11px] font-medium rounded-full bg-background/70 backdrop-blur-md border border-white/10 text-foreground/80">
-								+{repo.gallery.length - 1}
+								+{localGallery.length - 1}
 							</div>
 						)}
 					</button>
@@ -371,6 +462,32 @@ export default function RepoCard({
 						)}
 					</div>
 				</div>
+
+				{/* Drag-and-drop overlay (visible only while dragging files) */}
+				{canEdit && (isDragActive || isUploading) && (
+					<div
+						className={[
+							"absolute inset-0 z-20 flex items-center justify-center",
+							"rounded-md",
+							"bg-neutral-200/70 dark:bg-neutral-700/60 backdrop-blur-sm",
+							"border-2 border-dashed",
+							isDragReject
+								? "border-red-500 text-red-500"
+								: "border-neutral-400 dark:border-neutral-500 text-foreground/80",
+						].join(" ")}
+						onClick={(e) => e.stopPropagation()}
+					>
+						<span className="text-sm font-medium">
+							{isUploading
+								? "Uploading..."
+								: isDragReject
+								? "Only images supported"
+								: isDragAccept
+								? "Drop to add image to gallery"
+								: "Drop image to add to gallery"}
+						</span>
+					</div>
+				)}
 			</div>
 		</div>
 	);
