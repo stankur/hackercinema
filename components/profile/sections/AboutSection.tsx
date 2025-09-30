@@ -21,11 +21,11 @@ export default function AboutSection({ about }: AboutSectionProps) {
 					return (
 						<div key={index}>
 							{beforeList && (
-								<p className="text-sm leading-relaxed text-foreground font-light mb-3">
+								<p className="text-sm leading-relaxed text-muted-foreground font-light mb-3">
 									{beforeList}
 								</p>
 							)}
-							<ul className="text-sm leading-relaxed text-foreground font-light space-y-1 list-disc list-inside">
+							<ul className="text-sm leading-relaxed text-muted-foreground font-light space-y-1 list-disc list-inside">
 								{listItems.map((item, itemIndex) => (
 									<li key={itemIndex}>{item.substring(2)}</li>
 								))}
@@ -38,7 +38,7 @@ export default function AboutSection({ about }: AboutSectionProps) {
 				return (
 					<p
 						key={index}
-						className="text-sm leading-relaxed text-foreground font-light"
+						className="text-sm leading-relaxed text-muted-foreground font-light"
 					>
 						{paragraph}
 					</p>

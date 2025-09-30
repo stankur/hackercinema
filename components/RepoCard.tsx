@@ -129,6 +129,7 @@ export default function RepoCard({
 			aiEnabled,
 			hasGen: !!repo.generated_description,
 			emphasisLen: repo.emphasis?.length,
+			kind: repo.kind,
 		});
 	}
 
@@ -227,17 +228,10 @@ export default function RepoCard({
 							>
 								{repo.name}
 							</a>
-							{/* Language info */}
-							{repo.language && (
-								<div className="flex items-center gap-1.5 text-xs text-muted-foreground/60">
-									<div
-										className="w-2 h-2 rounded-full"
-										style={{
-											backgroundColor:
-												languageDotColor || "#6b7280",
-										}}
-									></div>
-									<span>{repo.language}</span>
+							{/* Kind info */}
+							{repo.kind && (
+								<div className="text-xs text-muted-foreground/80">
+									<span>{repo.kind}</span>
 								</div>
 							)}
 						</div>
@@ -344,6 +338,20 @@ export default function RepoCard({
 							) : (
 								repo.description
 							)}
+						</div>
+					)}
+
+					{/* Language info - only show when not showing AI description */}
+					{!showGeneratedDescription && repo.language && (
+						<div className="flex items-center gap-1.5 text-xs text-muted-foreground/60 mt-6">
+							<div
+								className="w-2 h-2 rounded-full"
+								style={{
+									backgroundColor:
+										languageDotColor || "#6b7280",
+								}}
+							></div>
+							<span>{repo.language}</span>
 						</div>
 					)}
 

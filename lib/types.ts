@@ -26,6 +26,7 @@ export interface GitHubRepo {
 	toy_implementation?: string;
 	emphasis?: string[];
 	keywords?: string[];
+	kind?: string;
 }
 
 export interface Builder {

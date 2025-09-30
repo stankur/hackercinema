@@ -22,6 +22,7 @@ interface BackendRepo {
 	emphasis?: string[];
 	/** New: keywords describing the repo */
 	keywords?: string[];
+	kind?: string;
 }
 
 interface ProfileData {
@@ -204,6 +205,7 @@ export function useProfileData(username: string): UseProfileDataReturn {
 										gallery: repo.gallery || [],
 										emphasis: repo.emphasis,
 										keywords: repo.keywords || [],
+										kind: repo.kind,
 									} as const;
 									if (typeof window !== "undefined") {
 										console.log(
@@ -218,6 +220,7 @@ export function useProfileData(username: string): UseProfileDataReturn {
 												sampleKeywords: (
 													mapped.keywords || []
 												).slice(0, 5),
+												kind: mapped.kind,
 											}
 										);
 									}
@@ -305,6 +308,7 @@ export function useProfileData(username: string): UseProfileDataReturn {
 										gallery: repo.gallery || [],
 										emphasis: repo.emphasis,
 										keywords: repo.keywords || [],
+										kind: repo.kind,
 									} as const;
 									if (typeof window !== "undefined") {
 										console.log(

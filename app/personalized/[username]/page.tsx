@@ -25,6 +25,7 @@ interface BackendRepo {
 		url: string;
 		original_url: string;
 	}>;
+	kind?: string;
 }
 
 interface PageProps {
@@ -81,6 +82,7 @@ export default function ForYouPage({ params }: PageProps) {
 									topics: repo.topics || [],
 									link: repo.link,
 									gallery: repo.gallery || [],
+									kind: repo.kind,
 								})
 							),
 							similar_repos: backendData.similar_repos || [],

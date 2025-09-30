@@ -1,6 +1,6 @@
 "use client";
 
-import {  Clock, Info, Star } from "lucide-react";
+import { Clock, Info, Star } from "lucide-react";
 
 interface Tab {
 	id: string;
@@ -50,10 +50,7 @@ export default function ProfileTabs({
 					);
 
 				return (
-					<div
-						role="tablist"
-						className="flex justify-start gap-4"
-					>
+					<div role="tablist" className="flex justify-start gap-4">
 						{filtered.map((tab) => {
 							const isActive = activeTab === tab.id;
 							const Icon =
