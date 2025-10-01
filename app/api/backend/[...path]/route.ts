@@ -35,6 +35,14 @@ export async function DELETE(
 	return forwardRequest(request, path, "DELETE");
 }
 
+export async function PATCH(
+	request: NextRequest,
+	{ params }: { params: Promise<{ path: string[] }> }
+) {
+	const { path } = await params;
+	return forwardRequest(request, path, "PATCH");
+}
+
 async function forwardRequest(
 	request: NextRequest,
 	path: string[],
@@ -73,8 +81,8 @@ async function forwardRequest(
 			headers,
 		};
 
-		// Add body for POST/PUT requests
-		if (method === "POST" || method === "PUT") {
+		// Add body for POST/PUT/PATCH requests
+		if (method === "POST" || method === "PUT" || method === "PATCH") {
 			const body = await request.text();
 			if (body) {
 				options.body = body;

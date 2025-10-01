@@ -177,3 +177,43 @@ export function groupGalleryByDate(
 
 	return entries.map(([dateKey, items]) => ({ dateKey, items }));
 }
+
+/**
+ * Persist highlight (pin) state for a single gallery image by URL.
+ * Backend is expected to dedupe by URL and update the record.
+ */
+export async function persistImageHighlight(params: {
+	username: string;
+	owner: string;
+	repoName: string;
+	url: string;
+	isHighlight: boolean;
+	signal?: AbortSignal;
+}): Promise<void> {
+	const { username, owner, repoName, url, isHighlight, signal } = params;
+	const res = await fetch(
+		`/api/backend/users/${encodeURIComponent(
+			username
+		)}/repos/${encodeURIComponent(owner)}/${encodeURIComponent(
+			repoName
+		)}/gallery`,
+		{
+			method: "PATCH",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify({ url, is_highlight: !!isHighlight }),
+			signal,
+		}
+	);
+	const body = await safeJson(res);
+	console.info("[persistImageHighlight] response", {
+		status: res.status,
+		ok: res.ok,
+		body,
+		params: { username, owner, repoName, url, isHighlight },
+	});
+	if (!res.ok) {
+		throw new Error(
+			`pin_persist_failed: ${res.status} ${JSON.stringify(body)}`
+		);
+	}
+}

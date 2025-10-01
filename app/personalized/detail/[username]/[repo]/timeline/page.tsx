@@ -7,7 +7,13 @@ import RepoCard from "@/components/RepoCard";
 import { useGalleryModal } from "@/components/GalleryModalProvider";
 import { History } from "lucide-react";
 import type { Builder, GitHubRepo, GalleryImage } from "@/lib/types";
-import { groupGalleryByDate, resolveRepoOwner } from "@/lib/repoGallery";
+import {
+	groupGalleryByDate,
+	resolveRepoOwner,
+	persistImageHighlight,
+} from "@/lib/repoGallery";
+import { Pin } from "lucide-react";
+import { useDevUser } from "@/hooks/useDevUser";
 import {
 	timelineItemDescClass,
 	timelineItemTitleClass,
@@ -28,6 +34,7 @@ export default function RepoTimelinePage({ params }: PageProps) {
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState<string | null>(null);
 	const { openGallery } = useGalleryModal();
+	const { login } = useDevUser();
 
 	useEffect(() => {
 		let cancelled = false;
@@ -197,6 +204,163 @@ export default function RepoTimelinePage({ params }: PageProps) {
 													className="object-cover"
 												/>
 												<div className="absolute inset-0 pointer-events-none bg-background/20 dark:bg-background/25 mix-blend-multiply" />
+
+												{/* Pin overlay (top-right) */}
+												{(login &&
+													login.toLowerCase() ===
+														username.toLowerCase()) ||
+												img.is_highlight ? (
+													<button
+														onClick={(e) => {
+															e.stopPropagation();
+															if (!repo) return;
+															const owner =
+																resolveRepoOwner(
+																	repo.link,
+																	username
+																);
+															const next =
+																!img.is_highlight;
+															// Optimistic update
+															setGallery((prev) =>
+																prev.map((g) =>
+																	g.url ===
+																	img.url
+																		? {
+																				...g,
+																				is_highlight:
+																					next,
+																		  }
+																		: g
+																)
+															);
+															// Also keep repo.gallery in sync for header
+															setRepo((r) =>
+																r
+																	? {
+																			...r,
+																			gallery:
+																				(
+																					r.gallery ||
+																					[]
+																				).map(
+																					(
+																						g
+																					) =>
+																						g.url ===
+																						img.url
+																							? {
+																									...g,
+																									is_highlight:
+																										next,
+																							  }
+																							: g
+																				),
+																	  }
+																	: r
+															);
+															persistImageHighlight(
+																{
+																	username,
+																	owner,
+																	repoName:
+																		repo.name,
+																	url: img.url,
+																	isHighlight:
+																		next,
+																}
+															)
+																.then(() => {
+																	console.debug(
+																		"[pin] persist success",
+																		{
+																			url: img.url,
+																			is_highlight:
+																				next,
+																		}
+																	);
+																})
+																.catch(
+																	(err) => {
+																		console.error(
+																			"[pin] persist failed",
+																			err
+																		);
+																		// Revert on failure
+																		setGallery(
+																			(
+																				prev
+																			) =>
+																				prev.map(
+																					(
+																						g
+																					) =>
+																						g.url ===
+																						img.url
+																							? {
+																									...g,
+																									is_highlight:
+																										!next,
+																							  }
+																							: g
+																				)
+																		);
+																		setRepo(
+																			(
+																				r
+																			) =>
+																				r
+																					? {
+																							...r,
+																							gallery:
+																								(
+																									r.gallery ||
+																									[]
+																								).map(
+																									(
+																										g
+																									) =>
+																										g.url ===
+																										img.url
+																											? {
+																													...g,
+																													is_highlight:
+																														!next,
+																											  }
+																											: g
+																								),
+																					  }
+																					: r
+																		);
+																	}
+																);
+														}}
+														className={`absolute top-2 right-2 z-10 p-1 rounded-full border ${
+															img.is_highlight
+																? "bg-background/70 backdrop-blur-md border-white/10 text-white cursor-pointer"
+																: login &&
+																  login.toLowerCase() ===
+																		username.toLowerCase()
+																? "bg-background/70 backdrop-blur-md border-white/10 text-muted-foreground/40 cursor-pointer"
+																: "bg-transparent border-transparent text-transparent cursor-default"
+														}`}
+														title={
+															img.is_highlight
+																? "Unpin"
+																: "Pin"
+														}
+														aria-pressed={
+															!!img.is_highlight
+														}
+														aria-label={
+															img.is_highlight
+																? "Unpin image"
+																: "Pin image"
+														}
+													>
+														<Pin size={16} />
+													</button>
+												) : null}
 											</div>
 											{/* Right: title + caption, reserved spacing */}
 											<div className="flex-1 min-w-0 space-y-2 mt-2 md:mt-0">
