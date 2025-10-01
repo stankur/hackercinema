@@ -32,6 +32,10 @@ interface RepoWithOwner {
 		alt: string;
 		url: string;
 		original_url: string;
+		title?: string;
+		caption?: string;
+		is_highlight?: boolean;
+		taken_at?: number;
 	}>;
 	owner: string;
 }

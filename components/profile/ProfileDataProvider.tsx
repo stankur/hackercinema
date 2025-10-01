@@ -17,6 +17,10 @@ interface BackendRepo {
 		alt: string;
 		url: string;
 		original_url: string;
+		title?: string;
+		caption?: string;
+		is_highlight?: boolean;
+		taken_at?: number;
 	}>;
 	/** Words to emphasize in generated_description */
 	emphasis?: string[];

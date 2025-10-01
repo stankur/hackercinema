@@ -60,6 +60,14 @@ async function forwardRequest(
 		// Ensure upstream returns uncompressed payload to avoid encoding mismatches
 		headers["accept-encoding"] = "identity";
 
+		// Inject Authorization header if API_KEY is configured and not already present
+		if (!headers["authorization"]) {
+			const apiKey = process.env.API_KEY;
+			if (apiKey) {
+				headers["authorization"] = `Bearer ${apiKey}`;
+			}
+		}
+
 		const options: RequestInit = {
 			method,
 			headers,

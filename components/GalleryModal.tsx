@@ -39,8 +39,11 @@ export default function GalleryModal({
 	const [loadingImages, setLoadingImages] = useState<Set<number>>(new Set());
 	const [isDeleting, setIsDeleting] = useState(false);
 
-	// Filter out failed images
-	const validImages = images.filter((_, index) => !failedImages.has(index));
+	// Only show highlight images; filter out failed ones
+	const highlightImages = (images || []).filter((img) => img.is_highlight);
+	const validImages = highlightImages.filter(
+		(_, index) => !failedImages.has(index)
+	);
 	const validCurrentIndex = Math.min(currentIndex, validImages.length - 1);
 
 	// Reset index and loading state when modal opens

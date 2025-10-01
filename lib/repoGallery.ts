@@ -22,6 +22,14 @@ export async function uploadRepoImageAndPersist(params: {
 	repoName: string;
 	file: File;
 	alt?: string;
+	/** If true, mark this image as highlight */
+	isHighlight?: boolean;
+	/** Optional title to persist (empty string by default) */
+	title?: string;
+	/** Optional caption to persist (empty string by default) */
+	caption?: string;
+	/** Epoch ms the image was taken; defaults to now */
+	takenAt?: number;
 	signal?: AbortSignal;
 }): Promise<{
 	secureUrl: string;
@@ -29,7 +37,18 @@ export async function uploadRepoImageAndPersist(params: {
 	width?: number;
 	height?: number;
 }> {
-	const { username, owner, repoName, file, alt, signal } = params;
+	const {
+		username,
+		owner,
+		repoName,
+		file,
+		alt,
+		isHighlight,
+		title,
+		caption,
+		takenAt,
+		signal,
+	} = params;
 
 	// 1) Upload to Cloudinary via server route
 	const form = new FormData();
@@ -65,6 +84,10 @@ export async function uploadRepoImageAndPersist(params: {
 		url: secureUrl,
 		original_url: secureUrl,
 		alt: alt ?? repoName,
+		is_highlight: !!isHighlight,
+		title: title ?? "",
+		caption: caption ?? "",
+		taken_at: takenAt ?? Date.now(),
 	};
 
 	const persistRes = await fetch(

@@ -73,18 +73,31 @@ export default function RepoCard({
 				const repoName = repo.name;
 				const username = owner; // page username when canEdit is true
 
+				const shouldBeHighlight = (localGallery?.length || 0) === 0;
+
 				const { secureUrl } = await uploadRepoImageAndPersist({
 					username,
 					owner: repoOwner,
 					repoName,
 					file,
 					alt: repo.name,
+					isHighlight: shouldBeHighlight,
+					title: "",
+					caption: "",
 				});
 
 				// Update local gallery
 				setLocalGallery((prev) => [
 					...(prev || []),
-					{ url: secureUrl, original_url: secureUrl, alt: repo.name },
+					{
+						url: secureUrl,
+						original_url: secureUrl,
+						alt: repo.name,
+						title: "",
+						caption: "",
+						is_highlight: shouldBeHighlight,
+						taken_at: Date.now(),
+					},
 				]);
 			} catch (e) {
 				console.error("Failed to upload/persist image", e);
@@ -170,50 +183,57 @@ export default function RepoCard({
 			>
 				{canEdit && <input {...getInputProps()} />}
 				{/* Hero thumbnail with +N badge */}
-				{localGallery && localGallery.length > 0 && (
-					<button
-						onClick={() => {
-							// Determine repo owner for delete functionality
-							const parsed = parseOwnerRepoFromLink(
-								repo.link || ""
-							);
-							const repoOwner = parsed?.owner || owner;
+				{(() => {
+					const highlightGallery = (localGallery || []).filter(
+						(img) => img.is_highlight
+					);
+					if (highlightGallery.length === 0) return null;
+					return (
+						<button
+							onClick={() => {
+								// Determine repo owner for delete functionality
+								const parsed = parseOwnerRepoFromLink(
+									repo.link || ""
+								);
+								const repoOwner = parsed?.owner || owner;
 
-							openGallery(localGallery!, 0, {
-								username: owner, // page username when canEdit is true
-								owner: repoOwner,
-								repoName: repo.name,
-								repoLink: repo.link,
-								canEdit,
-								onImageDeleted: (deletedUrl: string) => {
-									// Remove from local gallery
-									setLocalGallery(
-										(prev) =>
-											prev?.filter(
-												(img) => img.url !== deletedUrl
-											) || []
-									);
-								},
-							});
-						}}
-						className="relative w-full md:w-[28%] md:min-w-[280px] md:max-w-[420px] md:h-[144px] lg:h-[160px] md:shrink-0 md:self-start rounded-md overflow-hidden group"
-						title={localGallery[0].alt || repo.name}
-						style={{ aspectRatio: `${1899 / 1165}` }}
-					>
-						<Image
-							src={localGallery[0].url}
-							alt={localGallery[0].alt || repo.name}
-							fill
-							className="object-cover"
-						/>
-						<div className="absolute inset-0 pointer-events-none bg-background/20 dark:bg-background/25 mix-blend-multiply" />
-						{localGallery.length > 1 && (
-							<div className="absolute bottom-2 right-2 z-10 px-2 py-0.5 text-[11px] font-medium rounded-full bg-background/70 backdrop-blur-md border border-white/10 text-foreground/80">
-								+{localGallery.length - 1}
-							</div>
-						)}
-					</button>
-				)}
+								openGallery(highlightGallery, 0, {
+									username: owner, // page username when canEdit is true
+									owner: repoOwner,
+									repoName: repo.name,
+									repoLink: repo.link,
+									canEdit,
+									onImageDeleted: (deletedUrl: string) => {
+										// Remove from local gallery
+										setLocalGallery(
+											(prev) =>
+												prev?.filter(
+													(img) =>
+														img.url !== deletedUrl
+												) || []
+										);
+									},
+								});
+							}}
+							className="relative w-full md:w-[28%] md:min-w-[280px] md:max-w-[420px] md:h-[144px] lg:h-[160px] md:shrink-0 md:self-start rounded-md overflow-hidden group"
+							title={highlightGallery[0].alt || repo.name}
+							style={{ aspectRatio: `${1899 / 1165}` }}
+						>
+							<Image
+								src={highlightGallery[0].url}
+								alt={highlightGallery[0].alt || repo.name}
+								fill
+								className="object-cover"
+							/>
+							<div className="absolute inset-0 pointer-events-none bg-background/20 dark:bg-background/25 mix-blend-multiply" />
+							{highlightGallery.length > 1 && (
+								<div className="absolute bottom-2 right-2 z-10 px-2 py-0.5 text-[11px] font-medium rounded-full bg-background/70 backdrop-blur-md border border-white/10 text-foreground/80">
+									+{highlightGallery.length - 1}
+								</div>
+							)}
+						</button>
+					);
+				})()}
 
 				{/* Content column */}
 				<div className="flex-1 min-w-0 space-y-2">
@@ -343,7 +363,7 @@ export default function RepoCard({
 
 					{/* Language info - only show when not showing AI description */}
 					{!showGeneratedDescription && repo.language && (
-						<div className="flex items-center gap-1.5 text-xs text-muted-foreground/60 mt-6">
+						<div className="flex items-center gap-1.5 text-xs text-muted-foreground/60 mt-4">
 							<div
 								className="w-2 h-2 rounded-full"
 								style={{
