@@ -1,13 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ExternalLink, Sparkles, ZoomOut, ZoomIn, Pencil } from "lucide-react";
+import { ExternalLink, ZoomOut, ZoomIn, Pencil, History } from "lucide-react";
 import Image from "next/image";
 import { getCardBackground, getLanguageDotColor } from "@/lib/language-colors";
 import type { GitHubRepo, GalleryImage } from "@/lib/types";
 import { useGalleryModal } from "./GalleryModalProvider";
 import EmphasizedText from "./EmphasizedText";
 import Link from "next/link";
+import { repoKindClass, repoDescClass } from "./RepoStyles";
 import { useDropzone } from "react-dropzone";
 import {
 	uploadRepoImageAndPersist,
@@ -25,6 +26,10 @@ interface RepoCardProps {
 	aiEnabled?: boolean;
 	aiShowLoadingIfMissing?: boolean;
 	canEdit?: boolean;
+	/** Username namespace for routing (timeline). Defaults to owner if not provided. */
+	pageUsername?: string;
+	/** When true, hides the hero thumbnail image area even if gallery highlight exists. */
+	hideHeroImage?: boolean;
 }
 
 export default function RepoCard({
@@ -38,6 +43,8 @@ export default function RepoCard({
 	aiEnabled = true,
 	aiShowLoadingIfMissing = true,
 	canEdit = false,
+	pageUsername,
+	hideHeroImage = false,
 }: RepoCardProps) {
 	const [cardBackground, setCardBackground] = useState<string>("");
 	const [languageDotColor, setLanguageDotColor] = useState<string>("");
@@ -184,6 +191,7 @@ export default function RepoCard({
 				{canEdit && <input {...getInputProps()} />}
 				{/* Hero thumbnail with +N badge */}
 				{(() => {
+					if (hideHeroImage) return null;
 					const highlightGallery = (localGallery || []).filter(
 						(img) => img.is_highlight
 					);
@@ -250,7 +258,7 @@ export default function RepoCard({
 							</a>
 							{/* Kind info */}
 							{repo.kind && (
-								<div className="text-xs text-muted-foreground/80">
+								<div className={repoKindClass}>
 									<span>{repo.kind}</span>
 								</div>
 							)}
@@ -269,6 +277,18 @@ export default function RepoCard({
 									<ExternalLink size={14} />
 								</a>
 							)}
+							{Array.isArray(repo.gallery) &&
+								repo.gallery.length > 0 && (
+									<Link
+										href={`/personalized/detail/${
+											pageUsername || owner
+										}/${repo.name}/timeline`}
+										className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
+										title="View timeline"
+									>
+										<History size={14} />
+									</Link>
+								)}
 							{aiEnabled && (
 								<>
 									{(repo.generated_description ||
@@ -310,7 +330,7 @@ export default function RepoCard({
 											{showGeneratedDescription ? (
 												<ZoomOut size={14} />
 											) : (
-												<Sparkles size={14} />
+												<ZoomIn size={14} />
 											)}
 										</button>
 									)}
@@ -348,7 +368,7 @@ export default function RepoCard({
 					{(repo.description ||
 						(showGeneratedDescription &&
 							repo.generated_description)) && (
-						<div className="text-sm text-muted-foreground leading-relaxed">
+						<div className={repoDescClass}>
 							{showGeneratedDescription &&
 							repo.generated_description ? (
 								<EmphasizedText
@@ -423,6 +443,18 @@ export default function RepoCard({
 									<ExternalLink size={20} />
 								</a>
 							)}
+							{Array.isArray(repo.gallery) &&
+								repo.gallery.length > 0 && (
+									<Link
+										href={`/personalized/detail/${
+											pageUsername || owner
+										}/${repo.name}/timeline`}
+										className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
+										title="View timeline"
+									>
+										<History size={20} />
+									</Link>
+								)}
 							{aiEnabled && (
 								<>
 									{(repo.generated_description ||
@@ -464,7 +496,7 @@ export default function RepoCard({
 											{showGeneratedDescription ? (
 												<ZoomOut size={20} />
 											) : (
-												<Sparkles size={20} />
+												<ZoomIn size={20} />
 											)}
 										</button>
 									)}

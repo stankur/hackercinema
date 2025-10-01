@@ -19,6 +19,7 @@ interface GalleryModalProps {
 	repoLink?: string;
 	canEdit?: boolean;
 	onImageDeleted?: (deletedUrl: string) => void;
+	showAllImages?: boolean;
 }
 
 export default function GalleryModal({
@@ -32,6 +33,7 @@ export default function GalleryModal({
 	repoLink,
 	canEdit = false,
 	onImageDeleted,
+	showAllImages = false,
 }: GalleryModalProps) {
 	const [currentIndex, setCurrentIndex] = useState(initialIndex);
 	const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set());
@@ -39,9 +41,11 @@ export default function GalleryModal({
 	const [loadingImages, setLoadingImages] = useState<Set<number>>(new Set());
 	const [isDeleting, setIsDeleting] = useState(false);
 
-	// Only show highlight images; filter out failed ones
-	const highlightImages = (images || []).filter((img) => img.is_highlight);
-	const validImages = highlightImages.filter(
+	// Show all images when requested; otherwise only highlight images
+	const baseImages = showAllImages
+		? images || []
+		: (images || []).filter((img) => img.is_highlight);
+	const validImages = baseImages.filter(
 		(_, index) => !failedImages.has(index)
 	);
 	const validCurrentIndex = Math.min(currentIndex, validImages.length - 1);

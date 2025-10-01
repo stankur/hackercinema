@@ -15,6 +15,7 @@ interface GalleryModalContextType {
 			repoLink?: string;
 			canEdit?: boolean;
 			onImageDeleted?: (deletedUrl: string) => void;
+			showAllImages?: boolean;
 		}
 	) => void;
 	closeGallery: () => void;
@@ -37,6 +38,7 @@ export function GalleryModalProvider({ children }: GalleryModalProviderProps) {
 		repoLink?: string;
 		canEdit?: boolean;
 		onImageDeleted?: (deletedUrl: string) => void;
+		showAllImages?: boolean;
 	}>({});
 
 	const openGallery = (

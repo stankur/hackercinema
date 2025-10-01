@@ -1,4 +1,5 @@
 import type { GalleryImage } from "./types";
+import dayjs from "dayjs";
 
 export function parseOwnerRepoFromLink(
 	link: string | undefined | null
@@ -128,4 +129,51 @@ async function safeJson(res: Response): Promise<unknown> {
 	} catch {
 		return { ok: false } as unknown;
 	}
+}
+
+/**
+ * Resolve the GitHub repo owner given a repo link and a fallback username.
+ * Falls back to the provided username when the link is missing or unparsable.
+ */
+export function resolveRepoOwner(
+	link: string | null | undefined,
+	fallbackUsername: string
+): string {
+	const parsed = parseOwnerRepoFromLink(link || undefined);
+	return parsed?.owner || fallbackUsername;
+}
+
+/**
+ * Group gallery images by local calendar date using dayjs.
+ * - Date key format: YYYY-MM-DD
+ * - Images without taken_at are grouped under "Unknown" and sorted last.
+ * - Dated groups are sorted in descending date order.
+ */
+export function groupGalleryByDate(
+	images: GalleryImage[]
+): Array<{ dateKey: string; items: GalleryImage[] }> {
+	const buckets = new Map<string, GalleryImage[]>();
+
+	for (const img of images || []) {
+		const dateKey =
+			typeof img.taken_at === "number"
+				? dayjs(img.taken_at).format("YYYY-MM-DD")
+				: "Unknown";
+		if (!buckets.has(dateKey)) buckets.set(dateKey, []);
+		buckets.get(dateKey)!.push(img);
+	}
+
+	const entries = Array.from(buckets.entries());
+
+	entries.sort((a, b) => {
+		const [da] = a;
+		const [db] = b;
+		if (da === "Unknown" && db === "Unknown") return 0;
+		if (da === "Unknown") return 1; // Unknown last
+		if (db === "Unknown") return -1;
+		// Desc by date
+		return dayjs(db).valueOf() - dayjs(da).valueOf();
+	});
+
+	return entries.map(([dateKey, items]) => ({ dateKey, items }));
 }
