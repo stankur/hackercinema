@@ -11,6 +11,7 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
 interface BackendRepo {
+	id?: string;
 	name: string;
 	description?: string | null;
 	generated_description?: string | null;
@@ -71,6 +72,7 @@ export default function ForYouPage({ params }: PageProps) {
 							},
 							repos: (backendData.repos || []).map(
 								(repo: BackendRepo) => ({
+									id: repo.id,
 									name: repo.name,
 									description: repo.description,
 									generated_description:

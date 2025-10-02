@@ -53,7 +53,7 @@ async function forwardRequest(
 		const searchParams = request.nextUrl.searchParams.toString();
 		const fullUrl = searchParams ? `${url}?${searchParams}` : url;
 
-		const headers: Record<string, string> = {};
+        const headers: Record<string, string> = {};
 
 		// Forward relevant headers
 		request.headers.forEach((value, key) => {

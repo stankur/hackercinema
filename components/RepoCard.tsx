@@ -10,10 +10,7 @@ import EmphasizedText from "./EmphasizedText";
 import Link from "next/link";
 import { repoKindClass, repoDescClass } from "./RepoStyles";
 import { useDropzone } from "react-dropzone";
-import {
-	uploadRepoImageAndPersist,
-	parseOwnerRepoFromLink,
-} from "@/lib/repoGallery";
+import { uploadRepoImageAndPersist } from "@/lib/repoGallery";
 
 interface RepoCardProps {
 	repo: GitHubRepo;
@@ -46,6 +43,14 @@ export default function RepoCard({
 	pageUsername,
 	hideHeroImage = false,
 }: RepoCardProps) {
+	// Enforce explicit inputs; no fallbacks
+	if (!pageUsername) {
+		throw new Error("RepoCard requires pageUsername");
+	}
+	if (!repo.id || !repo.id.includes("/")) {
+		throw new Error("RepoCard requires repo.id in 'owner/repo' format");
+	}
+	const ownerFromId = repo.id.split("/")[0];
 	const [cardBackground, setCardBackground] = useState<string>("");
 	const [languageDotColor, setLanguageDotColor] = useState<string>("");
 	const [showGeneratedDescription, setShowGeneratedDescription] =
@@ -74,11 +79,10 @@ export default function RepoCard({
 			if (!file || isUploading) return;
 			try {
 				setIsUploading(true);
-				// Resolve repo owner for subject id
-				const parsed = parseOwnerRepoFromLink(repo.link || "");
-				const repoOwner = parsed?.owner || owner;
+				// Owner and username are required, derived deterministically
+				const repoOwner = ownerFromId;
 				const repoName = repo.name;
-				const username = owner; // page username when canEdit is true
+				const username = pageUsername;
 
 				const shouldBeHighlight = (localGallery?.length || 0) === 0;
 
@@ -199,14 +203,11 @@ export default function RepoCard({
 					return (
 						<button
 							onClick={() => {
-								// Determine repo owner for delete functionality
-								const parsed = parseOwnerRepoFromLink(
-									repo.link || ""
-								);
-								const repoOwner = parsed?.owner || owner;
+								// Owner derived strictly from repo.id
+								const repoOwner = ownerFromId;
 
 								openGallery(highlightGallery, 0, {
-									username: owner, // page username when canEdit is true
+									username: pageUsername,
 									owner: repoOwner,
 									repoName: repo.name,
 									repoLink: repo.link,
@@ -280,9 +281,7 @@ export default function RepoCard({
 							{Array.isArray(repo.gallery) &&
 								repo.gallery.length > 0 && (
 									<Link
-										href={`/personalized/detail/${
-											pageUsername || owner
-										}/${repo.name}/timeline`}
+										href={`/personalized/detail/${pageUsername}/${ownerFromId}/${repo.name}/timeline`}
 										className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
 										title="View timeline"
 									>
@@ -338,7 +337,7 @@ export default function RepoCard({
 										showGeneratedDescription &&
 										repo.tech_doc && (
 											<Link
-												href={`/personalized/detail/${owner}/${repo.name}`}
+												href={`/personalized/detail/${pageUsername}/${ownerFromId}/${repo.name}`}
 												className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
 												title="View detailed explanation"
 											>
@@ -446,9 +445,7 @@ export default function RepoCard({
 							{Array.isArray(repo.gallery) &&
 								repo.gallery.length > 0 && (
 									<Link
-										href={`/personalized/detail/${
-											pageUsername || owner
-										}/${repo.name}/timeline`}
+										href={`/personalized/detail/${pageUsername}/${ownerFromId}/${repo.name}/timeline`}
 										className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
 										title="View timeline"
 									>
@@ -504,7 +501,7 @@ export default function RepoCard({
 										showGeneratedDescription &&
 										repo.tech_doc && (
 											<Link
-												href={`/personalized/detail/${owner}/${repo.name}`}
+												href={`/personalized/detail/${pageUsername}/${ownerFromId}/${repo.name}`}
 												className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
 												title="View detailed explanation"
 											>

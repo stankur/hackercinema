@@ -20,6 +20,8 @@ export default function AllReposSection({
 	const canEdit = login === username;
 	const isGeneratingHighlights = highlightedRepoNames === undefined;
 
+	// removed debug logging
+
 	if (!repos || repos.length === 0) {
 		return <SharedSkeletonRows count={5} height={100} />;
 	}
@@ -35,11 +37,13 @@ export default function AllReposSection({
 			{sortedRepos.map((repo) => {
 				const isHighlighted = highlightedRepoNames?.includes(repo.name);
 				const aiEnabled = !isGeneratingHighlights && !!isHighlighted;
+				const ownerFromId = repo?.id?.split("/")?.[0];
 				return (
 					<RepoCard
-						key={`${username}-${repo.name}`}
+						key={repo.id}
 						repo={repo}
-						owner={username}
+						owner={ownerFromId as string}
+						pageUsername={username}
 						showOwner={false}
 						showUsernameInsteadOfDate={false}
 						aiEnabled={aiEnabled}

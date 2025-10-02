@@ -4,6 +4,7 @@ import { useEffect, useState, useCallback, useMemo, useRef } from "react";
 import type { Builder } from "@/lib/types";
 
 interface BackendRepo {
+	id?: string;
 	name: string;
 	description?: string | null;
 	generated_description?: string | null;
@@ -196,6 +197,7 @@ export function useProfileData(username: string): UseProfileDataReturn {
 							repos: (backendData.repos || []).map(
 								(repo: BackendRepo) => {
 									const mapped = {
+										id: repo.id,
 										name: repo.name,
 										description: repo.description,
 										generated_description:
@@ -284,6 +286,7 @@ export function useProfileData(username: string): UseProfileDataReturn {
 				);
 				if (response.ok) {
 					const backendData = await response.json();
+					// removed debug logging
 
 					if (backendData.user) {
 						const mappedBuilder: Builder = {
@@ -299,6 +302,7 @@ export function useProfileData(username: string): UseProfileDataReturn {
 							repos: (backendData.repos || []).map(
 								(repo: BackendRepo) => {
 									const mapped = {
+										id: repo.id,
 										name: repo.name,
 										description: repo.description,
 										generated_description:

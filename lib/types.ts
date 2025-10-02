@@ -21,6 +21,7 @@ export interface GalleryImage {
 }
 
 export interface GitHubRepo {
+	id: string;
 	name: string;
 	description?: string | null;
 	generated_description?: string | null;

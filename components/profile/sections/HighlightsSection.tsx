@@ -42,17 +42,25 @@ export default function HighlightsSection({
 
 		return (
 			<div className="space-y-6">
-				{sortedHighlightedRepos.map((repo) => (
-					<RepoCard
-						key={repo.name}
-						repo={repo}
-						owner={username}
-						showOwner={false}
-						showUsernameInsteadOfDate={false}
-						aiEnabled={aiEnabled && !!repo.generated_description}
-						canEdit={canEdit}
-					/>
-				))}
+				{sortedHighlightedRepos.map((repo) => {
+					const ownerFromId = (repo as { id?: string })?.id?.split(
+						"/"
+					)?.[0] as string;
+					return (
+						<RepoCard
+							key={(repo as { id?: string })?.id || repo.name}
+							repo={repo}
+							owner={ownerFromId}
+							pageUsername={username}
+							showOwner={false}
+							showUsernameInsteadOfDate={false}
+							aiEnabled={
+								aiEnabled && !!repo.generated_description
+							}
+							canEdit={canEdit}
+						/>
+					);
+				})}
 			</div>
 		);
 	}
