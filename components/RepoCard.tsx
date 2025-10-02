@@ -250,7 +250,7 @@ export default function RepoCard({
 					<div className="flex items-center justify-between">
 						<div className="flex items-center gap-3 flex-1 min-w-0">
 							<a
-								href={`https://github.com/${owner}/${repo.name}`}
+								href={`https://github.com/${ownerFromId}/${repo.name}`}
 								target="_blank"
 								rel="noopener noreferrer"
 								className="text-base font-semibold text-foreground hover:text-primary hover:underline"
@@ -258,6 +258,17 @@ export default function RepoCard({
 								{repo.name}
 							</a>
 							{/* Kind info */}
+							{/* <div className="flex items-center gap-1.5 text-xs text-muted-foreground/60">
+								<div
+									className="w-2 h-2 rounded-full"
+									style={{
+										backgroundColor:
+											languageDotColor || "#6b7280",
+									}}
+								></div>
+								<span>{repo.language}</span>
+							</div>
+ */}
 							{repo.kind && (
 								<div className={repoKindClass}>
 									<span>{repo.kind}</span>

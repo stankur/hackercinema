@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import RepoCard from "@/components/RepoCard";
 
-import type { Builder } from "@/lib/types";
+import type { Builder, GitHubRepo } from "@/lib/types";
 import { preloadGitHubImages } from "@/lib/imageCache";
 
 interface ClusterData {
@@ -19,28 +19,13 @@ interface ClusterData {
 	}>;
 }
 
-interface RepoWithOwner {
-	name: string;
-	description?: string | null;
-	generated_description?: string | null;
-	updated_at: string;
-	stars?: number;
-	language?: string | null;
-	topics?: string[];
-	link?: string;
-	gallery?: Array<{
-		alt: string;
-		url: string;
-		original_url: string;
-		title?: string;
-		caption?: string;
-		is_highlight?: boolean;
-		taken_at?: number;
-	}>;
-	owner: string;
-}
+type RepoWithOwner = GitHubRepo & { owner: string };
 
-export default function ProjectsContent() {
+export default function ProjectsContent({
+	pageUsername,
+}: {
+	pageUsername: string;
+}) {
 	const [builders, setBuilders] = useState<Builder[]>([]);
 	const [clusters, setClusters] = useState<ClusterData[]>([]);
 	const [loading, setLoading] = useState(true);
@@ -81,10 +66,11 @@ export default function ProjectsContent() {
 	// Get all repositories with owner information
 	const getAllRepos = useCallback((): RepoWithOwner[] => {
 		return builders.flatMap((builder) =>
-			builder.repos.map((repo) => ({
-				...repo,
-				owner: builder.username,
-			}))
+			builder.repos.map((repo) => {
+				const owner = builder.username;
+				const id = (repo as GitHubRepo).id || `${owner}/${repo.name}`;
+				return { ...(repo as GitHubRepo), id, owner } as RepoWithOwner;
+			})
 		);
 	}, [builders]);
 
@@ -180,6 +166,7 @@ export default function ProjectsContent() {
 								repo={repo}
 								owner={repo.owner}
 								showOwnerAndDate={true}
+								pageUsername={pageUsername}
 							/>
 					  ))
 					: // Show repositories for selected category
@@ -189,6 +176,7 @@ export default function ProjectsContent() {
 								repo={repo}
 								owner={repo.owner}
 								showOwnerAndDate={true}
+								pageUsername={pageUsername}
 							/>
 					  ))}
 			</div>

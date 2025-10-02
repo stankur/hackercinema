@@ -5,13 +5,15 @@ import RepoCard from "./RepoCard";
 import type { GitHubRepo } from "@/lib/types";
 
 interface SimilarReposSectionProps {
-	similarRepos: Array<{username: string, repo_name: string}>;
+	similarRepos: Array<{ username: string; repo_name: string }>;
 }
 
 export default function SimilarReposSection({
 	similarRepos,
 }: SimilarReposSectionProps) {
-	const [foundRepos, setFoundRepos] = useState<Array<{repo: GitHubRepo, owner: string}>>([]);
+	const [foundRepos, setFoundRepos] = useState<
+		Array<{ repo: GitHubRepo; owner: string }>
+	>([]);
 	const [isLoading, setIsLoading] = useState(true);
 	const [showAllRepos, setShowAllRepos] = useState(false);
 
@@ -28,14 +30,29 @@ export default function SimilarReposSection({
 				const data = await response.json();
 
 				// Search for each repo in the similar_repos array
-				const foundReposData: Array<{repo: GitHubRepo, owner: string}> = [];
-				
-				similarRepos.forEach(({username, repo_name}) => {
-					const user = data.find((u: {username: string, repos?: GitHubRepo[]}) => u.username === username);
+				const foundReposData: Array<{
+					repo: GitHubRepo;
+					owner: string;
+				}> = [];
+
+				similarRepos.forEach(({ username, repo_name }) => {
+					const user = data.find(
+						(u: { username: string; repos?: GitHubRepo[] }) =>
+							u.username === username
+					);
 					if (user && user.repos) {
-						const repo = user.repos.find((r: GitHubRepo) => r.name === repo_name);
+						const repo = user.repos.find(
+							(r: GitHubRepo) => r.name === repo_name
+						);
 						if (repo) {
-							foundReposData.push({ repo, owner: username });
+							const id =
+								repo.id && repo.id.includes("/")
+									? repo.id
+									: `${username}/${repo.name}`;
+							foundReposData.push({
+								repo: { ...repo, id },
+								owner: username,
+							});
 						}
 					}
 				});
@@ -71,6 +88,7 @@ export default function SimilarReposSection({
 							owner={owner}
 							showOwner={false}
 							showUsernameInsteadOfDate={true}
+							pageUsername={owner}
 						/>
 					))}
 

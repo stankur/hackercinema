@@ -208,7 +208,7 @@ export default function ExplorePage({ params }: PageProps) {
 
 			{/* Projects Content - Exact same as projects page */}
 			<div className="max-w-3xl mx-auto px-6">
-				<ProjectsContent />
+				<ProjectsContent pageUsername={username} />
 			</div>
 		</div>
 	);

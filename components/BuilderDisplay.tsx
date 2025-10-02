@@ -233,6 +233,7 @@ export default function BuilderDisplay({
 										owner={builder.username}
 										showOwner={showOwner}
 										showUsernameInsteadOfDate={false}
+										pageUsername={builder.username}
 									/>
 								))
 							) : (
