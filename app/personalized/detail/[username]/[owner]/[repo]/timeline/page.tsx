@@ -5,15 +5,19 @@ import Link from "next/link";
 import Image from "next/image";
 import RepoCard from "@/components/RepoCard";
 import { useGalleryModal } from "@/components/GalleryModalProvider";
-import { History } from "lucide-react";
+import { History, Check, Pin } from "lucide-react";
 import type { GitHubRepo, GalleryImage } from "@/lib/types";
-import { groupGalleryByDate, persistImageHighlight } from "@/lib/repoGallery";
-import { Pin } from "lucide-react";
+import EditableText from "@/components/EditableText";
+import {
+	groupGalleryByDate,
+	persistImageHighlight,
+	persistImageMetadata,
+} from "@/lib/repoGallery";
 import { useDevUser } from "@/hooks/useDevUser";
 import {
 	timelineItemTitleClass,
 	repoMetaMutedClass,
-    timelineItemDescClass,
+	timelineItemDescClass,
 } from "@/components/RepoStyles";
 
 interface PageProps {
@@ -29,7 +33,7 @@ export default function RepoTimelinePage({ params }: PageProps) {
 	const [repo, setRepo] = useState<GitHubRepo | null>(null);
 	const [gallery, setGallery] = useState<GalleryImage[]>([]);
 	const [loading, setLoading] = useState(true);
-	const [error, setError] = useState<string | null>(null);
+	const [pendingEdits, setPendingEdits] = useState<Set<string>>(new Set());
 	const { openGallery } = useGalleryModal();
 	const { login } = useDevUser();
 
@@ -83,7 +87,6 @@ export default function RepoTimelinePage({ params }: PageProps) {
 			} catch (e) {
 				console.error(e);
 				if (!cancelled) {
-					setError("Failed to load timeline");
 					setLoading(false);
 				}
 			}
@@ -95,6 +98,126 @@ export default function RepoTimelinePage({ params }: PageProps) {
 	}, [username, owner, repoName]);
 
 	const grouped = useMemo(() => groupGalleryByDate(gallery), [gallery]);
+
+	const isOwner = Boolean(
+		login && login.toLowerCase() === username.toLowerCase()
+	);
+
+	const handleSaveTitle = async (img: GalleryImage, newTitle: string) => {
+		if (!repo) return;
+		const editKey = `${img.url}-title`;
+		setPendingEdits((prev) => new Set(prev).add(editKey));
+
+		// Optimistic update
+		setGallery((prev) =>
+			prev.map((g) => (g.url === img.url ? { ...g, title: newTitle } : g))
+		);
+		setRepo((r) =>
+			r
+				? {
+						...r,
+						gallery: (r.gallery || []).map((g) =>
+							g.url === img.url ? { ...g, title: newTitle } : g
+						),
+				  }
+				: r
+		);
+
+		try {
+			await persistImageMetadata({
+				username,
+				owner,
+				repoName: repo.name,
+				url: img.url,
+				title: newTitle,
+			});
+		} catch {
+			// Revert on error
+			setGallery((prev) =>
+				prev.map((g) =>
+					g.url === img.url ? { ...g, title: img.title } : g
+				)
+			);
+			setRepo((r) =>
+				r
+					? {
+							...r,
+							gallery: (r.gallery || []).map((g) =>
+								g.url === img.url
+									? { ...g, title: img.title }
+									: g
+							),
+					  }
+					: r
+			);
+		} finally {
+			setPendingEdits((prev) => {
+				const next = new Set(prev);
+				next.delete(editKey);
+				return next;
+			});
+		}
+	};
+
+	const handleSaveCaption = async (img: GalleryImage, newCaption: string) => {
+		if (!repo) return;
+		const editKey = `${img.url}-caption`;
+		setPendingEdits((prev) => new Set(prev).add(editKey));
+
+		// Optimistic update
+		setGallery((prev) =>
+			prev.map((g) =>
+				g.url === img.url ? { ...g, caption: newCaption } : g
+			)
+		);
+		setRepo((r) =>
+			r
+				? {
+						...r,
+						gallery: (r.gallery || []).map((g) =>
+							g.url === img.url
+								? { ...g, caption: newCaption }
+								: g
+						),
+				  }
+				: r
+		);
+
+		try {
+			await persistImageMetadata({
+				username,
+				owner,
+				repoName: repo.name,
+				url: img.url,
+				caption: newCaption,
+			});
+		} catch {
+			// Revert on error
+			setGallery((prev) =>
+				prev.map((g) =>
+					g.url === img.url ? { ...g, caption: img.caption } : g
+				)
+			);
+			setRepo((r) =>
+				r
+					? {
+							...r,
+							gallery: (r.gallery || []).map((g) =>
+								g.url === img.url
+									? { ...g, caption: img.caption }
+									: g
+							),
+					  }
+					: r
+			);
+		} finally {
+			setPendingEdits((prev) => {
+				const next = new Set(prev);
+				next.delete(editKey);
+				return next;
+			});
+		}
+	};
 
 	if (loading) {
 		return (
@@ -359,20 +482,58 @@ export default function RepoTimelinePage({ params }: PageProps) {
 												</div>
 												{/* Right: title + caption, reserved spacing */}
 												<div className="flex-1 min-w-0 space-y-2 mt-2 md:mt-0">
-													<div
+													<EditableText
+														value={img.title || ""}
+														placeholder="what is this?"
 														className={
 															timelineItemTitleClass
 														}
-													>
-														{img.title || ""}
-													</div>
-													<div
+														onSave={(newTitle) =>
+															handleSaveTitle(
+																img,
+																newTitle
+															)
+														}
+														canEdit={isOwner}
+														showPlaceholder={
+															isOwner &&
+															!img.title
+														}
+													/>
+													<EditableText
+														value={
+															img.caption || ""
+														}
+														placeholder="What improvement did it bring? How did you do it?"
 														className={
 															timelineItemDescClass
 														}
-													>
-														{img.caption || ""}
-													</div>
+														onSave={(newCaption) =>
+															handleSaveCaption(
+																img,
+																newCaption
+															)
+														}
+														canEdit={isOwner}
+														showPlaceholder={
+															isOwner &&
+															!img.caption
+														}
+													/>
+													{/* Save indicator */}
+													{(pendingEdits.has(
+														`${img.url}-title`
+													) ||
+														pendingEdits.has(
+															`${img.url}-caption`
+														)) && (
+														<div className="flex justify-end mt-1">
+															<Check
+																size={14}
+																className="text-muted-foreground/60"
+															/>
+														</div>
+													)}
 												</div>
 											</div>
 										))}

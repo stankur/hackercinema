@@ -206,3 +206,10 @@
 	--base-color: theme(colors.slate.700);
 	--highlight-color: theme(colors.slate.600);
 }
+
+/* Editable text placeholder styling */
+[data-placeholder]:empty::before {
+	content: attr(data-placeholder);
+	color: var(--muted-foreground);
+	pointer-events: none;
+}

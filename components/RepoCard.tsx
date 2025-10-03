@@ -234,7 +234,7 @@ export default function RepoCard({
 								fill
 								className="object-cover"
 							/>
-							<div className="absolute inset-0 pointer-events-none bg-background/20 dark:bg-background/25 mix-blend-multiply" />
+							<div className="absolute inset-0 pointer-events-none bg-background/30 dark:bg-background/40 mix-blend-multiply" />
 							{highlightGallery.length > 1 && (
 								<div className="absolute bottom-2 right-2 z-10 px-2 py-0.5 text-[11px] font-medium rounded-full bg-background/70 backdrop-blur-md border border-white/10 text-foreground/80">
 									+{highlightGallery.length - 1}
