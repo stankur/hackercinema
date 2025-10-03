@@ -181,7 +181,7 @@ export default function ProfileHeader({
 								keywords={allKeywords}
 								startDirection="left"
 							/>
-						)}
+						)} */}
 						{allEmphasis.length > 0 && (
 							<EmphasisBelts
 								emphasis={allEmphasis}
@@ -197,7 +197,7 @@ export default function ProfileHeader({
 										: "left"
 								}
 							/>
-						)} */}
+						)}
 					</div>
 				)}
 			</div>
