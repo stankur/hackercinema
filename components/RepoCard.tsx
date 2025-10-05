@@ -187,92 +187,68 @@ export default function RepoCard({
 		<div className="border border-muted rounded-lg p-3 md:border-0 md:p-0">
 			<div
 				{...(canEdit ? getRootProps() : {})}
-				className="rounded-md py-1.5 md:py-2 space-y-2 md:space-y-0 relative overflow-hidden md:flex md:items-start md:gap-4"
+				className="rounded-md py-1.5 md:py-2 space-y-2 relative overflow-hidden md:rounded-b-none md:pb-10 md:border-b-muted md:border-b"
 				style={{
 					background: cardBackground || undefined,
 				}}
 			>
 				{canEdit && <input {...getInputProps()} />}
-				{/* Hero thumbnail with +N badge or language color placeholder */}
-				{(() => {
-					if (hideHeroImage) return null;
-					const highlightGallery = (localGallery || []).filter(
-						(img) => img.is_highlight
-					);
-					const hasHighlight = highlightGallery.length > 0;
 
-					return (
-						<div
-							className={`relative w-full md:w-[19%] md:min-w-[188px] md:max-w-[280px] md:h-[96px] lg:h-[107px] md:shrink-0 md:self-start rounded-md overflow-hidden group ${
-								hasHighlight ? "cursor-pointer" : ""
-							} ${!hasHighlight ? "hidden md:block" : ""}`}
-							style={{
-								aspectRatio: `${1899 / 1165}`,
-								backgroundColor: hasHighlight
-									? undefined
-									: languageDotColor || "#6b7280",
-							}}
-							{...(hasHighlight
-								? {
-										onClick: () => {
-											// Owner derived strictly from repo.id
-											const repoOwner = ownerFromId;
+				{/* Mobile: Image at top */}
+				{!hideHeroImage &&
+					(() => {
+						const highlightGallery = (localGallery || []).filter(
+							(img) => img.is_highlight
+						);
+						const hasHighlight = highlightGallery.length > 0;
 
-											openGallery(highlightGallery, 0, {
-												username: pageUsername,
-												owner: repoOwner,
-												repoName: repo.name,
-												repoLink: repo.link,
-												canEdit,
-												onImageDeleted: (
-													deletedUrl: string
-												) => {
-													// Remove from local gallery
-													setLocalGallery(
-														(prev) =>
-															prev?.filter(
-																(img) =>
-																	img.url !==
-																	deletedUrl
-															) || []
-													);
-												},
-											});
+						if (!hasHighlight) return null;
+
+						return (
+							<div
+								className="relative w-full md:hidden rounded-md overflow-hidden cursor-pointer"
+								style={{
+									aspectRatio: `${1899 / 1165}`,
+								}}
+								onClick={() => {
+									const repoOwner = ownerFromId;
+									openGallery(highlightGallery, 0, {
+										username: pageUsername,
+										owner: repoOwner,
+										repoName: repo.name,
+										repoLink: repo.link,
+										canEdit,
+										onImageDeleted: (
+											deletedUrl: string
+										) => {
+											setLocalGallery(
+												(prev) =>
+													prev?.filter(
+														(img) =>
+															img.url !==
+															deletedUrl
+													) || []
+											);
 										},
-								  }
-								: {})}
-							title={
-								hasHighlight
-									? highlightGallery[0].alt || repo.name
-									: `${
-											repo.language || "Unknown"
-									  } language placeholder`
-							}
-						>
-							{hasHighlight ? (
-								<>
-									<Image
-										src={highlightGallery[0].url}
-										alt={
-											highlightGallery[0].alt || repo.name
-										}
-										fill
-										className="object-cover"
-									/>
-									<div className="absolute inset-0 pointer-events-none bg-background/30 dark:bg-background/40 mix-blend-multiply" />
-									{highlightGallery.length > 1 && (
-										<div className="absolute bottom-2 right-2 z-10 px-2 py-0.5 text-[11px] font-medium rounded-full bg-background/70 backdrop-blur-md border border-white/10 text-foreground/80">
-											+{highlightGallery.length - 1}
-										</div>
-									)}
-								</>
-							) : (
-								// Language color placeholder with dark overlay
-								<div className="absolute inset-0 bg-background/60 dark:bg-background/70 mix-blend-multiply" />
-							)}
-						</div>
-					);
-				})()}
+									});
+								}}
+								title={highlightGallery[0].alt || repo.name}
+							>
+								<Image
+									src={highlightGallery[0].url}
+									alt={highlightGallery[0].alt || repo.name}
+									fill
+									className="object-cover"
+								/>
+								<div className="absolute inset-0 pointer-events-none bg-background/30 dark:bg-background/40 mix-blend-multiply" />
+								{highlightGallery.length > 1 && (
+									<div className="absolute bottom-2 right-2 z-10 px-2 py-0.5 text-[11px] font-medium rounded-full bg-background/70 backdrop-blur-md border border-white/10 text-foreground/80">
+										+{highlightGallery.length - 1}
+									</div>
+								)}
+							</div>
+						);
+					})()}
 
 				{/* Content column */}
 				<div className="flex-1 min-w-0 space-y-2">
@@ -393,191 +369,265 @@ export default function RepoCard({
 							)}
 						</div>
 					</div>
-					{/* Description - toggles between original and generated */}
-					{(repo.description ||
-						(showGeneratedDescription &&
-							repo.generated_description)) && (
-						<div className={repoDescClass}>
-							{showGeneratedDescription &&
-							repo.generated_description ? (
-								<EmphasizedText
-									text={repo.generated_description}
-									emphasisWords={repo.emphasis || []}
-								/>
-							) : (
-								repo.description
-							)}
-						</div>
-					)}
 
-					{/* Username row - only show for explore/for you pages with clickable usernames */}
-					{showOwnerAndDate ? (
-						<div className="text-xs text-muted-foreground/60 mt-2 flex items-center gap-3">
-							<button
-								onClick={() => {
-									// Navigate to the personalized profile page
-									window.location.href = `/personalized/${owner}/profile`;
-								}}
-								className="font-semibold cursor-pointer hover:text-foreground transition-colors"
-							>
-								{owner}
-							</button>
-							{repo.language && (
-								<div className="flex items-center gap-1">
-									<div
-										className="w-1.5 h-1.5 rounded-full"
-										style={{
-											backgroundColor:
-												languageDotColor || "#6b7280",
-										}}
-									></div>
-									<span className="text-xs">
-										{repo.language}
-									</span>
-								</div>
-							)}
-						</div>
-					) : showUsernameInsteadOfDate ? (
-						<div className="text-xs text-muted-foreground/60 mt-2 flex items-center gap-3">
-							<button
-								onClick={() => {
-									// Navigate to the personalized profile page
-									window.location.href = `/personalized/${owner}/profile`;
-								}}
-								className="font-semibold cursor-pointer hover:text-foreground transition-colors"
-							>
-								{owner}
-							</button>
-							{repo.language && (
-								<div className="flex items-center gap-1">
-									<div
-										className="w-1.5 h-1.5 rounded-full"
-										style={{
-											backgroundColor:
-												languageDotColor || "#6b7280",
-										}}
-									></div>
-									<span className="text-xs">
-										{repo.language}
-									</span>
-								</div>
-							)}
-						</div>
-					) : null}
-
-					{/* Language display - show when username row is not displayed */}
-					{!showOwnerAndDate &&
-						!showUsernameInsteadOfDate &&
-						repo.language && (
-							<div className="flex items-center gap-1.5 text-xs text-muted-foreground/60 mt-4">
-								<div
-									className="w-2 h-2 rounded-full"
-									style={{
-										backgroundColor:
-											languageDotColor || "#6b7280",
-									}}
-								></div>
-								<span>{repo.language}</span>
-							</div>
-						)}
-
-					{/* Mobile action icons in bottom right corner for easy mobile tapping */}
-					<div className="flex items-center justify-end mt-3 pt-2 md:hidden">
-						<div className="flex items-start gap-3">
-							{repo.link && (
-								<a
-									href={repo.link}
-									target="_blank"
-									rel="noopener noreferrer"
-									className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
-									title="Visit project link"
-								>
-									<ExternalLink size={20} />
-								</a>
-							)}
-							{Array.isArray(repo.gallery) &&
-								repo.gallery.length > 0 && (
-									<Link
-										href={`/personalized/detail/${ownerFromId}/${ownerFromId}/${repo.name}/timeline`}
-										className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
-										title="View timeline"
-									>
-										<History size={20} />
-									</Link>
-								)}
-							{aiEnabled && (
-								<>
-									{(repo.generated_description ||
-										aiShowLoadingIfMissing) && (
-										<button
-											onClick={() => {
-												if (!repo.generated_description)
-													return;
-												if (
-													hideDetailIcon &&
-													showGeneratedDescription
-												) {
-													window.history.back();
-												} else {
-													setShowGeneratedDescription(
-														!showGeneratedDescription
-													);
-												}
-											}}
-											disabled={
-												!repo.generated_description
-											}
-											className={`cursor-pointer transition-colors p-1 ${
-												!repo.generated_description
-													? "text-muted-foreground/40 animate-pulse cursor-not-allowed"
-													: "text-muted-foreground hover:text-foreground"
-											}`}
-											title={
-												!repo.generated_description
-													? "AI description generating..."
-													: hideDetailIcon &&
-													  showGeneratedDescription
-													? "Go back"
-													: showGeneratedDescription
-													? "Show concise description"
-													: "Show AI-generated description"
-											}
-										>
-											{showGeneratedDescription ? (
-												<ZoomOut size={20} />
-											) : (
-												<ZoomIn size={20} />
-											)}
-										</button>
+					{/* Description + Desktop Image row */}
+					<div className="md:flex md:items-start md:gap-4">
+						<div className="flex-1 min-w-0 space-y-2">
+							{/* Description - toggles between original and generated */}
+							{(repo.description ||
+								(showGeneratedDescription &&
+									repo.generated_description)) && (
+								<div className={repoDescClass}>
+									{showGeneratedDescription &&
+									repo.generated_description ? (
+										<EmphasizedText
+											text={repo.generated_description}
+											emphasisWords={repo.emphasis || []}
+										/>
+									) : (
+										repo.description
 									)}
-									{!hideDetailIcon &&
-										showGeneratedDescription &&
-										repo.tech_doc && (
+								</div>
+							)}
+
+							{/* Username row - only show for explore/for you pages with clickable usernames */}
+							{showOwnerAndDate ? (
+								<div className="text-xs text-muted-foreground/60 mt-2 flex items-center gap-3">
+									<button
+										onClick={() => {
+											// Navigate to the personalized profile page
+											window.location.href = `/personalized/${owner}/profile`;
+										}}
+										className="font-semibold cursor-pointer hover:text-foreground transition-colors"
+									>
+										{owner}
+									</button>
+									{repo.language && (
+										<div className="flex items-center gap-1">
+											<div
+												className="w-1.5 h-1.5 rounded-full"
+												style={{
+													backgroundColor:
+														languageDotColor ||
+														"#6b7280",
+												}}
+											></div>
+											<span className="text-xs">
+												{repo.language}
+											</span>
+										</div>
+									)}
+								</div>
+							) : showUsernameInsteadOfDate ? (
+								<div className="text-xs text-muted-foreground/60 mt-2 flex items-center gap-3">
+									<button
+										onClick={() => {
+											// Navigate to the personalized profile page
+											window.location.href = `/personalized/${owner}/profile`;
+										}}
+										className="font-semibold cursor-pointer hover:text-foreground transition-colors"
+									>
+										{owner}
+									</button>
+									{repo.language && (
+										<div className="flex items-center gap-1">
+											<div
+												className="w-1.5 h-1.5 rounded-full"
+												style={{
+													backgroundColor:
+														languageDotColor ||
+														"#6b7280",
+												}}
+											></div>
+											<span className="text-xs">
+												{repo.language}
+											</span>
+										</div>
+									)}
+								</div>
+							) : null}
+
+							{/* Language display - show when username row is not displayed */}
+							{!showOwnerAndDate &&
+								!showUsernameInsteadOfDate &&
+								repo.language && (
+									<div className="flex items-center gap-1.5 text-xs text-muted-foreground/60 mt-4">
+										<div
+											className="w-2 h-2 rounded-full"
+											style={{
+												backgroundColor:
+													languageDotColor ||
+													"#6b7280",
+											}}
+										></div>
+										<span>{repo.language}</span>
+									</div>
+								)}
+
+							{/* Mobile action icons in bottom right corner for easy mobile tapping */}
+							<div className="flex items-center justify-end mt-3 pt-2 md:hidden">
+								<div className="flex items-start gap-3">
+									{repo.link && (
+										<a
+											href={repo.link}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
+											title="Visit project link"
+										>
+											<ExternalLink size={20} />
+										</a>
+									)}
+									{Array.isArray(repo.gallery) &&
+										repo.gallery.length > 0 && (
 											<Link
-												href={`/personalized/detail/${pageUsername}/${ownerFromId}/${repo.name}`}
+												href={`/personalized/detail/${ownerFromId}/${ownerFromId}/${repo.name}/timeline`}
 												className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
-												title="View detailed explanation"
+												title="View timeline"
 											>
-												<ZoomIn size={20} />
+												<History size={20} />
 											</Link>
 										)}
-								</>
-							)}
-							{canEdit && (
-								<button
-									onClick={() => {
-										console.debug("Edit repo", {
-											owner,
-											name: repo.name,
-										});
-									}}
-									className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
-									title="Edit repository"
-								>
-									<Pencil size={20} />
-								</button>
-							)}
+									{aiEnabled && (
+										<>
+											{(repo.generated_description ||
+												aiShowLoadingIfMissing) && (
+												<button
+													onClick={() => {
+														if (
+															!repo.generated_description
+														)
+															return;
+														if (
+															hideDetailIcon &&
+															showGeneratedDescription
+														) {
+															window.history.back();
+														} else {
+															setShowGeneratedDescription(
+																!showGeneratedDescription
+															);
+														}
+													}}
+													disabled={
+														!repo.generated_description
+													}
+													className={`cursor-pointer transition-colors p-1 ${
+														!repo.generated_description
+															? "text-muted-foreground/40 animate-pulse cursor-not-allowed"
+															: "text-muted-foreground hover:text-foreground"
+													}`}
+													title={
+														!repo.generated_description
+															? "AI description generating..."
+															: hideDetailIcon &&
+															  showGeneratedDescription
+															? "Go back"
+															: showGeneratedDescription
+															? "Show concise description"
+															: "Show AI-generated description"
+													}
+												>
+													{showGeneratedDescription ? (
+														<ZoomOut size={20} />
+													) : (
+														<ZoomIn size={20} />
+													)}
+												</button>
+											)}
+											{!hideDetailIcon &&
+												showGeneratedDescription &&
+												repo.tech_doc &&
+												pageUsername && (
+													<Link
+														href={`/personalized/detail/${pageUsername}/${ownerFromId}/${repo.name}`}
+														className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
+														title="View detailed explanation"
+													>
+														<ZoomIn size={20} />
+													</Link>
+												)}
+										</>
+									)}
+									{canEdit && (
+										<button
+											onClick={() => {
+												console.debug("Edit repo", {
+													owner,
+													name: repo.name,
+												});
+											}}
+											className="text-muted-foreground cursor-pointer hover:text-foreground transition-colors p-1"
+											title="Edit repository"
+										>
+											<Pencil size={20} />
+										</button>
+									)}
+								</div>
+							</div>
 						</div>
+
+						{/* Desktop: Image on right side next to content */}
+						{!hideHeroImage &&
+							(() => {
+								const highlightGallery = (
+									localGallery || []
+								).filter((img) => img.is_highlight);
+								const hasHighlight =
+									highlightGallery.length > 0;
+
+								if (!hasHighlight) return null;
+
+								return (
+									<div
+										className="hidden md:block relative md:w-[19%] md:min-w-[188px] md:max-w-[280px] md:h-[96px] lg:h-[107px] md:shrink-0 md:self-start rounded-md overflow-hidden group cursor-pointer"
+										style={{
+											aspectRatio: `${1899 / 1165}`,
+										}}
+										onClick={() => {
+											const repoOwner = ownerFromId;
+											openGallery(highlightGallery, 0, {
+												username: pageUsername,
+												owner: repoOwner,
+												repoName: repo.name,
+												repoLink: repo.link,
+												canEdit,
+												onImageDeleted: (
+													deletedUrl: string
+												) => {
+													setLocalGallery(
+														(prev) =>
+															prev?.filter(
+																(img) =>
+																	img.url !==
+																	deletedUrl
+															) || []
+													);
+												},
+											});
+										}}
+										title={
+											highlightGallery[0].alt || repo.name
+										}
+									>
+										<Image
+											src={highlightGallery[0].url}
+											alt={
+												highlightGallery[0].alt ||
+												repo.name
+											}
+											fill
+											className="object-cover"
+										/>
+										<div className="absolute inset-0 pointer-events-none bg-background/30 dark:bg-background/40 mix-blend-multiply" />
+										{highlightGallery.length > 1 && (
+											<div className="absolute bottom-2 right-2 z-10 px-2 py-0.5 text-[11px] font-medium rounded-full bg-background/70 backdrop-blur-md border border-white/10 text-foreground/80">
+												+{highlightGallery.length - 1}
+											</div>
+										)}
+									</div>
+								);
+							})()}
 					</div>
 				</div>
 

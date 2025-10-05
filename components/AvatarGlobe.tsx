@@ -203,14 +203,14 @@ function AvatarGlobeClient({ maxUsers = DEFAULT_MAX_USERS }: AvatarGlobeProps) {
 	}
 
 	return (
-		<div className="w-full max-w-2xl mx-auto px-4">
+		<div className="w-full max-w-xl mx-auto px-4">
 			<div
 				ref={containerRef}
 				className="avatar-globe-container w-full rounded-lg"
 				style={{
 					background: "transparent",
 					overflow: "hidden",
-					minHeight: "350px", // Taller minimum height
+					minHeight: "250px", // Smaller minimum height
 				}}
 			/>
 		</div>

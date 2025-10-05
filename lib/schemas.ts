@@ -2,7 +2,7 @@ import { z } from "zod";
 
 // Basic, pragmatic schema that matches the sample data
 
-export const ProfileSchema = z.object({
+const ProfileSchema = z.object({
 	id: z.string(),
 	name: z.string(),
 	headline: z.string().optional(),
@@ -19,7 +19,7 @@ export const ProfileSchema = z.object({
 		.optional(),
 });
 
-export const ExperienceSchema = z.object({
+const ExperienceSchema = z.object({
 	org: z.string(),
 	role: z.string(),
 	location: z.string(),
@@ -28,7 +28,7 @@ export const ExperienceSchema = z.object({
 	highlights: z.array(z.string()),
 });
 
-export const ProjectSchema = z.object({
+const ProjectSchema = z.object({
 	name: z.string(),
 	subtitle: z.string(),
 	period: z.string(),
@@ -43,14 +43,14 @@ export const ProjectSchema = z.object({
 		.optional(),
 });
 
-export const WritingSchema = z.object({
+const WritingSchema = z.object({
 	title: z.string(),
 	link: z.string(),
 	description: z.string().optional(),
 	date: z.string().optional(),
 });
 
-export const IndexSchema = z.object({
+const IndexSchema = z.object({
 	profile: ProfileSchema,
 	contacts: z.record(z.string(), z.string()),
 	experiences: z.array(ExperienceSchema),
@@ -60,21 +60,12 @@ export const IndexSchema = z.object({
 	workingOn: z.string().optional(),
 });
 
-export type Profile = z.infer<typeof ProfileSchema>;
-export type Experience = z.infer<typeof ExperienceSchema>;
-export type Project = z.infer<typeof ProjectSchema>;
 export type Writing = z.infer<typeof WritingSchema>;
-export type IndexJson = z.infer<typeof IndexSchema>;
-
-export function validateIndexJson(data: unknown): IndexJson {
-	return IndexSchema.parse(data);
-}
 
 // Legacy type alias for backward compatibility
-export type ProfileData = IndexJson;
-export const ProfileDataSchema = IndexSchema;
+export type ProfileData = z.infer<typeof IndexSchema>;
 
 // Validation function that throws on error (legacy name)
 export function validateProfileData(data: unknown): ProfileData {
-	return validateIndexJson(data);
+	return IndexSchema.parse(data);
 }

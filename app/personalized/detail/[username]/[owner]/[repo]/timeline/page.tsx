@@ -19,6 +19,7 @@ import {
 	repoMetaMutedClass,
 	timelineItemDescClass,
 } from "@/components/RepoStyles";
+import CursorGradient from "@/components/CursorGradient";
 
 interface PageProps {
 	params: Promise<{
@@ -221,7 +222,8 @@ export default function RepoTimelinePage({ params }: PageProps) {
 
 	if (loading) {
 		return (
-			<div className="min-h-screen flex items-center justify-center">
+			<div className="min-h-screen relative flex items-center justify-center">
+				<CursorGradient />
 				<div className="text-sm text-muted-foreground">Loading…</div>
 			</div>
 		);
@@ -229,7 +231,8 @@ export default function RepoTimelinePage({ params }: PageProps) {
 
 	if (!repo) {
 		return (
-			<div className="min-h-screen flex items-center justify-center">
+			<div className="min-h-screen relative flex items-center justify-center">
+				<CursorGradient />
 				<div className="text-sm text-muted-foreground">
 					Repository not found
 				</div>
@@ -238,7 +241,8 @@ export default function RepoTimelinePage({ params }: PageProps) {
 	}
 
 	return (
-		<div className="min-h-screen">
+		<div className="min-h-screen relative">
+			<CursorGradient />
 			<div className="max-w-3xl mx-auto px-6 py-10">
 				{/* Timeline label (styled like tabs) at the top */}
 				<div className="mb-2">

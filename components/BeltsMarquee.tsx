@@ -4,7 +4,7 @@ import React from "react";
 import Marquee from "react-fast-marquee";
 
 interface BeltsMarqueeProps {
-	items: string[];
+	items: React.ReactNode[];
 	className?: string;
 	itemClassName?: string;
 	beltSize?: number;
@@ -16,28 +16,19 @@ interface BeltsMarqueeProps {
 	startDirection?: "left" | "right";
 }
 
-function dedupeCaseInsensitive(items: string[], cap: number): string[] {
-	const seen = new Set<string>();
-	const result: string[] = [];
-	for (const raw of items) {
-		const trimmed = (raw || "").trim();
-		if (!trimmed) continue;
-		const key = trimmed.toLowerCase();
-		if (seen.has(key)) continue;
-		seen.add(key);
-		result.push(trimmed);
-		if (result.length >= cap) break;
-	}
-	return result;
+function dedupeItems(items: React.ReactNode[], cap: number): React.ReactNode[] {
+	// For React elements, we can't easily dedupe based on content
+	// Just return the items up to the cap limit
+	return items.slice(0, cap);
 }
 
 function chunkAndSpread(
-	items: string[],
+	items: React.ReactNode[],
 	beltSize: number,
 	minLastBeltSize: number
-): string[][] {
+): React.ReactNode[][] {
 	// 1) naive chunk
-	const belts: string[][] = [];
+	const belts: React.ReactNode[][] = [];
 	for (let i = 0; i < items.length; i += beltSize) {
 		belts.push(items.slice(i, i + beltSize));
 	}
@@ -70,7 +61,7 @@ export default function BeltsMarquee({
 	pauseOnClick = false,
 	startDirection = "left",
 }: BeltsMarqueeProps) {
-	const deduped = dedupeCaseInsensitive(items, cap);
+	const deduped = dedupeItems(items, cap);
 	if (deduped.length === 0) return null;
 
 	const belts = chunkAndSpread(deduped, beltSize, minLastBeltSize);

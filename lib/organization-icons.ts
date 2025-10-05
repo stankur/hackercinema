@@ -1,5 +1,5 @@
 // Mapping of social media and platform names to Simple Icons names
-export const socialIcons: Record<string, string> = {
+const socialIcons: Record<string, string> = {
 	// Social Media & Platforms
 	github: "github",
 	x: "x",

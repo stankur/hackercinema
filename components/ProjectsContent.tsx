@@ -4,7 +4,6 @@ import { useState, useEffect, useCallback } from "react";
 import RepoCard from "@/components/RepoCard";
 
 import type { Builder, GitHubRepo } from "@/lib/types";
-import { preloadGitHubImages } from "@/lib/imageCache";
 
 interface ClusterData {
 	domain: string;
@@ -24,7 +23,7 @@ type RepoWithOwner = GitHubRepo & { owner: string };
 export default function ProjectsContent({
 	pageUsername,
 }: {
-	pageUsername: string;
+	pageUsername?: string;
 }) {
 	const [builders, setBuilders] = useState<Builder[]>([]);
 	const [clusters, setClusters] = useState<ClusterData[]>([]);
@@ -38,23 +37,10 @@ export default function ProjectsContent({
 			fetch("/api/clusters.json").then((res) => res.json()),
 		])
 			.then(
-				async ([buildersData, clustersData]: [
-					Builder[],
-					ClusterData[]
-				]) => {
+				([buildersData, clustersData]: [Builder[], ClusterData[]]) => {
 					setBuilders(buildersData);
 					setClusters(clustersData);
 					setLoading(false);
-
-					// Preload GitHub images in the background
-					try {
-						const galleries = buildersData.flatMap((builder) =>
-							builder.repos.map((repo) => repo.gallery || [])
-						);
-						await preloadGitHubImages(galleries);
-					} catch (error) {
-						console.warn("Failed to preload some images:", error);
-					}
 				}
 			)
 			.catch((err) => {
@@ -166,7 +152,7 @@ export default function ProjectsContent({
 								repo={repo}
 								owner={repo.owner}
 								showOwnerAndDate={true}
-								pageUsername={pageUsername}
+								pageUsername={pageUsername || repo.owner}
 							/>
 					  ))
 					: // Show repositories for selected category
@@ -176,7 +162,7 @@ export default function ProjectsContent({
 								repo={repo}
 								owner={repo.owner}
 								showOwnerAndDate={true}
-								pageUsername={pageUsername}
+								pageUsername={pageUsername || repo.owner}
 							/>
 					  ))}
 			</div>

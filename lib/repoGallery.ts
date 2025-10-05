@@ -132,18 +132,6 @@ async function safeJson(res: Response): Promise<unknown> {
 }
 
 /**
- * Resolve the GitHub repo owner given a repo link and a fallback username.
- * Falls back to the provided username when the link is missing or unparsable.
- */
-export function resolveRepoOwner(
-	link: string | null | undefined,
-	fallbackUsername: string
-): string {
-	const parsed = parseOwnerRepoFromLink(link || undefined);
-	return parsed?.owner || fallbackUsername;
-}
-
-/**
  * Group gallery images by local calendar date using dayjs.
  * - Date key format: YYYY-MM-DD
  * - Images without taken_at are grouped under "Unknown" and sorted last.
