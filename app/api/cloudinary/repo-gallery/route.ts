@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { cookies } from "next/headers";
 import { v2 as cloudinary, type UploadApiResponse } from "cloudinary";
+import { auth } from "@/app/api/auth/[...nextauth]/route";
 
 export const runtime = "nodejs";
 
@@ -19,11 +19,30 @@ export async function POST(request: Request) {
 			return jsonError("missing_params", 400);
 		}
 
-		// Dev auth gate: in non-production, require devUser cookie to match username
-		if (process.env.NODE_ENV !== "production") {
-			const store = await cookies();
-			const devUser = store.get("devUser")?.value || null;
-			if (!devUser || devUser !== username) {
+		// Authenticate: user must be uploading to their own account
+		const useMockAuth =
+			process.env.NODE_ENV !== "production" &&
+			process.env.USE_MOCK_AUTH === "true";
+
+		if (useMockAuth) {
+			// Validate dev cookie
+			const { cookies } = await import("next/headers");
+			const cookieStore = await cookies();
+			const devUser = cookieStore.get("devUser")?.value || null;
+
+			if (!devUser) {
+				return jsonError("unauthorized", 401);
+			}
+			if (devUser !== username) {
+				return jsonError("forbidden", 403);
+			}
+		} else {
+			// Use real NextAuth session
+			const session = await auth();
+			if (!session || !session.user) {
+				return jsonError("unauthorized", 401);
+			}
+			if (session.user.username !== username) {
 				return jsonError("forbidden", 403);
 			}
 		}

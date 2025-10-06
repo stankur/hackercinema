@@ -13,7 +13,7 @@ import {
 	persistImageHighlight,
 	persistImageMetadata,
 } from "@/lib/repoGallery";
-import { useDevUser } from "@/hooks/useDevUser";
+import { useAuth } from "@/hooks/useAuth";
 import {
 	timelineItemTitleClass,
 	repoMetaMutedClass,
@@ -36,7 +36,7 @@ export default function RepoTimelinePage({ params }: PageProps) {
 	const [loading, setLoading] = useState(true);
 	const [pendingEdits, setPendingEdits] = useState<Set<string>>(new Set());
 	const { openGallery } = useGalleryModal();
-	const { login } = useDevUser();
+	const { login } = useAuth();
 
 	useEffect(() => {
 		let cancelled = false;

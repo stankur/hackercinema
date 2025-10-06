@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { auth } from "@/app/api/auth/[...nextauth]/route";
 
 const BACKEND_BASE_URL =
 	process.env.BACKEND_BASE_URL || "http://localhost:8080";
@@ -16,6 +17,8 @@ export async function POST(
 	{ params }: { params: Promise<{ path: string[] }> }
 ) {
 	const { path } = await params;
+	const authCheck = await checkAuth(path);
+	if (authCheck) return authCheck;
 	return forwardRequest(request, path, "POST");
 }
 
@@ -24,6 +27,8 @@ export async function PUT(
 	{ params }: { params: Promise<{ path: string[] }> }
 ) {
 	const { path } = await params;
+	const authCheck = await checkAuth(path);
+	if (authCheck) return authCheck;
 	return forwardRequest(request, path, "PUT");
 }
 
@@ -32,6 +37,8 @@ export async function DELETE(
 	{ params }: { params: Promise<{ path: string[] }> }
 ) {
 	const { path } = await params;
+	const authCheck = await checkAuth(path);
+	if (authCheck) return authCheck;
 	return forwardRequest(request, path, "DELETE");
 }
 
@@ -40,7 +47,60 @@ export async function PATCH(
 	{ params }: { params: Promise<{ path: string[] }> }
 ) {
 	const { path } = await params;
+	const authCheck = await checkAuth(path);
+	if (authCheck) return authCheck;
 	return forwardRequest(request, path, "PATCH");
+}
+
+async function checkAuth(path: string[]): Promise<NextResponse | null> {
+	// Extract username from path
+	// Expected pattern: ['users', 'username', ...]
+	if (path[0] !== "users" || !path[1]) {
+		return NextResponse.json(
+			{ error: "Invalid path format" },
+			{ status: 400 }
+		);
+	}
+
+	const targetUsername = path[1];
+
+	// Check if using mock auth in dev
+	const useMockAuth =
+		process.env.NODE_ENV !== "production" &&
+		process.env.USE_MOCK_AUTH === "true";
+
+	if (useMockAuth) {
+		// Validate dev cookie
+		const { cookies } = await import("next/headers");
+		const cookieStore = await cookies();
+		const devUser = cookieStore.get("devUser")?.value || null;
+
+		if (!devUser) {
+			return NextResponse.json(
+				{ error: "Unauthorized" },
+				{ status: 401 }
+			);
+		}
+
+		if (devUser !== targetUsername) {
+			return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+		}
+
+		return null;
+	}
+
+	// Use real NextAuth session
+	const session = await auth();
+
+	if (!session || !session.user) {
+		return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+	}
+
+	if (session.user.username !== targetUsername) {
+		return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+	}
+
+	return null;
 }
 
 async function forwardRequest(
@@ -53,7 +113,7 @@ async function forwardRequest(
 		const searchParams = request.nextUrl.searchParams.toString();
 		const fullUrl = searchParams ? `${url}?${searchParams}` : url;
 
-        const headers: Record<string, string> = {};
+		const headers: Record<string, string> = {};
 
 		// Forward relevant headers
 		request.headers.forEach((value, key) => {

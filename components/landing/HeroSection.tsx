@@ -1,5 +1,8 @@
+"use client";
+
 import EmphasizedText from "@/components/EmphasizedText";
 import { SimpleIcon } from "@/components/ui/SimpleIcon";
+import { signIn } from "next-auth/react";
 
 export default function HeroSection() {
 	return (
@@ -35,15 +38,15 @@ export default function HeroSection() {
 			</div>
 
 			<div className="pt-4">
-				<a
-					href="https://github.com/login"
-					target="_blank"
-					rel="noopener noreferrer"
+				<button
+					onClick={() =>
+						signIn("github", { callbackUrl: "/auth/callback" })
+					}
 					className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-foreground text-background hover:bg-foreground/90 transition-colors font-medium"
 				>
 					<SimpleIcon name="github" size={20} />
 					Join with GitHub
-				</a>
+				</button>
 			</div>
 		</section>
 	);

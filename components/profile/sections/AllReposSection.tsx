@@ -3,7 +3,7 @@
 import RepoCard from "@/components/RepoCard";
 import SharedSkeletonRows from "./SharedSkeletonRows";
 import type { Builder } from "@/lib/types";
-import { useDevUser } from "@/hooks/useDevUser";
+import { useAuth } from "@/hooks/useAuth";
 
 interface AllReposSectionProps {
 	username: string;
@@ -16,7 +16,7 @@ export default function AllReposSection({
 	repos,
 	highlightedRepoNames,
 }: AllReposSectionProps) {
-	const { login } = useDevUser();
+	const { login } = useAuth();
 	const canEdit = login === username;
 	const isGeneratingHighlights = highlightedRepoNames === undefined;
 

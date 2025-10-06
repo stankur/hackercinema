@@ -176,12 +176,12 @@ export default function ProfileHeader({
 				{/* Keywords and Emphasis Belts */}
 				{(allKeywords.length > 0 || allEmphasis.length > 0) && (
 					<div className="mt-10 space-y-5 md:space-y-5">
-						{allKeywords.length > 0 && (
+						{/* {allKeywords.length > 0 && (
 							<KeywordsBelts
 								keywords={allKeywords}
 								startDirection="left"
 							/>
-						)}
+						)} */}
 						{allEmphasis.length > 0 && (
 							<EmphasisBelts
 								emphasis={allEmphasis}

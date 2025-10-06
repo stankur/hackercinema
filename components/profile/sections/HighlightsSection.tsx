@@ -3,7 +3,7 @@
 import RepoCard from "@/components/RepoCard";
 import SharedSkeletonRows from "./SharedSkeletonRows";
 import type { Builder } from "@/lib/types";
-import { useDevUser } from "@/hooks/useDevUser";
+import { useAuth } from "@/hooks/useAuth";
 
 interface HighlightsSectionProps {
 	highlightedRepoNames: string[] | undefined;
@@ -18,7 +18,7 @@ export default function HighlightsSection({
 	username,
 	aiEnabled = false,
 }: HighlightsSectionProps) {
-	const { login } = useDevUser();
+	const { login } = useAuth();
 	const canEdit = login === username;
 	if (highlightedRepoNames === undefined) {
 		return <SharedSkeletonRows count={5} height={100} />;
