@@ -15,9 +15,8 @@ import { uploadRepoImageAndPersist } from "@/lib/repoGallery";
 interface RepoCardProps {
 	repo: GitHubRepo;
 	owner: string;
-	showOwner?: boolean;
 	showUsernameInsteadOfDate?: boolean;
-	showOwnerAndDate?: boolean;
+	showOwner?: boolean;
 	hideDetailIcon?: boolean;
 	showGeneratedDescriptionByDefault?: boolean;
 	aiEnabled?: boolean;
@@ -32,9 +31,8 @@ interface RepoCardProps {
 export default function RepoCard({
 	repo,
 	owner,
-	showOwner = false,
 	showUsernameInsteadOfDate = false,
-	showOwnerAndDate = false,
+	showOwner = false,
 	hideDetailIcon = false,
 	showGeneratedDescriptionByDefault = false,
 	aiEnabled = true,
@@ -391,7 +389,7 @@ export default function RepoCard({
 							)}
 
 							{/* Username row - only show for explore/for you pages with clickable usernames */}
-							{showOwnerAndDate ? (
+							{showOwner ? (
 								<div className="text-xs text-muted-foreground/60 mt-2 flex items-center gap-3">
 									<button
 										onClick={() => {
@@ -448,7 +446,7 @@ export default function RepoCard({
 							) : null}
 
 							{/* Language display - show when username row is not displayed */}
-							{!showOwnerAndDate &&
+							{!showOwner &&
 								!showUsernameInsteadOfDate &&
 								repo.language && (
 									<div className="flex items-center gap-1.5 text-xs text-muted-foreground/60 mt-4">

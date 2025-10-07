@@ -1,10 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { SocialIcon } from "@/components/ui/OrganizationIcon";
 import { Mail, Globe } from "lucide-react";
 import type { Builder } from "@/lib/types";
-import KeywordsBelts from "@/components/KeywordsBelts";
 import EmphasisBelts from "@/components/EmphasisBelts";
 
 interface ProfileData {

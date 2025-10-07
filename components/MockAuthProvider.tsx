@@ -46,6 +46,7 @@ export function MockAuthProvider({ children }: { children: ReactNode }) {
 
 	useEffect(() => {
 		loadSession();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	return (

@@ -151,7 +151,7 @@ export default function ProjectsContent({
 								key={`${repo.owner}-${repo.name}`}
 								repo={repo}
 								owner={repo.owner}
-								showOwnerAndDate={true}
+								showOwner={true}
 								pageUsername={pageUsername || repo.owner}
 							/>
 					  ))
@@ -161,7 +161,7 @@ export default function ProjectsContent({
 								key={`${repo.owner}-${repo.name}`}
 								repo={repo}
 								owner={repo.owner}
-								showOwnerAndDate={true}
+								showOwner={true}
 								pageUsername={pageUsername || repo.owner}
 							/>
 					  ))}

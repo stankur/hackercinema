@@ -138,9 +138,6 @@ export default function ProfilePage({ params }: PageProps) {
 
 	useEffect(() => {
 		// Load all profiles from the consolidated file
-		// Note: We intentionally don't include 'data' in dependencies
-		// because we only want to run this effect when username changes
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 		fetch("/api/profiles.json")
 			.then((res) => {
 				if (!res.ok) {

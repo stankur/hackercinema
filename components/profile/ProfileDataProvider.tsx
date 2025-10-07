@@ -156,7 +156,7 @@ export function useProfileData(username: string): UseProfileDataReturn {
 			setActiveTab("highlights");
 			hasAutoSwitchedRef.current = true;
 		}
-	}, [activeTab, data?.repos?.length]);
+	}, [activeTab, data?.repos]);
 
 	// Reset to Recent Projects on username change (reload/navigation)
 	useEffect(() => {
