@@ -4,9 +4,29 @@ import { useEffect, useState, use } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import SimilarReposSection from "@/components/SimilarReposSection";
+import RepoCard from "@/components/RepoCard";
 import CursorGradient from "@/components/CursorGradient";
-import type { Builder } from "@/lib/types";
+import type { GitHubRepo, GalleryImage } from "@/lib/types";
+
+// No local BackendRepo type; reuse GitHubRepo for mapping
+type ForYouItem = {
+	username: string;
+	id: string;
+	name: string;
+	description?: string | null;
+	generated_description?: string | null;
+	updated_at: string;
+	stargazers_count?: number;
+	language?: string | null;
+	topics?: string[];
+	link?: string;
+	gallery?: GalleryImage[];
+	tech_doc?: string;
+	toy_implementation?: string;
+	emphasis?: string[];
+	keywords?: string[];
+	kind?: string;
+};
 
 interface PageProps {
 	params: Promise<{
@@ -17,54 +37,82 @@ interface PageProps {
 export default function ForYouPage({ params }: PageProps) {
 	const { username } = use(params);
 	const pathname = usePathname();
-	const [data, setData] = useState<Builder | null>(null);
-	const [loading, setLoading] = useState(true);
+	const [feed, setFeed] = useState<
+		Array<{ owner: string; repo: GitHubRepo }>
+	>([]);
+	const [feedLoading, setFeedLoading] = useState<boolean>(true);
+	const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
 
+	// Load For You feed from backend (strict shape: { repos: ForYouItem[] })
 	useEffect(() => {
-		// Load user data from data.json
-		fetch("/api/data.json")
-			.then((res) => {
-				if (!res.ok) {
-					throw new Error("Failed to load data");
-				}
-				return res.json();
-			})
-			.then((builders: Builder[]) => {
-				// Find user with case-insensitive matching
-				const user = builders.find(
-					(builder) =>
-						builder.username.toLowerCase() ===
-						username.toLowerCase()
+		setFeedLoading(true);
+		(async () => {
+			const res = await fetch(`/api/backend/for-you/${username}`);
+			if (!res.ok) throw new Error(`HTTP ${res.status}`);
+			const { repos } = (await res.json()) as { repos: ForYouItem[] };
+			if (!Array.isArray(repos))
+				throw new Error(
+					"Invalid response shape: expected { repos: [] }"
 				);
 
-				if (user) {
-					setData(user);
-				}
-				setLoading(false);
-			})
-			.catch((error) => {
-				console.error(`Failed to load data for ${username}:`, error);
-				setLoading(false);
-			});
+			const mapped: Array<{ owner: string; repo: GitHubRepo }> =
+				repos.map((item) => {
+					if (
+						!item ||
+						typeof item.username !== "string" ||
+						typeof item.id !== "string" ||
+						!item.id.includes("/") ||
+						typeof item.name !== "string" ||
+						typeof item.updated_at !== "string"
+					) {
+						throw new Error("Invalid repo item in feed");
+					}
+					return {
+						owner: item.username,
+						repo: {
+							id: item.id,
+							name: item.name,
+							description: item.description ?? undefined,
+							generated_description:
+								item.generated_description ?? undefined,
+							updated_at: item.updated_at,
+							stars: item.stargazers_count,
+							language: item.language ?? undefined,
+							topics: item.topics,
+							link: item.link,
+							gallery: item.gallery,
+							tech_doc: item.tech_doc,
+							toy_implementation: item.toy_implementation,
+							emphasis: item.emphasis,
+							keywords: item.keywords,
+							kind: item.kind,
+						},
+					};
+				});
+
+			setFeed(mapped);
+			setFeedLoading(false);
+		})().catch((e) => {
+			// Surface hard failures
+			throw e;
+		});
 	}, [username]);
 
-	if (loading) {
-		return (
-			<div className="min-h-screen flex items-center justify-center">
-				<div className="text-sm text-muted-foreground">Loading…</div>
-			</div>
-		);
-	}
-
-	if (!data) {
-		return (
-			<div className="min-h-screen flex items-center justify-center">
-				<div className="text-sm text-muted-foreground">
-					User not found
-				</div>
-			</div>
-		);
-	}
+	// Single fetch for user avatar (no polling)
+	useEffect(() => {
+		(async () => {
+			try {
+				const res = await fetch(`/api/backend/users/${username}/data`);
+				if (!res.ok) throw new Error(`HTTP ${res.status}`);
+				const data = await res.json();
+				const url = data?.user?.avatar_url;
+				if (typeof url !== "string") throw new Error("Invalid avatar");
+				setAvatarUrl(url);
+			} catch (e) {
+				console.error("Failed to load profile avatar", e);
+			}
+		})();
+	}, [username]);
 
 	return (
 		<div className="min-h-screen relative">
@@ -106,10 +154,10 @@ export default function ForYouPage({ params }: PageProps) {
 						className="cursor-pointer"
 					>
 						<div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center overflow-hidden hover:opacity-80 transition-opacity">
-							{data.profile?.avatar_url ? (
+							{avatarUrl ? (
 								<Image
-									src={data.profile.avatar_url}
-									alt={`${data.username}'s avatar`}
+									src={avatarUrl}
+									alt={`${username}'s avatar`}
 									width={32}
 									height={32}
 									className="w-full h-full object-cover"
@@ -124,11 +172,26 @@ export default function ForYouPage({ params }: PageProps) {
 
 			{/* For You Content */}
 			<div className="max-w-3xl mx-auto px-6">
-				{data.similar_repos && data.similar_repos.length > 0 ? (
-					<SimilarReposSection similarRepos={data.similar_repos} />
-				) : (
+				{feedLoading ? (
 					<div className="text-sm text-muted-foreground text-center py-20">
-						No recommendations found.
+						Loading feed...
+					</div>
+				) : feed.length === 0 ? (
+					<div className="text-sm text-muted-foreground text-center py-20">
+						No feed yet.
+					</div>
+				) : (
+					<div className="space-y-6">
+						{feed.map(({ owner, repo }) => (
+							<RepoCard
+								key={`${repo.id}`}
+								repo={repo}
+								owner={owner}
+								showUsernameInsteadOfDate
+								pageUsername={username}
+								hideHeroImage={false}
+							/>
+						))}
 					</div>
 				)}
 			</div>

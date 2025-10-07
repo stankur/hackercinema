@@ -10,9 +10,18 @@ export interface GalleryImage {
 	alt: string;
 	url: string;
 	original_url: string;
+	/** Optional title for the image */
+	title?: string;
+	/** Optional caption for the image */
+	caption?: string;
+	/** Whether this image is a highlight */
+	is_highlight?: boolean;
+	/** Epoch milliseconds when the image was taken */
+	taken_at?: number;
 }
 
 export interface GitHubRepo {
+	id: string;
 	name: string;
 	description?: string | null;
 	generated_description?: string | null;
@@ -25,6 +34,8 @@ export interface GitHubRepo {
 	tech_doc?: string;
 	toy_implementation?: string;
 	emphasis?: string[];
+	keywords?: string[];
+	kind?: string;
 }
 
 export interface Builder {

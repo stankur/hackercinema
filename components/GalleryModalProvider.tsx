@@ -5,7 +5,19 @@ import GalleryModal from "./GalleryModal";
 import type { GalleryImage } from "@/lib/types";
 
 interface GalleryModalContextType {
-	openGallery: (images: GalleryImage[], initialIndex?: number) => void;
+	openGallery: (
+		images: GalleryImage[],
+		initialIndex?: number,
+		options?: {
+			username?: string;
+			owner?: string;
+			repoName?: string;
+			repoLink?: string;
+			canEdit?: boolean;
+			onImageDeleted?: (deletedUrl: string) => void;
+			showAllImages?: boolean;
+		}
+	) => void;
 	closeGallery: () => void;
 }
 
@@ -19,10 +31,24 @@ export function GalleryModalProvider({ children }: GalleryModalProviderProps) {
 	const [isOpen, setIsOpen] = useState(false);
 	const [images, setImages] = useState<GalleryImage[]>([]);
 	const [initialIndex, setInitialIndex] = useState(0);
+	const [modalOptions, setModalOptions] = useState<{
+		username?: string;
+		owner?: string;
+		repoName?: string;
+		repoLink?: string;
+		canEdit?: boolean;
+		onImageDeleted?: (deletedUrl: string) => void;
+		showAllImages?: boolean;
+	}>({});
 
-	const openGallery = (galleryImages: GalleryImage[], startIndex = 0) => {
+	const openGallery = (
+		galleryImages: GalleryImage[],
+		startIndex = 0,
+		options = {}
+	) => {
 		setImages(galleryImages);
 		setInitialIndex(startIndex);
+		setModalOptions(options);
 		setIsOpen(true);
 	};
 
@@ -32,6 +58,7 @@ export function GalleryModalProvider({ children }: GalleryModalProviderProps) {
 		setTimeout(() => {
 			setImages([]);
 			setInitialIndex(0);
+			setModalOptions({});
 		}, 150);
 	};
 
@@ -43,6 +70,7 @@ export function GalleryModalProvider({ children }: GalleryModalProviderProps) {
 				isOpen={isOpen}
 				onClose={closeGallery}
 				initialIndex={initialIndex}
+				{...modalOptions}
 			/>
 		</GalleryModalContext.Provider>
 	);

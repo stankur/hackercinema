@@ -3,8 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import RepoCard from "@/components/RepoCard";
 
-import type { Builder } from "@/lib/types";
-import { preloadGitHubImages } from "@/lib/imageCache";
+import type { Builder, GitHubRepo } from "@/lib/types";
 
 interface ClusterData {
 	domain: string;
@@ -19,24 +18,13 @@ interface ClusterData {
 	}>;
 }
 
-interface RepoWithOwner {
-	name: string;
-	description?: string | null;
-	generated_description?: string | null;
-	updated_at: string;
-	stars?: number;
-	language?: string | null;
-	topics?: string[];
-	link?: string;
-	gallery?: Array<{
-		alt: string;
-		url: string;
-		original_url: string;
-	}>;
-	owner: string;
-}
+type RepoWithOwner = GitHubRepo & { owner: string };
 
-export default function ProjectsContent() {
+export default function ProjectsContent({
+	pageUsername,
+}: {
+	pageUsername?: string;
+}) {
 	const [builders, setBuilders] = useState<Builder[]>([]);
 	const [clusters, setClusters] = useState<ClusterData[]>([]);
 	const [loading, setLoading] = useState(true);
@@ -49,23 +37,10 @@ export default function ProjectsContent() {
 			fetch("/api/clusters.json").then((res) => res.json()),
 		])
 			.then(
-				async ([buildersData, clustersData]: [
-					Builder[],
-					ClusterData[]
-				]) => {
+				([buildersData, clustersData]: [Builder[], ClusterData[]]) => {
 					setBuilders(buildersData);
 					setClusters(clustersData);
 					setLoading(false);
-
-					// Preload GitHub images in the background
-					try {
-						const galleries = buildersData.flatMap((builder) =>
-							builder.repos.map((repo) => repo.gallery || [])
-						);
-						await preloadGitHubImages(galleries);
-					} catch (error) {
-						console.warn("Failed to preload some images:", error);
-					}
 				}
 			)
 			.catch((err) => {
@@ -77,10 +52,11 @@ export default function ProjectsContent() {
 	// Get all repositories with owner information
 	const getAllRepos = useCallback((): RepoWithOwner[] => {
 		return builders.flatMap((builder) =>
-			builder.repos.map((repo) => ({
-				...repo,
-				owner: builder.username,
-			}))
+			builder.repos.map((repo) => {
+				const owner = builder.username;
+				const id = (repo as GitHubRepo).id || `${owner}/${repo.name}`;
+				return { ...(repo as GitHubRepo), id, owner } as RepoWithOwner;
+			})
 		);
 	}, [builders]);
 
@@ -175,7 +151,8 @@ export default function ProjectsContent() {
 								key={`${repo.owner}-${repo.name}`}
 								repo={repo}
 								owner={repo.owner}
-								showOwnerAndDate={true}
+								showOwner={true}
+								pageUsername={pageUsername || repo.owner}
 							/>
 					  ))
 					: // Show repositories for selected category
@@ -184,7 +161,8 @@ export default function ProjectsContent() {
 								key={`${repo.owner}-${repo.name}`}
 								repo={repo}
 								owner={repo.owner}
-								showOwnerAndDate={true}
+								showOwner={true}
+								pageUsername={pageUsername || repo.owner}
 							/>
 					  ))}
 			</div>

@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { GalleryModalProvider } from "@/components/GalleryModalProvider";
+import AuthProvider from "@/components/AuthProvider";
+import { MockAuthProvider } from "@/components/MockAuthProvider";
+import DevAuthButton from "@/components/DevAuthButton";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -23,13 +26,29 @@ export default function RootLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
+	const useMockAuth =
+		process.env.NODE_ENV !== "production" &&
+		process.env.NEXT_PUBLIC_USE_MOCK_AUTH === "true";
+
+	console.log("[layout] DEBUG:", {
+		NODE_ENV: process.env.NODE_ENV,
+		NEXT_PUBLIC_USE_MOCK_AUTH: process.env.NEXT_PUBLIC_USE_MOCK_AUTH,
+		useMockAuth,
+		willShowDevButton: useMockAuth,
+	});
+
+	const Provider = useMockAuth ? MockAuthProvider : AuthProvider;
+
 	return (
 		<html lang="en" className="dark">
 			<head></head>
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
-				<GalleryModalProvider>{children}</GalleryModalProvider>
+				<Provider>
+					{useMockAuth && <DevAuthButton />}
+					<GalleryModalProvider>{children}</GalleryModalProvider>
+				</Provider>
 			</body>
 		</html>
 	);

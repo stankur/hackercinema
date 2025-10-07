@@ -25,7 +25,7 @@ function percentageToHexOpacity(percentage: number): string {
 }
 
 // Generate subtle grayscale gradient for card backgrounds (not language-dependent)
-export function generateCardBackground(seed: string): string {
+function generateCardBackground(seed: string): string {
 	const seedNumber = simpleHash(seed);
 	const rng = seededRandom(seedNumber);
 
@@ -60,8 +60,7 @@ export function generateCardBackground(seed: string): string {
   `;
 }
 
-// Get language color for the dot indicator
-export function getLanguageColor(
+function getLanguageColor(
 	language: string,
 	languageColors?: Record<string, string[]>
 ): string {

@@ -52,16 +52,3 @@ export function SimpleIcon({
 		</svg>
 	);
 }
-
-// Helper function to get available icon names
-export function getAvailableIconNames(): string[] {
-	return Object.keys(SimpleIcons as unknown as Record<string, SimpleIconData>)
-		.filter((key) => key.startsWith("si"))
-		.map((key) => key.slice(2).toLowerCase());
-}
-
-// Helper function to search icons by name
-export function searchIcons(query: string): string[] {
-	const searchTerm = query.toLowerCase();
-	return getAvailableIconNames().filter((name) => name.includes(searchTerm));
-}

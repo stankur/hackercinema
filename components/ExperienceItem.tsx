@@ -2,8 +2,6 @@
 
 import { useState } from "react";
 import { Calendar } from "lucide-react";
-import { useOrganizationColors } from "@/hooks/useOrganizationColors";
-import { generateGradientStyle } from "@/lib/gradientUtils";
 
 export type Experience = {
 	emoji?: string;
@@ -21,16 +19,11 @@ interface ExperienceItemProps {
 
 export default function ExperienceItem({ experience }: ExperienceItemProps) {
 	const [activeTab, setActiveTab] = useState<"tech" | "details" | null>(null);
-	const { getOrganizationColor } = useOrganizationColors();
 
 	const hasTech = experience.tech && experience.tech.length > 0;
 	const hasDetails =
 		(experience.location && experience.location.trim().length > 0) ||
 		(experience.highlights && experience.highlights.length > 0);
-
-	// Get the organization color and generate gradient style
-	const orgColor = getOrganizationColor(experience.org);
-	const gradientStyle = generateGradientStyle(orgColor, 0.20);
 
 	const handleTabClick = (tab: "tech" | "details") => {
 		setActiveTab(activeTab === tab ? null : tab);
@@ -42,7 +35,6 @@ export default function ExperienceItem({ experience }: ExperienceItemProps) {
 				experience.period || "no-period"
 			}`}
 			className="py-10 space-y-2 px-6"
-			style={gradientStyle}
 		>
 			<div className="space-y-8">
 				<div className="space-y-4">

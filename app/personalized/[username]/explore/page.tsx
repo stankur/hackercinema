@@ -7,6 +7,27 @@ import { usePathname } from "next/navigation";
 import ProjectsContent from "@/components/ProjectsContent";
 import CursorGradient from "@/components/CursorGradient";
 import type { Builder } from "@/lib/types";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+
+interface BackendRepo {
+	id?: string;
+	name: string;
+	description?: string | null;
+	generated_description?: string | null;
+	updated_at?: string;
+	pushed_at?: string;
+	stargazers_count?: number;
+	language?: string | null;
+	topics?: string[];
+	link?: string;
+	gallery?: Array<{
+		alt: string;
+		url: string;
+		original_url: string;
+	}>;
+	kind?: string;
+}
 
 interface PageProps {
 	params: Promise<{
@@ -21,44 +42,109 @@ export default function ExplorePage({ params }: PageProps) {
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		// Load user data from data.json
-		fetch("/api/data.json")
-			.then((res) => {
-				if (!res.ok) {
-					throw new Error("Failed to load data");
-				}
-				return res.json();
-			})
-			.then((builders: Builder[]) => {
-				// Find user with case-insensitive matching
-				const user = builders.find(
-					(builder) =>
-						builder.username.toLowerCase() ===
-						username.toLowerCase()
-				);
+		// Trigger restart on mount
+		fetch(`/api/backend/users/${username}/start`, {
+			method: "POST",
+		}).catch((error) => {
+			console.error(`Failed to restart pipeline for ${username}:`, error);
+		});
 
-				setUserData(user || null);
+		// Polling function to get data
+		const pollData = async () => {
+			try {
+				const response = await fetch(
+					`/api/backend/users/${username}/data`
+				);
+				if (response.ok) {
+					const backendData = await response.json();
+
+					// Map backend data to Builder format
+					if (backendData.user) {
+						const mappedBuilder: Builder = {
+							username: backendData.user.login,
+							theme: backendData.user.theme || "",
+							profile: {
+								login: backendData.user.login,
+								avatar_url: backendData.user.avatar_url,
+								bio: backendData.user.bio,
+								location: backendData.user.location,
+								blog: backendData.user.blog || "",
+							},
+							repos: (backendData.repos || []).map(
+								(repo: BackendRepo) => ({
+									id: repo.id,
+									name: repo.name,
+									description: repo.description,
+									generated_description:
+										repo.generated_description,
+									updated_at:
+										repo.updated_at || repo.pushed_at,
+									stars: repo.stargazers_count,
+									language: repo.language,
+									topics: repo.topics || [],
+									link: repo.link,
+									gallery: repo.gallery || [],
+									kind: repo.kind,
+								})
+							),
+							similar_repos: backendData.similar_repos || [],
+						};
+						setUserData(mappedBuilder);
+					}
+				}
 				setLoading(false);
-			})
-			.catch((error) => {
+			} catch (error) {
 				console.error(`Failed to load data for ${username}:`, error);
 				setLoading(false);
-			});
+			}
+		};
+
+		// Initial poll
+		pollData();
+
+		// Set up polling every 4 seconds
+		const interval = setInterval(pollData, 4000);
+
+		return () => clearInterval(interval);
 	}, [username]);
 
-	if (loading) {
+	// Show skeleton loading state
+	if (loading || !userData) {
 		return (
-			<div className="min-h-screen flex items-center justify-center">
-				<div className="text-sm text-muted-foreground">Loading…</div>
-			</div>
-		);
-	}
+			<div className="min-h-screen relative">
+				<CursorGradient />
+				{/* Navigation skeleton */}
+				<div className="max-w-3xl mx-auto pt-10 px-6 mb-12">
+					<div className="flex justify-between items-center relative z-20">
+						<div></div>
+						<div className="flex gap-10">
+							<Link
+								href={`/personalized/${username}`}
+								className="text-sm text-muted-foreground hover:text-foreground"
+							>
+								For You
+							</Link>
+							<Link
+								href={`/personalized/${username}/explore`}
+								className="text-sm text-foreground"
+							>
+								Explore
+							</Link>
+						</div>
+						<div className="w-8 h-8 rounded-full bg-muted">
+							<Skeleton circle height={32} width={32} />
+						</div>
+					</div>
+				</div>
 
-	if (!userData) {
-		return (
-			<div className="min-h-screen flex items-center justify-center">
-				<div className="text-sm text-muted-foreground">
-					User not found
+				{/* Content skeleton */}
+				<div className="max-w-3xl mx-auto px-6">
+					<div className="space-y-6">
+						<Skeleton height={100} />
+						<Skeleton height={100} />
+						<Skeleton height={100} />
+						<Skeleton height={100} />
+					</div>
 				</div>
 			</div>
 		);
@@ -122,7 +208,7 @@ export default function ExplorePage({ params }: PageProps) {
 
 			{/* Projects Content - Exact same as projects page */}
 			<div className="max-w-3xl mx-auto px-6">
-				<ProjectsContent />
+				<ProjectsContent pageUsername={username} />
 			</div>
 		</div>
 	);
