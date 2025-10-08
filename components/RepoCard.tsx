@@ -1,7 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ExternalLink, ZoomOut, ZoomIn, Pencil, History } from "lucide-react";
+import {
+	ExternalLink,
+	ZoomOut,
+	ZoomIn,
+	Pencil,
+	History,
+	Ghost,
+} from "lucide-react";
 import Image from "next/image";
 import { getCardBackground, getLanguageDotColor } from "@/lib/language-colors";
 import type { GitHubRepo, GalleryImage } from "@/lib/types";
@@ -391,15 +398,23 @@ export default function RepoCard({
 							{/* Username row - only show for explore/for you pages with clickable usernames */}
 							{showOwner ? (
 								<div className="text-xs text-muted-foreground/60 mt-2 flex items-center gap-3">
-									<button
-										onClick={() => {
-											// Navigate to the personalized profile page
-											window.location.href = `/personalized/${owner}/profile`;
-										}}
-										className="font-semibold cursor-pointer hover:text-foreground transition-colors"
-									>
-										{owner}
-									</button>
+									<div className="flex items-center gap-1.5">
+										<button
+											onClick={() => {
+												// Navigate to the personalized profile page
+												window.location.href = `/personalized/${owner}/profile`;
+											}}
+											className="font-semibold cursor-pointer hover:text-foreground transition-colors"
+										>
+											{owner}
+										</button>
+										{repo.is_ghost && (
+											<Ghost
+												size={12}
+												className="text-muted-foreground/60"
+											/>
+										)}
+									</div>
 									{repo.language && (
 										<div className="flex items-center gap-1">
 											<div
@@ -418,15 +433,23 @@ export default function RepoCard({
 								</div>
 							) : showUsernameInsteadOfDate ? (
 								<div className="text-xs text-muted-foreground/60 mt-2 flex items-center gap-3">
-									<button
-										onClick={() => {
-											// Navigate to the personalized profile page
-											window.location.href = `/personalized/${owner}/profile`;
-										}}
-										className="font-semibold cursor-pointer hover:text-foreground transition-colors"
-									>
-										{owner}
-									</button>
+									<div className="flex items-center gap-1.5">
+										<button
+											onClick={() => {
+												// Navigate to the personalized profile page
+												window.location.href = `/personalized/${owner}/profile`;
+											}}
+											className="font-semibold cursor-pointer hover:text-foreground transition-colors"
+										>
+											{owner}
+										</button>
+										{repo.is_ghost && (
+											<Ghost
+												size={12}
+												className="text-muted-foreground/60"
+											/>
+										)}
+									</div>
 									{repo.language && (
 										<div className="flex items-center gap-1">
 											<div

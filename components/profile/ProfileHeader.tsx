@@ -1,7 +1,7 @@
 "use client";
 
 import { SocialIcon } from "@/components/ui/OrganizationIcon";
-import { Mail, Globe } from "lucide-react";
+import { Mail, Globe, Ghost } from "lucide-react";
 import type { Builder } from "@/lib/types";
 import EmphasisBelts from "@/components/EmphasisBelts";
 
@@ -60,9 +60,14 @@ export default function ProfileHeader({
 		>
 			<div className="flex-1 min-w-0 space-y-2">
 				<div className="flex gap-4 items-center">
-					<h1 className="text-2xl font-semibold text-foreground">
-						{data.username}
-					</h1>
+					<div className="flex items-center gap-2">
+						<h1 className="text-2xl font-semibold text-foreground">
+							{data.username}
+						</h1>
+						{data.profile?.is_ghost && (
+							<Ghost size={18} className="text-foreground" />
+						)}
+					</div>
 
 					{/* {profileData?.profile?.headline && (
 					<p className="text-sm font-light mt-1">
