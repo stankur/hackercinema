@@ -165,13 +165,6 @@ export function useProfileData(username: string): UseProfileDataReturn {
 	}, [username]);
 
 	useEffect(() => {
-		// Trigger restart on mount
-		fetch(`/api/backend/users/${username}/start`, {
-			method: "POST",
-		}).catch((error) => {
-			console.error(`Failed to restart pipeline for ${username}:`, error);
-		});
-
 		// Load both backend data and profiles.json
 		const loadData = async () => {
 			try {
@@ -193,6 +186,7 @@ export function useProfileData(username: string): UseProfileDataReturn {
 								bio: backendData.user.bio,
 								location: backendData.user.location,
 								blog: backendData.user.blog || "",
+								is_ghost: backendData.user.is_ghost,
 							},
 							repos: (backendData.repos || []).map(
 								(repo: BackendRepo) => {
@@ -298,6 +292,7 @@ export function useProfileData(username: string): UseProfileDataReturn {
 								bio: backendData.user.bio,
 								location: backendData.user.location,
 								blog: backendData.user.blog || "",
+								is_ghost: backendData.user.is_ghost,
 							},
 							repos: (backendData.repos || []).map(
 								(repo: BackendRepo) => {

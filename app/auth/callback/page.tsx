@@ -12,8 +12,26 @@ export default function AuthCallbackPage() {
 		if (status === "loading") return;
 
 		if (session?.user?.username) {
-			// Redirect to user's profile
-			router.push(`/personalized/${session.user.username}`);
+			// Call login endpoint to handle activation/pipeline
+			fetch(`/api/backend/users/${session.user.username}/login`, {
+				method: "POST",
+			})
+				.then(() => {
+					// Redirect to user's profile after login
+					router.push(
+						`/personalized/${session.user.username}/profile`
+					);
+				})
+				.catch((error) => {
+					console.error(
+						`Failed to login user ${session.user.username}:`,
+						error
+					);
+					// Still redirect even if login fails
+					router.push(
+						`/personalized/${session.user.username}/profile`
+					);
+				});
 		} else {
 			// Not authenticated, redirect to home
 			router.push("/");

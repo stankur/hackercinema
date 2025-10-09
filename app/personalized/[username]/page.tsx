@@ -26,6 +26,7 @@ type ForYouItem = {
 	emphasis?: string[];
 	keywords?: string[];
 	kind?: string;
+	is_ghost?: boolean;
 };
 
 interface PageProps {
@@ -86,6 +87,7 @@ export default function ForYouPage({ params }: PageProps) {
 							emphasis: item.emphasis,
 							keywords: item.keywords,
 							kind: item.kind,
+							is_ghost: item.is_ghost,
 						},
 					};
 				});

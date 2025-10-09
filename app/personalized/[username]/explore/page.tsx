@@ -42,13 +42,6 @@ export default function ExplorePage({ params }: PageProps) {
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		// Trigger restart on mount
-		fetch(`/api/backend/users/${username}/start`, {
-			method: "POST",
-		}).catch((error) => {
-			console.error(`Failed to restart pipeline for ${username}:`, error);
-		});
-
 		// Polling function to get data
 		const pollData = async () => {
 			try {
@@ -69,6 +62,7 @@ export default function ExplorePage({ params }: PageProps) {
 								bio: backendData.user.bio,
 								location: backendData.user.location,
 								blog: backendData.user.blog || "",
+								is_ghost: backendData.user.is_ghost,
 							},
 							repos: (backendData.repos || []).map(
 								(repo: BackendRepo) => ({

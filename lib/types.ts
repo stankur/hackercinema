@@ -4,6 +4,7 @@ export interface GitHubProfile {
 	bio?: string | null;
 	location?: string | null;
 	blog?: string;
+	is_ghost?: boolean;
 }
 
 export interface GalleryImage {
@@ -36,6 +37,7 @@ export interface GitHubRepo {
 	emphasis?: string[];
 	keywords?: string[];
 	kind?: string;
+	is_ghost?: boolean;
 }
 
 export interface Builder {
