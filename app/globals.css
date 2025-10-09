@@ -213,3 +213,56 @@
 	color: var(--muted-foreground);
 	pointer-events: none;
 }
+
+/* Retro grid overlay for images */
+.retro-grid {
+	position: relative;
+}
+.retro-grid::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	background-image: repeating-linear-gradient(
+			to right,
+			rgba(255, 255, 255, 0.15) 0 1px,
+			transparent 1px 20px
+		),
+		repeating-linear-gradient(
+			to bottom,
+			rgba(255, 255, 255, 0.15) 0 1px,
+			transparent 1px 20px
+		);
+	mix-blend-mode: overlay;
+}
+
+/* CRT scanlines */
+.retro-grid::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	background: repeating-linear-gradient(
+		to bottom,
+		rgba(0, 0, 0, 0) 0 2px,
+		rgba(0, 0, 0, 0.2) 2px 3px
+	);
+	z-index: 1;
+}
+
+/* Vignette overlay */
+.vignette {
+	position: relative;
+}
+.vignette::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	background: radial-gradient(
+		ellipse at center,
+		rgba(0, 0, 0, 0) 40%,
+		rgba(0, 0, 0, 0.3) 100%
+	);
+	z-index: 2;
+}
