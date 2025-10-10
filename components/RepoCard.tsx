@@ -9,7 +9,7 @@ import {
 	History,
 	Ghost,
 } from "lucide-react";
-import Image from "next/image";
+import SmartImage from "./SmartImage";
 import { getCardBackground, getLanguageDotColor } from "@/lib/language-colors";
 import type { GitHubRepo, GalleryImage } from "@/lib/types";
 import { useGalleryModal } from "./GalleryModalProvider";
@@ -239,7 +239,7 @@ export default function RepoCard({
 								}}
 								title={highlightGallery[0].alt || repo.name}
 							>
-								<Image
+								<SmartImage
 									src={highlightGallery[0].url}
 									alt={highlightGallery[0].alt || repo.name}
 									fill
@@ -631,7 +631,7 @@ export default function RepoCard({
 											highlightGallery[0].alt || repo.name
 										}
 									>
-										<Image
+										<SmartImage
 											src={highlightGallery[0].url}
 											alt={
 												highlightGallery[0].alt ||
