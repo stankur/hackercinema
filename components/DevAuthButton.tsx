@@ -23,13 +23,28 @@ export default function DevAuthButton() {
 
 	async function impersonate() {
 		if (!login.trim()) return;
+		const username = login.trim();
+
+		// Set dev auth cookie
 		await fetch("/api/dev/auth", {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify({ login: login.trim() }),
+			body: JSON.stringify({ login: username }),
 		});
+
+		// Call backend login endpoint to trigger pipeline (like real sign-in)
+		try {
+			await fetch(`/api/backend/users/${username}/login`, {
+				method: "POST",
+			});
+		} catch (error) {
+			console.error(`Failed to login user ${username}:`, error);
+			// Continue even if login fails
+		}
+
 		setOpen(false);
-		router.refresh();
+		// Redirect to personalized profile
+		router.push(`/personalized/${username}/profile`);
 	}
 
 	async function clearImpersonation() {

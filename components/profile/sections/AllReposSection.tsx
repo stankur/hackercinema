@@ -22,8 +22,18 @@ export default function AllReposSection({
 
 	// removed debug logging
 
-	if (!repos || repos.length === 0) {
+	// Not fetched yet - show skeleton
+	if (!repos) {
 		return <SharedSkeletonRows count={5} height={100} />;
+	}
+
+	// Fetched but empty - show empty state
+	if (repos.length === 0) {
+		return (
+			<div className="text-sm text-muted-foreground text-center py-20">
+				No projects yet.
+			</div>
+		);
 	}
 
 	// Sort repos by updated_at (most recent first)

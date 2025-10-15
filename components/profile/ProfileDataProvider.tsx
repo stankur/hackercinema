@@ -89,24 +89,26 @@ export function useProfileData(username: string): UseProfileDataReturn {
 		const tabs: Array<{ id: string; label: string; loading?: boolean }> =
 			[];
 
-		// HIGHLIGHTS - show while generating or when repos exist (shown first)
-		if (
-			highlightedRepoNames === undefined ||
-			(data?.repos && data.repos.length > 0)
-		) {
+		const reposFetched = data?.repos !== undefined && data?.repos !== null;
+		const hasRepos = reposFetched && data.repos.length > 0;
+
+		// HIGHLIGHTS - only show while generating highlights OR when repos exist
+		// Don't show if repos are fetched but empty (no point in highlights)
+		if (hasRepos || (!reposFetched && highlightedRepoNames === undefined)) {
 			tabs.push({
 				id: "highlights",
 				label: "HIGHLIGHTS",
-				loading: highlightedRepoNames === undefined,
+				loading: highlightedRepoNames === undefined && hasRepos,
 			});
 		}
 
-		// RECENT PROJECTS - always show when we have data; show loading when repos empty (shown second)
+		// RECENT PROJECTS - always show when we have data
+		// Loading only if repos not yet fetched (not if fetched but empty)
 		if (data) {
 			tabs.push({
 				id: "recent",
 				label: "RECENT PROJECTS",
-				loading: !data.repos || data.repos.length === 0,
+				loading: !reposFetched,
 			});
 		}
 
