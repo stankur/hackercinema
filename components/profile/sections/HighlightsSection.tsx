@@ -34,11 +34,11 @@ export default function HighlightsSection({
 
 	if (highlightedRepos.length > 0) {
 		// Sort highlighted repos by updated_at (most recent first)
-		const sortedHighlightedRepos = [...highlightedRepos].sort(
-			(a, b) =>
-				new Date(b.updated_at).getTime() -
-				new Date(a.updated_at).getTime()
-		);
+		const sortedHighlightedRepos = [...highlightedRepos].sort((a, b) => {
+			const aTime = a.updated_at ? new Date(a.updated_at).getTime() : 0;
+			const bTime = b.updated_at ? new Date(b.updated_at).getTime() : 0;
+			return bTime - aTime;
+		});
 
 		return (
 			<div className="space-y-6">

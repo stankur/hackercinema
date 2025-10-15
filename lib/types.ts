@@ -26,7 +26,7 @@ export interface GitHubRepo {
 	name: string;
 	description?: string | null;
 	generated_description?: string | null;
-	updated_at: string;
+	updated_at: string | null;
 	stars?: number;
 	language?: string | null;
 	topics?: string[];

@@ -6,6 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import RepoCard from "@/components/RepoCard";
 import CursorGradient from "@/components/CursorGradient";
+import ForYouTabs from "@/components/ForYouTabs";
 import type { GitHubRepo, GalleryImage } from "@/lib/types";
 
 // No local BackendRepo type; reuse GitHubRepo for mapping
@@ -15,7 +16,7 @@ type ForYouItem = {
 	name: string;
 	description?: string | null;
 	generated_description?: string | null;
-	updated_at: string;
+	updated_at: string | null;
 	stargazers_count?: number;
 	language?: string | null;
 	topics?: string[];
@@ -38,15 +39,59 @@ interface PageProps {
 export default function ForYouPage({ params }: PageProps) {
 	const { username } = use(params);
 	const pathname = usePathname();
-	const [feed, setFeed] = useState<
+	const [activeTab, setActiveTab] = useState<"community" | "trending">(
+		"community"
+	);
+	const [communityFeed, setCommunityFeed] = useState<
 		Array<{ owner: string; repo: GitHubRepo }>
 	>([]);
-	const [feedLoading, setFeedLoading] = useState<boolean>(true);
+	const [trendingFeed, setTrendingFeed] = useState<
+		Array<{ owner: string; repo: GitHubRepo }>
+	>([]);
+	const [communityLoading, setCommunityLoading] = useState<boolean>(true);
+	const [trendingLoading, setTrendingLoading] = useState<boolean>(false);
 	const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
 
-	// Load For You feed from backend (strict shape: { repos: ForYouItem[] })
+	// Helper function to map backend items to feed format
+	const mapReposToFeed = (repos: ForYouItem[]) => {
+		return repos.map((item) => {
+			if (
+				!item ||
+				typeof item.username !== "string" ||
+				typeof item.id !== "string" ||
+				!item.id.includes("/") ||
+				typeof item.name !== "string"
+			) {
+				throw new Error("Invalid repo item in feed");
+			}
+			return {
+				owner: item.username,
+				repo: {
+					id: item.id,
+					name: item.name,
+					description: item.description ?? undefined,
+					generated_description:
+						item.generated_description ?? undefined,
+					updated_at: item.updated_at,
+					stars: item.stargazers_count,
+					language: item.language ?? undefined,
+					topics: item.topics,
+					link: item.link,
+					gallery: item.gallery,
+					tech_doc: item.tech_doc,
+					toy_implementation: item.toy_implementation,
+					emphasis: item.emphasis,
+					keywords: item.keywords,
+					kind: item.kind,
+					is_ghost: item.is_ghost,
+				},
+			};
+		});
+	};
+
+	// Load Community feed from backend
 	useEffect(() => {
-		setFeedLoading(true);
+		setCommunityLoading(true);
 		(async () => {
 			const res = await fetch(`/api/backend/for-you/${username}`);
 			if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -56,49 +101,39 @@ export default function ForYouPage({ params }: PageProps) {
 					"Invalid response shape: expected { repos: [] }"
 				);
 
-			const mapped: Array<{ owner: string; repo: GitHubRepo }> =
-				repos.map((item) => {
-					if (
-						!item ||
-						typeof item.username !== "string" ||
-						typeof item.id !== "string" ||
-						!item.id.includes("/") ||
-						typeof item.name !== "string" ||
-						typeof item.updated_at !== "string"
-					) {
-						throw new Error("Invalid repo item in feed");
-					}
-					return {
-						owner: item.username,
-						repo: {
-							id: item.id,
-							name: item.name,
-							description: item.description ?? undefined,
-							generated_description:
-								item.generated_description ?? undefined,
-							updated_at: item.updated_at,
-							stars: item.stargazers_count,
-							language: item.language ?? undefined,
-							topics: item.topics,
-							link: item.link,
-							gallery: item.gallery,
-							tech_doc: item.tech_doc,
-							toy_implementation: item.toy_implementation,
-							emphasis: item.emphasis,
-							keywords: item.keywords,
-							kind: item.kind,
-							is_ghost: item.is_ghost,
-						},
-					};
-				});
-
-			setFeed(mapped);
-			setFeedLoading(false);
+			const mapped = mapReposToFeed(repos);
+			setCommunityFeed(mapped);
+			setCommunityLoading(false);
 		})().catch((e) => {
 			// Surface hard failures
 			throw e;
 		});
 	}, [username]);
+
+	// Load Trending feed from backend (lazy load when tab is clicked)
+	useEffect(() => {
+		if (activeTab !== "trending" || trendingFeed.length > 0) return;
+
+		setTrendingLoading(true);
+		(async () => {
+			const res = await fetch(
+				`/api/backend/for-you-trending/${username}`
+			);
+			if (!res.ok) throw new Error(`HTTP ${res.status}`);
+			const { repos } = (await res.json()) as { repos: ForYouItem[] };
+			if (!Array.isArray(repos))
+				throw new Error(
+					"Invalid response shape: expected { repos: [] }"
+				);
+
+			const mapped = mapReposToFeed(repos);
+			setTrendingFeed(mapped);
+			setTrendingLoading(false);
+		})().catch((e) => {
+			// Surface hard failures
+			throw e;
+		});
+	}, [activeTab, username, trendingFeed.length]);
 
 	// Single fetch for user avatar (no polling)
 	useEffect(() => {
@@ -174,17 +209,43 @@ export default function ForYouPage({ params }: PageProps) {
 
 			{/* For You Content */}
 			<div className="max-w-3xl mx-auto px-6">
-				{feedLoading ? (
+				<ForYouTabs activeTab={activeTab} setActiveTab={setActiveTab} />
+
+				{activeTab === "community" ? (
+					communityLoading ? (
+						<div className="text-sm text-muted-foreground text-center py-20">
+							Loading feed...
+						</div>
+					) : communityFeed.length === 0 ? (
+						<div className="text-sm text-muted-foreground text-center py-20">
+							No feed yet.
+						</div>
+					) : (
+						<div className="space-y-6">
+							{communityFeed.map(({ owner, repo }) => (
+								<RepoCard
+									key={`${repo.id}`}
+									repo={repo}
+									owner={owner}
+									showUsernameInsteadOfDate
+									pageUsername={username}
+									hideHeroImage={false}
+									aiShowLoadingIfMissing={false}
+								/>
+							))}
+						</div>
+					)
+				) : trendingLoading ? (
 					<div className="text-sm text-muted-foreground text-center py-20">
-						Loading feed...
+						Loading trending...
 					</div>
-				) : feed.length === 0 ? (
+				) : trendingFeed.length === 0 ? (
 					<div className="text-sm text-muted-foreground text-center py-20">
-						No feed yet.
+						No trending repos yet.
 					</div>
 				) : (
 					<div className="space-y-6">
-						{feed.map(({ owner, repo }) => (
+						{trendingFeed.map(({ owner, repo }) => (
 							<RepoCard
 								key={`${repo.id}`}
 								repo={repo}
@@ -192,6 +253,7 @@ export default function ForYouPage({ params }: PageProps) {
 								showUsernameInsteadOfDate
 								pageUsername={username}
 								hideHeroImage={false}
+								aiShowLoadingIfMissing={false}
 							/>
 						))}
 					</div>
