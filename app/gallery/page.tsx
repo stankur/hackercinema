@@ -12,6 +12,8 @@ interface GalleryCardData {
 	description?: string;
 	language?: string;
 	totalImages: number;
+	allImages: GalleryImage[];
+	username: string;
 }
 
 export default function GalleryPage() {
@@ -28,7 +30,9 @@ export default function GalleryPage() {
 				}
 
 				const data = await response.json();
-				const repos: GitHubRepo[] = data.repos || [];
+				// Backend returns repos with username field
+				const repos: Array<GitHubRepo & { username: string }> =
+					data.repos || [];
 
 				// One card per repo (not flattened)
 				const galleryCards: GalleryCardData[] = repos
@@ -46,6 +50,8 @@ export default function GalleryPage() {
 						description: repo.description || undefined,
 						language: repo.language || undefined,
 						totalImages: repo.gallery!.length,
+						allImages: repo.gallery!,
+						username: repo.username,
 					}));
 
 				setCards(galleryCards);
@@ -108,6 +114,8 @@ export default function GalleryPage() {
 							description={card.description}
 							language={card.language}
 							totalImages={card.totalImages}
+							allImages={card.allImages}
+							username={card.username}
 						/>
 					))}
 				</div>

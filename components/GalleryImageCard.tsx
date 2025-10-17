@@ -1,9 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import SmartImage from "./SmartImage";
 import { getLanguageDotColor } from "@/lib/language-colors";
 import type { GalleryImage } from "@/lib/types";
+import { useGalleryModal } from "./GalleryModalProvider";
 
 interface GalleryImageCardProps {
 	image: GalleryImage;
@@ -13,6 +15,8 @@ interface GalleryImageCardProps {
 	description?: string;
 	language?: string;
 	totalImages: number;
+	allImages: GalleryImage[];
+	username: string;
 }
 
 export default function GalleryImageCard({
@@ -23,8 +27,12 @@ export default function GalleryImageCard({
 	description,
 	language,
 	totalImages,
+	allImages,
+	username,
 }: GalleryImageCardProps) {
 	const [languageDotColor, setLanguageDotColor] = useState<string>("");
+	const { openGallery } = useGalleryModal();
+	const router = useRouter();
 
 	useEffect(() => {
 		const loadColor = async () => {
@@ -36,16 +44,30 @@ export default function GalleryImageCard({
 		loadColor();
 	}, [language]);
 
+	const handleImageClick = (e: React.MouseEvent) => {
+		e.stopPropagation();
+		openGallery(allImages, 0, { showAllImages: true });
+	};
+
+	const handleCardClick = () => {
+		router.push(`/personalized/${username}/profile`);
+	};
+
 	return (
-		<div className="group cursor-pointer">
+		<div className="group cursor-pointer" onClick={handleCardClick}>
 			{/* Image - main focus */}
-			<div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-muted">
+			<div
+				className="relative w-full rounded-lg overflow-hidden bg-muted cursor-pointer"
+				style={{ aspectRatio: `${1899 / 1165}` }}
+				onClick={handleImageClick}
+			>
 				<SmartImage
 					src={image.url}
 					alt={image.alt || repoName}
 					fill
 					className="object-cover transition-transform duration-300 group-hover:scale-105"
 				/>
+				<div className="absolute inset-0 pointer-events-none bg-background/30 dark:bg-background/40 mix-blend-multiply" />
 				{/* +n chip overlay */}
 				{totalImages > 1 && (
 					<div className="absolute bottom-2 right-2 z-10 px-2 py-0.5 text-[11px] font-medium rounded-full bg-background/70 backdrop-blur-md border border-white/10 text-foreground/80">
@@ -61,6 +83,7 @@ export default function GalleryImageCard({
 					href={`https://github.com/${repoId}`}
 					target="_blank"
 					rel="noopener noreferrer"
+					onClick={(e) => e.stopPropagation()}
 					className="text-sm font-semibold text-foreground hover:text-primary line-clamp-1"
 				>
 					{repoName}
