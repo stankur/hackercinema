@@ -24,12 +24,6 @@ export default function ProfileSkeleton({ username }: ProfileSkeletonProps) {
 						>
 							For You
 						</Link>
-						<Link
-							href={`/personalized/${username}/explore`}
-							className="text-sm text-muted-foreground hover:text-foreground"
-						>
-							Explore
-						</Link>
 					</div>
 					<Link href={`/personalized/${username}/profile`}>
 						<div className="w-8 h-8 rounded-full bg-muted">

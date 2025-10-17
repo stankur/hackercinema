@@ -34,17 +34,6 @@ export default function ProfileNavigation({
 					>
 						For You
 					</Link>
-
-					<Link
-						href={`/personalized/${username}/explore`}
-						className={`text-sm transition-colors ${
-							pathname === `/personalized/${username}/explore`
-								? "text-foreground"
-								: "text-muted-foreground hover:text-foreground"
-						}`}
-					>
-						Explore
-					</Link>
 				</div>
 
 				{/* Avatar on right within content width - active state */}
