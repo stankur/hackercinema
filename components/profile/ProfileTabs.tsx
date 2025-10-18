@@ -21,11 +21,6 @@ export default function ProfileTabs({
 	setActiveTab,
 	visibleSections,
 }: ProfileTabsProps) {
-	// Don't render if there's only one tab or no tabs
-	if (visibleTabs.length <= 1) {
-		return null;
-	}
-
 	return (
 		<div
 			data-section="tabs"

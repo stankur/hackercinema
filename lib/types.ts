@@ -44,6 +44,6 @@ export interface Builder {
 	username: string;
 	theme: string;
 	profile: GitHubProfile;
-	repos: GitHubRepo[];
+	repos: GitHubRepo[] | null;
 	similar_repos?: Array<{ username: string; repo_name: string }>;
 }

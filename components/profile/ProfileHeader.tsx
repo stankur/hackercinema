@@ -1,42 +1,26 @@
 "use client";
 
 import { SocialIcon } from "@/components/ui/OrganizationIcon";
-import { Mail, Globe, Ghost } from "lucide-react";
+import { Ghost, RotateCw } from "lucide-react";
 import type { Builder } from "@/lib/types";
 import EmphasisBelts from "@/components/EmphasisBelts";
 
-interface ProfileData {
-	profile?: {
-		name?: string;
-		headline?: string;
-		links?: {
-			email?: string;
-			linkedin?: string;
-			x?: string;
-			yc?: string;
-			personal?: string;
-		};
-	};
-}
-
 interface ProfileHeaderProps {
 	data: Builder;
-	profileData: ProfileData | null;
 	visibleSections: Set<string>;
 }
 
 export default function ProfileHeader({
 	data,
-	profileData,
 	visibleSections,
 }: ProfileHeaderProps) {
 	// Collect all keywords from repos
-	const allKeywords = (data?.repos || [])
+	const allKeywords = (data?.repos ?? [])
 		.flatMap((r) => r.keywords || [])
 		.filter(Boolean);
 
 	// Collect all emphasis from repos
-	const allEmphasis = (data?.repos || [])
+	const allEmphasis = (data?.repos ?? [])
 		.flatMap((r) => r.emphasis || [])
 		.filter(Boolean);
 
@@ -46,6 +30,23 @@ export default function ProfileHeader({
 			sample: allKeywords.slice(0, 10),
 		});
 	}
+
+	// Handle restart button click
+	const handleRestart = async () => {
+		try {
+			const response = await fetch(
+				`/api/backend/users/${data.username}/restart`,
+				{
+					method: "POST",
+				}
+			);
+			if (!response.ok) {
+				console.error("Restart failed:", response.status);
+			}
+		} catch (error) {
+			console.error("Restart error:", error);
+		}
+	};
 	return (
 		<header
 			data-section="header"
@@ -59,110 +60,46 @@ export default function ProfileHeader({
 			`}
 		>
 			<div className="flex-1 min-w-0 space-y-2">
-				<div className="flex gap-4 items-center">
-					<div className="flex items-center gap-2">
-						<h1 className="text-2xl font-semibold text-foreground">
-							{data.username}
-						</h1>
-						{data.profile?.is_ghost && (
-							<Ghost size={18} className="text-foreground" />
-						)}
-					</div>
-
-					{/* {profileData?.profile?.headline && (
-					<p className="text-sm font-light mt-1">
-						{profileData.profile.headline}
-					</p>
-				)} */}
-
-					{/* Social Links */}
+				<div className="flex justify-between items-center">
 					<div className="flex gap-4 items-center">
-						{/* GitHub - default from data.json */}
-						<a
-							href={`https://github.com/${data.username}`}
-							target="_blank"
-							rel="noopener noreferrer"
-							className="text-muted-foreground hover:opacity-80 transition-opacity"
-							title="GitHub"
-						>
-							<SocialIcon
-								platformName="github"
-								size={20}
-								color="currentColor"
-							/>
-						</a>
+						<div className="flex items-center gap-2">
+							<h1 className="text-2xl font-semibold text-foreground">
+								{data.username}
+							</h1>
+							{data.profile?.is_ghost && (
+								<Ghost size={18} className="text-foreground" />
+							)}
+						</div>
 
-						{/* Additional links from profiles.json */}
-						{profileData?.profile?.links?.email && (
+						{/* Social Links */}
+						<div className="flex gap-4 items-center">
+							{/* GitHub */}
 							<a
-								href={`mailto:${profileData.profile.links.email}`}
-								className="text-muted-foreground hover:opacity-80 transition-opacity"
-								title="Email"
-							>
-								<Mail className="w-5 h-5" strokeWidth={1} />
-							</a>
-						)}
-
-						{profileData?.profile?.links?.linkedin && (
-							<a
-								href={profileData.profile.links.linkedin}
+								href={`https://github.com/${data.username}`}
 								target="_blank"
 								rel="noopener noreferrer"
 								className="text-muted-foreground hover:opacity-80 transition-opacity"
-								title="LinkedIn"
+								title="GitHub"
 							>
 								<SocialIcon
-									platformName="linkedin"
+									platformName="github"
 									size={20}
 									color="currentColor"
 								/>
 							</a>
-						)}
-
-						{profileData?.profile?.links?.x && (
-							<a
-								href={profileData.profile.links.x}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="text-muted-foreground hover:opacity-80 transition-opacity"
-								title="X (Twitter)"
-							>
-								<SocialIcon
-									platformName="x"
-									size={20}
-									color="currentColor"
-								/>
-							</a>
-						)}
-
-						{profileData?.profile?.links?.yc && (
-							<a
-								href={profileData.profile.links.yc}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="text-muted-foreground hover:opacity-80 transition-opacity"
-								title="Y Combinator"
-							>
-								<SocialIcon
-									platformName="yc"
-									size={20}
-									color="currentColor"
-								/>
-							</a>
-						)}
-
-						{profileData?.profile?.links?.personal && (
-							<a
-								href={profileData.profile.links.personal}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="text-muted-foreground hover:opacity-80 transition-opacity"
-								title="Personal Website"
-							>
-								<Globe className="w-5 h-5" strokeWidth={1} />
-							</a>
-						)}
+						</div>
 					</div>
+
+					{/* Restart Button - only visible when enabled via env var */}
+					{process.env.NEXT_PUBLIC_ENABLE_RESTART === "true" && (
+						<button
+							onClick={handleRestart}
+							className="text-muted-foreground hover:text-foreground transition-colors"
+							title="Restart"
+						>
+							<RotateCw size={14} />
+						</button>
+					)}
 				</div>
 				{/* Inferred Theme - always at the top when available */}
 				{data?.theme && (

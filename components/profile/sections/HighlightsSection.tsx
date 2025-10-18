@@ -1,35 +1,53 @@
 "use client";
 
+import { useMemo } from "react";
 import RepoCard from "@/components/RepoCard";
 import SharedSkeletonRows from "./SharedSkeletonRows";
-import type { Builder } from "@/lib/types";
+import type { GitHubRepo } from "@/lib/types";
 import { useAuth } from "@/hooks/useAuth";
 
 interface HighlightsSectionProps {
+	repos: GitHubRepo[] | null;
 	highlightedRepoNames: string[] | undefined;
-	highlightedRepos: Builder["repos"];
 	username: string;
 	aiEnabled?: boolean;
 }
 
 export default function HighlightsSection({
+	repos,
 	highlightedRepoNames,
-	highlightedRepos,
 	username,
 	aiEnabled = false,
 }: HighlightsSectionProps) {
 	const { login } = useAuth();
 	const canEdit = login === username;
+
+	// Derive highlighted repos from repos + highlightedRepoNames
+	const highlightedRepos = useMemo(() => {
+		if (!repos || !highlightedRepoNames) return [];
+		const map = new Map(repos.map((r) => [r.name, r]));
+		return highlightedRepoNames
+			.map((name) => map.get(name))
+			.filter(Boolean) as GitHubRepo[];
+	}, [repos, highlightedRepoNames]);
+
+	// Still loading
 	if (highlightedRepoNames === undefined) {
 		return <SharedSkeletonRows count={5} height={100} />;
 	}
 
+	// Empty array - check if repos is empty or still processing
 	if (highlightedRepoNames.length === 0) {
-		return (
-			<div className="text-sm text-muted-foreground">
-				No repositories found.
-			</div>
-		);
+		// No repos exist - show empty state
+		if (repos && repos.length === 0) {
+			return (
+				<div className="text-sm text-muted-foreground">
+					No repositories found.
+				</div>
+			);
+		}
+		// Repos exist but highlights still processing - show skeleton
+		return <SharedSkeletonRows count={5} height={100} />;
 	}
 
 	if (highlightedRepos.length > 0) {
@@ -54,9 +72,8 @@ export default function HighlightsSection({
 							pageUsername={username}
 							showOwner={false}
 							showUsernameInsteadOfDate={false}
-							aiEnabled={
-								aiEnabled && !!repo.generated_description
-							}
+							aiEnabled={aiEnabled}
+							aiShowLoadingIfMissing={true}
 							canEdit={canEdit}
 						/>
 					);

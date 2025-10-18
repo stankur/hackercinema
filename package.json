@@ -7,7 +7,6 @@
 		"build": "next build --turbopack",
 		"start": "next start",
 		"lint": "eslint",
-		"validate-profiles": "tsx scripts/validate-profiles.ts",
 		"find-unused": "knip"
 	},
 	"dependencies": {

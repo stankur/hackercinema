@@ -23,7 +23,7 @@ export default function AllReposSection({
 	// removed debug logging
 
 	// Not fetched yet - show skeleton
-	if (!repos) {
+	if (repos === null) {
 		return <SharedSkeletonRows count={5} height={100} />;
 	}
 
