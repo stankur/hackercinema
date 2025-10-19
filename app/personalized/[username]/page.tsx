@@ -3,11 +3,12 @@
 import { useEffect, useState, use } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import RepoCard from "@/components/RepoCard";
 import UserInfoCard from "@/components/UserInfoCard";
 import CursorGradient from "@/components/CursorGradient";
 import ForYouTabs from "@/components/ForYouTabs";
+import { useAuth } from "@/hooks/useAuth";
 import type { GitHubRepo, GalleryImage } from "@/lib/types";
 
 // No local BackendRepo type; reuse GitHubRepo for mapping
@@ -51,6 +52,8 @@ interface PageProps {
 export default function ForYouPage({ params }: PageProps) {
 	const { username } = use(params);
 	const pathname = usePathname();
+	const router = useRouter();
+	const { login, loading } = useAuth();
 	const [activeTab, setActiveTab] = useState<
 		"community" | "trending" | "people"
 	>("community");
@@ -65,6 +68,13 @@ export default function ForYouPage({ params }: PageProps) {
 	const [trendingLoading, setTrendingLoading] = useState<boolean>(false);
 	const [peopleLoading, setPeopleLoading] = useState<boolean>(false);
 	const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
+
+	// Redirect if user is not the owner of this "for you" page
+	useEffect(() => {
+		if (!loading && login && login !== username) {
+			router.push(`/personalized/${username}/profile`);
+		}
+	}, [loading, login, username, router]);
 
 	// Helper function to map backend items to feed format
 	const mapReposToFeed = (repos: ForYouItem[]) => {
@@ -186,6 +196,28 @@ export default function ForYouPage({ params }: PageProps) {
 			}
 		})();
 	}, [username]);
+
+	// Show loading state while checking authentication
+	if (loading) {
+		return (
+			<div className="min-h-screen relative flex items-center justify-center">
+				<CursorGradient />
+				<div className="text-sm text-muted-foreground">Loading...</div>
+			</div>
+		);
+	}
+
+	// If user is not logged in or not the owner, don't render (redirect will handle it)
+	if (!login || login !== username) {
+		return (
+			<div className="min-h-screen relative flex items-center justify-center">
+				<CursorGradient />
+				<div className="text-sm text-muted-foreground">
+					Redirecting...
+				</div>
+			</div>
+		);
+	}
 
 	return (
 		<div className="min-h-screen relative">

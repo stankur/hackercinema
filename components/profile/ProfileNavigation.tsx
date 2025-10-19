@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useAuth } from "@/hooks/useAuth";
 import type { Builder } from "@/lib/types";
 
 interface ProfileNavigationProps {
@@ -15,6 +16,9 @@ export default function ProfileNavigation({
 	data,
 }: ProfileNavigationProps) {
 	const pathname = usePathname();
+	const { login } = useAuth();
+
+	const isOwner = login === username;
 
 	return (
 		<div className="max-w-3xl mx-auto pt-10 px-6 mb-12">
@@ -22,18 +26,20 @@ export default function ProfileNavigation({
 				{/* Empty left space */}
 				<div></div>
 
-				{/* Centered tabs */}
+				{/* Centered tabs - only show "For You" for owner */}
 				<div className="flex gap-10">
-					<Link
-						href={`/personalized/${username}`}
-						className={`text-sm transition-colors ${
-							pathname === `/personalized/${username}`
-								? "text-foreground"
-								: "text-muted-foreground hover:text-foreground"
-						}`}
-					>
-						For You
-					</Link>
+					{isOwner && (
+						<Link
+							href={`/personalized/${username}`}
+							className={`text-sm transition-colors ${
+								pathname === `/personalized/${username}`
+									? "text-foreground"
+									: "text-muted-foreground hover:text-foreground"
+							}`}
+						>
+							For You
+						</Link>
+					)}
 				</div>
 
 				{/* Avatar on right within content width - active state */}
