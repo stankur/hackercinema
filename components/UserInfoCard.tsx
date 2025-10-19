@@ -25,7 +25,7 @@ export default function UserInfoCard({
 
 	const handleClick = () => {
 		if (clickable) {
-			router.push(`/personalized/${username}`);
+			router.push(`/personalized/${username}/profile`);
 		}
 	};
 
