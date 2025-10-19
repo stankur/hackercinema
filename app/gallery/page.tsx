@@ -3,6 +3,12 @@
 import { useEffect, useState } from "react";
 import GalleryImageCard from "@/components/GalleryImageCard";
 import type { GitHubRepo, GalleryImage } from "@/lib/types";
+import { Pixelify_Sans } from "next/font/google";
+import { Film } from "lucide-react";
+import { SimpleIcon } from "@/components/ui/SimpleIcon";
+import { signIn } from "next-auth/react";
+
+const pixelFont = Pixelify_Sans({ subsets: ["latin"], weight: "700" });
 
 interface GalleryCardData {
 	image: GalleryImage;
@@ -93,17 +99,32 @@ export default function GalleryPage() {
 		<div className="min-h-screen py-8 px-4 md:px-8 lg:px-12">
 			<div className="max-w-7xl mx-auto">
 				{/* Header */}
-				<div className="mb-8">
-					<h1 className="text-3xl font-bold text-foreground">
-						Gallery
-					</h1>
-					<p className="text-muted-foreground mt-2">
-						Explore repositories with visual previews
-					</p>
+				<div className="mb-8 flex items-start justify-between gap-4">
+					<div>
+						<h1
+							className={`${pixelFont.className} text-4xl md:text-3xl font-bold tracking-tight inline-flex items-center gap-2 mb-4`}
+						>
+							<Film size={24} />
+							<span>Gallery</span>
+						</h1>
+						<p className="text-lg md:text-base text-muted-foreground">
+							Welcome to the cinema of our projects. Enjoy the
+							show.
+						</p>
+					</div>
+					<button
+						onClick={() =>
+							signIn("github", { callbackUrl: "/auth/callback" })
+						}
+						className="inline-flex items-center gap-2 px-3 py-1.5 text-sm rounded-lg border border-muted-foreground/30 text-muted-foreground hover:text-foreground hover:border-foreground/50 transition-colors"
+					>
+						<SimpleIcon name="github" size={16} />
+						Join
+					</button>
 				</div>
 
 				{/* Grid of images */}
-				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
 					{cards.map((card) => (
 						<GalleryImageCard
 							key={card.repoId}

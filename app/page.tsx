@@ -2,6 +2,7 @@
 
 import CursorGradient from "@/components/CursorGradient";
 import HeroSection from "@/components/landing/HeroSection";
+import GallerySection from "@/components/landing/GallerySection";
 import ShowcaseSection from "@/components/landing/ShowcaseSection";
 import CommunitySection from "@/components/landing/CommunitySection";
 
@@ -14,6 +15,7 @@ export default function LandingPage() {
 				<HeroSection />
 
 				{/* Linear sections */}
+				<GallerySection />
 				<ShowcaseSection />
 				<CommunitySection />
 			</div>

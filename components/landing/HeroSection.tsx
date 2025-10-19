@@ -11,13 +11,13 @@ export default function HeroSection() {
 	return (
 		<section className="text-left space-y-4 md:space-y-6 py-24">
 			<h1
-				className={` text-5xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-none md:leading-tight`}
+				className={` text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight md:leading-tight`}
 			>
 				Follow your curiosity,
 			</h1>
 
 			<h1
-				className={`${pixelFont.className} text-5xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-none md:leading-tight`}
+				className={`${pixelFont.className} text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight md:leading-tight`}
 			>
 				Go build some{" "}
 				<span
@@ -58,7 +58,7 @@ export default function HeroSection() {
 				!
 			</h1>
 
-			<div className="text-2xl md:text-xl text-muted-foreground leading-relaxed md:leading-relaxed space-y-1">
+			<div className="text-base md:text-xl text-muted-foreground leading-relaxed space-y-1">
 				<div>
 					<EmphasizedText
 						text="Showcase"
@@ -86,14 +86,14 @@ export default function HeroSection() {
 				</div>
 			</div>
 
-			<div className="pt-4">
+			<div className="pt-6">
 				<button
 					onClick={() =>
 						signIn("github", { callbackUrl: "/auth/callback" })
 					}
-					className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-foreground text-background hover:bg-foreground/90 transition-colors font-medium"
+					className="inline-flex items-center gap-2 px-4 py-2 text-sm rounded-lg border border-muted-foreground/30 text-muted-foreground hover:text-foreground hover:border-foreground/50 transition-colors"
 				>
-					<SimpleIcon name="github" size={20} />
+					<SimpleIcon name="github" size={16} />
 					Join with GitHub
 				</button>
 			</div>

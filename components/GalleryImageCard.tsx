@@ -78,44 +78,38 @@ export default function GalleryImageCard({
 
 			{/* Metadata below image */}
 			<div className="mt-3 space-y-1">
-				{/* Repo name */}
-				<a
-					href={`https://github.com/${repoId}`}
-					target="_blank"
-					rel="noopener noreferrer"
-					onClick={(e) => e.stopPropagation()}
-					className="text-sm font-semibold text-foreground hover:text-primary line-clamp-1"
-				>
-					{repoName}
-				</a>
+				{/* Repo name and language */}
+				<div className="flex items-center gap-2">
+					<a
+						href={`https://github.com/${repoId}`}
+						target="_blank"
+						rel="noopener noreferrer"
+						onClick={(e) => e.stopPropagation()}
+						className="text-sm font-semibold text-foreground hover:text-primary line-clamp-1"
+					>
+						{repoName}
+					</a>
+					{language && (
+						<div className="flex items-center gap-1.5 flex-shrink-0">
+							<div
+								className="w-2 h-2 rounded-full"
+								style={{
+									backgroundColor:
+										languageDotColor || "#6b7280",
+								}}
+							/>
+							<span className="text-xs text-muted-foreground/60">
+								{language}
+							</span>
+						</div>
+					)}
+				</div>
 
 				{/* Kind - short blurb */}
 				{kind && (
 					<p className="text-xs text-muted-foreground/80 line-clamp-1">
 						{kind}
 					</p>
-				)}
-
-				{/* Description */}
-				{description && (
-					<p className="text-xs text-muted-foreground/60 line-clamp-2">
-						{description}
-					</p>
-				)}
-
-				{/* Language badge */}
-				{language && (
-					<div className="flex items-center gap-1.5 pt-1">
-						<div
-							className="w-2 h-2 rounded-full"
-							style={{
-								backgroundColor: languageDotColor || "#6b7280",
-							}}
-						/>
-						<span className="text-xs text-muted-foreground/60">
-							{language}
-						</span>
-					</div>
 				)}
 			</div>
 		</div>

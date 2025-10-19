@@ -214,10 +214,6 @@
 	pointer-events: none;
 }
 
-/* Retro grid overlay for images */
-.retro-grid {
-	position: relative;
-}
 .retro-grid::after {
 	content: "";
 	position: absolute;
@@ -244,8 +240,8 @@
 	pointer-events: none;
 	background: repeating-linear-gradient(
 		to bottom,
-		rgba(0, 0, 0, 0) 0 2px,
-		rgba(0, 0, 0, 0.2) 2px 3px
+		rgba(0, 0, 100, 0.05) 0 2px,
+		rgba(0, 0, 0, 0.15) 2px 5px
 	);
 	z-index: 1;
 }
