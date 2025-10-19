@@ -17,21 +17,21 @@ export default function CommunitySection() {
 				<span>Find similar hackers</span>
 			</h2>
 			<p className="text-lg md:text-base text-muted-foreground">
-				<EmphasizedText text="connect" emphasisWords={["connect"]} />{" "}
-				with people building things like you
+				<EmphasizedText text="discover" emphasisWords={["discover"]} />{" "}
+				 people building things like you
 			</p>
 			<div className="relative w-full overflow-hidden retro-grid vignette border border-muted-foreground/50 border-r-8 border-b-8">
 				<Image
-					src="/others.gif"
-					alt="Connect with people building similar things"
+					src="/others.png"
+					alt="Discover people building similar things"
 					width={800}
 					height={600}
 					className="w-full h-auto"
 				/>
 			</div>
 			<p className="text-lg md:text-base text-muted-foreground">
-				<EmphasizedText text="discover" emphasisWords={["discover"]} />{" "}
-				projects that match your interests
+				<EmphasizedText text="learn" emphasisWords={["learn"]} />{" "}
+				from trending projects personalized to your interests
 			</p>
 			<div className="relative w-full overflow-hidden retro-grid vignette border border-muted-foreground/50 border-r-8 border-b-8">
 				<Image

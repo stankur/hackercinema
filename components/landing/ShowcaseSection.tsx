@@ -25,7 +25,7 @@ export default function ShowcaseSection() {
 			</p>
 			<div className="relative w-full overflow-hidden retro-grid vignette border border-muted-foreground/50 border-r-8 border-b-8">
 				<Image
-					src="/stankur_profile.gif"
+					src="/stankur_profile.png"
 					alt="Auto-updated profile"
 					width={800}
 					height={600}
