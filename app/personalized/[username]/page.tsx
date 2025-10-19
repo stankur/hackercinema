@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import RepoCard from "@/components/RepoCard";
+import UserInfoCard from "@/components/UserInfoCard";
 import CursorGradient from "@/components/CursorGradient";
 import ForYouTabs from "@/components/ForYouTabs";
 import type { GitHubRepo, GalleryImage } from "@/lib/types";
@@ -30,6 +31,17 @@ type ForYouItem = {
 	is_ghost?: boolean;
 };
 
+type ForYouUser = {
+	login: string;
+	avatar_url: string;
+	theme: string;
+	is_ghost: boolean;
+	bio?: string | null;
+	blog?: string;
+	location?: string | null;
+	highlighted_repos?: string[];
+};
+
 interface PageProps {
 	params: Promise<{
 		username: string;
@@ -39,17 +51,19 @@ interface PageProps {
 export default function ForYouPage({ params }: PageProps) {
 	const { username } = use(params);
 	const pathname = usePathname();
-	const [activeTab, setActiveTab] = useState<"community" | "trending">(
-		"community"
-	);
+	const [activeTab, setActiveTab] = useState<
+		"community" | "trending" | "people"
+	>("community");
 	const [communityFeed, setCommunityFeed] = useState<
 		Array<{ owner: string; repo: GitHubRepo }>
 	>([]);
 	const [trendingFeed, setTrendingFeed] = useState<
 		Array<{ owner: string; repo: GitHubRepo }>
 	>([]);
+	const [peopleFeed, setPeopleFeed] = useState<ForYouUser[]>([]);
 	const [communityLoading, setCommunityLoading] = useState<boolean>(true);
 	const [trendingLoading, setTrendingLoading] = useState<boolean>(false);
+	const [peopleLoading, setPeopleLoading] = useState<boolean>(false);
 	const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
 
 	// Helper function to map backend items to feed format
@@ -135,6 +149,28 @@ export default function ForYouPage({ params }: PageProps) {
 		});
 	}, [activeTab, username, trendingFeed.length]);
 
+	// Load People feed from backend (lazy load when tab is clicked)
+	useEffect(() => {
+		if (activeTab !== "people" || peopleFeed.length > 0) return;
+
+		setPeopleLoading(true);
+		(async () => {
+			const res = await fetch(`/api/backend/for-you-users/${username}`);
+			if (!res.ok) throw new Error(`HTTP ${res.status}`);
+			const { users } = (await res.json()) as { users: ForYouUser[] };
+			if (!Array.isArray(users))
+				throw new Error(
+					"Invalid response shape: expected { users: [] }"
+				);
+
+			setPeopleFeed(users);
+			setPeopleLoading(false);
+		})().catch((e) => {
+			// Surface hard failures
+			throw e;
+		});
+	}, [activeTab, username, peopleFeed.length]);
+
 	// Single fetch for user avatar (no polling)
 	useEffect(() => {
 		(async () => {
@@ -200,8 +236,8 @@ export default function ForYouPage({ params }: PageProps) {
 			<div className="max-w-3xl mx-auto px-6">
 				<ForYouTabs activeTab={activeTab} setActiveTab={setActiveTab} />
 
-				{activeTab === "community" ? (
-					communityLoading ? (
+				{activeTab === "community" &&
+					(communityLoading ? (
 						<div className="text-sm text-muted-foreground text-center py-20">
 							Loading feed...
 						</div>
@@ -223,30 +259,55 @@ export default function ForYouPage({ params }: PageProps) {
 								/>
 							))}
 						</div>
-					)
-				) : trendingLoading ? (
-					<div className="text-sm text-muted-foreground text-center py-20">
-						Loading trending...
-					</div>
-				) : trendingFeed.length === 0 ? (
-					<div className="text-sm text-muted-foreground text-center py-20">
-						No trending repos yet.
-					</div>
-				) : (
-					<div className="space-y-6">
-						{trendingFeed.map(({ owner, repo }) => (
-							<RepoCard
-								key={`${repo.id}`}
-								repo={repo}
-								owner={owner}
-								showUsernameInsteadOfDate
-								pageUsername={username}
-								hideHeroImage={false}
-								aiShowLoadingIfMissing={false}
-							/>
-						))}
-					</div>
-				)}
+					))}
+
+				{activeTab === "trending" &&
+					(trendingLoading ? (
+						<div className="text-sm text-muted-foreground text-center py-20">
+							Loading trending...
+						</div>
+					) : trendingFeed.length === 0 ? (
+						<div className="text-sm text-muted-foreground text-center py-20">
+							No trending repos yet.
+						</div>
+					) : (
+						<div className="space-y-6">
+							{trendingFeed.map(({ owner, repo }) => (
+								<RepoCard
+									key={`${repo.id}`}
+									repo={repo}
+									owner={owner}
+									showUsernameInsteadOfDate
+									pageUsername={username}
+									hideHeroImage={false}
+									aiShowLoadingIfMissing={false}
+								/>
+							))}
+						</div>
+					))}
+
+				{activeTab === "people" &&
+					(peopleLoading ? (
+						<div className="text-sm text-muted-foreground text-center py-20">
+							Loading people...
+						</div>
+					) : peopleFeed.length === 0 ? (
+						<div className="text-sm text-muted-foreground text-center py-20">
+							No people to show yet.
+						</div>
+					) : (
+						<div className="space-y-8">
+							{peopleFeed.map((user) => (
+								<UserInfoCard
+									key={user.login}
+									username={user.login}
+									is_ghost={user.is_ghost}
+									theme={user.theme}
+									clickable={true}
+								/>
+							))}
+						</div>
+					))}
 			</div>
 		</div>
 	);

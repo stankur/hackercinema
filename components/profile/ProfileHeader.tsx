@@ -1,9 +1,8 @@
 "use client";
 
-import { SocialIcon } from "@/components/ui/OrganizationIcon";
-import { Ghost, RotateCw } from "lucide-react";
 import type { Builder } from "@/lib/types";
 import EmphasisBelts from "@/components/EmphasisBelts";
+import UserInfoCard from "@/components/UserInfoCard";
 
 interface ProfileHeaderProps {
 	data: Builder;
@@ -59,88 +58,42 @@ export default function ProfileHeader({
 				}
 			`}
 		>
-			<div className="flex-1 min-w-0 space-y-2">
-				<div className="flex justify-between items-center">
-					<div className="flex gap-4 items-center">
-						<div className="flex items-center gap-2">
-							<h1 className="text-2xl font-semibold text-foreground">
-								{data.username}
-							</h1>
-							{data.profile?.is_ghost && (
-								<Ghost size={18} className="text-foreground" />
-							)}
-						</div>
+			<UserInfoCard
+				username={data.username}
+				is_ghost={data.profile?.is_ghost ?? false}
+				theme={data.theme}
+				showRestartButton={
+					process.env.NEXT_PUBLIC_ENABLE_RESTART === "true"
+				}
+				onRestart={handleRestart}
+			/>
 
-						{/* Social Links */}
-						<div className="flex gap-4 items-center">
-							{/* GitHub */}
-							<a
-								href={`https://github.com/${data.username}`}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="text-muted-foreground hover:opacity-80 transition-opacity"
-								title="GitHub"
-							>
-								<SocialIcon
-									platformName="github"
-									size={20}
-									color="currentColor"
-								/>
-							</a>
-						</div>
-					</div>
-
-					{/* Restart Button - only visible when enabled via env var */}
-					{process.env.NEXT_PUBLIC_ENABLE_RESTART === "true" && (
-						<button
-							onClick={handleRestart}
-							className="text-muted-foreground hover:text-foreground transition-colors"
-							title="Restart"
-						>
-							<RotateCw size={14} />
-						</button>
-					)}
-				</div>
-				{/* Inferred Theme - always at the top when available */}
-				{data?.theme && (
-					<div className="border border-muted-foreground/20 rounded-lg p-4 bg-gray-500/10 mb-6 mt-6">
-						<h3 className="text-xs font-mono tracking-widest uppercase text-muted-foreground mb-2">
-							Inferred Interest
-						</h3>
-						<p className="text-sm font-medium text-muted-foreground">
-							{data.theme}
-						</p>
-					</div>
-				)}
-
-				{/* Keywords and Emphasis Belts */}
-				{(allKeywords.length > 0 || allEmphasis.length > 0) && (
-					<div className="mt-10 space-y-5 md:space-y-5">
-						{/* {allKeywords.length > 0 && (
+			{/* Keywords and Emphasis Belts */}
+			{(allKeywords.length > 0 || allEmphasis.length > 0) && (
+				<div className="mt-10 space-y-5 md:space-y-5">
+					{/* {allKeywords.length > 0 && (
 							<KeywordsBelts
 								keywords={allKeywords}
 								startDirection="left"
 							/>
 						)} */}
-						{allEmphasis.length > 0 && (
-							<EmphasisBelts
-								emphasis={allEmphasis}
-								startDirection={
-									// Opposite of the last keywords belt
-									// If keywords start left and alternate, last belt index = belts-1
-									// Opposite = right when last keywords belt would be ...
-									// Simplify: flip based on number of belts derived from count
-									(Math.ceil(allKeywords.length / 20) - 1) %
-										2 ===
-									0
-										? "right"
-										: "left"
-								}
-							/>
-						)}
-					</div>
-				)}
-			</div>
+					{allEmphasis.length > 0 && (
+						<EmphasisBelts
+							emphasis={allEmphasis}
+							startDirection={
+								// Opposite of the last keywords belt
+								// If keywords start left and alternate, last belt index = belts-1
+								// Opposite = right when last keywords belt would be ...
+								// Simplify: flip based on number of belts derived from count
+								(Math.ceil(allKeywords.length / 20) - 1) % 2 ===
+								0
+									? "right"
+									: "left"
+							}
+						/>
+					)}
+				</div>
+			)}
 		</header>
 	);
 }
