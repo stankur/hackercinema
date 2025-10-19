@@ -1,10 +1,12 @@
 "use client";
 
-import { Users, TrendingUp, User } from "lucide-react";
+import { Users, TrendingUp, User, Newspaper } from "lucide-react";
 
 interface ForYouTabsProps {
-	activeTab: "community" | "trending" | "people";
-	setActiveTab: (tab: "community" | "trending" | "people") => void;
+	activeTab: "community" | "trending" | "people" | "hackernews";
+	setActiveTab: (
+		tab: "community" | "trending" | "people" | "hackernews"
+	) => void;
 }
 
 export default function ForYouTabs({
@@ -15,6 +17,7 @@ export default function ForYouTabs({
 		{ id: "community" as const, label: "Community", Icon: Users },
 		{ id: "trending" as const, label: "Trending", Icon: TrendingUp },
 		{ id: "people" as const, label: "People", Icon: User },
+		{ id: "hackernews" as const, label: "Hacker News", Icon: Newspaper },
 	];
 
 	return (

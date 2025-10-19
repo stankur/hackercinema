@@ -8,8 +8,9 @@ import RepoCard from "@/components/RepoCard";
 import UserInfoCard from "@/components/UserInfoCard";
 import CursorGradient from "@/components/CursorGradient";
 import ForYouTabs from "@/components/ForYouTabs";
+import HackerNewsStoryCard from "@/components/HackerNewsStoryCard";
 import { useAuth } from "@/hooks/useAuth";
-import type { GitHubRepo, GalleryImage } from "@/lib/types";
+import type { GitHubRepo, GalleryImage, HackerNewsStory } from "@/lib/types";
 
 // No local BackendRepo type; reuse GitHubRepo for mapping
 type ForYouItem = {
@@ -55,7 +56,7 @@ export default function ForYouPage({ params }: PageProps) {
 	const router = useRouter();
 	const { login, loading } = useAuth();
 	const [activeTab, setActiveTab] = useState<
-		"community" | "trending" | "people"
+		"community" | "trending" | "people" | "hackernews"
 	>("community");
 	const [communityFeed, setCommunityFeed] = useState<
 		Array<{ owner: string; repo: GitHubRepo }>
@@ -64,9 +65,11 @@ export default function ForYouPage({ params }: PageProps) {
 		Array<{ owner: string; repo: GitHubRepo }>
 	>([]);
 	const [peopleFeed, setPeopleFeed] = useState<ForYouUser[]>([]);
+	const [hackerNewsFeed, setHackerNewsFeed] = useState<HackerNewsStory[]>([]);
 	const [communityLoading, setCommunityLoading] = useState<boolean>(true);
 	const [trendingLoading, setTrendingLoading] = useState<boolean>(false);
 	const [peopleLoading, setPeopleLoading] = useState<boolean>(false);
+	const [hackerNewsLoading, setHackerNewsLoading] = useState<boolean>(false);
 	const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
 
 	// Redirect if user is not the owner of this "for you" page
@@ -180,6 +183,32 @@ export default function ForYouPage({ params }: PageProps) {
 			throw e;
 		});
 	}, [activeTab, username, peopleFeed.length]);
+
+	// Load Hacker News feed from backend (lazy load when tab is clicked)
+	useEffect(() => {
+		if (activeTab !== "hackernews" || hackerNewsFeed.length > 0) return;
+
+		setHackerNewsLoading(true);
+		(async () => {
+			const res = await fetch(
+				`/api/backend/for-you-hackernews/${username}`
+			);
+			if (!res.ok) throw new Error(`HTTP ${res.status}`);
+			const { stories } = (await res.json()) as {
+				stories: HackerNewsStory[];
+			};
+			if (!Array.isArray(stories))
+				throw new Error(
+					"Invalid response shape: expected { stories: [] }"
+				);
+
+			setHackerNewsFeed(stories);
+			setHackerNewsLoading(false);
+		})().catch((e) => {
+			// Surface hard failures
+			throw e;
+		});
+	}, [activeTab, username, hackerNewsFeed.length]);
 
 	// Single fetch for user avatar (no polling)
 	useEffect(() => {
@@ -336,6 +365,28 @@ export default function ForYouPage({ params }: PageProps) {
 									is_ghost={user.is_ghost}
 									theme={user.theme}
 									clickable={true}
+								/>
+							))}
+						</div>
+					))}
+
+				{activeTab === "hackernews" &&
+					(hackerNewsLoading ? (
+						<div className="text-sm text-muted-foreground text-center py-20">
+							Loading stories...
+						</div>
+					) : hackerNewsFeed.length === 0 ? (
+						<div className="text-sm text-muted-foreground text-center py-20">
+							No stories to show yet.
+						</div>
+					) : (
+						<div className="divide-y divide-border/40">
+							{hackerNewsFeed.map((story) => (
+								<HackerNewsStoryCard
+									key={story.id}
+									title={story.title}
+									url={story.url}
+									hnUrl={story.hn_url}
 								/>
 							))}
 						</div>

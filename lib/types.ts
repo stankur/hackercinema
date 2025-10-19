@@ -47,3 +47,15 @@ export interface Builder {
 	repos: GitHubRepo[] | null;
 	similar_repos?: Array<{ username: string; repo_name: string }>;
 }
+
+export interface HackerNewsStory {
+	by: string;
+	descendants: number;
+	extracted_at: string;
+	hn_url: string;
+	id: string;
+	score: number;
+	time: number;
+	title: string;
+	url?: string;
+}
