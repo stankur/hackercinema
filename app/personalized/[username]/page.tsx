@@ -2,7 +2,6 @@
 
 import { useEffect, useState, use } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import RepoCard from "@/components/RepoCard";
 import UserInfoCard from "@/components/UserInfoCard";
@@ -11,6 +10,9 @@ import ForYouTabs from "@/components/ForYouTabs";
 import HackerNewsStoryCard from "@/components/HackerNewsStoryCard";
 import { useAuth } from "@/hooks/useAuth";
 import type { GitHubRepo, GalleryImage, HackerNewsStory } from "@/lib/types";
+import { Pixelify_Sans } from "next/font/google";
+
+const pixelFont = Pixelify_Sans({ subsets: ["latin"], weight: "700" });
 
 // No local BackendRepo type; reuse GitHubRepo for mapping
 type ForYouItem = {
@@ -70,7 +72,6 @@ export default function ForYouPage({ params }: PageProps) {
 	const [trendingLoading, setTrendingLoading] = useState<boolean>(false);
 	const [peopleLoading, setPeopleLoading] = useState<boolean>(false);
 	const [hackerNewsLoading, setHackerNewsLoading] = useState<boolean>(false);
-	const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
 
 	// Redirect if user is not the owner of this "for you" page
 	useEffect(() => {
@@ -210,22 +211,6 @@ export default function ForYouPage({ params }: PageProps) {
 		});
 	}, [activeTab, username, hackerNewsFeed.length]);
 
-	// Single fetch for user avatar (no polling)
-	useEffect(() => {
-		(async () => {
-			try {
-				const res = await fetch(`/api/backend/users/${username}/data`);
-				if (!res.ok) throw new Error(`HTTP ${res.status}`);
-				const data = await res.json();
-				const url = data?.user?.avatar_url;
-				if (typeof url !== "string") throw new Error("Invalid avatar");
-				setAvatarUrl(url);
-			} catch (e) {
-				console.error("Failed to load profile avatar", e);
-			}
-		})();
-	}, [username]);
-
 	// Show loading state while checking authentication
 	if (loading) {
 		return (
@@ -253,43 +238,57 @@ export default function ForYouPage({ params }: PageProps) {
 			<CursorGradient />
 			{/* Navigation */}
 			<div className="max-w-3xl mx-auto pt-10 px-6 mb-12">
-				<div className="flex justify-between items-center relative z-20">
-					{/* Empty left space */}
-					<div></div>
-
-					{/* Centered tabs */}
-					<div className="flex gap-10">
+				<div className="flex justify-center items-center relative z-20">
+					<div className="flex items-center gap-6">
 						<Link
 							href={`/personalized/${username}`}
-							className={`text-sm transition-colors ${
+							className={`text-lg md:text-xl transition-colors relative ${
 								pathname === `/personalized/${username}`
-									? "text-foreground"
+									? "after:absolute after:left-0 after:right-0 after:-bottom-1 after:h-[2px] after:bg-foreground after:rounded"
+									: ""
+							}`}
+						>
+							<span
+								className={`${pixelFont.className} font-bold`}
+							>
+								{Array.from("FOR YOU").map((char, idx) => {
+									const colors = [
+										"text-rose-500",
+										"text-orange-500",
+										"text-amber-500",
+										"text-lime-500",
+										"text-emerald-500",
+										"text-teal-500",
+										"text-sky-500",
+									];
+									return (
+										<span
+											key={idx}
+											className={
+												char === " "
+													? ""
+													: colors[
+															idx % colors.length
+													  ]
+											}
+										>
+											{char}
+										</span>
+									);
+								})}
+							</span>
+						</Link>
+						<Link
+							href={`/personalized/${username}/profile`}
+							className={`text-sm transition-colors relative ${
+								pathname === `/personalized/${username}/profile`
+									? "text-foreground after:absolute after:left-0 after:right-0 after:-bottom-1 after:h-[2px] after:bg-foreground after:rounded"
 									: "text-muted-foreground hover:text-foreground"
 							}`}
 						>
-							For You
+							Me
 						</Link>
 					</div>
-
-					{/* Avatar on right within content width */}
-					<Link
-						href={`/personalized/${username}/profile`}
-						className="cursor-pointer"
-					>
-						<div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center overflow-hidden hover:opacity-80 transition-opacity">
-							{avatarUrl ? (
-								<Image
-									src={avatarUrl}
-									alt={`${username}'s avatar`}
-									width={32}
-									height={32}
-									className="w-full h-full object-cover"
-								/>
-							) : (
-								<div className="w-6 h-6 bg-muted-foreground/20 rounded-full" />
-							)}
-						</div>
-					</Link>
 				</div>
 			</div>
 
@@ -362,6 +361,7 @@ export default function ForYouPage({ params }: PageProps) {
 								<UserInfoCard
 									key={user.login}
 									username={user.login}
+									avatarUrl={user.avatar_url}
 									is_ghost={user.is_ghost}
 									theme={user.theme}
 									clickable={true}

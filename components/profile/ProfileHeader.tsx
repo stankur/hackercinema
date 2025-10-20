@@ -60,6 +60,7 @@ export default function ProfileHeader({
 		>
 			<UserInfoCard
 				username={data.username}
+				avatarUrl={data.profile?.avatar_url}
 				is_ghost={data.profile?.is_ghost ?? false}
 				theme={data.theme}
 				showRestartButton={

@@ -121,7 +121,7 @@ export default function ProfilePage({ params }: PageProps) {
 		<div className="min-h-screen relative">
 			<CursorGradient />
 			{/* Navigation */}
-			<ProfileNavigation username={username} data={data} />
+			<ProfileNavigation username={username} />
 
 			<div className="max-w-3xl mx-auto py-10 px-6 space-y-20">
 				{/* Header */}

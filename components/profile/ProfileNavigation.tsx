@@ -1,19 +1,18 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useAuth } from "@/hooks/useAuth";
-import type { Builder } from "@/lib/types";
+import { Pixelify_Sans } from "next/font/google";
+
+const pixelFont = Pixelify_Sans({ subsets: ["latin"], weight: "700" });
 
 interface ProfileNavigationProps {
 	username: string;
-	data: Builder | null;
 }
 
 export default function ProfileNavigation({
 	username,
-	data,
 }: ProfileNavigationProps) {
 	const pathname = usePathname();
 	const { login } = useAuth();
@@ -22,45 +21,59 @@ export default function ProfileNavigation({
 
 	return (
 		<div className="max-w-3xl mx-auto pt-10 px-6 mb-12">
-			<div className="flex justify-between items-center relative z-20">
-				{/* Empty left space */}
-				<div></div>
-
-				{/* Centered tabs - only show "For You" for owner */}
-				<div className="flex gap-10">
+			<div className="flex justify-center items-center relative z-20">
+				<div className="flex items-center gap-6">
 					{isOwner && (
 						<Link
 							href={`/personalized/${username}`}
-							className={`text-sm transition-colors ${
+							className={`text-lg md:text-xl transition-colors relative ${
 								pathname === `/personalized/${username}`
-									? "text-foreground"
-									: "text-muted-foreground hover:text-foreground"
+									? "after:absolute after:left-0 after:right-0 after:-bottom-1 after:h-[2px] after:bg-foreground after:rounded"
+									: ""
 							}`}
 						>
-							For You
+							<span
+								className={`${pixelFont.className} font-bold`}
+							>
+								{Array.from("FOR YOU").map((char, idx) => {
+									const colors = [
+										"text-rose-500",
+										"text-orange-500",
+										"text-amber-500",
+										"text-lime-500",
+										"text-emerald-500",
+										"text-teal-500",
+										"text-sky-500",
+									];
+									return (
+										<span
+											key={idx}
+											className={
+												char === " "
+													? ""
+													: colors[
+															idx % colors.length
+													  ]
+											}
+										>
+											{char}
+										</span>
+									);
+								})}
+							</span>
 						</Link>
 					)}
+					<Link
+						href={`/personalized/${username}/profile`}
+						className={`text-sm transition-colors relative ${
+							pathname === `/personalized/${username}/profile`
+								? "text-foreground after:absolute after:left-0 after:right-0 after:-bottom-1 after:h-[2px] after:bg-foreground after:rounded"
+								: "text-muted-foreground hover:text-foreground"
+						}`}
+					>
+						Me
+					</Link>
 				</div>
-
-				{/* Avatar on right within content width - active state */}
-				<Link
-					href={`/personalized/${username}/profile`}
-					className="cursor-pointer"
-				>
-					<div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center overflow-hidden ring-2 ring-foreground">
-						{data?.profile?.avatar_url ? (
-							<Image
-								src={data.profile.avatar_url}
-								alt={`${data.username}'s avatar`}
-								width={32}
-								height={32}
-								className="w-full h-full object-cover"
-							/>
-						) : (
-							<div className="w-6 h-6 bg-muted-foreground/20 rounded-full" />
-						)}
-					</div>
-				</Link>
 			</div>
 		</div>
 	);

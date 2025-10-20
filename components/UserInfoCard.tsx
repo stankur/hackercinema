@@ -3,9 +3,11 @@
 import { useRouter } from "next/navigation";
 import { SocialIcon } from "@/components/ui/OrganizationIcon";
 import { Ghost, RotateCw } from "lucide-react";
+import Image from "next/image";
 
 interface UserInfoCardProps {
 	username: string;
+	avatarUrl?: string;
 	is_ghost: boolean;
 	theme?: string;
 	showRestartButton?: boolean;
@@ -15,6 +17,7 @@ interface UserInfoCardProps {
 
 export default function UserInfoCard({
 	username,
+	avatarUrl,
 	is_ghost,
 	theme,
 	showRestartButton = false,
@@ -33,13 +36,26 @@ export default function UserInfoCard({
 		<div className="flex-1 min-w-0 space-y-2">
 			<div className="flex justify-between items-center">
 				<div className="flex gap-4 items-center">
-					<div className="flex items-center gap-2">
-						<h1 className="text-2xl font-semibold text-foreground">
-							{username}
-						</h1>
-						{is_ghost && (
-							<Ghost size={18} className="text-foreground" />
+					<div className="flex items-center gap-3">
+						{avatarUrl && (
+							<div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center overflow-hidden flex-shrink-0">
+								<Image
+									src={avatarUrl}
+									alt={`${username}'s avatar`}
+									width={48}
+									height={48}
+									className="w-full h-full object-cover"
+								/>
+							</div>
 						)}
+						<div className="flex items-center gap-2">
+							<h1 className="text-2xl font-semibold text-foreground">
+								{username}
+							</h1>
+							{is_ghost && (
+								<Ghost size={18} className="text-foreground" />
+							)}
+						</div>
 					</div>
 
 					{/* Social Links */}

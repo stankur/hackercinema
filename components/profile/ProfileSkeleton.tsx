@@ -15,21 +15,21 @@ export default function ProfileSkeleton({ username }: ProfileSkeletonProps) {
 
 			{/* Header skeleton */}
 			<header className="max-w-3xl mx-auto pt-10 px-6 mb-12">
-				<div className="flex justify-between items-center relative z-20">
-					<div></div>
-					<div className="flex gap-10">
+				<div className="flex justify-center items-center relative z-20">
+					<div className="flex items-center gap-6">
 						<Link
 							href={`/personalized/${username}`}
 							className="text-sm text-muted-foreground hover:text-foreground"
 						>
-							For You
+							<Skeleton height={16} width={60} />
+						</Link>
+						<Link
+							href={`/personalized/${username}/profile`}
+							className="text-sm"
+						>
+							<Skeleton height={16} width={30} />
 						</Link>
 					</div>
-					<Link href={`/personalized/${username}/profile`}>
-						<div className="w-8 h-8 rounded-full bg-muted">
-							<Skeleton circle height={32} width={32} />
-						</div>
-					</Link>
 				</div>
 			</header>
 
