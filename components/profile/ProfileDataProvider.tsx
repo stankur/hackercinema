@@ -1,29 +1,38 @@
 "use client";
 
 import { useEffect, useState, useCallback, useRef } from "react";
-import type { Builder } from "@/lib/types";
+import { useAuth } from "@/hooks/useAuth";
+import type { Builder, Context } from "@/lib/types";
 
 interface UseProfileDataReturn {
 	data: Builder | null;
 	loading: boolean;
 	highlightedRepoNames: string[] | undefined;
+	contexts: Context[] | null;
+	contextsLoading: boolean;
 	visibleTabs: Array<{ id: string; label: string; loading?: boolean }>;
 	activeTab: string;
 	setActiveTab: (tabId: string) => void;
+	addContext: (newContext: Context) => void;
 }
 
 export function useProfileData(username: string): UseProfileDataReturn {
+	const { login } = useAuth();
 	const [data, setData] = useState<Builder | null>(null);
 	const [loading, setLoading] = useState(true);
 	const [highlightedRepoNames, setHighlightedRepoNames] = useState<
 		string[] | undefined
 	>(undefined);
+	const [contexts, setContexts] = useState<Context[] | null>(null);
+	const [contextsLoading, setContextsLoading] = useState(false);
 	const [activeTab, setActiveTab] = useState<string>("recent");
 
-	// Function to determine visible tabs - always show both tabs
+	const isOwner = login === username;
+
+	// Function to determine visible tabs
 	const getVisibleTabs = useCallback(() => {
 		const repos = data?.repos;
-		return [
+		const tabs = [
 			{
 				id: "highlights",
 				label: "HIGHLIGHTS",
@@ -40,7 +49,18 @@ export function useProfileData(username: string): UseProfileDataReturn {
 				loading: repos === null,
 			},
 		];
-	}, [data?.repos, highlightedRepoNames]);
+
+		// Add contexts tab only if user is owner
+		if (isOwner) {
+			tabs.push({
+				id: "contexts",
+				label: "CONTEXT",
+				loading: contextsLoading,
+			});
+		}
+
+		return tabs;
+	}, [data?.repos, highlightedRepoNames, isOwner, contextsLoading]);
 
 	const visibleTabs = getVisibleTabs();
 
@@ -144,12 +164,48 @@ export function useProfileData(username: string): UseProfileDataReturn {
 		return () => clearInterval(interval);
 	}, [username]);
 
+	// Load contexts for owner only
+	useEffect(() => {
+		if (!isOwner) return;
+
+		const loadContexts = async () => {
+			setContextsLoading(true);
+			try {
+				const response = await fetch(
+					`/api/backend/contexts/${username}`
+				);
+				if (response.ok) {
+					const data = await response.json();
+					if (data.contexts && Array.isArray(data.contexts)) {
+						setContexts(data.contexts);
+					}
+				}
+			} catch (error) {
+				console.error(
+					`Failed to load contexts for ${username}:`,
+					error
+				);
+			} finally {
+				setContextsLoading(false);
+			}
+		};
+
+		loadContexts();
+	}, [username, isOwner]);
+
+	const addContext = useCallback((newContext: Context) => {
+		setContexts((prev) => (prev ? [newContext, ...prev] : [newContext]));
+	}, []);
+
 	return {
 		data,
 		loading,
 		highlightedRepoNames,
+		contexts,
+		contextsLoading,
 		visibleTabs,
 		activeTab,
 		setActiveTab,
+		addContext,
 	};
 }

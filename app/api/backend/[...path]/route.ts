@@ -54,15 +54,19 @@ export async function PATCH(
 
 async function checkAuth(path: string[]): Promise<NextResponse | null> {
 	// Extract username from path
-	// Expected pattern: ['users', 'username', ...]
-	if (path[0] !== "users" || !path[1]) {
+	// Expected patterns: ['users', 'username', ...] or ['contexts', 'username']
+	let targetUsername: string;
+
+	if (path[0] === "users" && path[1]) {
+		targetUsername = path[1];
+	} else if (path[0] === "contexts" && path[1]) {
+		targetUsername = path[1];
+	} else {
 		return NextResponse.json(
 			{ error: "Invalid path format" },
 			{ status: 400 }
 		);
 	}
-
-	const targetUsername = path[1];
 
 	// Check if using mock auth in dev
 	const useMockAuth =

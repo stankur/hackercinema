@@ -8,6 +8,7 @@ import ProfileHeader from "@/components/profile/ProfileHeader";
 import ProfileTabs from "@/components/profile/ProfileTabs";
 import HighlightsSection from "@/components/profile/sections/HighlightsSection";
 import AllReposSection from "@/components/profile/sections/AllReposSection";
+import ContextsSection from "@/components/profile/sections/ContextsSection";
 import { useProfileData } from "@/components/profile/ProfileDataProvider";
 import "react-loading-skeleton/dist/skeleton.css";
 
@@ -25,9 +26,12 @@ export default function ProfilePage({ params }: PageProps) {
 		data,
 		loading,
 		highlightedRepoNames,
+		contexts,
+		contextsLoading,
 		visibleTabs,
 		activeTab,
 		setActiveTab,
+		addContext,
 	} = useProfileData(username);
 
 	// Animation refs for each section
@@ -169,6 +173,14 @@ export default function ProfilePage({ params }: PageProps) {
 								highlightedRepoNames={highlightedRepoNames}
 								username={data.profile.login}
 								aiEnabled={!!highlightedRepoNames}
+							/>
+						)}
+						{activeTab === "contexts" && (
+							<ContextsSection
+								contexts={contexts}
+								loading={contextsLoading}
+								username={username}
+								onContextAdded={addContext}
 							/>
 						)}
 					</div>

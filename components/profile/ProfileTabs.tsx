@@ -1,6 +1,6 @@
 "use client";
 
-import { Clock, Info, Star } from "lucide-react";
+import { Clock, Info, Star, Brain, Lock } from "lucide-react";
 
 interface Tab {
 	id: string;
@@ -34,8 +34,18 @@ export default function ProfileTabs({
 			`}
 		>
 			{(() => {
-				const allowed = new Set(["highlights", "recent", "about"]);
-				const order = ["highlights", "recent", "about"] as const;
+				const allowed = new Set([
+					"highlights",
+					"recent",
+					"contexts",
+					"about",
+				]);
+				const order = [
+					"highlights",
+					"recent",
+					"contexts",
+					"about",
+				] as const;
 				const filtered = visibleTabs
 					.filter((t) => allowed.has(t.id))
 					.sort(
@@ -53,6 +63,8 @@ export default function ProfileTabs({
 									? Star
 									: tab.id === "recent"
 									? Clock
+									: tab.id === "contexts"
+									? Brain
 									: Info;
 							return (
 								<button
@@ -76,8 +88,16 @@ export default function ProfileTabs({
 											? "Recent"
 											: tab.id === "highlights"
 											? "Highlights"
+											: tab.id === "contexts"
+											? "Context"
 											: "About"}
 									</span>
+									{tab.id === "contexts" && (
+										<Lock
+											size={12}
+											className="opacity-60"
+										/>
+									)}
 									{tab.loading && (
 										<span className="inline-block w-2 h-2 rounded-full bg-muted-foreground/50 animate-pulse" />
 									)}

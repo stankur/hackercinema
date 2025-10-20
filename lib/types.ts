@@ -59,3 +59,10 @@ export interface HackerNewsStory {
 	title: string;
 	url?: string;
 }
+
+export interface Context {
+	id: string;
+	content: string;
+	created_at: string;
+	has_embedding: boolean;
+}
